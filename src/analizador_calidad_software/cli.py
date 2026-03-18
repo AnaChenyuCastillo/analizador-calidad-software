@@ -4,44 +4,31 @@ import shutil
 from pathlib import Path
 
 
-def asegurar_cloc_instalado() -> None:
-    #Comprueba si la aplicacón cloc está disponible en el sistema.
-    #Si no lo está, intetará instalarlo automáticamente
+def obtener_ruta_herramienta(nombre: str) -> Path:
+    #Prueba para ejecutar cloc.exe
+    repo_root = Path(__file__).resolve().parents[2]
+    ruta = repo_root / "herramientas" / nombre / f"{nombre}.exe"
 
-    #Primero comprobamos si la aplicación Cloc esta instalada y para ello utlizamos el comando hutil.which que retorna la ruta del ejecutable
-    if shutil.which("cloc") is not None:
-        return
-
-
-    print("La aplicación Cloc no está instalada. Intentando instalarlo automáticamente...")
-
-    #A continuación se iintetará instalar la aplicación cloc
-
-    try: 
-        subprocess.run(
-            [sys.executable, "-m", "pip", "install", "cloc"],
-            check=True,
-            capture_output=True,
-            text=True,
-        )
-    except subprocess.CalledProcessError as e:
-        #
-        print("La instalación ha fallado")
-        if e.stderr:
-            print(e.stderr.strip())
-
-    #Volcemos a comprobar si la aplicación cloc está instalada
-    if shutil.which("cloc") is not None:
-        print("La aplicación cloc ya está disponible")
-        return
+    if not ruta.exists():
+        raise RuntimeError(f"No se encontro el archivo '{nombre}.exe' en {ruta}")
     
-    #Si la comprobación falla es que la instalación ha fallado, entonces mandamos un mensaje 
-    #de que la aplicación no se ha podido instalar y que para continuar tiene que instalarla
-    raise RuntimeError(
-        "No se pudo instalar 'cloc' automáticamente. "
-        "Instálalo manualmente (por ejemplo con Chocolatey o Scoop) "
-        "o añade 'cloc' al PATH."
+    return ruta
+
+def ejecutar_herramienta(nombre: str, argumentos: list[str]):
+    #Ejecuta una de las herramientas del repositorio.
+
+    #El parámetro nombre corresponde con el nombre de la herramienta
+    #El parámetro argumento corrresponde con la lista de argumentos para lanzar el ejecutable
+
+    ruta = obtener_ruta_herramienta(nombre)
+
+    resultado = subprocess.run(
+        [str(ruta)] + argumentos,
+        capture_output=True,
+        text=True,
     )
+
+    return resultado
 
 
 def main() -> int:
@@ -57,7 +44,12 @@ def main() -> int:
         print("Error: la ruta indicada no existe.")
         return 1
     
-    asegurar_cloc_instalado()
+    
+    #Prueba para ejecutar cloc.exe
+    resultado= ejecutar_herramienta("cloc", ["--version"])
+
+    print("Salida de cloc:")
+    print(resultado.stdout)
 
     if ruta.is_dir():
         print(f"Analizando directorio: {ruta.resolve()}")
