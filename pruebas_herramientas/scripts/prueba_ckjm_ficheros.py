@@ -70,7 +70,7 @@ def interpretar_salida_ckjm(salida: str) -> dict:
     partes = linea.split()
     print("Estas son las partes",partes)
 
-    if not linea:
+    if len(partes) != 9:
         raise RuntimeError(f"La salida de ckjm no tiene el formato esperado: \n {salida}")
     
     salida_metodo = {
@@ -90,30 +90,38 @@ def interpretar_salida_ckjm(salida: str) -> dict:
     return salida_metodo
 
 def generar_texto_resultado(metricas: dict) -> str:
-    print("LAs métrocas son:", metricas)
+    print("Las métrocas son:", metricas)
     texto = []
     texto.append("Resultadode prueba CKJM")
     texto.append("")
     texto.append(f"Clase analizada: {metricas['Clase']}")
     texto.append("")
-    texto.append(f"WMC - Métodos ponderados por clase: {metricas['WMC']}")
-    texto.append(f"DIT - Profundidad del árbol de herencia: {metricas['DIT']}")
-    texto.append(f"NOC - Número de clases hijas : {metricas['NOC']}")
+    texto.append(f"WMC - Metodos ponderados por clase: {metricas['WMC']}")
+    texto.append(f"DIT - Profundidad del arbol de herencia: {metricas['DIT']}")
+    texto.append(f"NOC - Numero de clases hijas : {metricas['NOC']}")
     texto.append(f"CBO - Acoplamiento entre clases: {metricas['CBO']}")
     texto.append(f"RFC - COnjunto de respuesta de la clase: {metricas['RFC']}")
-    texto.append(f"LCOM - Falta de cohesión en métodos: {metricas['LCOM']}")
+    texto.append(f"LCOM - Falta de cohesion en metodos: {metricas['LCOM']}")
     texto.append(f"CA - Acoplamiento aferente: {metricas['CA']}")
-    texto.append(f"NPM - Número de métodos públicos: {metricas['NPM']}")
+    texto.append(f"NPM - Numero de metodos publicos: {metricas['NPM']}")
+
 
     return "\n".join(texto)
 
 def guardar_resultado_txt(contenido: str) -> Path:
     repo_root = obtener_repo_root()
-    carpeta_resultados = repo_root / "pruebas" / "resultados"
+    carpeta_resultados = repo_root / "pruebas_herramientas" / "resultados"
     carpeta_resultados.mkdir(parents=True, exist_ok=True)
 
+
     timestap = datetime.now().strftime("%Y%m%d_%H%M%S")
-    ruta_fichero = carpeta_resultados / f"resultado_ckjm_{timestap}.txt"
+    nombre_fichero = f"resultado_ckjm_{timestap}.txt"
+
+    with open(carpeta_resultados / nombre_fichero, "w") as fichero:
+        fichero.write(contenido)
+    ruta_fichero = carpeta_resultados / nombre_fichero
+
+   
 
     return ruta_fichero
 

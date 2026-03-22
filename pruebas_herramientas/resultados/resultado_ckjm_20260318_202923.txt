@@ -1,0 +1,12 @@
+Resultadode prueba CKJM
+
+Clase analizada: pruebas_herramientas.TestClass
+
+WMC - Metodos ponderados por clase: 4
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 0
+RFC - COnjunto de respuesta de la clase: 5
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 4
