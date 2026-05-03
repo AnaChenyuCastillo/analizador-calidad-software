@@ -74,7 +74,7 @@ if __name__ == "__main__":
         try:
             # Ejecuta ciclomatico2 
             print(f'archivo:{archivo}')
-            repo_root = obtener_repo_root()
+            repo_root = obtener_repo_root(3)
             print(repo_root)
             ruta = repo_root / "pruebas_herramientas" / "scripts" / "cc_grafo" / "ciclomatico2.py"
             result = subprocess.run(

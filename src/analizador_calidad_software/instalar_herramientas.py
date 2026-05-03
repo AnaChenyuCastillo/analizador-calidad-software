@@ -5,7 +5,7 @@ from pathlib import Path
 from cli import (obtener_repo_root)
 
 def obtener_herramientas() -> Path:
-    repo_root = obtener_repo_root()
+    repo_root = obtener_repo_root(2)
     ruta = repo_root / "herramientas" / "herramientas.txt"
 
     if not ruta.exists():

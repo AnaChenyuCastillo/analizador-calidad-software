@@ -1,0 +1,18 @@
+Instalar las aplicaciones.
+Para instalar las aplicaciones tenemos que ejecutar el fichero instalar_herramientas.py
+Es importante destacar que pueden salir warnings si hay aplicaciones ya instaladas, sin embrgo si al final de prorama aparece la frase
+"Todas las dependencias de herramientas.txt se han instalado correctamente.", es que todas las aplicaciones que no estaban instaladas se 
+han instalado correctamente.
+Además para poder ejecutar el programa es necesario que en la consola, dentro de la carpeta del proyecto, ejecutemos el siguiente
+comando: "$env:PYTHONPATH="src", esto es necesario para que al ejecutar el programa la terinal ubique las diferentes carpetas de proyecto
+y ejecute correctamente las importaciones de métodos entre ficheros.
+
+Por otro lado encontramos diferentes observaciones:
+1. En la carpera prueba_herremientas se encuentras las primeras pruebas para ejecutar las diferentes aplicaciones,
+sin embargo esto no quiere decir que el resultado que devuelva en el txt sea la salida que va a tener en la aplicacion final.
+2. LA aplicación pylint (herramienta de detección de errores) en proyectos grandes puede tardar varias horas, dado que la detección de errores 
+se realiza de manera profunda por lo que en el programa fina solo se ejecutará cuando se quiera un analisis completo o profundo del código. En 
+el análisis rápido no se ejcutrá esta aplicación. O si se decide ejecutar se ejecutrá parcialmente en los 20 o 30 archivos con más lineas de 
+codigo del proyecto.
+3. El program de genración de grafos está en proceso por lo por lo que puede que el selecionar carpeta aun de algun error, además de que quepa 
+la posibilidad de que solo funcione correctamente el que está ubicado dentro de pruebas_herraamientas.

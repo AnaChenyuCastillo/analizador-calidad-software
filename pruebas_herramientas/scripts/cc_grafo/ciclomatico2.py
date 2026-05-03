@@ -72,7 +72,7 @@ def replace_tabs_with_spaces(file_path, work_file, spaces_per_tab=4)  :
         shutil.copy(file_path, work_file)
         print(f"Copia  en: {work_file}")
          # llama a quitar comentarios
-        result = ejecutar_quitar_comentario()
+        result = ejecutar_quitar_comentario(file_path, work_file)
         print("Los comentarios estan eliminados")
         # Leer y reemplazar
         with open(work_file, "r", encoding="utf-8") as f:
@@ -500,9 +500,11 @@ if len(sys.argv)>1:
 else:    
     mi_archivo=seleccionar_archivo()
 print(f'archivo={mi_archivo}')  
+#Esta es la ruta del archivo
 directorio_sel=""
-if len(sys.argv) > 2:
-    directorio_sel= Path(sys.argv[2])
+print("sys.argv, len(sys.argv):",sys.argv,len(sys.argv))
+if len(sys.argv) >= 1:
+    directorio_sel= Path(sys.argv[0])
     print(f"este es mi directorio {directorio_sel}")
     
 
@@ -526,11 +528,11 @@ if __name__ == "__main__":
     if directorio_sel!="" and directorio_sel!=directorio_arc:
         print("Entro en el if")
         print(f'nombre_dirsel_1:{directorio_sel}')
-        nombre_dirsel=ruta[len(directorio_sel)+1:len(directorio_arc)]
+        nombre_dirsel=directorio_sel
         print(f'nombre_dirsel2:{nombre_dirsel}')
         
         
-        nombre_dirsel="("+nombre_dirsel.replace("/", "_")+")"
+        nombre_dirsel="("+str(nombre_dirsel).replace("/", "_")+")"
         print(f'nombre_dirsel4:{nombre_dirsel}')
     print(f'nombre_dirsel fin:{nombre_dirsel}')
    
@@ -541,8 +543,8 @@ if __name__ == "__main__":
             print(f"Directorio creado: {Directoriow}")
     
 
-    work_file = Directoriow / f"{nombre_dirsel}{Nombre_arch}dcc.txt"
-    grafo_file = Directoriow / f"{nombre_dirsel}{Nombre_arch}dcc"
+    work_file = Directoriow / f"{Nombre_arch}dcc.txt"
+    grafo_file = Directoriow / f"{Nombre_arch}dcc"
 
     replace_tabs_with_spaces(ruta, work_file,  spaces_per_tab=4)
 
@@ -717,7 +719,7 @@ Esto es una prueba
 '''
 marca_tiempo=datetime.today().strftime("%Y%m%d%H%M%S")
 Nombre_arch_sin_ext = Path(Nombre_arch).stem
-nombre_pdf_final = f"{nombre_dirsel}_{Nombre_arch_sin_ext}_dcc_{marca_tiempo}.pdf"
+nombre_pdf_final = f"{Nombre_arch_sin_ext}_dcc_{marca_tiempo}.pdf"
 grafo_file = Directoriow / nombre_pdf_final
 fusionador = PdfWriter()
 for pdf in T_grafos_files:
