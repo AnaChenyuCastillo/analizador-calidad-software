@@ -2,8 +2,16 @@ import json
 from pathlib import Path
 import tkinter as tk
 from tkinter import filedialog
+import sys
 
-from analizador_calidad_software.cli import ejecutar_herramienta
+repo_root = Path(__file__).resolve().parents[2]
+src_path = repo_root / "src"
+sys.path.insert(0, str(src_path))
+
+from analizador_calidad_software.cli import (
+    ejecutar_herramienta,
+    obtener_ruta_herramienta
+)
 
 def elegir_tipo_entrada() -> str:
     print("¿Que quieres analizar?")
@@ -65,7 +73,9 @@ def main() -> None:
     if ruta.is_dir():
         print("Se ha selecionado un directorio")
 
-    resultado = ejecutar_herramienta("cloc", [str(ruta), "--json"])
+    
+    ruta_cloc = obtener_ruta_herramienta("cloc")
+    resultado = ejecutar_herramienta([str(ruta_cloc), str(ruta), "--json"])
 
     if resultado.returncode !=0:
         print("Error al ejecutar cloc")

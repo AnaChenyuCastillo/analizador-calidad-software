@@ -2,30 +2,54 @@ import sys
 import subprocess
 import shutil
 from pathlib import Path
+import tkinter as tk
+from tkinter import filedialog
 
+def seleccionar_proyecto() -> Path:
+    root = tk.Tk()
+    root.withdraw()
 
-def obtener_ruta_herramienta(nombre: str) -> Path:
+    ruta = filedialog.askdirectory(
+        title=("Seleccionar la carpeta del proyecto que quieres analizar")
+    )
+
+    if not ruta:
+        raise RuntimeError("No se ha selecionado ninguna carpeta de proyecto")
+    
+    ruta_proyecto = Path(ruta).resolve()
+
+    if not ruta_proyecto.exists():
+        raise RecursionError("La ruta selecionada no existe")
+    
+    if not ruta_proyecto.is_dir():
+        raise RuntimeError("La ruta selecionada no es una carpeta")
+    
+    return ruta_proyecto
+
+def obtener_repo_root(padres: int) -> Path:
+    return Path(__file__).resolve().parents[padres]
+
+def obtener_ruta_herramienta(nombre: str, nombre_fichero) -> Path:
     #Prueba para ejecutar cloc.exe
-    repo_root = Path(__file__).resolve().parents[2]
-    ruta = repo_root / "herramientas" / nombre / f"{nombre}.exe"
+    repo_root = obtener_repo_root(2)
+    ruta = repo_root / "herramientas" / nombre / nombre_fichero
 
     if not ruta.exists():
         raise RuntimeError(f"No se encontro el archivo '{nombre}.exe' en {ruta}")
     
     return ruta
 
-def ejecutar_herramienta(nombre: str, argumentos: list[str]):
+def ejecutar_herramienta(argumentos: list[str], cwd=None):
     #Ejecuta una de las herramientas del repositorio.
 
     #El parámetro nombre corresponde con el nombre de la herramienta
     #El parámetro argumento corrresponde con la lista de argumentos para lanzar el ejecutable
 
-    ruta = obtener_ruta_herramienta(nombre)
-
     resultado = subprocess.run(
-        [str(ruta)] + argumentos,
+        argumentos,
         capture_output=True,
         text=True,
+        cwd=str(cwd) if cwd else None #Lo que hacemos es que si le pasamos un proyecto lo coge como referencia para la ejecución pero si no se lo pasamos siguimos tenienedo por defecto el proyecto en el que estamos trabajando
     )
 
     return resultado

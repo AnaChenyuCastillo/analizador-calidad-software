@@ -1,3 +1,0 @@
-Lizard
-radon
-pylint
