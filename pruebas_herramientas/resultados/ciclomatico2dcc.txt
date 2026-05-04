@@ -649,7 +649,8 @@ T_grafos_files=[]
 cop_T_procesos=copy.deepcopy(T_procesos)
 
 # generar tabla de nodos Tnodos y aristas Taristas
-
+graphviz_bin = repo_root / "herramientas" / "graphviz" / "bin"
+os.environ["PATH"] += os.pathsep + str(graphviz_bin) 
 for n_grafo in range(0,numero_grafos+1):
     # Modificar inicio y fin para grafo !=0
     
@@ -691,8 +692,7 @@ for n_grafo in range(0,numero_grafos+1):
     Texto_Label= str(f"{mruta}+\n Calculo complejidad ciclomatica nº aristas: +{str(len(T_aristas)-1)}+ - nº nodos:+{str(len(T_nodos)-1)}+ +2=  + {str(calc_ciclo)}")
     from graphviz import Digraph    
 
-    graphviz_bin = repo_root / "herramientas" / "graphviz" / "bin"
-    os.environ["PATH"] += os.pathsep + str(graphviz_bin) 
+    
 
     dot = Digraph(name=str(ruta), comment='Flujo de procesar_datos', format='pdf')
     dot.attr(label=Texto_Label, fontsize="18", labelloc="t")

@@ -86,17 +86,22 @@ def generar_texto_resultado(metricas: dict) -> str:
     return "\n".join(texto)
 
 def guardar_resultado_txt(contenido: str, nombre_proyecto: str) -> Path:
-    repo_root = obtener_repo_root()
+    repo_root = obtener_repo_root(3)
     carpeta_resultados = repo_root / "src" / "analizador_calidad_software" / "analisis_herramientas" / "resultados_herramientas"
     carpeta_resultados.mkdir(parents=True, exist_ok=True)
 
 
-    timestap = datetime.now().strftime("%Y/%m/%d_%H:%M:%S")
-    nombre_fichero = f"resultado_ckjm_{nombre_proyecto}_{timestap}.txt"
+    timestap = datetime.now().strftime("%Y-%m-%d_%H-%M.%S")
+    nombre_fichero = f"resultado_ckjm_{nombre_proyecto}_{timestap}.pdf"
+
+    print(carpeta_resultados / nombre_fichero)
+    
 
     with open(carpeta_resultados / nombre_fichero, "w") as fichero:
         fichero.write(contenido)
+
     ruta_fichero = carpeta_resultados / nombre_fichero
+    print("El fichero esta creado:", ruta_fichero.exists(), ruta_fichero)
 
    
 
@@ -132,14 +137,15 @@ def ejecutar_analisis_ckjm(ruta_proyecto: Path) -> None:
     for ruta_class in clases:
         resultado, ruta_relativa = ejecutar_ckjm(ruta_proyecto, ruta_class)
 
-        resultado = resultado.stdout
+
         proyecto = ruta_relativa
         print(resultado)
-        bloque_salida = interpretar_salida_ckjm(resultado, proyecto.name)
+        if resultado.stdout!= "":
+            bloque_salida = interpretar_salida_ckjm(resultado.stdout, proyecto.name)
 
-        bloque = generar_texto_resultado(bloque_salida)
+            bloque = generar_texto_resultado(bloque_salida)
 
-        bloques.append(bloque)
+            bloques.append(bloque)
 
     contenido_final = "\n".join(bloques)
     ruta_txt = guardar_resultado_txt(contenido_final, ruta_proyecto.name)

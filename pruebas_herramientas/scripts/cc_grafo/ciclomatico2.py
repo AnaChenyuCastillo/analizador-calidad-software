@@ -13,7 +13,7 @@ from pathlib import Path
 # flujo_procesar_datos.py
 from graphviz import Digraph
 
-from analizador_calidad_software.analisis_herramientas.cc_grafo.quirar_coment import ejecutar_quitar_comentario
+from analizador_calidad_software.analisis_herramientas.cc_grafo.quitar_coment import ejecutar_quitar_comentario
 
 def obtener_repo_root() -> Path:
     return Path(__file__).resolve().parents[3]
@@ -649,7 +649,8 @@ T_grafos_files=[]
 cop_T_procesos=copy.deepcopy(T_procesos)
 
 # generar tabla de nodos Tnodos y aristas Taristas
-
+graphviz_bin = repo_root / "herramientas" / "graphviz" / "bin"
+os.environ["PATH"] += os.pathsep + str(graphviz_bin) 
 for n_grafo in range(0,numero_grafos+1):
     # Modificar inicio y fin para grafo !=0
     
@@ -691,8 +692,7 @@ for n_grafo in range(0,numero_grafos+1):
     Texto_Label= str(f"{mruta}+\n Calculo complejidad ciclomatica nº aristas: +{str(len(T_aristas)-1)}+ - nº nodos:+{str(len(T_nodos)-1)}+ +2=  + {str(calc_ciclo)}")
     from graphviz import Digraph    
 
-    graphviz_bin = repo_root / "herramientas" / "graphviz" / "bin"
-    os.environ["PATH"] += os.pathsep + str(graphviz_bin) 
+    
 
     dot = Digraph(name=str(ruta), comment='Flujo de procesar_datos', format='pdf')
     dot.attr(label=Texto_Label, fontsize="18", labelloc="t")
@@ -708,6 +708,13 @@ for n_grafo in range(0,numero_grafos+1):
     grafo_file1 = Path(str(grafo_file) + str(n_grafo))
     grafo_file1pdf = Path(str(grafo_file1) + ".pdf")
     T_grafos_files.append(grafo_file1pdf)
+    print("grafo_file1:",str(grafo_file1))
+    
+   
+    
+    print("grafo_file1_final:",grafo_file1)
+   
+    print("tipo grafo_file1:",type(grafo_file1))
     output_path = dot.render(engine="dot",filename=str(grafo_file1), cleanup=bool)
     dot.clear()
 print(f"Grafos generados para: {grafo_file}")

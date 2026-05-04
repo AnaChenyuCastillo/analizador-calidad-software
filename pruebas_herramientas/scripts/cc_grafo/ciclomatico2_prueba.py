@@ -13,8 +13,9 @@ from pathlib import Path
 # flujo_procesar_datos.py
 from graphviz import Digraph
 
-from analizador_calidad_software.cli import obtener_repo_root
 from analizador_calidad_software.analisis_herramientas.cc_grafo.quitar_coment import ejecutar_quitar_comentario
+def obtener_repo_root() -> Path:
+    return Path(__file__).resolve().parents[3]
 
 
 def seleccionar_archivo():
@@ -70,8 +71,8 @@ def replace_tabs_with_spaces(file_path, work_file, spaces_per_tab=4)  :
         shutil.copy(file_path, work_file)
         print(f"Copia  en: {work_file}")
          # llama a quitar comentarios
-        result = ejecutar_quitar_comentario()
-        
+        result = ejecutar_quitar_comentario(file_path, work_file)
+        print("Los comentarios estan eliminados")
         # Leer y reemplazar
         with open(work_file, "r", encoding="utf-8") as f:
             content = f.read()
@@ -134,103 +135,30 @@ def agregar_arista(num_grafo,nodo_i,nodo_f,texto_a=""):
     Id_nodo_i="N"+str(num_grafo)+"-"+str(nodo_i)
     Id_nodo_f="N"+str(num_grafo)+"-"+str(nodo_f)
     T_aristas.append([num_grafo,Id_nodo_i,Id_nodo_f,texto_a ])
+     
 
-# buscar if o try inverso desde un else para determinar si estamos en un bloque if o un try
-def buscar_if_try(z,espacios):
-   
-    xfila=z
-    miresult=""
-    for yfila in range(z,0,-1):
-        if (T_procesos[yfila][0]) >= espacios:
-            if T_procesos[yfila][0] == espacios and T_procesos[yfila][1]=="if" :
-                miresult="if"
-            if T_procesos[yfila][0] == espacios and T_procesos[yfila][1]=="try:" :
-                miresult="try:"    
- 
-    return miresult     
-
-def buscar_salida_try(z,espacios):
-    xfila=z
-    while T_procesos[xfila][0]>=espacios:
-        if T_procesos[xfila][0]==espacios:
-          if T_procesos[xfila][1] in ("else:","finally:","except"):
-             xfila=xfila+1
-             continue
-             
-          else:
-            return xfila,T_procesos[xfila][0]
-            
-        xfila=xfila+1
-    return xfila,T_procesos[xfila][0]
-
-def buscar_finally(z,fin,espacios):
-    numfinally=0
-    xfila=z
-    for yfila in range(z,fin):
-        if (T_procesos[yfila][0]) == espacios:
-            if  T_procesos[yfila][1] =="finally:" :
-                numfinally=yfila
-    return numfinally     
-
-# buscar elif else
-def buscar_elif_else(z,fin,espacios):
-    numelif=0
-    xfila=z
-
-    for yfila in range(z,fin):
-        if (T_procesos[yfila][0]) >= espacios:
-            if T_procesos[yfila][0] == espacios and T_procesos[yfila][1] in ("elif","else:") :
-                numelif=numelif+1
- 
-    return numelif       
-
-def buscar_fin_if(z,espacios):
-    xfila=z
-    while T_procesos[xfila][0]>=espacios:
-        if T_procesos[xfila][0]==espacios:
-          if T_procesos[xfila][1] in ("elif","else:"):
-             xfila=xfila+1
-             continue
-             
-          else:
-            return xfila,T_procesos[xfila][0]
-            
-        xfila=xfila+1
-    return xfila,T_procesos[xfila][0]
-'''
-def buscar_case(xfila,ultimo_match,espacios_match):
-    numcase=0
-    yfila=0
-    for yfila in range(xfila,ultimo_match):
-        if (T_procesos[yfila][0]) >= espacios_match:
-            if T_procesos[yfila][0] == espacios_match and T_procesos[yfila][1]=="case" :
-                T.case
-                T_case.append(yfila)
-                numcase=numcase+1
-
-    return numcase
-'''           
-def buscar_else_try(xfila,fin_try,espacios_try):
-    pos_else=0
-    
-    for yfila in range(xfila,fin_try):
-        if (T_procesos[yfila][0]) == espacios_try:
-            if T_procesos[yfila][1] == "else:" :
-                pos_else=yfila
-               
-
-    return pos_else 
-
-def buscar_salida_bloque(z,espacios):
+# busca la salida del bloque exceptuando palabras claves 
+def buscar_salida_bloque(z,espacios,palabras_exc:list[str]=""):
     
     xfila=z
     espacios_obj=espacios
-    
 
-    while T_procesos[xfila][0]>espacios_obj:
+    while (T_procesos[xfila][0]>espacios_obj) or (T_procesos[xfila][1] in palabras_exc):
         xfila=xfila+1
     
     return xfila
+
+# busca una palabra en desde una posicion hacia arriba o hacia abajo(direcc=1 o -1)
+def buscar_palabra(inicio,fin,espacios,palabras:list[str],direcc=1):
+    
+    
+    num_palabra=0
+    
+    for yfila in range(inicio,fin,direcc):
+        if (T_procesos[yfila][0]) == espacios:
+            if  T_procesos[yfila][1] in palabras :
+                num_palabra=yfila
+    return num_palabra
 
 def buscar_def():
     numdef=0
@@ -265,22 +193,22 @@ def examinar_proceso():
                 nodos=nodos+1
      
             case 'if':
+                for y in range(1,len(T_procesos)):
+                    print("T:",T_procesos[y])
                 nodoif=nodos
                 agregar_nodo(T_procesos[x][5],nodos,T_procesos[x][1])
                 agregar_arista(T_procesos[x][5],nodos,nodos+1,"si")
                 nodos=nodos+1
                 fin_if=0
                 ultimo_si=0
-                fin_if,esp_fin_if=buscar_fin_if(x+1,T_procesos[x][0])
+                
+                fin_if=buscar_salida_bloque(x+1,T_procesos[x][0],["elif","else:"])
                 ultimo_si=buscar_salida_bloque(x+1,T_procesos[x][0])-1
+                
+                sigue_bloque=ultimo_si+1
                 T_procesos[ultimo_si][3]= fin_if 
                 T_procesos[ultimo_si][4]="fin_if"
                 # busca si tiene else o elif si no tiene agrega la arista del no
-                sw_else=0
-                #Arista no
-                #sw_else ?
-                sw_else=buscar_elif_else(x+1,fin_if,T_procesos[x][0])
-                sigue_bloque=buscar_salida_bloque(x+1,T_procesos[x][0])
                 agregar_arista(T_procesos[x][5],nodoif,sigue_bloque,"no")             
                 nodoelif_ant=0
             case 'elif': 
@@ -290,27 +218,23 @@ def examinar_proceso():
                 agregar_nodo(T_procesos[x][5],nodos,T_procesos[x][1])
                 agregar_arista(T_procesos[x][5],nodos,nodos+1,"si")
 
-                agregar_arista(T_procesos[x][5],nodos,sigue_bloque,"no")
-            
-            
-                #T_procesos[ultimo_si][3]= sigue_bloque 
-                #T_procesos[ultimo_si][4]="no sigue"
-           
+                agregar_arista(T_procesos[x][5],nodos,sigue_bloque,"no")        
 
-                         
                 nodoelif_ant=nodoelif
                 nodos=nodos+1
-                #fin_if=0
-                #fin_if,esp_fin_if=buscar_fin_if(x+1,T_procesos[x][0])
+                
 
-                ultimo_si=buscar_salida_bloque(x+1,T_procesos[x][0])-1
+                ultimo_si=sigue_bloque-1
                 T_procesos[ultimo_si][3]= fin_if 
                 T_procesos[ultimo_si][4]="fin_if"
 
             case 'else:':
 
-                # determinar si es de if o tipo else try se desarrolla en el try
-                xtipo=buscar_if_try(x-1,T_procesos[x][0])
+                # determinar si es de if o tipo else try o el try , busca hacia arriba if o else
+                #def buscar_palabra(inicio,fin,espacios,palabras:list[str],direcc=1):
+                npos=buscar_palabra(x-1, 1, T_procesos[x][0] ,["if","try:"],-1)  
+                xtipo=T_procesos[npos][1]
+                #xtipo=buscar_if_try(x-1,T_procesos[x][0])
                 
 
                 if xtipo=="if" :
@@ -320,8 +244,7 @@ def examinar_proceso():
                     nodo_ant=nodoif
             
                     nodos=nodos+1
-                    fin_if=0
-                    fin_if,esp_fin_if=buscar_fin_if(x+1,T_procesos[x][0])
+                    
 
                     ultimo_si=buscar_salida_bloque(x+1,T_procesos[x][0])-1
                     T_procesos[ultimo_si][3]= fin_if 
@@ -346,17 +269,19 @@ def examinar_proceso():
                 agregar_arista(T_procesos[x][5],nodos,nodos+1,"valid")
                 nodos=nodos+1
                 salida_try=0
-                salida_try,esp_salida_try=buscar_salida_try(x+1,T_procesos[x][0])
+                
+                salida_try=buscar_salida_bloque(x+1,T_procesos[x][0],["else:","finally:","except"])
                 fin_valid_tray=0
                 fin_valid_tray=buscar_salida_bloque(x+1,T_procesos[x][0])-1
                 
                 #input("teclea")
                 # busca else en try
                 elsetry=0
-                elsetry=buscar_else_try(x+1,salida_try,T_procesos[x][0])
-                # busac finally
+                elsetry=buscar_palabra(x+1,salida_try-1,T_procesos[x][0],["else:"])
+                
+                # buscar finally
                 n_finally=0
-                n_finally=buscar_finally(x+1,salida_try,T_procesos[x][0])
+                n_finally=buscar_palabra(x+1,salida_try-1,T_procesos[x][0],["finally:"])
 
                 
                 # busca else en try
@@ -486,7 +411,8 @@ def examinar_proceso():
             case 'Fin':
                 agregar_nodo(T_procesos[x][5],nodos,"Fin")
 
-  
+
+
 
 # Crear ventana principal oculta
 root = tk.Tk()
@@ -498,9 +424,12 @@ if len(sys.argv)>1:
 else:    
     mi_archivo=seleccionar_archivo()
 print(f'archivo={mi_archivo}')  
+#Esta es la ruta del archivo
 directorio_sel=""
-if len(sys.argv) > 2:
-    directorio_sel= sys.argv[2] 
+print("sys.argv, len(sys.argv):",sys.argv,len(sys.argv))
+if len(sys.argv) >= 1:
+    directorio_sel= Path(sys.argv[0])
+    print(f"este es mi directorio {directorio_sel}")
     
 
 
@@ -508,6 +437,7 @@ if len(sys.argv) > 2:
 # paso 1 reemplazar tabuladores por espacios y copiar en file.txt
 if __name__ == "__main__":
     ruta = Path(mi_archivo) # archivo a tratar
+    print("mi ruta esta cogida")
 
     '''punto=ruta.find('.')
     ultima_barra=ruta.rfind('/')
@@ -520,26 +450,30 @@ if __name__ == "__main__":
    
  
     if directorio_sel!="" and directorio_sel!=directorio_arc:
+        print("Entro en el if")
         print(f'nombre_dirsel_1:{directorio_sel}')
-        nombre_dirsel=ruta[len(directorio_sel)+1:len(directorio_arc)]
+        nombre_dirsel=directorio_sel
         print(f'nombre_dirsel2:{nombre_dirsel}')
         
         
-        nombre_dirsel="("+nombre_dirsel.replace("/", "_")+")"
+        nombre_dirsel="("+str(nombre_dirsel).replace("/", "_")+")"
         print(f'nombre_dirsel4:{nombre_dirsel}')
     print(f'nombre_dirsel fin:{nombre_dirsel}')
    
-    repo_root = obtener_repo_root(4)
-    Directoriow=repo_root / "src" / "analizador_calidad_software"/ "analisis_herramientas" / "resultados_herramientas" / directorio_sel # directorio trabajo
+    repo_root = obtener_repo_root()
+    Directoriow=repo_root / "pruebas_herramientas" / "resultados"  # directorio trabajo
     if not os.path.exists(Directoriow):  
             os.makedirs(Directoriow)  
             print(f"Directorio creado: {Directoriow}")
     
 
-    work_file = Directoriow / f"{nombre_dirsel}{Nombre_arch}dcc.txt"
-    grafo_file = Directoriow / f"{nombre_dirsel}{Nombre_arch}dcc"
+    work_file = Directoriow / f"{Nombre_arch}dcc.txt"
+    grafo_file = Directoriow / f"{Nombre_arch}dcc"
 
     replace_tabs_with_spaces(ruta, work_file,  spaces_per_tab=4)
+
+    print("ruta, work_file,grafo_file",ruta, work_file,grafo_file)
+   
 
 #paso 2 leer fichero e identificar palabras clave y crear tabla procesos
 with open(work_file, 'r', encoding='utf-8') as archivo:
@@ -618,13 +552,16 @@ for x in range(1,len(T_procesos)):
     elif T_procesos[x][1]=="if":    
         salida=0
         espacios=0
-        salida,espacios=buscar_fin_if(x+1,T_procesos[x][0])
+        salida=buscar_salida_bloque(x+1,T_procesos[x][0],["elif","else:"])
+        espacios=T_procesos[salida][0]
+       
     
     if salida!=0 and espacios<espacios_ini:
         nombre_proc="insertado"
         etiqueta_proc="Fin"+T_procesos[x][1]
         Insertar_proceso(salida,espacios_ini,nombre_proc,T_procesos[salida][2],0,etiqueta_proc,0) 
         
+
 
 #tratar def
 
@@ -642,7 +579,8 @@ T_grafos_files=[]
 cop_T_procesos=copy.deepcopy(T_procesos)
 
 # generar tabla de nodos Tnodos y aristas Taristas
-
+graphviz_bin = repo_root / "herramientas" / "graphviz" / "bin"
+os.environ["PATH"] += os.pathsep + str(graphviz_bin) 
 for n_grafo in range(0,numero_grafos+1):
     # Modificar inicio y fin para grafo !=0
     
@@ -684,8 +622,7 @@ for n_grafo in range(0,numero_grafos+1):
     Texto_Label= str(f"{mruta}+\n Calculo complejidad ciclomatica nº aristas: +{str(len(T_aristas)-1)}+ - nº nodos:+{str(len(T_nodos)-1)}+ +2=  + {str(calc_ciclo)}")
     from graphviz import Digraph    
 
-    graphviz_bin = repo_root / "herramientas" / "graphviz" / "bin"
-    os.environ["PATH"] += os.pathsep + str(graphviz_bin) 
+    
 
     dot = Digraph(name=str(ruta), comment='Flujo de procesar_datos', format='pdf')
     dot.attr(label=Texto_Label, fontsize="18", labelloc="t")
@@ -701,6 +638,14 @@ for n_grafo in range(0,numero_grafos+1):
     grafo_file1 = Path(str(grafo_file) + str(n_grafo))
     grafo_file1pdf = Path(str(grafo_file1) + ".pdf")
     T_grafos_files.append(grafo_file1pdf)
+    print("grafo_file1:",str(grafo_file1))
+    
+   
+    
+    print("grafo_file1_final:",grafo_file1)
+   
+    print("tipo grafo_file1:",type(grafo_file1))
+    print("n_grafo,grafo_file1,type(grafo_file1)",n_grafo,grafo_file1,type(grafo_file1))
     output_path = dot.render(engine="dot",filename=str(grafo_file1), cleanup=bool)
     dot.clear()
 print(f"Grafos generados para: {grafo_file}")
@@ -712,7 +657,7 @@ Esto es una prueba
 '''
 marca_tiempo=datetime.today().strftime("%Y%m%d%H%M%S")
 Nombre_arch_sin_ext = Path(Nombre_arch).stem
-nombre_pdf_final = f"{nombre_dirsel}_{Nombre_arch_sin_ext}_dcc_{marca_tiempo}.pdf"
+nombre_pdf_final = f"{Nombre_arch_sin_ext}_dcc_{marca_tiempo}.pdf"
 grafo_file = Directoriow / nombre_pdf_final
 fusionador = PdfWriter()
 for pdf in T_grafos_files:
