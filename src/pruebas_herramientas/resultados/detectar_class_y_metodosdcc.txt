@@ -1,0 +1,64 @@
+import re
+import sys
+import os
+from pathlib import Path
+def detect_class_met(entrada: str):
+    archivo_entrada = str(entrada) 
+    archivo_salida = str(entrada) + "cop"
+    patron_clase = re.compile(r'^(\s*)(?:public\s+|private\s+|protected\s+)?class\s+(\w+)')
+    patron_metodo = re.compile(
+    r'^(\s*)(?!else\s+if\s*\()'                 
+    r'(?:public\s+|private\s+|protected\s+)?'    
+    r'(?:static\s+)?'                            
+    r'[\w\<\>\[\]]+'                             
+    r'\s+'                                       
+    r'(\w+)'                                     
+    r'\s*\([^)]*\)'                              
+    r'\s*'                                       
+    r'(?:throws\s+\w+(?:\s*,\s*\w+)*)?'          
+    r'\s*\{?',                                   
+    re.IGNORECASE                                
+    )
+    patron_constructor = re.compile(
+        r'^(\s*)(?:public\s+|private\s+|protected\s+)?([A-Z]\w*)\s*\([^)]*\)\s*(?:throws\s+\w+(?:\s*,\s*\w+)*)?\s*\{?'
+    )
+    nombre_clase_actual = None
+    try:
+        with open(archivo_entrada, 'r', encoding='utf-8') as f_in , open(archivo_salida, 'w', encoding='utf-8') as f_out:
+            for linea in f_in:
+                match_clase = patron_clase.match(linea)
+                if match_clase:
+                    indent, nombre = match_clase.groups()
+                    nombre_clase_actual = nombre
+                    nueva_linea = f"{indent}class {nombre} {linea.lstrip()}"
+                    f_out.write(nueva_linea)
+                    continue
+                match_constructor = patron_constructor.match(linea)
+                if match_constructor:
+                    indent, nombre = match_constructor.groups()
+                    if nombre_clase_actual == nombre:
+                        nueva_linea = f"{indent}metodo {nombre} {linea.lstrip()}"
+                        f_out.write(nueva_linea)
+                        continue
+                match_metodo = patron_metodo.match(linea)
+                if match_metodo:
+                    indent, nombre = match_metodo.groups()
+                    nueva_linea = f"{indent}metodo {nombre} {linea.lstrip()}"
+                    f_out.write(nueva_linea)
+                    continue
+                f_out.write(linea)
+    except FileNotFoundError:
+        print(f"Error: Detect class.No se encontró el archivo {archivo_entrada}")
+    except Exception as e:
+        print(f"Ocurrió un error: {e}")
+    f_out.close()
+    f_in.close()
+    os.remove(archivo_entrada)
+    os.rename(archivo_salida,entrada)
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Uso: python script.py <archivo_entrada.java> <archivo_salida.txt>")
+        sys.exit(1)
+    archivo_entrada = Path(sys.argv[1]+"cop")
+    archivo_salida =  Path(sys.argv[1])
+    detect_class_met(str(archivo_entrada))

@@ -1,8 +1,5 @@
 import subprocess
 from pathlib import Path
-import tkinter as tk
-from tkinter import filedialog
-from datetime import datetime
 
 from analizador_calidad_software.cli import (
     ejecutar_herramienta, 
@@ -11,7 +8,7 @@ from analizador_calidad_software.cli import (
     )
 
 def ejecutar_ckjm(proyecto: Path, clase: Path) -> tuple[subprocess.CalledProcessError, Path]:
-    repo_root = obtener_repo_root(3)
+    repo_root = obtener_repo_root()
     ruta_ckjm = obtener_ruta_herramienta("ckjm", "ckjm.jar")
     print(ruta_ckjm)
 
@@ -85,19 +82,16 @@ def generar_texto_resultado(metricas: dict) -> str:
 
     return "\n".join(texto)
 
-def guardar_resultado_txt(contenido: str, nombre_proyecto: str) -> Path:
-    repo_root = obtener_repo_root(3)
-    carpeta_resultados = repo_root / "src" / "analizador_calidad_software" / "analisis_herramientas" / "resultados_herramientas"
-    carpeta_resultados.mkdir(parents=True, exist_ok=True)
+def guardar_resultado_txt(contenido: str, carpeta_resultados) -> Path:
+    
 
-
-    timestap = datetime.now().strftime("%Y-%m-%d_%H-%M.%S")
-    nombre_fichero = f"resultado_ckjm_{nombre_proyecto}_{timestap}.pdf"
+    
+    nombre_fichero = f"resultado_ckjm.txt"
 
     print(carpeta_resultados / nombre_fichero)
     
 
-    with open(carpeta_resultados / nombre_fichero, "w") as fichero:
+    with open(carpeta_resultados / nombre_fichero, "w", encoding="utf-8") as fichero:
         fichero.write(contenido)
 
     ruta_fichero = carpeta_resultados / nombre_fichero
@@ -119,7 +113,7 @@ def buscar_clases_compiladas(ruta_proyecto: Path) -> list[Path]:
 
 
 
-def ejecutar_analisis_ckjm(ruta_proyecto: Path) -> None:
+def ejecutar_analisis_ckjm(ruta_proyecto: Path, carpeta_resultados) -> None:
     clases = buscar_clases_compiladas(ruta_proyecto)
 
     if not clases:
@@ -148,6 +142,6 @@ def ejecutar_analisis_ckjm(ruta_proyecto: Path) -> None:
             bloques.append(bloque)
 
     contenido_final = "\n".join(bloques)
-    ruta_txt = guardar_resultado_txt(contenido_final, ruta_proyecto.name)
+    ruta_txt = guardar_resultado_txt(contenido_final, carpeta_resultados)
 
     return ruta_txt

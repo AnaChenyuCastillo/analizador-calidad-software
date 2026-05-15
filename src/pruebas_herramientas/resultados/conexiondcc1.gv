@@ -1,0 +1,11 @@
+// Flujo de procesar_datos
+digraph "C:\Datos\universidad\2º curso\Segundo cuatrimestre\Ingenieria de software\Laboratorio\PL2CastilloCasado\PL2_Ejercicio3\LibreriaSilueta\LibreriaSilueta\src\acceso_a_datos\conexion.java" {
+	fontsize=18 label="C:/Datos/universidad/2º curso/Segundo cuatrimestre/Ingenieria de software/Laboratorio/PL2CastilloCasado/PL2_Ejercicio3/LibreriaSilueta/LibreriaSilueta/src/acceso_a_datos/conexion.java metodo: conexion
+ Calculo complejidad ciclomatica (nº aristas-nº nodos+2):2-3 +2= 1" labelloc=t
+	"N1-1" [label="1 Inicio"]
+	"N1-2" [label="2 intermedio"]
+	"N1-3" [label="3 Fin"]
+	"N1-3" [label="3 Fin" fontname="Helvetica-Bold"]
+	"N1-1" -> "N1-2" [label=""]
+	"N1-2" -> "N1-3" [label=""]
+}

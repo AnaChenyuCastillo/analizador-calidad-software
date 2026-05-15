@@ -46,6 +46,13 @@ def process_file(input_path: str, output_path: str):
         print(f"Error procesando el archivo: {e}")
 
 
-def ejecutar_quitar_comentario(file_path, work_file):
+def ejecutar_quitar_comentario(input_file, output_file):
+    '''print("sys.argv,len(sys.argv):",sys.argv,len(sys.argv))
+    if len(sys.argv) != 2:
+        print("Uso: python quitar_comentarios.py <archivo_entrada.py> <archivo_salida.py>")
+        sys.exit(1)
 
-    process_file(file_path, work_file)
+    input_file = sys.argv[0]
+    output_file = sys.argv[1]'''
+
+    process_file(input_file, output_file)

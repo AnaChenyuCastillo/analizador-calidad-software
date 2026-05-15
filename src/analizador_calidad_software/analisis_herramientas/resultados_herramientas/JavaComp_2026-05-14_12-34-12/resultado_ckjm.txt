@@ -1,0 +1,764 @@
+RESULTADO COMPLETO DE CKJM
+Proyecto analizado: JavaComp
+Ruta del proyecto: C:\Datos\universidad\1º curso\Ropero_Castillo_21_22\JavaComp
+Número de clases analizadas: 92
+
+
+Clase analizada: clases.Administrador
+
+WMC - Metodos ponderados por clase: 3
+DIT - Profundidad del arbol de herencia: 0
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 8
+LCOM - Falta de cohesion en metodos: 3
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 3
+
+Clase analizada: clases.AlmacenDatos$1
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 5
+LCOM - Falta de cohesion en metodos: 1
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: clases.AlmacenDatos$2
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 5
+LCOM - Falta de cohesion en metodos: 1
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: clases.AlmacenDatos$3
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 5
+LCOM - Falta de cohesion en metodos: 1
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: clases.AlmacenDatos$4
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 5
+LCOM - Falta de cohesion en metodos: 1
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: clases.InicializarFicheros
+
+WMC - Metodos ponderados por clase: 3
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 3
+RFC - COnjunto de respuesta de la clase: 14
+LCOM - Falta de cohesion en metodos: 1
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 2
+
+Clase analizada: interfaz.BuscarProductos$1
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 2
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.BuscarProductos$2
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 2
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.BuscarProductos$3
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.BuscarProductos$4
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.BuscarProductos$5
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.CarritoCompra$1
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 2
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.CarritoCompra$2
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.CarritoCompra$3
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.CarritoCompra$4
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.CarritoCompra$5
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.CarritoCompra$6
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.CarritoCompra$7
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ConsultarClientes$1
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 2
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ConsultarClientes$2
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ConsultarClientes$3
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ConsultarClientes$4
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ConsultarClientes$5
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ConsultarProductos$1
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 2
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ConsultarProductos$2
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ConsultarProductos$3
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ConsultarProductos$4
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ConsultarProductos$5
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ConsultarProductos$6
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ConsultarProductos$7
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ConsultarProductos$8
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ConsultarVentas$1
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 2
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ConsultarVentas$2
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ConsultarVentas$3
+
+WMC - Metodos ponderados por clase: 4
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 6
+LCOM - Falta de cohesion en metodos: 4
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 3
+
+Clase analizada: interfaz.ConsultarVentas$4
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ModificarDatos$1
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 2
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ModificarDatos$2
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ModificarDatos$3
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ModificarDatos$4
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.PanelProductos$1
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.PanelProductos$2
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 2
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.PanelProductos$3
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ProductosBuscados$1
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 2
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ProductosBuscados$2
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ProductosBuscados$3
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ProductosBuscados$4
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ProductosBuscados$5
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ProductosBuscados$6
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ProductosBuscados$7
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ProductosBuscados$8
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.ProductosBuscados$9
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.VentanaAdministrador$1
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 2
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.VentanaAdministrador$2
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.VentanaAdministrador$3
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.VentanaAdministrador$4
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.VentanaClientes$1
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 2
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.VentanaClientes$2
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.VentanaClientes$3
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.VentanaLogin$1
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 2
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.VentanaLogin$2
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.VentanaLogin$3
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.VentanaLogin$4
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.VentanaLogin$5
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 2
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.VentanaLogin$6
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 5
+LCOM - Falta de cohesion en metodos: 1
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.VentanaRegistro$1
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 2
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.VentanaRegistro$2
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.VentanaRegistro$3
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.VentanaRegistro$4
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1
+
+Clase analizada: interfaz.VentanaRegistro$5
+
+WMC - Metodos ponderados por clase: 2
+DIT - Profundidad del arbol de herencia: 1
+NOC - Numero de clases hijas : 0
+CBO - Acoplamiento entre clases: 1
+RFC - COnjunto de respuesta de la clase: 4
+LCOM - Falta de cohesion en metodos: 0
+CA - Acoplamiento aferente: 0
+NPM - Numero de metodos publicos: 1

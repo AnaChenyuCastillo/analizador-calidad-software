@@ -701,6 +701,8 @@ for n_grafo in range(0,numero_grafos+1):
 
     for x in range(1,len(T_nodos)):
         dot.node(T_nodos[x][1],T_nodos[x][2])
+
+    dot.node(T_nodos[len(T_nodos)-1][1],T_nodos[len(T_nodos)-1][2],fontname="Helvetica-Bold")   
     for x in range(1,len(T_aristas)):
         dot.edge(T_aristas[x][1],T_aristas[x][2],T_aristas[x][3])
     

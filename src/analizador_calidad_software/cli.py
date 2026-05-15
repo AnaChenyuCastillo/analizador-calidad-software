@@ -26,13 +26,16 @@ def seleccionar_proyecto() -> Path:
     
     return ruta_proyecto
 
-def obtener_repo_root(padres: int) -> Path:
-    return Path(__file__).resolve().parents[padres]
+def obtener_repo_root() -> Path:
+    return Path(__file__).resolve().parents[2]
 
 def obtener_ruta_herramienta(nombre: str, nombre_fichero) -> Path:
     #Prueba para ejecutar cloc.exe
-    repo_root = obtener_repo_root(2)
-    ruta = repo_root / "herramientas" / nombre / nombre_fichero
+    repo_root = obtener_repo_root()
+    if nombre == "cpd":
+        ruta = repo_root / "herramientas" / nombre / "bin" /nombre_fichero
+    else:
+        ruta = repo_root / "herramientas" / nombre / nombre_fichero
 
     if not ruta.exists():
         raise RuntimeError(f"No se encontro el archivo '{nombre}.exe' en {ruta}")
@@ -54,8 +57,18 @@ def ejecutar_herramienta(argumentos: list[str], cwd=None):
 
     return resultado
 
+def guardar_resultado_txt(contenido: str, carpeta_resultados, nombre_herramienta) -> Path:
+    
+    ruta_fichero = carpeta_resultados / f"reultado_{nombre_herramienta}.txt"
 
-def main() -> int:
+    with open(ruta_fichero, "w", encoding="utf-8") as f:
+        f.write(contenido)
+
+    return ruta_fichero
+
+
+
+'''def main() -> int:
     # 1) Validación: comprobar que el usuario ha pasado una ruta
     if len(sys.argv) < 2:
         print("Uso: python -m analizador_calidad_software.cli <ruta_proyecto>")
@@ -87,3 +100,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+'''

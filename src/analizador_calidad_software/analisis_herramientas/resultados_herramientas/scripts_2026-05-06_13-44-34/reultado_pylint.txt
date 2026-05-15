@@ -1,0 +1,53 @@
+RESULTADO DE LA PRUEBA DE - LIZARD
+
+Proyecto analizado: scripts
+Ruta del proyecto: C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts
+Herramienta: Pylant
+Lenguaje principal: Python
+
+Codigo de salida: 30
+
+STDOUT
+************* Module homeassistant.scripts.auth
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\auth.py:71:4: W0613: Unused argument 'hass' (unused-argument)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\auth.py:71:63: W0613: Unused argument 'args' (unused-argument)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\auth.py:86:4: W0613: Unused argument 'hass' (unused-argument)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\auth.py:103:4: W0613: Unused argument 'hass' (unused-argument)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\auth.py:116:4: W0613: Unused argument 'hass' (unused-argument)
+************* Module homeassistant.scripts.check_config
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\check_config.py:16:0: E0401: Unable to import 'annotatedyaml' (import-error)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\check_config.py:17:0: E0401: Unable to import 'annotatedyaml.loader' (import-error)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\check_config.py:51:4: E0401: Unable to import 'colorlog.escape_codes' (import-error)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\check_config.py:51:4: C0415: Import outside toplevel (colorlog.escape_codes.escape_codes, colorlog.escape_codes.parse_colors) (import-outside-toplevel)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\check_config.py:62:0: R0914: Too many local variables (22/15) (too-many-locals)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\check_config.py:62:0: R0912: Too many branches (23/12) (too-many-branches)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\check_config.py:62:0: R0915: Too many statements (68/50) (too-many-statements)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\check_config.py:62:8: W0613: Unused argument 'script_args' (unused-argument)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\check_config.py:265:30: W0212: Access to a protected member _cache of a client class (protected-access)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\check_config.py:286:11: W0718: Catching too general exception Exception (broad-exception-caught)
+************* Module homeassistant.scripts.benchmark.__init__
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\benchmark\__init__.py:39:0: C0301: Line too long (101/100) (line-too-long)
+************* Module homeassistant.scripts.benchmark
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\benchmark\__init__.py:95:21: W0613: Unused argument 'event_data' (unused-argument)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\benchmark\__init__.py:127:0: W0613: Unused argument 'args' (unused-argument)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\benchmark\__init__.py:161:0: W0613: Unused argument 'args' (unused-argument)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\benchmark\__init__.py:199:0: W0613: Unused argument 'args' (unused-argument)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\benchmark\__init__.py:227:30: W0613: Unused argument 'hass' (unused-argument)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\benchmark\__init__.py:292:26: W0613: Unused argument 'hass' (unused-argument)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\benchmark\__init__.py:301:32: W0613: Unused argument 'hass' (unused-argument)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\benchmark\__init__.py:1:0: R0801: Similar lines in 2 files
+==homeassistant.scripts.auth:[23:30]
+==homeassistant.scripts.check_config:[65:71]
+    parser.add_argument(
+        "-c",
+        "--config",
+        default=get_default_config_dir(),
+        help="Directory that contains the Home Assistant configuration",
+    ) (duplicate-code)
+
+-----------------------------------
+Your code has been rated at 9.24/10
+
+
+
+STDERR

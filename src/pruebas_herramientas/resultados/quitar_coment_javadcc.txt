@@ -1,0 +1,91 @@
+import sys
+import re
+import os
+def remove_java_comments(code: str) -> str:
+    pattern = re.compile(
+        r'(\"(?:\\.|[^"\\])*\"|\'.*?(?<!\\)\'|/\*[\s\S]*?\*/|//[^\n]*)',
+        re.MULTILINE
+    )
+    def replacer(match):
+        text = match.group(0)
+        if text.startswith("/*") or text.startswith("//"):
+            return ""
+        return text
+    code_no_comments = re.sub(pattern, replacer, code)
+    code_clean = re.sub(r'\n\s*\n+', '\n', code_no_comments)
+    return code_clean.strip() + "\n"
+def wrap_case_blocks(java_code):
+    lines = java_code.splitlines()
+    output = []
+    inside_case = False
+    case_indent = ""
+    temp_block = []
+    for line in lines:
+        stripped = line.strip()
+        if re.match(r'^(case\s+.+:|default\s*:)', stripped):
+            if inside_case:
+                output.extend(wrap_block(temp_block, case_indent))
+                temp_block.clear()
+            output.append(line)
+            inside_case = True
+            case_indent = re.match(r'^(\s*)', line).group(1)
+            continue
+        if inside_case and (re.match(r'^(case\s+.+:|default\s*:)', stripped) or stripped.startswith("}")):
+            output.extend(wrap_block(temp_block, case_indent))
+            temp_block.clear()
+            inside_case = False
+        if inside_case:
+            temp_block.append(line)
+        else:
+            output.append(line)
+    if inside_case:
+        output.extend(wrap_block(temp_block, case_indent))
+    return "\n".join(output)
+def wrap_block(block_lines, indent):
+    while block_lines and not block_lines[0].strip():
+        block_lines.pop(0)
+    while block_lines and not block_lines[-1].strip():
+        block_lines.pop()
+    if not block_lines:
+        return []
+    if block_lines[0].strip().startswith("{") and block_lines[-1].strip().endswith("}"):
+        return block_lines
+    wrapped = [f"{indent}{{"]
+    wrapped.extend(block_lines)
+    wrapped.append(f"{indent}}}")
+    return wrapped
+def format_braces_and_indent(code: str) -> str:
+    code = re.sub(r'\{', r'\n{\n', code)
+    code = re.sub(r'\}', r'\n}\n', code)
+    code = re.sub(r'\n\s*\n+', '\n', code)
+    lines = code.strip().split("\n")
+    formatted_lines = []
+    indent_level = 0
+    for line in lines:
+        stripped = line.strip()
+        if stripped == "}":
+            indent_level = max(indent_level - 1, 0)
+        stripped = re.sub(r'(?<!\s);', r' ;', stripped)
+        stripped = re.sub(r'(?<!\s)\(', r' (', stripped)
+        formatted_lines.append(" " * (indent_level * 4) + stripped)
+        if stripped == "{":
+            indent_level += 1
+    return "\n".join(formatted_lines) + "\n"
+def quitar_coment_java1(file_path, work_file):
+    origen, destino = file_path, work_file
+    if not os.path.isfile(origen):
+        print(f"Error: El archivo '{origen}' no existe.")
+        sys.exit(1)
+    try:
+        with open(origen, "r", encoding="utf-8") as f:
+            codigo = f.read()
+        codigo_sin_comentario = wrap_case_blocks(codigo)
+        codigo_sin_comentarios = remove_java_comments(codigo_sin_comentario)
+        codigo_formateado = format_braces_and_indent(codigo_sin_comentarios)
+        with open(destino, "w", encoding="utf-8") as f:
+            f.write(codigo_formateado)
+    except Exception as e:
+        print(f"Error procesando archivos: {e}")
+        sys.exit(1)
+if __name__ == "__main__":
+    quitar_coment_java1()

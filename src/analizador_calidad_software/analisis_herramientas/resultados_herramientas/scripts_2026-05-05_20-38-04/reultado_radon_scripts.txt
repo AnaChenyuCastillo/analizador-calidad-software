@@ -1,0 +1,206 @@
+RESULTADO DE PRUEBA - RADON
+
+Proyecto analizador: scripts
+Ruta del proyecto: C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts
+Lenguaje analizador: Pyhton
+Herramienta: Radon
+Subcomandos ejecutados: cc, raw, mi, hal
+
+
+========= RADON CC (Complejidad ciclomatica) ==========
+Código de salida: 0
+
+STDOUT:
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\auth.py
+    F 70:0 list_users - A
+    F 85:0 add_user - A
+    F 102:0 validate_login - A
+    F 115:0 change_password - A
+    F 20:0 run - A
+    F 55:0 run_command - A
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\check_config.py
+    F 62:0 run - E
+    F 218:0 check - C
+    F 323:0 dump_dict - B
+    F 49:0 color - A
+    F 314:0 line_info - A
+    F 300:0 async_check_config - A
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\ensure_config.py
+    F 13:0 run - A
+    F 41:0 async_run - A
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\__init__.py
+    F 22:0 run - C
+    F 69:0 extract_config_dir - A
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\benchmark\__init__.py
+    F 154:0 state_changed_event_helper - A
+    F 189:0 state_changed_event_filter_helper - A
+    F 61:0 fire_events - A
+    F 88:0 fire_events_with_filter - A
+    F 120:0 state_changed_helper - A
+    F 27:0 run - A
+    F 227:0 filtering_entity_id - A
+    F 292:0 valid_entity_id - A
+    F 301:0 json_serialize_states - A
+    F 46:0 run_benchmark - A
+    F 54:0 benchmark - A
+
+
+STDERR:
+No hubo errores.
+
+========= RADON RAW (Metricas basicas del codigo) ==========
+Código de salida: 0
+
+STDOUT:
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\auth.py
+    LOC: 126
+    LLOC: 87
+    SLOC: 92
+    Comments: 4
+    Single comments: 10
+    Multi: 0
+    Blank: 24
+    - Comment Stats
+        (C % L): 3%
+        (C % S): 4%
+        (C + M % L): 3%
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\check_config.py
+    LOC: 350
+    LLOC: 217
+    SLOC: 265
+    Comments: 26
+    Single comments: 27
+    Multi: 3
+    Blank: 55
+    - Comment Stats
+        (C % L): 7%
+        (C % S): 10%
+        (C + M % L): 8%
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\ensure_config.py
+    LOC: 46
+    LLOC: 25
+    SLOC: 30
+    Comments: 2
+    Single comments: 5
+    Multi: 0
+    Blank: 11
+    - Comment Stats
+        (C % L): 4%
+        (C % S): 7%
+        (C + M % L): 4%
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\__init__.py
+    LOC: 78
+    LLOC: 55
+    SLOC: 54
+    Comments: 2
+    Single comments: 4
+    Multi: 0
+    Blank: 20
+    - Comment Stats
+        (C % L): 3%
+        (C % S): 4%
+        (C + M % L): 3%
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\benchmark\__init__.py
+    LOC: 310
+    LLOC: 166
+    SLOC: 211
+    Comments: 7
+    Single comments: 20
+    Multi: 3
+    Blank: 76
+    - Comment Stats
+        (C % L): 2%
+        (C % S): 3%
+        (C + M % L): 3%
+
+
+STDERR:
+No hubo errores.
+
+========= RADON MI (Indices de mantenibilidad) ==========
+Código de salida: 0
+
+STDOUT:
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\auth.py - A
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\check_config.py - A
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\ensure_config.py - A
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\__init__.py - A
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\benchmark\__init__.py - A
+
+
+STDERR:
+No hubo errores.
+
+========= RADON HAL (Metricas de Halstead) ==========
+Código de salida: 0
+
+STDOUT:
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\auth.py:
+    h1: 1
+    h2: 2
+    N1: 1
+    N2: 2
+    vocabulary: 3
+    length: 3
+    calculated_length: 2.0
+    volume: 4.754887502163469
+    difficulty: 0.5
+    effort: 2.3774437510817346
+    time: 0.1320802083934297
+    bugs: 0.0015849625007211565
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\check_config.py:
+    h1: 10
+    h2: 54
+    N1: 43
+    N2: 81
+    vocabulary: 64
+    length: 124
+    calculated_length: 343.983206065701
+    volume: 744.0
+    difficulty: 7.5
+    effort: 5580.0
+    time: 310.0
+    bugs: 0.248
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\ensure_config.py:
+    h1: 1
+    h2: 1
+    N1: 1
+    N2: 1
+    vocabulary: 2
+    length: 2
+    calculated_length: 0.0
+    volume: 2.0
+    difficulty: 0.5
+    effort: 1.0
+    time: 0.05555555555555555
+    bugs: 0.0006666666666666666
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\__init__.py:
+    h1: 6
+    h2: 11
+    N1: 8
+    N2: 12
+    vocabulary: 17
+    length: 20
+    calculated_length: 53.563522809337215
+    volume: 81.7492568250068
+    difficulty: 3.272727272727273
+    effort: 267.5430223363859
+    time: 14.863501240910328
+    bugs: 0.027249752275002266
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\proyecto_prueba_python\core-dev\homeassistant\scripts\benchmark\__init__.py:
+    h1: 5
+    h2: 47
+    N1: 28
+    N2: 56
+    vocabulary: 52
+    length: 84
+    calculated_length: 272.6753165032857
+    volume: 478.8369363238518
+    difficulty: 2.978723404255319
+    effort: 1426.3227890497712
+    time: 79.24015494720952
+    bugs: 0.1596123121079506
+
+
+STDERR:
+No hubo errores.
