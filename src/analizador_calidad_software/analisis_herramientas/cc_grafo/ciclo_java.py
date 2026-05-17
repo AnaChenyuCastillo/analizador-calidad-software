@@ -574,6 +574,9 @@ def palabras_crear_procesos(work_file):
 # generar tabla de nodos Tnodos y aristas Taristas y generar grafos            
 def generar_nodos_aristas():
     global T_nodos,T_aristas,T_procesos
+    repo_root = obtener_repo_root()
+    graphviz_bin = repo_root / "herramientas" / "graphviz" / "bin"
+    os.environ["PATH"] += os.pathsep + str(graphviz_bin) 
     for n_grafo in range(1,numero_grafos+1):
         # Modificar inicio y fin para grafo !=0
         
@@ -657,7 +660,8 @@ def fusionar_pdfs():
     # borrar archivos de trabajo pdfs y work_file.txt
     for pdf in T_grafos_files:
         os.remove(pdf)
-    os.remove(work_file)   
+    os.remove(work_file)  
+    return grafo_file
 
 def flujo_grafos_java(arch=""):
     global mi_archivo,directorio_sel,work_file,grafo_file,repo_root,ruta,num_grafo,numero_grafos  
@@ -689,7 +693,7 @@ def flujo_grafos_java(arch=""):
     #paso 2 leer fichero e identificar palabras clave y crear tabla procesos
     palabras_crear_procesos(work_file)
     # tratamiento case y default para identar procesos al mismo nivel de case y default sumanadoles 4
-    print("T_procesos",T_procesos)
+   
     Tratar_case_default()
        
     # Añadir procesos intermedios finales para if for while switch
@@ -714,8 +718,9 @@ def flujo_grafos_java(arch=""):
     
     # fusionar archivos Pdfs de grafos
     print(f"Fusionando archivos")
-    fusionar_pdfs()
+    ruta=fusionar_pdfs()
 
+    return ruta
 
 
 

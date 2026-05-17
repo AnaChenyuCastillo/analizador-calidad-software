@@ -23,7 +23,7 @@ def procesar_cpd(ruta_txt: Path, ruta_proyecto: Path, lenguaje) -> dict:
     lineas = contenido.splitlines()
 
     info_referencia = referencia_cpd()
-    rangos = info_referencia["rangos"]
+    rangos = info_referencia["referencias_metricas"]
 
     titulo = "Resultados CPD"
 

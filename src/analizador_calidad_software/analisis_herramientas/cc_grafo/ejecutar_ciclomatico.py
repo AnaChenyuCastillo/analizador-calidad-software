@@ -106,24 +106,16 @@ def ejectar_ciclomatico(ruta_directorio, lenguaje: str):
             elif lenguaje.lower() == "python":
                 ext_pdf="_py.pdf"
                 ruta = flujo_grafos_python(archivo)
-            result = subprocess.run(
-                [sys.executable, str(ruta) ,archivo],capture_output=True,text=True,check=True)
-            datos = None
-            for linea in result.stdout.splitlines():
-                linea = linea.strip()  # Quitar espacios y saltos de línea
-                if linea.lower().startswith("grafo_file:"):
-                    # Extraer lo que viene después de "grafo_file:"
-                    datos = linea.split(":", 1)[1].strip()
-                    break  
-            if datos is not None:
-                print(f"Datos encontrados: {datos}")
-                T_grafos_files.append(datos)
+            
+            if ruta is not None:
+                print(f"Datos encontrados: {ruta}")
+                T_grafos_files.append(ruta)
             else:
                 print("No se encontró ninguna línea que empiece con 'grafo_file:'")
         
             #print("Salida del otro script:",x,result.stdout)
             print("Salida del otro script:")
-            print(result.stdout)
+           
 
         except subprocess.CalledProcessError as e:
             print("Error al ejecutar el script:", e.stderr)

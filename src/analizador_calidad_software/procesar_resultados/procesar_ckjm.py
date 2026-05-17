@@ -37,7 +37,7 @@ def procesar_ckjm(ruta_txt: Path, ruta_proyecto: Path, lenguaje) -> dict:
     lineas = contenido.splitlines()
 
     info_referencia = referencia_ckjm()
-    rangos = info_referencia["rangos"]
+    referencias_metricas = info_referencia["referencias_metricas"]
     titulo = "Resultados CKJM"
 
     cabeceras = [
@@ -80,10 +80,7 @@ def procesar_ckjm(ruta_txt: Path, ruta_proyecto: Path, lenguaje) -> dict:
                     "CA": ca,
                     "NPM": npm,
                 }
-                metricas_fuera_de_rango = obtener_metricas_fuera_de_rango(
-                    metricas= metricas_clase,
-                    rangos= rangos
-                )
+                metricas_fuera_de_rango = obtener_metricas_fuera_de_rango(metricas= metricas_clase, referencias_metricas= referencias_metricas)
                 fila = construir_fila(
                         clase=clase_actual,
                         wmc=wmc,
@@ -144,10 +141,7 @@ def procesar_ckjm(ruta_txt: Path, ruta_proyecto: Path, lenguaje) -> dict:
             "NPM": npm,
         }
 
-        metricas_fuera_de_rango = obtener_metricas_fuera_de_rango(
-            metricas=metricas_clase,
-            rangos=rangos,
-        )
+        metricas_fuera_de_rango = obtener_metricas_fuera_de_rango(metricas= metricas_clase, referencias_metricas= referencias_metricas)
 
         fila = construir_fila(
             clase=clase_actual,

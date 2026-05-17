@@ -1,0 +1,2976 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset='UTF-8'>
+<title>Informe de calidad de software</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        h1 {
+            color: #1f2937;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #1f2937;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 6px;
+        }
+
+        h3 {
+            margin-top: 25px;
+            color: #374151;
+        }
+
+        h4 {
+            margin-top: 20px;
+            color: #374151;
+        }
+
+        .bloque-proyecto {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+        }
+
+        .bloque-tabla {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 35px;
+            border: 1px solid #ddd;
+        }
+
+        .referencia {
+            background-color: #eef2ff;
+            padding: 12px;
+            border-left: 4px solid #6366f1;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        .observacion {
+            background-color: #fff7ed;
+            padding: 12px;
+            border-left: 4px solid #f97316;
+            margin: 10px 0 20px 0;
+            border-radius: 4px;
+        }
+
+        .aviso {
+            background-color: #fef2f2;
+            padding: 15px;
+            border-left: 4px solid #dc2626;
+            margin: 20px 0 30px 0;
+            border-radius: 4px;
+        }
+
+        .aviso ul {
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        .contenedor-tabla {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 25px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #1f2937;
+            color: white;
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .tabla-referencias th {
+            background-color: #4338ca;
+        }
+
+        .tabla-rangos th {
+            background-color: #065f46;
+        }
+
+        .tabla-vacia {
+            padding: 12px;
+            background-color: #fee2e2;
+            border-left: 4px solid #dc2626;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .botones-superiores {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .boton {
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 14px;
+            border: none;
+        }
+
+        .boton:hover {
+            background-color: #374151;
+        }
+
+        .boton-secundario {
+            background-color: #4b5563;
+        }
+
+        .boton-secundario:hover {
+            background-color: #6b7280;
+        }
+
+        .indice {
+            background-color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 30px;
+        }
+
+        .indice a {
+            display: inline-block;
+            margin: 6px 10px 6px 0;
+            color: #1f2937;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .indice a:hover {
+            text-decoration: underline;
+        }
+
+        .volver-arriba {
+            display: inline-block;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: #374151;
+            text-decoration: none;
+        }
+
+        .volver-arriba:hover {
+            text-decoration: underline;
+        }
+    </style>
+    
+</head>
+<body id='inicio'>
+<div class='botones-superiores'>
+<a class='boton boton-secundario' href='#inicio'>Inicio</a>
+<a class='boton' href='informe_calidad.pdf' download>Descargar PDF</a>
+<a class='boton boton-secundario' href='C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\resultados\cc_grafo_20260517231023_py.pdf' target='_blank'>Ver diagramas</a>
+</div>
+<h1>Informe de calidad de software</h1>
+<div class='bloque-proyecto'>
+<p><strong>Proyecto:</strong> cc_grafo</p>
+<p><strong>Ruta:</strong> C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo</p>
+<p><strong>Lenguaje:</strong> python</p>
+<p><strong>Número de tablas:</strong> 4</p>
+</div>
+<div class='indice'>
+<h2>Índice de resultados</h2>
+<a href='#tabla-1'>Resultados Radon</a>
+<a href='#tabla-2'>Resultados Lizard</a>
+<a href='#tabla-3'>Resumen Pylint</a>
+<a href='#tabla-4'>Incidencias relevantes Pylint</a>
+</div>
+<section class='bloque-tabla' id='tabla-1'>
+<h2>Resultados Radon</h2>
+<a class='volver-arriba' href='#inicio'>Volver arriba</a>
+<div class='referencia'><strong>Referencia:</strong> Radon calcula métricas de código Python como complejidad ciclomática, índice de mantenibilidad, métricas básicas de tamaño y métricas de Halstead. En este informe se muestran las métricas más relevantes para interpretar la calidad del código.</div>
+<div class='observacion'><strong>Observación:</strong> La complejidad ciclomática y el índice de mantenibilidad se interpretan mediante rangos cualitativos. SLOC y las métricas de Halstead se muestran como métricas descriptivas para contextualizar el tamaño, el volumen lógico, la dificultad y el esfuerzo estimado del código analizado.</div>
+<h3>Referencias de métricas</h3>
+<div class='contenedor-tabla'>
+<table class='tabla-referencias'>
+<thead>
+<tr>
+<th></th>
+<th>SLOC</th>
+<th>CC</th>
+<th>MI</th>
+<th>VOLUMEN</th>
+<th>DIFICULTAD</th>
+<th>ESFUERZO</th>
+<th>BUGS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nombre</strong></td>
+<td>Líneas de código fuente</td>
+<td>Complejidad ciclomática</td>
+<td>Índice de mantenibilidad</td>
+<td>Volumen de Halstead</td>
+<td>Dificultad de Halstead</td>
+<td>Esfuerzo de Halstead</td>
+<td>Errores estimados de Halstead</td>
+</tr>
+<tr>
+<td><strong>Qué mide</strong></td>
+<td>Cantidad de líneas de código fuente sin contar líneas en blanco ni comentarios.</td>
+<td>Número de caminos independientes existentes en el flujo de control del código.</td>
+<td>Indicador numérico que estima la facilidad de mantenimiento del código.</td>
+<td>Tamaño lógico del código calculado a partir de operadores y operandos.</td>
+<td>Estimación de la dificultad de comprensión o implementación del código.</td>
+<td>Estimación del esfuerzo necesario para comprender o desarrollar el código.</td>
+<td>Estimación teórica del número de defectos potenciales asociados al volumen lógico del código.</td>
+</tr>
+<tr>
+<td><strong>Mínimo</strong></td>
+<td>Sin especificar</td>
+<td>1</td>
+<td>20</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+</tr>
+<tr>
+<td><strong>Máximo</strong></td>
+<td>Sin especificar</td>
+<td>10</td>
+<td>100</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Rangos cualitativos</h3>
+<h4>CC</h4>
+<div class='contenedor-tabla'>
+<table class='tabla-rangos'>
+<thead>
+<tr>
+<th>Mínimo</th>
+<th>Máximo</th>
+<th>Clasificación</th>
+<th>Observación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>10</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>20</td>
+<td>Moderada</td>
+<td>Complejidad moderada; conviene revisar si puede simplificarse.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>50</td>
+<td>Alta</td>
+<td>Complejidad alta; puede estar justificada en casos concretos, pero aumenta el esfuerzo de prueba y mantenimiento.</td>
+</tr>
+<tr>
+<td>51</td>
+<td>Sin especificar</td>
+<td>Muy alta</td>
+<td>Complejidad muy alta; requiere revisión prioritaria por su impacto en comprensión, prueba y mantenimiento.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4>MI</h4>
+<div class='contenedor-tabla'>
+<table class='tabla-rangos'>
+<thead>
+<tr>
+<th>Mínimo</th>
+<th>Máximo</th>
+<th>Clasificación</th>
+<th>Observación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td>100</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>19</td>
+<td>Media</td>
+<td>Mantenibilidad media; conviene revisar posibles mejoras.</td>
+</tr>
+<tr>
+<td>0</td>
+<td>9</td>
+<td>Baja</td>
+<td>Mantenibilidad baja; requiere revisión prioritaria.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Resultados</h3>
+<div class='contenedor-tabla'>
+<table>
+<thead>
+<tr>
+<th>Elemento analizado</th>
+<th>SLOC</th>
+<th>Complejidad ciclomatica</th>
+<th>Clasificacion complejidad</th>
+<th>Observacion complejidad</th>
+<th>MI</th>
+<th>Clasificacion MI</th>
+<th>Observacion MI</th>
+<th>Volumen Halstead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ciclomatico2.py::F 260:0 examinar_proceso</td>
+<td>470</td>
+<td>22</td>
+<td>Alta</td>
+<td>Complejidad alta; puede estar justificada en casos concretos, pero aumenta el esfuerzo de prueba y mantenimiento.</td>
+<td>27.54</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4053.5770740712724</td>
+</tr>
+<tr>
+<td>ciclomatico2.py::F 141:0 buscar_if_try</td>
+<td>470</td>
+<td>7</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>27.54</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4053.5770740712724</td>
+</tr>
+<tr>
+<td>ciclomatico2.py::F 55:0 replace_tabs_with_spaces</td>
+<td>470</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>27.54</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4053.5770740712724</td>
+</tr>
+<tr>
+<td>ciclomatico2.py::F 178:0 buscar_elif_else</td>
+<td>470</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>27.54</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4053.5770740712724</td>
+</tr>
+<tr>
+<td>ciclomatico2.py::F 22:0 seleccionar_archivo</td>
+<td>470</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>27.54</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4053.5770740712724</td>
+</tr>
+<tr>
+<td>ciclomatico2.py::F 154:0 buscar_salida_try</td>
+<td>470</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>27.54</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4053.5770740712724</td>
+</tr>
+<tr>
+<td>ciclomatico2.py::F 168:0 buscar_finally</td>
+<td>470</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>27.54</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4053.5770740712724</td>
+</tr>
+<tr>
+<td>ciclomatico2.py::F 189:0 buscar_fin_if</td>
+<td>470</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>27.54</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4053.5770740712724</td>
+</tr>
+<tr>
+<td>ciclomatico2.py::F 215:0 buscar_else_try</td>
+<td>470</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>27.54</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4053.5770740712724</td>
+</tr>
+<tr>
+<td>ciclomatico2.py::F 237:0 buscar_def</td>
+<td>470</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>27.54</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4053.5770740712724</td>
+</tr>
+<tr>
+<td>ciclomatico2.py::F 100:0 contar_espacios_inicio</td>
+<td>470</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>27.54</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4053.5770740712724</td>
+</tr>
+<tr>
+<td>ciclomatico2.py::F 118:0 renumerar_procesos</td>
+<td>470</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>27.54</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4053.5770740712724</td>
+</tr>
+<tr>
+<td>ciclomatico2.py::F 126:0 agregar_nodo</td>
+<td>470</td>
+<td>2</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>27.54</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4053.5770740712724</td>
+</tr>
+<tr>
+<td>ciclomatico2.py::F 226:0 buscar_salida_bloque</td>
+<td>470</td>
+<td>2</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>27.54</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4053.5770740712724</td>
+</tr>
+<tr>
+<td>ciclomatico2.py::F 18:0 obtener_repo_root</td>
+<td>470</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>27.54</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4053.5770740712724</td>
+</tr>
+<tr>
+<td>ciclomatico2.py::F 109:0 Insertar_proceso</td>
+<td>470</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>27.54</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4053.5770740712724</td>
+</tr>
+<tr>
+<td>ciclomatico2.py::F 135:0 agregar_arista</td>
+<td>470</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>27.54</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4053.5770740712724</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py::F 186:0 examinar_proceso</td>
+<td>423</td>
+<td>23</td>
+<td>Alta</td>
+<td>Complejidad alta; puede estar justificada en casos concretos, pero aumenta el esfuerzo de prueba y mantenimiento.</td>
+<td>30.69</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>3356.744228386784</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py::F 54:0 replace_tabs_with_spaces</td>
+<td>423</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>30.69</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>3356.744228386784</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py::F 21:0 seleccionar_archivo</td>
+<td>423</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>30.69</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>3356.744228386784</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py::F 152:0 buscar_palabra</td>
+<td>423</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>30.69</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>3356.744228386784</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py::F 163:0 buscar_def</td>
+<td>423</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>30.69</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>3356.744228386784</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py::F 99:0 contar_espacios_inicio</td>
+<td>423</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>30.69</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>3356.744228386784</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py::F 117:0 renumerar_procesos</td>
+<td>423</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>30.69</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>3356.744228386784</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py::F 141:0 buscar_salida_bloque</td>
+<td>423</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>30.69</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>3356.744228386784</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py::F 125:0 agregar_nodo</td>
+<td>423</td>
+<td>2</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>30.69</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>3356.744228386784</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py::F 17:0 obtener_repo_root</td>
+<td>423</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>30.69</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>3356.744228386784</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py::F 108:0 Insertar_proceso</td>
+<td>423</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>30.69</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>3356.744228386784</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py::F 134:0 agregar_arista</td>
+<td>423</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>30.69</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>3356.744228386784</td>
+</tr>
+<tr>
+<td>ciclo_selc_carp.py::F 18:0 listar_archivos_por_extension</td>
+<td>54</td>
+<td>6</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>72.44</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>120.40465370320703</td>
+</tr>
+<tr>
+<td>ciclo_selc_carp.py::F 11:0 seleccionar_directorio</td>
+<td>54</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>72.44</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>120.40465370320703</td>
+</tr>
+<tr>
+<td>quitar_coment.py::F 28:0 process_file</td>
+<td>31</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>81.94</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>24.0</td>
+</tr>
+<tr>
+<td>quitar_coment.py::F 5:0 remove_comments_from_code</td>
+<td>31</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>81.94</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>24.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class='bloque-tabla' id='tabla-2'>
+<h2>Resultados Lizard</h2>
+<a class='volver-arriba' href='#inicio'>Volver arriba</a>
+<div class='referencia'><strong>Referencia:</strong> Lizard calcula métricas estructurales como NLOC, tokens, número de parámetros y longitud. En proyectos Java también se incluye la complejidad ciclomática. En proyectos Python, la complejidad ciclomática se muestra mediante Radon para evitar duplicidad.</div>
+<div class='observacion'><strong>Observación:</strong> Las métricas de Lizard deben interpretarse en contexto. En proyectos grandes pueden existir funciones extensas justificadas por lógica de negocio, estructuras condicionales amplias o flujos difíciles de dividir. Aun así, valores elevados pueden indicar mayor dificultad de prueba y mantenimiento.</div>
+<h3>Referencias de métricas</h3>
+<div class='contenedor-tabla'>
+<table class='tabla-referencias'>
+<thead>
+<tr>
+<th></th>
+<th>NLOC</th>
+<th>TOKENS</th>
+<th>PARAM</th>
+<th>LENGTH</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nombre</strong></td>
+<td>Líneas de código sin comentarios</td>
+<td>Tokens</td>
+<td>Número de parámetros</td>
+<td>Longitud</td>
+</tr>
+<tr>
+<td><strong>Qué mide</strong></td>
+<td>Cantidad de líneas efectivas de código dentro del elemento analizado.</td>
+<td>Cantidad de unidades léxicas presentes en el elemento analizado.</td>
+<td>Cantidad de parámetros recibidos por una función o método.</td>
+<td>Número de líneas que ocupa la función o método analizado.</td>
+</tr>
+<tr>
+<td><strong>Mínimo</strong></td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+</tr>
+<tr>
+<td><strong>Máximo</strong></td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Resultados</h3>
+<div class='contenedor-tabla'>
+<table>
+<thead>
+<tr>
+<th>Elemento analizado</th>
+<th>NLOC</th>
+<th>Tokens</th>
+<th>Parametros</th>
+<th>longitud</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>obtener_repo_root@18-19@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py</td>
+<td>2</td>
+<td>20</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>seleccionar_archivo@22-50@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py</td>
+<td>20</td>
+<td>96</td>
+<td>0</td>
+<td>29</td>
+</tr>
+<tr>
+<td>replace_tabs_with_spaces@55-97@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py</td>
+<td>19</td>
+<td>147</td>
+<td>3</td>
+<td>43</td>
+</tr>
+<tr>
+<td>contar_espacios_inicio@100-107@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py</td>
+<td>8</td>
+<td>26</td>
+<td>1</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Insertar_proceso@109-115@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py</td>
+<td>6</td>
+<td>57</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr>
+<td>renumerar_procesos@118-123@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py</td>
+<td>5</td>
+<td>65</td>
+<td>1</td>
+<td>6</td>
+</tr>
+<tr>
+<td>agregar_nodo@126-130@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py</td>
+<td>5</td>
+<td>54</td>
+<td>3</td>
+<td>5</td>
+</tr>
+<tr>
+<td>agregar_arista@135-138@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py</td>
+<td>4</td>
+<td>57</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>buscar_if_try@141-152@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py</td>
+<td>10</td>
+<td>89</td>
+<td>2</td>
+<td>12</td>
+</tr>
+<tr>
+<td>buscar_salida_try@154-166@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py</td>
+<td>11</td>
+<td>82</td>
+<td>2</td>
+<td>13</td>
+</tr>
+<tr>
+<td>buscar_finally@168-175@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py</td>
+<td>8</td>
+<td>54</td>
+<td>3</td>
+<td>8</td>
+</tr>
+<tr>
+<td>buscar_elif_else@178-187@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py</td>
+<td>8</td>
+<td>70</td>
+<td>3</td>
+<td>10</td>
+</tr>
+<tr>
+<td>buscar_fin_if@189-201@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py</td>
+<td>11</td>
+<td>80</td>
+<td>2</td>
+<td>13</td>
+</tr>
+<tr>
+<td>buscar_else_try@215-224@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py</td>
+<td>7</td>
+<td>51</td>
+<td>3</td>
+<td>10</td>
+</tr>
+<tr>
+<td>buscar_salida_bloque@226-235@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py</td>
+<td>6</td>
+<td>31</td>
+<td>2</td>
+<td>10</td>
+</tr>
+<tr>
+<td>buscar_def@237-258@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py</td>
+<td>19</td>
+<td>133</td>
+<td>0</td>
+<td>22</td>
+</tr>
+<tr>
+<td>examinar_proceso@260-489@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py</td>
+<td>159</td>
+<td>1508</td>
+<td>0</td>
+<td>230</td>
+</tr>
+<tr>
+<td>obtener_repo_root@17-18@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py</td>
+<td>2</td>
+<td>20</td>
+<td>0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>seleccionar_archivo@21-49@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py</td>
+<td>20</td>
+<td>96</td>
+<td>0</td>
+<td>29</td>
+</tr>
+<tr>
+<td>replace_tabs_with_spaces@54-96@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py</td>
+<td>19</td>
+<td>147</td>
+<td>3</td>
+<td>43</td>
+</tr>
+<tr>
+<td>contar_espacios_inicio@99-106@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py</td>
+<td>8</td>
+<td>26</td>
+<td>1</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Insertar_proceso@108-114@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py</td>
+<td>6</td>
+<td>57</td>
+<td>7</td>
+<td>7</td>
+</tr>
+<tr>
+<td>renumerar_procesos@117-122@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py</td>
+<td>5</td>
+<td>65</td>
+<td>1</td>
+<td>6</td>
+</tr>
+<tr>
+<td>agregar_nodo@125-129@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py</td>
+<td>5</td>
+<td>54</td>
+<td>3</td>
+<td>5</td>
+</tr>
+<tr>
+<td>agregar_arista@134-137@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py</td>
+<td>4</td>
+<td>57</td>
+<td>4</td>
+<td>4</td>
+</tr>
+<tr>
+<td>buscar_salida_bloque@141-149@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py</td>
+<td>6</td>
+<td>54</td>
+<td>3</td>
+<td>9</td>
+</tr>
+<tr>
+<td>buscar_palabra@152-161@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py</td>
+<td>7</td>
+<td>64</td>
+<td>5</td>
+<td>10</td>
+</tr>
+<tr>
+<td>buscar_def@163-184@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py</td>
+<td>19</td>
+<td>133</td>
+<td>0</td>
+<td>22</td>
+</tr>
+<tr>
+<td>examinar_proceso@186-412@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py</td>
+<td>158</td>
+<td>1506</td>
+<td>0</td>
+<td>227</td>
+</tr>
+<tr>
+<td>seleccionar_directorio@11-16@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclo_selc_carp.py</td>
+<td>5</td>
+<td>29</td>
+<td>0</td>
+<td>6</td>
+</tr>
+<tr>
+<td>listar_archivos_por_extension@18-40@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclo_selc_carp.py</td>
+<td>10</td>
+<td>97</td>
+<td>2</td>
+<td>23</td>
+</tr>
+<tr>
+<td>remove_comments_from_code@5-25@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\quitar_coment.py</td>
+<td>8</td>
+<td>70</td>
+<td>1</td>
+<td>21</td>
+</tr>
+<tr>
+<td>process_file@28-46@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\quitar_coment.py</td>
+<td>13</td>
+<td>93</td>
+<td>2</td>
+<td>19</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class='bloque-tabla' id='tabla-3'>
+<h2>Resumen Pylint</h2>
+<a class='volver-arriba' href='#inicio'>Volver arriba</a>
+<h3>Resultados</h3>
+<div class='contenedor-tabla'>
+<table>
+<thead>
+<tr>
+<th>Categoria</th>
+<th>Severidad</th>
+<th>Numero de incidencias</th>
+<th>Interpretacion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fatal</td>
+<td>Muy grave</td>
+<td>0</td>
+<td>Impide o dificulta gravemente el análisis.</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>Grave</td>
+<td>4</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>Warning</td>
+<td>Revisión necesaria</td>
+<td>149</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>Refactor</td>
+<td>Mejora recomendada</td>
+<td>16</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>Convention</td>
+<td>Estilo</td>
+<td>374</td>
+<td>Incumplimiento de convenciones de estilo o formato.</td>
+</tr>
+<tr>
+<td>Information</td>
+<td>Informativo</td>
+<td>0</td>
+<td>Información adicional del análisis.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class='bloque-tabla' id='tabla-4'>
+<h2>Incidencias relevantes Pylint</h2>
+<a class='volver-arriba' href='#inicio'>Volver arriba</a>
+<h3>Resultados</h3>
+<div class='contenedor-tabla'>
+<table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Linea</th>
+<th>Columna</th>
+<th>Categoria</th>
+<th>Codigo</th>
+<th>Simbolo</th>
+<th>Mensaje</th>
+<th>Severidad</th>
+<th>Interpretacion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ciclomatico2.py</td>
+<td>158</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 10 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>159</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 16</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>160</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 16</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>162</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 10 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>163</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 12 spaces, expected 16</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>193</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 10 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>194</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 16</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>195</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 16</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>197</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 10 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>198</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 12 spaces, expected 16</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>261</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 2 spaces, expected 4</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>262</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 2 spaces, expected 4</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>263</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 4 spaces, expected 8</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>332</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 19 spaces, expected 20</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>333</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 19 spaces, expected 20</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>335</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 19 spaces, expected 20</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>338</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 19 spaces, expected 20</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>372</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 23 spaces, expected 24</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>373</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 23 spaces, expected 24</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>375</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 23 spaces, expected 24</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>376</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 23 spaces, expected 24</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>542</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 12 spaces, expected 8</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>543</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 12 spaces, expected 8</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>575</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>583</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>584</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>585</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>587</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>589</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>595</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>596</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>597</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>49</td>
+<td>11</td>
+<td>Warning</td>
+<td>W0718</td>
+<td>broad-exception-caught</td>
+<td>Catching too general exception Exception</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>22</td>
+<td>0</td>
+<td>Refactor</td>
+<td>R1710</td>
+<td>inconsistent-return-statements</td>
+<td>Either all return statements in a function should return an expression, or none of them should.</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>55</td>
+<td>40</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;work_file&#x27; from outer scope (line 546)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>96</td>
+<td>11</td>
+<td>Warning</td>
+<td>W0718</td>
+<td>broad-exception-caught</td>
+<td>Catching too general exception Exception</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>75</td>
+<td>8</td>
+<td>Error</td>
+<td>E1111</td>
+<td>assignment-from-no-return</td>
+<td>Assigning result of a function call, where the function has no return</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>75</td>
+<td>8</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;result&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>100</td>
+<td>27</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;linea&#x27; from outer scope (line 567)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>109</td>
+<td>0</td>
+<td>Refactor</td>
+<td>R0913</td>
+<td>too-many-arguments</td>
+<td>Too many arguments (7/5)</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>109</td>
+<td>0</td>
+<td>Refactor</td>
+<td>R0917</td>
+<td>too-many-positional-arguments</td>
+<td>Too many positional arguments (7/5)</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>109</td>
+<td>61</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;etiqueta&#x27; from outer scope (line 581)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>110</td>
+<td>4</td>
+<td>Warning</td>
+<td>W0602</td>
+<td>global-variable-not-assigned</td>
+<td>Using global for &#x27;num_grafo&#x27; but no assignment is done</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>109</td>
+<td>73</td>
+<td>Warning</td>
+<td>W0613</td>
+<td>unused-argument</td>
+<td>Unused argument &#x27;xnum_grafo&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>118</td>
+<td>23</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;z&#x27; from outer scope (line 669)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>120</td>
+<td>8</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;x&#x27; from outer scope (line 605)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>126</td>
+<td>17</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;num_grafo&#x27; from outer scope (line 244)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>135</td>
+<td>19</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;num_grafo&#x27; from outer scope (line 244)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>141</td>
+<td>18</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;z&#x27; from outer scope (line 669)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>141</td>
+<td>20</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;espacios&#x27; from outer scope (line 568)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>143</td>
+<td>4</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;xfila&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>154</td>
+<td>22</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;z&#x27; from outer scope (line 669)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>154</td>
+<td>24</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;espacios&#x27; from outer scope (line 568)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>158</td>
+<td>10</td>
+<td>Refactor</td>
+<td>R1724</td>
+<td>no-else-continue</td>
+<td>Unnecessary &quot;else&quot; after &quot;continue&quot;, remove the &quot;else&quot; and de-indent the code inside it</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>168</td>
+<td>19</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;z&#x27; from outer scope (line 669)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>168</td>
+<td>25</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;espacios&#x27; from outer scope (line 568)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>170</td>
+<td>4</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;xfila&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>178</td>
+<td>21</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;z&#x27; from outer scope (line 669)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>178</td>
+<td>27</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;espacios&#x27; from outer scope (line 568)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>180</td>
+<td>4</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;xfila&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>189</td>
+<td>18</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;z&#x27; from outer scope (line 669)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>189</td>
+<td>20</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;espacios&#x27; from outer scope (line 568)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>193</td>
+<td>10</td>
+<td>Refactor</td>
+<td>R1724</td>
+<td>no-else-continue</td>
+<td>Unnecessary &quot;else&quot; after &quot;continue&quot;, remove the &quot;else&quot; and de-indent the code inside it</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>202</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0105</td>
+<td>pointless-string-statement</td>
+<td>String statement has no effect</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>226</td>
+<td>25</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;z&#x27; from outer scope (line 669)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>226</td>
+<td>27</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;espacios&#x27; from outer scope (line 568)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>238</td>
+<td>4</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;numdef&#x27; from outer scope (line 639)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>239</td>
+<td>8</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;z&#x27; from outer scope (line 669)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>241</td>
+<td>8</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;proceso_ini&#x27; from outer scope (line 618)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>242</td>
+<td>8</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;espacios_ini&#x27; from outer scope (line 614)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>247</td>
+<td>12</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;etiqueta&#x27; from outer scope (line 581)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>240</td>
+<td>8</td>
+<td>Warning</td>
+<td>W0603</td>
+<td>global-statement</td>
+<td>Using the global statement</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>260</td>
+<td>0</td>
+<td>Refactor</td>
+<td>R0914</td>
+<td>too-many-locals</td>
+<td>Too many local variables (43/15)</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>261</td>
+<td>2</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;nodos&#x27; from outer scope (line 675)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>262</td>
+<td>6</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;x&#x27; from outer scope (line 605)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>322</td>
+<td>20</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;nodo_ant&#x27; from outer scope (line 584)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>418</td>
+<td>16</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;espacios&#x27; from outer scope (line 568)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>260</td>
+<td>0</td>
+<td>Refactor</td>
+<td>R0912</td>
+<td>too-many-branches</td>
+<td>Too many branches (25/12)</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>260</td>
+<td>0</td>
+<td>Refactor</td>
+<td>R0915</td>
+<td>too-many-statements</td>
+<td>Too many statements (144/50)</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>276</td>
+<td>23</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;esp_fin_if&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>281</td>
+<td>16</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;sw_else&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>287</td>
+<td>16</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;nodoelif_ant&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>322</td>
+<td>20</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;nodo_ant&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>332</td>
+<td>19</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;nodoelse&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>345</td>
+<td>16</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;nodo_finally&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>351</td>
+<td>27</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;esp_salida_try&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>379</td>
+<td>16</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;nodofinally&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>386</td>
+<td>16</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;esp_finally&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>394</td>
+<td>16</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;nodoexcept&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>453</td>
+<td>16</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;ultimo_match&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>518</td>
+<td>4</td>
+<td>Warning</td>
+<td>W0105</td>
+<td>pointless-string-statement</td>
+<td>String statement has no effect</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>528</td>
+<td>7</td>
+<td>Refactor</td>
+<td>R1714</td>
+<td>consider-using-in</td>
+<td>Consider merging these comparisons with &#x27;in&#x27; by using &#x27;directorio_sel not in (&#x27;&#x27;, directorio_arc)&#x27;. Use a set instead if elements are hashable.</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>693</td>
+<td>4</td>
+<td>Warning</td>
+<td>W0404</td>
+<td>reimported</td>
+<td>Reimport &#x27;Digraph&#x27; (imported line 14)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>710</td>
+<td>27</td>
+<td>Error</td>
+<td>E0601</td>
+<td>used-before-assignment</td>
+<td>Using variable &#x27;grafo_file&#x27; before assignment</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>723</td>
+<td>6</td>
+<td>Warning</td>
+<td>W1309</td>
+<td>f-string-without-interpolation</td>
+<td>Using an f-string that does not have any interpolated variables</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>724</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0105</td>
+<td>pointless-string-statement</td>
+<td>String statement has no effect</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2.py</td>
+<td>2</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0611</td>
+<td>unused-import</td>
+<td>Unused import subprocess</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>187</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 2 spaces, expected 4</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>188</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 2 spaces, expected 4</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>189</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 4 spaces, expected 8</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>253</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 19 spaces, expected 20</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>254</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 19 spaces, expected 20</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>256</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 19 spaces, expected 20</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>259</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 19 spaces, expected 20</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>295</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 23 spaces, expected 24</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>296</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 23 spaces, expected 24</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>298</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 23 spaces, expected 24</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>299</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 23 spaces, expected 24</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>466</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 12 spaces, expected 8</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>467</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 12 spaces, expected 8</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>502</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>510</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>511</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>512</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>514</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>516</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>522</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>523</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>524</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0311</td>
+<td>bad-indentation</td>
+<td>Bad indentation. Found 13 spaces, expected 12</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>48</td>
+<td>11</td>
+<td>Warning</td>
+<td>W0718</td>
+<td>broad-exception-caught</td>
+<td>Catching too general exception Exception</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>21</td>
+<td>0</td>
+<td>Refactor</td>
+<td>R1710</td>
+<td>inconsistent-return-statements</td>
+<td>Either all return statements in a function should return an expression, or none of them should.</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>54</td>
+<td>40</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;work_file&#x27; from outer scope (line 470)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>95</td>
+<td>11</td>
+<td>Warning</td>
+<td>W0718</td>
+<td>broad-exception-caught</td>
+<td>Catching too general exception Exception</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>74</td>
+<td>8</td>
+<td>Error</td>
+<td>E1111</td>
+<td>assignment-from-no-return</td>
+<td>Assigning result of a function call, where the function has no return</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>74</td>
+<td>8</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;result&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>99</td>
+<td>27</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;linea&#x27; from outer scope (line 494)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>108</td>
+<td>0</td>
+<td>Refactor</td>
+<td>R0913</td>
+<td>too-many-arguments</td>
+<td>Too many arguments (7/5)</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>108</td>
+<td>0</td>
+<td>Refactor</td>
+<td>R0917</td>
+<td>too-many-positional-arguments</td>
+<td>Too many positional arguments (7/5)</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>108</td>
+<td>61</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;etiqueta&#x27; from outer scope (line 508)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>109</td>
+<td>4</td>
+<td>Warning</td>
+<td>W0602</td>
+<td>global-variable-not-assigned</td>
+<td>Using global for &#x27;num_grafo&#x27; but no assignment is done</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>108</td>
+<td>73</td>
+<td>Warning</td>
+<td>W0613</td>
+<td>unused-argument</td>
+<td>Unused argument &#x27;xnum_grafo&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>117</td>
+<td>23</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;z&#x27; from outer scope (line 599)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>119</td>
+<td>8</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;x&#x27; from outer scope (line 532)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>125</td>
+<td>17</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;num_grafo&#x27; from outer scope (line 170)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>134</td>
+<td>19</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;num_grafo&#x27; from outer scope (line 170)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>141</td>
+<td>25</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;z&#x27; from outer scope (line 599)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>141</td>
+<td>27</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;espacios&#x27; from outer scope (line 495)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>152</td>
+<td>30</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;espacios&#x27; from outer scope (line 495)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>152</td>
+<td>39</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;palabras&#x27; from outer scope (line 500)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>164</td>
+<td>4</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;numdef&#x27; from outer scope (line 569)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>165</td>
+<td>8</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;z&#x27; from outer scope (line 599)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>167</td>
+<td>8</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;proceso_ini&#x27; from outer scope (line 545)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>168</td>
+<td>8</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;espacios_ini&#x27; from outer scope (line 541)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>173</td>
+<td>12</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;etiqueta&#x27; from outer scope (line 508)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>166</td>
+<td>8</td>
+<td>Warning</td>
+<td>W0603</td>
+<td>global-statement</td>
+<td>Using the global statement</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>186</td>
+<td>0</td>
+<td>Refactor</td>
+<td>R0914</td>
+<td>too-many-locals</td>
+<td>Too many local variables (42/15)</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>187</td>
+<td>2</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;nodos&#x27; from outer scope (line 605)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>188</td>
+<td>6</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;x&#x27; from outer scope (line 532)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>244</td>
+<td>20</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;nodo_ant&#x27; from outer scope (line 511)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>341</td>
+<td>16</td>
+<td>Warning</td>
+<td>W0621</td>
+<td>redefined-outer-name</td>
+<td>Redefining name &#x27;espacios&#x27; from outer scope (line 495)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>186</td>
+<td>0</td>
+<td>Refactor</td>
+<td>R0912</td>
+<td>too-many-branches</td>
+<td>Too many branches (26/12)</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>186</td>
+<td>0</td>
+<td>Refactor</td>
+<td>R0915</td>
+<td>too-many-statements</td>
+<td>Too many statements (142/50)</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>213</td>
+<td>16</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;nodoelif_ant&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>244</td>
+<td>20</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;nodo_ant&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>253</td>
+<td>19</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;nodoelse&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>266</td>
+<td>16</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;nodo_finally&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>302</td>
+<td>16</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;nodofinally&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>309</td>
+<td>16</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;esp_finally&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>317</td>
+<td>16</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;nodoexcept&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>376</td>
+<td>16</td>
+<td>Warning</td>
+<td>W0612</td>
+<td>unused-variable</td>
+<td>Unused variable &#x27;ultimo_match&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>442</td>
+<td>4</td>
+<td>Warning</td>
+<td>W0105</td>
+<td>pointless-string-statement</td>
+<td>String statement has no effect</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>452</td>
+<td>7</td>
+<td>Refactor</td>
+<td>R1714</td>
+<td>consider-using-in</td>
+<td>Consider merging these comparisons with &#x27;in&#x27; by using &#x27;directorio_sel not in (&#x27;&#x27;, directorio_arc)&#x27;. Use a set instead if elements are hashable.</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>623</td>
+<td>4</td>
+<td>Warning</td>
+<td>W0404</td>
+<td>reimported</td>
+<td>Reimport &#x27;Digraph&#x27; (imported line 14)</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>652</td>
+<td>6</td>
+<td>Warning</td>
+<td>W1309</td>
+<td>f-string-without-interpolation</td>
+<td>Using an f-string that does not have any interpolated variables</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>653</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0105</td>
+<td>pointless-string-statement</td>
+<td>String statement has no effect</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclomatico2_prueba.py</td>
+<td>2</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0611</td>
+<td>unused-import</td>
+<td>Unused import subprocess</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclo_selc_carp.py</td>
+<td>67</td>
+<td>11</td>
+<td>Warning</td>
+<td>W0718</td>
+<td>broad-exception-caught</td>
+<td>Catching too general exception Exception</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ciclo_selc_carp.py</td>
+<td>77</td>
+<td>24</td>
+<td>Error</td>
+<td>E1121</td>
+<td>too-many-function-args</td>
+<td>Too many positional arguments for function call</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>quitar_coment.py</td>
+<td>45</td>
+<td>11</td>
+<td>Warning</td>
+<td>W0718</td>
+<td>broad-exception-caught</td>
+<td>Catching too general exception Exception</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</body>
+</html>

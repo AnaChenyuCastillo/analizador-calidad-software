@@ -616,6 +616,7 @@ def fusionar_pdfs():
     print(f'grafo_file:{grafo_file}')
     fusionador.write(grafo_file)
     fusionador.close()  
+    return grafo_file
 
 # flujo principal generar grafos         
 def flujo_grafos_python(arch = "") :
@@ -663,12 +664,13 @@ def flujo_grafos_python(arch = "") :
 
     # fusionar pdf's 
     print(f"Fusionando archivos")
-    fusionar_pdfs()
+    ruta = fusionar_pdfs()
 
     # borrar archivos de trabajo pdfs y work_file.txt
     for pdf in T_grafos_files:
         os.remove(pdf)
     os.remove(work_file)     
+    return ruta
 
 #              *** fin def ******
 
