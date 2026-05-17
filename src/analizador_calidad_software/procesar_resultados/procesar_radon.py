@@ -1,4 +1,5 @@
 from pathlib import Path
+import re #Esta funcion busca patrondes dentro de una cadena
 
 from analizador_calidad_software.procesar_resultados.referencias_metricas import (
     referencia_radon,
@@ -61,13 +62,13 @@ def crear_datos_archivo_vacios() -> dict:
         "VOLUMEN": "",
     }
 
-def procesador_radon(ruta_txt: Path, ruta_proyecto: Path, lenguaje) -> dict:
+def procesar_radon(ruta_txt: Path, ruta_proyecto: Path, lenguaje) -> dict:
     contenido = ruta_txt.read_text(encoding="utf-8", errors="replace")
     lineas = contenido.splitlines()
 
     info_referencia = referencia_radon()
 
-    rangos_complejidad = info_referencia["rangos_cualitativos"]["COMPLEJIDAD"]
+    rangos_complejidad = info_referencia["rangos_cualitativos"]["CC"]
 
     rangos_mi = info_referencia["rangos_cualitativos"]["MI"]
 
@@ -97,8 +98,21 @@ def procesador_radon(ruta_txt: Path, ruta_proyecto: Path, lenguaje) -> dict:
         if texto == "":
             continue
 
-        if texto.startswith("===") and texto.endswith("==="):
-            seccion_actual = texto.replace("=", "").strip().upper()
+        if texto.startswith("=") and "RADON" in texto.upper():
+            texto_seccion = texto.upper()
+
+            if "RADON CC" in texto_seccion:
+                seccion_actual = "COMPLEJIDAD"
+
+            elif "RADON RAW" in texto_seccion:
+                seccion_actual = "RAW"
+
+            elif "RADON MI" in texto_seccion:
+                seccion_actual = "MI"
+
+            elif "RADON HAL" in texto_seccion:
+                seccion_actual = "HALSTEAD"
+
             archivo_actual = ""
             continue
 
@@ -113,10 +127,13 @@ def procesador_radon(ruta_txt: Path, ruta_proyecto: Path, lenguaje) -> dict:
                 datos_archivos[archivo_actual]["SLOC"] = texto.split(":", 1)[1].strip()
 
         elif seccion_actual == "MI":
-            if " - " in texto:
-                archivo, mi = texto.split(" - ", 1)
-                archivo = obtener_ruta_relativa(archivo.strip(), ruta_proyecto)
-                mi = mi.strip()
+            patron = re.search(r"^(.*\.py)\s*-\s*[A-C]\s*\(([\d.]+)\)", texto)
+
+            if patron is not None:
+                archivo = patron.group(1).strip()
+                mi = patron.group(2).strip()
+
+                archivo = obtener_ruta_relativa(archivo, ruta_proyecto)
 
                 if archivo not in datos_archivos:
                     datos_archivos[archivo] = crear_datos_archivo_vacios()
@@ -124,15 +141,14 @@ def procesador_radon(ruta_txt: Path, ruta_proyecto: Path, lenguaje) -> dict:
                 datos_archivos[archivo]["MI"] = mi
 
         elif seccion_actual == "HALSTEAD":
-            if texto.endswith(".py"):
-                archivo_actual = obtener_ruta_relativa(texto, ruta_proyecto)
+            if texto.endswith(".py:"):
+                archivo_actual = obtener_ruta_relativa(texto[:-1], ruta_proyecto)
 
                 if archivo_actual not in datos_archivos:
                     datos_archivos[archivo_actual] = crear_datos_archivo_vacios()
 
-            elif texto.startswith("VOLUMEN:") and archivo_actual != "":
+            elif texto.startswith("volume:") and archivo_actual != "":
                 datos_archivos[archivo_actual]["VOLUMEN"] = texto.split(":", 1)[1].strip()
-
         elif seccion_actual == "COMPLEJIDAD":
             if texto.endswith(".py"):
                 archivo_actual = obtener_ruta_relativa(texto, ruta_proyecto)
@@ -141,10 +157,15 @@ def procesador_radon(ruta_txt: Path, ruta_proyecto: Path, lenguaje) -> dict:
                     datos_archivos[archivo_actual] = crear_datos_archivo_vacios()
 
             elif " - " in texto and archivo_actual != "":
-                nombre_bloque, complejidad = texto.rsplit(" - ", 1)
+                patron = re.search(r"^(.*?)\s*-\s*[A-F]\s*\((\d+)\)", texto)
 
-                elemento_analizado = f"{archivo_actual}::{nombre_bloque.strip()}"
-                complejidad = complejidad.strip()
+                if patron is None:
+                    continue
+
+                nombre_bloque = patron.group(1).strip()
+                complejidad = patron.group(2).strip()
+
+                elemento_analizado = f"{archivo_actual}::{nombre_bloque}"
 
                 filas_complejidad.append(
                     {
@@ -153,7 +174,6 @@ def procesador_radon(ruta_txt: Path, ruta_proyecto: Path, lenguaje) -> dict:
                         "COMPLEJIDAD": complejidad,
                     }
                 )
-
     filas = []
 
     for fila_complejidad in filas_complejidad:

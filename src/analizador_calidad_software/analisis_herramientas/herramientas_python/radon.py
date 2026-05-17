@@ -14,13 +14,23 @@ from analizador_calidad_software.cli import (
 
 def ejecutar_radon(subcomando: str, directorio_proyecto: Path):
 
-    comando = [
-        sys.executable,
-        "-m",
-        "radon",
-        subcomando,
-        str(directorio_proyecto)
-    ]
+    if subcomando == "cc" or subcomando == "mi":
+        comando = [
+            sys.executable,
+            "-m",
+            "radon",
+            subcomando,
+            "-s",
+            str(directorio_proyecto)
+        ]
+    else:
+        comando = [
+            sys.executable,
+            "-m",
+            "radon",
+            subcomando,
+            str(directorio_proyecto)
+        ]
 
     print(f"Comando ejecutado: ({subcomando})")
     print(comando)
@@ -73,9 +83,13 @@ def generar_texto_resultado(directorio_proyecto: Path, resultado_cc, resultado_r
 def ejecutar_analisis_radon(directorio_proyecto, carpeta_resultados) -> None:
     
     resultado_cc = ejecutar_radon("cc", directorio_proyecto)
+    print(resultado_cc.stdout)
     resultado_raw = ejecutar_radon("raw", directorio_proyecto)
+    print(resultado_raw.stdout)
     resultado_mi = ejecutar_radon("mi", directorio_proyecto)
+    print(resultado_mi.stdout)
     resultado_hal = ejecutar_radon("hal", directorio_proyecto)
+    print(resultado_hal.stdout)
 
     contenido = generar_texto_resultado(directorio_proyecto, resultado_cc, resultado_raw, resultado_mi, resultado_hal)
 

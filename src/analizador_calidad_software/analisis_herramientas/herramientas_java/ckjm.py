@@ -127,6 +127,7 @@ def ejecutar_analisis_ckjm(ruta_proyecto: Path, carpeta_resultados) -> None:
     bloques.append(f"Ruta del proyecto: {ruta_proyecto}")
     bloques.append(f"Número de clases analizadas: {len(clases)}")
     bloques.append("")
+    clases_errores = []
 
     for ruta_class in clases:
         resultado, ruta_relativa = ejecutar_ckjm(ruta_proyecto, ruta_class)
@@ -134,14 +135,16 @@ def ejecutar_analisis_ckjm(ruta_proyecto: Path, carpeta_resultados) -> None:
 
         proyecto = ruta_relativa
         print(resultado)
-        if resultado.stdout!= "":
+        if resultado.stdout.strip()!= "":
             bloque_salida = interpretar_salida_ckjm(resultado.stdout, proyecto.name)
 
             bloque = generar_texto_resultado(bloque_salida)
 
             bloques.append(bloque)
+        else: 
+            clases_errores.append(str(ruta_relativa))
 
     contenido_final = "\n".join(bloques)
     ruta_txt = guardar_resultado_txt(contenido_final, carpeta_resultados)
 
-    return ruta_txt
+    return ruta_txt, clases_errores

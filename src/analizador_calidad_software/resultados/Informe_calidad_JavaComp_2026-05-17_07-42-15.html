@@ -1,0 +1,5925 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset='UTF-8'>
+<title>Informe de calidad de software</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        h1 {
+            color: #1f2937;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #1f2937;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 6px;
+        }
+
+        .bloque-proyecto {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+        }
+
+        .referencia {
+            background-color: #eef2ff;
+            padding: 12px;
+            border-left: 4px solid #6366f1;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        .observacion {
+            background-color: #fff7ed;
+            padding: 12px;
+            border-left: 4px solid #f97316;
+            margin: 10px 0 20px 0;
+            border-radius: 4px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #1f2937;
+            color: white;
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .tabla-vacia {
+            padding: 12px;
+            background-color: #fee2e2;
+            border-left: 4px solid #dc2626;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .botones-superiores {
+        position: fixed;
+        top: 20px;
+        right: 30px;
+        display: flex;
+        gap: 10px;
+        z-index: 1000;
+        }
+
+        .boton {
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 14px;
+            border: none;
+        }
+
+        .boton:hover {
+            background-color: #374151;
+        }
+
+        .boton-secundario {
+            background-color: #4b5563;
+        }
+
+        .boton-secundario:hover {
+            background-color: #6b7280;
+        }
+    </style>
+    
+</head>
+<body>
+<div class='botones-superiores'>
+<a class='boton' href='informe_calidad.pdf' download>Descargar informe en PDF</a>
+<a class='boton boton-secundario' href='' target='_blank'>Ver diagramas</a>
+</div>
+<h1>Informe de calidad de software</h1>
+<div class='bloque-proyecto'>
+<p><strong>Proyecto:</strong> JavaComp</p>
+<p><strong>Ruta:</strong> C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp</p>
+<p><strong>Lenguaje:</strong> java</p>
+<p><strong>Número de tablas:</strong> 3</p>
+</div>
+<h2>Resultados CKJM</h2>
+<div class='referencia'><strong> Referencia:</strong> Los ranfos se basan unicamente en bibliografía con respaldo identificadoCuando no existe un umbral concreto con suficiente resspaldo, se dejará sinespecificar</div>
+<div class='observacion'><strong> Observacion:</strong> Las metricas de CKJM deben interpretarse según el contexto del proyectoLos umbrales no son universales y no sustituyen al analísis del proyecto</div>
+<table>
+<thead>
+<tr>
+<th>Elemente analizado</th>
+<th>WMC</th>
+<th>DIT</th>
+<th>NOC</th>
+<th>CBO</th>
+<th>RFC</th>
+<th>LCOM</th>
+<th>CA</th>
+<th>NPM</th>
+<th>Metricas fuera de rango</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clases.Administrador</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>8</td>
+<td>3</td>
+<td>0</td>
+<td>3</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>clases.AlmacenDatos$1</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>clases.AlmacenDatos$2</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>clases.AlmacenDatos$3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>clases.AlmacenDatos$4</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>clases.InicializarFicheros</td>
+<td>3</td>
+<td>1</td>
+<td>0</td>
+<td>3</td>
+<td>14</td>
+<td>1</td>
+<td>0</td>
+<td>2</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.BuscarProductos$1</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.BuscarProductos$2</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.BuscarProductos$3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.BuscarProductos$4</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.BuscarProductos$5</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.CarritoCompra$1</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.CarritoCompra$2</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.CarritoCompra$3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.CarritoCompra$4</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.CarritoCompra$5</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.CarritoCompra$6</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.CarritoCompra$7</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ConsultarClientes$1</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ConsultarClientes$2</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ConsultarClientes$3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ConsultarClientes$4</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ConsultarClientes$5</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ConsultarProductos$1</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ConsultarProductos$2</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ConsultarProductos$3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ConsultarProductos$4</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ConsultarProductos$5</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ConsultarProductos$6</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ConsultarProductos$7</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ConsultarProductos$8</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ConsultarVentas$1</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ConsultarVentas$2</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ConsultarVentas$3</td>
+<td>4</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>6</td>
+<td>4</td>
+<td>0</td>
+<td>3</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ConsultarVentas$4</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ModificarDatos$1</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ModificarDatos$2</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ModificarDatos$3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ModificarDatos$4</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.PanelProductos$1</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.PanelProductos$2</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.PanelProductos$3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ProductosBuscados$1</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ProductosBuscados$2</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ProductosBuscados$3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ProductosBuscados$4</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ProductosBuscados$5</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ProductosBuscados$6</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ProductosBuscados$7</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ProductosBuscados$8</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.ProductosBuscados$9</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.VentanaAdministrador$1</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.VentanaAdministrador$2</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.VentanaAdministrador$3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.VentanaAdministrador$4</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.VentanaClientes$1</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.VentanaClientes$2</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.VentanaClientes$3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.VentanaLogin$1</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.VentanaLogin$2</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.VentanaLogin$3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.VentanaLogin$4</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.VentanaLogin$5</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.VentanaLogin$6</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.VentanaRegistro$1</td>
+<td>2</td>
+<td>2</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.VentanaRegistro$2</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.VentanaRegistro$3</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.VentanaRegistro$4</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>interfaz.VentanaRegistro$5</td>
+<td>2</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>Ninguna</td>
+</tr>
+</tbody
+</table>
+<h2>Resultados CPD</h2>
+<div class='referencia'><strong> Referencia:</strong> CPD no proporciona un rango univarsal de calidad para interpretar la duplicaciónEl valor configurado corresponde al umbral técnicode detección de duplicación</div>
+<div class='observacion'><strong> Observacion:</strong> La dupicación debe interpretarse según el tamaño del pryecto, el contexto del códigoy la politica de calidad definida. El umbral de tokens es configurable</div>
+<table>
+<thead>
+<tr>
+<th>Elemento analizado</th>
+<th>Lineas duplicadas</th>
+<th>Tokens</th>
+<th>Metricas fuera de rango</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>58</td>
+<td>472</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>30</td>
+<td>386</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java</td>
+<td>24</td>
+<td>233</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelProductos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>24</td>
+<td>233</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>13</td>
+<td>194</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>23</td>
+<td>174</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java</td>
+<td>21</td>
+<td>166</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>21</td>
+<td>160</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\BuscarProductos.java</td>
+<td>16</td>
+<td>139</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>24</td>
+<td>132</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>7</td>
+<td>128</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>15</td>
+<td>123</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java</td>
+<td>14</td>
+<td>121</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>15</td>
+<td>121</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>15</td>
+<td>115</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>12</td>
+<td>115</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>8</td>
+<td>110</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>13</td>
+<td>105</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>12</td>
+<td>102</td>
+<td>TOKENS</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java</td>
+<td>11</td>
+<td>100</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>12</td>
+<td>85</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java</td>
+<td>11</td>
+<td>81</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>10</td>
+<td>77</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>10</td>
+<td>76</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>11</td>
+<td>76</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaAdministrador.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java</td>
+<td>10</td>
+<td>74</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>12</td>
+<td>71</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>11</td>
+<td>69</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>14</td>
+<td>69</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaAdministrador.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java</td>
+<td>22</td>
+<td>69</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>9</td>
+<td>68</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>9</td>
+<td>68</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>9</td>
+<td>68</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>12</td>
+<td>67</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>8</td>
+<td>67</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>9</td>
+<td>67</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>9</td>
+<td>66</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>7</td>
+<td>66</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>9</td>
+<td>64</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java</td>
+<td>9</td>
+<td>64</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>8</td>
+<td>64</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java</td>
+<td>6</td>
+<td>63</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>7</td>
+<td>63</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>5</td>
+<td>61</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>5</td>
+<td>61</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>5</td>
+<td>61</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>5</td>
+<td>61</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>7</td>
+<td>61</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaAdministrador.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java</td>
+<td>7</td>
+<td>61</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>13</td>
+<td>60</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>14</td>
+<td>58</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>10</td>
+<td>57</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>13</td>
+<td>57</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>6</td>
+<td>57</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>14</td>
+<td>56</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>8</td>
+<td>56</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>10</td>
+<td>56</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>7</td>
+<td>56</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>10</td>
+<td>56</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>8</td>
+<td>55</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>3</td>
+<td>55</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>4</td>
+<td>55</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java</td>
+<td>7</td>
+<td>55</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>10</td>
+<td>55</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java</td>
+<td>8</td>
+<td>54</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>27</td>
+<td>54</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java</td>
+<td>9</td>
+<td>54</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>7</td>
+<td>54</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java</td>
+<td>6</td>
+<td>53</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>7</td>
+<td>53</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>14</td>
+<td>53</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java</td>
+<td>7</td>
+<td>53</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java</td>
+<td>13</td>
+<td>53</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java</td>
+<td>3</td>
+<td>53</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\VentanaAdministrador.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java</td>
+<td>8</td>
+<td>53</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaLogin.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>17</td>
+<td>53</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java</td>
+<td>8</td>
+<td>52</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>22</td>
+<td>52</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\VentanaAdministrador.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>7</td>
+<td>51</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\VentanaAdministrador.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>7</td>
+<td>51</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>22</td>
+<td>51</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\VentanaAdministrador.java</td>
+<td>7</td>
+<td>51</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelProductos.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>3</td>
+<td>51</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>8</td>
+<td>50</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>3</td>
+<td>50</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\VentanaAdministrador.java</td>
+<td>8</td>
+<td>50</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java</td>
+<td>5</td>
+<td>50</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>4</td>
+<td>49</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java</td>
+<td>6</td>
+<td>49</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>9</td>
+<td>49</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaLogin.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>15</td>
+<td>49</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>5</td>
+<td>48</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\VentanaAdministrador.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java</td>
+<td>8</td>
+<td>48</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>5</td>
+<td>48</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>8</td>
+<td>48</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>7</td>
+<td>48</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\VentanaAdministrador.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java</td>
+<td>7</td>
+<td>48</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\VentanaAdministrador.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>5</td>
+<td>48</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>7</td>
+<td>48</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>7</td>
+<td>47</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>7</td>
+<td>47</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>13</td>
+<td>47</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>11</td>
+<td>47</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>9</td>
+<td>47</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\VentanaAdministrador.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java</td>
+<td>8</td>
+<td>46</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>8</td>
+<td>46</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\VentanaAdministrador.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>5</td>
+<td>46</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>7</td>
+<td>46</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>6</td>
+<td>46</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java</td>
+<td>8</td>
+<td>46</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java</td>
+<td>5</td>
+<td>46</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>7</td>
+<td>46</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java</td>
+<td>5</td>
+<td>46</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>7</td>
+<td>46</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>7</td>
+<td>46</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>6</td>
+<td>45</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\VentanaAdministrador.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java</td>
+<td>8</td>
+<td>45</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>8</td>
+<td>45</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>4</td>
+<td>45</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java</td>
+<td>5</td>
+<td>45</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>16</td>
+<td>44</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>7</td>
+<td>44</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java</td>
+<td>7</td>
+<td>43</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>4</td>
+<td>43</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>4</td>
+<td>43</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java</td>
+<td>5</td>
+<td>43</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java</td>
+<td>7</td>
+<td>43</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java</td>
+<td>5</td>
+<td>43</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>5</td>
+<td>43</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>3</td>
+<td>42</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>5</td>
+<td>42</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaLogin.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>7</td>
+<td>42</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\ClienteEmpresa.java &lt;-&gt; src\main\java\clases\ClienteParticular.java</td>
+<td>12</td>
+<td>41</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>4</td>
+<td>41</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>5</td>
+<td>41</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>5</td>
+<td>41</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>5</td>
+<td>41</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java</td>
+<td>5</td>
+<td>41</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java</td>
+<td>5</td>
+<td>41</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>5</td>
+<td>41</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java</td>
+<td>7</td>
+<td>41</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaClientes.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>6</td>
+<td>41</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaLogin.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>3</td>
+<td>41</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\FicheroDeObjetos.java &lt;-&gt; src\main\java\clases\FicheroDeObjetos.java</td>
+<td>5</td>
+<td>40</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java</td>
+<td>9</td>
+<td>40</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>5</td>
+<td>39</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>3</td>
+<td>39</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>4</td>
+<td>39</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java</td>
+<td>4</td>
+<td>39</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>3</td>
+<td>39</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>4</td>
+<td>39</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>4</td>
+<td>39</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>3</td>
+<td>39</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java</td>
+<td>4</td>
+<td>39</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaLogin.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>3</td>
+<td>39</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\ClienteEmpresa.java &lt;-&gt; src\main\java\clases\Usuarios.java</td>
+<td>11</td>
+<td>38</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\ClienteParticular.java &lt;-&gt; src\main\java\clases\Usuarios.java</td>
+<td>11</td>
+<td>38</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java</td>
+<td>4</td>
+<td>38</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>3</td>
+<td>38</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>6</td>
+<td>38</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>3</td>
+<td>38</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java</td>
+<td>4</td>
+<td>38</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaAdministrador.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java</td>
+<td>5</td>
+<td>38</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\BuscarProductos.java</td>
+<td>5</td>
+<td>37</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>2</td>
+<td>37</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>3</td>
+<td>37</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>2</td>
+<td>37</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>3</td>
+<td>37</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>6</td>
+<td>37</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\Producto.java &lt;-&gt; src\main\java\clases\Producto.java</td>
+<td>7</td>
+<td>36</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\Producto.java &lt;-&gt; src\main\java\clases\Producto.java</td>
+<td>8</td>
+<td>36</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>9</td>
+<td>36</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>3</td>
+<td>36</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>15</td>
+<td>36</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>6</td>
+<td>36</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java</td>
+<td>4</td>
+<td>36</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>2</td>
+<td>36</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>9</td>
+<td>36</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>12</td>
+<td>36</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>9</td>
+<td>36</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaLogin.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>6</td>
+<td>36</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>4</td>
+<td>35</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\VentanaAdministrador.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>6</td>
+<td>35</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>5</td>
+<td>35</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>6</td>
+<td>35</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>4</td>
+<td>35</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java</td>
+<td>12</td>
+<td>35</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java</td>
+<td>5</td>
+<td>35</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\VentanaAdministrador.java</td>
+<td>6</td>
+<td>35</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java</td>
+<td>14</td>
+<td>35</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java</td>
+<td>3</td>
+<td>35</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>6</td>
+<td>35</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\VentanaAdministrador.java</td>
+<td>3</td>
+<td>35</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java</td>
+<td>4</td>
+<td>35</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>35</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>3</td>
+<td>35</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java</td>
+<td>4</td>
+<td>35</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java</td>
+<td>4</td>
+<td>35</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaLogin.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>4</td>
+<td>35</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>4</td>
+<td>34</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>2</td>
+<td>34</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>5</td>
+<td>34</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>7</td>
+<td>34</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>4</td>
+<td>34</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelProductos.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>6</td>
+<td>34</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaAdministrador.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>2</td>
+<td>34</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>4</td>
+<td>33</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java</td>
+<td>3</td>
+<td>33</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>4</td>
+<td>33</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>4</td>
+<td>33</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java</td>
+<td>3</td>
+<td>33</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>3</td>
+<td>33</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java</td>
+<td>15</td>
+<td>33</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>9</td>
+<td>33</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>4</td>
+<td>32</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\InicializarFicheros.java &lt;-&gt; src\main\java\clases\InicializarFicheros.java</td>
+<td>4</td>
+<td>32</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>17</td>
+<td>32</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>4</td>
+<td>32</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>2</td>
+<td>32</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>5</td>
+<td>32</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java</td>
+<td>18</td>
+<td>32</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java</td>
+<td>5</td>
+<td>32</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java</td>
+<td>2</td>
+<td>32</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaClientes.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java</td>
+<td>12</td>
+<td>32</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>3</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>9</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>3</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>7</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>9</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>3</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>3</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\FicheroDeObjetos.java &lt;-&gt; src\main\java\clases\FicheroDeObjetos.java</td>
+<td>5</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\Producto.java &lt;-&gt; src\main\java\clases\Producto.java</td>
+<td>7</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>7</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>4</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>4</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>5</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java</td>
+<td>4</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>3</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>1</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>16</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarVentas.java</td>
+<td>4</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>6</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java</td>
+<td>4</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelProductos.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java</td>
+<td>4</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaAdministrador.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java</td>
+<td>4</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaAdministrador.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>6</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaLogin.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>3</td>
+<td>31</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>9</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>7</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\clases\AlmacenDatos.java &lt;-&gt; src\main\java\clases\AlmacenDatos.java</td>
+<td>9</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>3</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\BuscarProductos.java</td>
+<td>4</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java</td>
+<td>4</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java</td>
+<td>3</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\BuscarProductos.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>3</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>3</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\VentanaAdministrador.java &lt;-&gt; src\main\java\interfaz\VentanaClientes.java</td>
+<td>3</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>4</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java</td>
+<td>4</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java &lt;-&gt; src\main\java\interfaz\ProductosBuscados.java</td>
+<td>2</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\CarritoCompra.java &lt;-&gt; src\main\java\interfaz\CarritoCompra.java</td>
+<td>4</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java</td>
+<td>8</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java</td>
+<td>4</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ConsultarClientes.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>2</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java &lt;-&gt; src\main\java\interfaz\ConsultarProductos.java</td>
+<td>8</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java</td>
+<td>4</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ConsultarVentas.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>2</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\ModificarDatos.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java</td>
+<td>4</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\PanelClientes.java &lt;-&gt; src\main\java\interfaz\PanelProductos.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>6</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaLogin.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>2</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaLogin.java &lt;-&gt; src\main\java\interfaz\VentanaLogin.java</td>
+<td>2</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>src\main\java\interfaz\VentanaRegistro.java &lt;-&gt; src\main\java\interfaz\VentanaRegistro.java</td>
+<td>4</td>
+<td>30</td>
+<td>Ninguna</td>
+</tr>
+</tbody
+</table>
+<h2>Resultados Lizard</h2>
+<div class='referencia'><strong> Referencia:</strong> Lizard calcula métricas como MLCO, complejidad ciclomatica, tokens, numero de prarámetros y longitud. Para la interpretación de la complejidad ciclomatica se opta el umbral académico basado en McCabe/NIST</div>
+<div class='observacion'><strong> Observacion:</strong> LA complejidad ciclomatica debe interpretarse en contexto. En proyectos grandes pueden existit funciones con complejidad moderada o alta justificadas por logica de negocios, estructuras switch o match extensas o flujos dificiles de dividir. Aun así canto mayor sea el valor, mayor será la dificultad de prueba y mantenimiento</div>
+<table>
+<thead>
+<tr>
+<th>Elemento analizado</th>
+<th>NLOC</th>
+<th>CCN</th>
+<th>Tokens</th>
+<th>Parametros</th>
+<th>longitud</th>
+<th>Clasificacion CCN</th>
+<th>Observacion CCN</th>
+<th>Metricas fuera de rango</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Administrador::Administrador@11-14@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Administrador.java</td>
+<td>3</td>
+<td>1</td>
+<td>17</td>
+<td>2</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Administrador::comprobarAdmin@16-18@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Administrador.java</td>
+<td>3</td>
+<td>2</td>
+<td>28</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Administrador::toString@23-25@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Administrador.java</td>
+<td>3</td>
+<td>1</td>
+<td>12</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::setClientes@39-41@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>3</td>
+<td>1</td>
+<td>14</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>(anonymous)::compare@52-56@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>5</td>
+<td>1</td>
+<td>42</td>
+<td>2</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::getClientes@45-61@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>7</td>
+<td>1</td>
+<td>21</td>
+<td>0</td>
+<td>17</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::consultarCliente@66-69@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>4</td>
+<td>1</td>
+<td>19</td>
+<td>1</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::RegistrarCliente@74-89@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>14</td>
+<td>3</td>
+<td>85</td>
+<td>1</td>
+<td>16</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::bajaCliente@94-101@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>8</td>
+<td>2</td>
+<td>34</td>
+<td>1</td>
+<td>8</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::modificarCliente@106-127@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>20</td>
+<td>4</td>
+<td>149</td>
+<td>8</td>
+<td>22</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::cargarDatosClientes@131-140@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>9</td>
+<td>3</td>
+<td>80</td>
+<td>0</td>
+<td>10</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::guardarDatosClientes@144-154@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>9</td>
+<td>3</td>
+<td>80</td>
+<td>0</td>
+<td>11</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::setProductos@180-182@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>3</td>
+<td>1</td>
+<td>18</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>(anonymous)::compare@193-197@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>5</td>
+<td>1</td>
+<td>42</td>
+<td>2</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::getProductos@186-200@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>7</td>
+<td>1</td>
+<td>21</td>
+<td>0</td>
+<td>15</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>(anonymous)::compare@208-212@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>5</td>
+<td>1</td>
+<td>42</td>
+<td>2</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::getProductosVendidos@202-215@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>7</td>
+<td>1</td>
+<td>21</td>
+<td>0</td>
+<td>14</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::setProductosCarrito@217-219@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>3</td>
+<td>1</td>
+<td>18</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>(anonymous)::compare@227-231@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>5</td>
+<td>1</td>
+<td>42</td>
+<td>2</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::getProductosCarrito@221-234@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>7</td>
+<td>1</td>
+<td>21</td>
+<td>0</td>
+<td>14</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::consultarProducto@239-242@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>4</td>
+<td>1</td>
+<td>19</td>
+<td>1</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::anadirProducto@247-262@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>13</td>
+<td>3</td>
+<td>76</td>
+<td>1</td>
+<td>16</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::eliminarProducto@267-274@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>8</td>
+<td>2</td>
+<td>34</td>
+<td>1</td>
+<td>8</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::modificarProductos@279-289@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>11</td>
+<td>3</td>
+<td>81</td>
+<td>7</td>
+<td>11</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::cargarDatosProductos@294-306@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>9</td>
+<td>3</td>
+<td>80</td>
+<td>0</td>
+<td>13</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::cargarDatosProductosVendidos@308-320@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>9</td>
+<td>3</td>
+<td>80</td>
+<td>0</td>
+<td>13</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::guardarDatosProductos@324-334@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>7</td>
+<td>2</td>
+<td>46</td>
+<td>0</td>
+<td>11</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::guardarDatosProductosVendidos@335-346@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>7</td>
+<td>2</td>
+<td>46</td>
+<td>0</td>
+<td>12</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::buscarProductosCategoria@351-369@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>14</td>
+<td>4</td>
+<td>121</td>
+<td>1</td>
+<td>19</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::buscarProductosCategoria@372-390@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>13</td>
+<td>5</td>
+<td>125</td>
+<td>2</td>
+<td>19</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::comprar@393-418@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>26</td>
+<td>6</td>
+<td>222</td>
+<td>1</td>
+<td>26</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::agregarProductosVendidos@420-442@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>17</td>
+<td>4</td>
+<td>149</td>
+<td>1</td>
+<td>23</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::aniadirOpinion@444-448@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>5</td>
+<td>1</td>
+<td>54</td>
+<td>2</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::mostrarOpinion@450-458@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>9</td>
+<td>2</td>
+<td>76</td>
+<td>1</td>
+<td>9</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>AlmacenDatos::generarFactura@464-556@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\AlmacenDatos.java</td>
+<td>60</td>
+<td>4</td>
+<td>549</td>
+<td>2</td>
+<td>93</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Cliente::Cliente@20-26@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Cliente.java</td>
+<td>7</td>
+<td>1</td>
+<td>53</td>
+<td>6</td>
+<td>7</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Cliente::Cliente@30-32@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Cliente.java</td>
+<td>3</td>
+<td>1</td>
+<td>9</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Cliente::Cliente@35-38@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Cliente.java</td>
+<td>3</td>
+<td>1</td>
+<td>17</td>
+<td>2</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Cliente::getTelefono@42-44@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Cliente.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Cliente::setTelefono@46-48@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Cliente.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Cliente::getTarjetaCredito@50-52@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Cliente.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Cliente::setTarjetaCredito@54-56@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Cliente.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Cliente::getDireccion@58-60@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Cliente.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Cliente::setDireccion@62-64@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Cliente.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Cliente::getNombre@66-68@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Cliente.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Cliente::setNombre@70-73@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Cliente.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Cliente::toString@77-79@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Cliente.java</td>
+<td>3</td>
+<td>1</td>
+<td>40</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Cliente::compareTo@81-83@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Cliente.java</td>
+<td>3</td>
+<td>1</td>
+<td>21</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ClienteEmpresa::ClienteEmpresa@23-27@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\ClienteEmpresa.java</td>
+<td>5</td>
+<td>1</td>
+<td>55</td>
+<td>8</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ClienteEmpresa::ClienteEmpresa@30-32@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\ClienteEmpresa.java</td>
+<td>3</td>
+<td>1</td>
+<td>9</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ClienteEmpresa::getWeb@42-44@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\ClienteEmpresa.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ClienteEmpresa::setWeb@46-48@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\ClienteEmpresa.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ClienteEmpresa::getCif@51-53@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\ClienteEmpresa.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ClienteEmpresa::setCif@55-57@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\ClienteEmpresa.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ClienteEmpresa::compareTo@61-63@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\ClienteEmpresa.java</td>
+<td>3</td>
+<td>1</td>
+<td>21</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ClienteEmpresa::equals@66-78@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\ClienteEmpresa.java</td>
+<td>13</td>
+<td>5</td>
+<td>82</td>
+<td>1</td>
+<td>13</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ClienteEmpresa::hashCode@81-85@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\ClienteEmpresa.java</td>
+<td>5</td>
+<td>2</td>
+<td>37</td>
+<td>0</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ClienteEmpresa::toString@88-90@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\ClienteEmpresa.java</td>
+<td>3</td>
+<td>1</td>
+<td>28</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ClienteParticular::ClienteParticular@24-27@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\ClienteParticular.java</td>
+<td>4</td>
+<td>1</td>
+<td>46</td>
+<td>7</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ClienteParticular::ClienteParticular@30-32@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\ClienteParticular.java</td>
+<td>3</td>
+<td>1</td>
+<td>9</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ClienteParticular::getDni@42-44@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\ClienteParticular.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ClienteParticular::setDni@46-48@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\ClienteParticular.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ClienteParticular::compareTo@52-54@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\ClienteParticular.java</td>
+<td>3</td>
+<td>1</td>
+<td>21</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ClienteParticular::equals@57-69@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\ClienteParticular.java</td>
+<td>13</td>
+<td>5</td>
+<td>82</td>
+<td>1</td>
+<td>13</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ClienteParticular::hashCode@72-76@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\ClienteParticular.java</td>
+<td>5</td>
+<td>2</td>
+<td>37</td>
+<td>0</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ClienteParticular::toString@79-81@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\ClienteParticular.java</td>
+<td>3</td>
+<td>1</td>
+<td>22</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Direccion::Direccion@19-24@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Direccion.java</td>
+<td>6</td>
+<td>1</td>
+<td>40</td>
+<td>4</td>
+<td>6</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Direccion::getCiudad@30-32@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Direccion.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Direccion::setCiudad@34-36@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Direccion.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Direccion::getCodigoPostal@39-41@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Direccion.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Direccion::setCodigoPostal@43-45@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Direccion.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Direccion::getNumero@48-50@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Direccion.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Direccion::setNumero@52-54@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Direccion.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Direccion::getCalle@57-59@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Direccion.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Direccion::setCalle@61-63@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Direccion.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Direccion::toString@66-68@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Direccion.java</td>
+<td>3</td>
+<td>1</td>
+<td>32</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>FicheroDeObjetos::FicheroDeObjetos@25-27@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\FicheroDeObjetos.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>FicheroDeObjetos::getNombre@29-31@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\FicheroDeObjetos.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>FicheroDeObjetos::setNombre@33-35@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\FicheroDeObjetos.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>FicheroDeObjetos::devuelveArrayListProductos@37-56@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\FicheroDeObjetos.java</td>
+<td>16</td>
+<td>3</td>
+<td>105</td>
+<td>0</td>
+<td>20</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>FicheroDeObjetos::creaFicheroProductos@58-67@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\FicheroDeObjetos.java</td>
+<td>9</td>
+<td>2</td>
+<td>81</td>
+<td>1</td>
+<td>10</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>FicheroDeObjetos::devuelveArrayListClientes@70-88@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\FicheroDeObjetos.java</td>
+<td>16</td>
+<td>3</td>
+<td>105</td>
+<td>0</td>
+<td>19</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>FicheroDeObjetos::creaFicheroClientes@90-99@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\FicheroDeObjetos.java</td>
+<td>9</td>
+<td>2</td>
+<td>81</td>
+<td>1</td>
+<td>10</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>FicheroDeObjetos::toString@103-105@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\FicheroDeObjetos.java</td>
+<td>3</td>
+<td>1</td>
+<td>14</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>InicializarFicheros::main@29-155@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\InicializarFicheros.java</td>
+<td>63</td>
+<td>3</td>
+<td>725</td>
+<td>1</td>
+<td>127</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>OpinionCliente::OpinionCliente@19-23@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\OpinionCliente.java</td>
+<td>5</td>
+<td>1</td>
+<td>32</td>
+<td>2</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>OpinionCliente::getFecha@28-30@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\OpinionCliente.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>OpinionCliente::getComentario@33-35@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\OpinionCliente.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>OpinionCliente::getCalificacion@38-40@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\OpinionCliente.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>OpinionCliente::toString@43-45@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\OpinionCliente.java</td>
+<td>3</td>
+<td>1</td>
+<td>28</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::Producto@39-47@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>8</td>
+<td>1</td>
+<td>59</td>
+<td>5</td>
+<td>9</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::Producto@51-52@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>2</td>
+<td>1</td>
+<td>5</td>
+<td>0</td>
+<td>2</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::Producto@53-62@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>9</td>
+<td>1</td>
+<td>68</td>
+<td>6</td>
+<td>10</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::Producto@66-75@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>9</td>
+<td>1</td>
+<td>71</td>
+<td>6</td>
+<td>10</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::Producto@77-87@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>10</td>
+<td>1</td>
+<td>70</td>
+<td>6</td>
+<td>11</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::Producto@88-97@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>9</td>
+<td>1</td>
+<td>70</td>
+<td>7</td>
+<td>10</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::getOpinion@106-108@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::setOpinion@110-112@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::getFechaEntrada@114-116@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::setFechaEntrada@118-120@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::getStock@122-124@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::setStock@126-128@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::getFotografia@131-133@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::setFotografia@135-137@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::getPrecio@140-142@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::setPrecio@144-146@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::getCategoria@151-153@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::setCategoria@155-157@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::getCaracteristicas@159-161@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::setCaracteristicas@163-165@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::getTitulo@168-170@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::setTitulo@172-174@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::hashCode@178-181@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>4</td>
+<td>1</td>
+<td>13</td>
+<td>0</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::equals@184-196@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>13</td>
+<td>4</td>
+<td>69</td>
+<td>1</td>
+<td>13</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::promedioCalificacion@198-206@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>8</td>
+<td>2</td>
+<td>61</td>
+<td>0</td>
+<td>9</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::toString@209-211@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>3</td>
+<td>1</td>
+<td>50</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::compareTo@216-224@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>8</td>
+<td>3</td>
+<td>42</td>
+<td>1</td>
+<td>9</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Producto::getOpiniones@228-230@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Producto.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>TarjetaCredito::TarjetaCredito@20-24@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\TarjetaCredito.java</td>
+<td>5</td>
+<td>1</td>
+<td>31</td>
+<td>3</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>TarjetaCredito::getFechaCaducidad@29-31@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\TarjetaCredito.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>TarjetaCredito::setFechaCaducidad@33-35@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\TarjetaCredito.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>TarjetaCredito::getNumTarj@38-40@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\TarjetaCredito.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>TarjetaCredito::setNumTarj@42-44@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\TarjetaCredito.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>TarjetaCredito::getTitular@47-49@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\TarjetaCredito.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>TarjetaCredito::setTitular@51-53@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\TarjetaCredito.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>TarjetaCredito::comprobarTarjeta@57-61@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\TarjetaCredito.java</td>
+<td>5</td>
+<td>2</td>
+<td>33</td>
+<td>0</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>TarjetaCredito::toString@64-66@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\TarjetaCredito.java</td>
+<td>3</td>
+<td>1</td>
+<td>32</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Usuarios::Usuarios@23-26@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Usuarios.java</td>
+<td>4</td>
+<td>1</td>
+<td>22</td>
+<td>2</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Usuarios::Usuarios@28-29@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Usuarios.java</td>
+<td>2</td>
+<td>1</td>
+<td>5</td>
+<td>0</td>
+<td>2</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Usuarios::getClave@35-37@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Usuarios.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Usuarios::setClave@39-41@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Usuarios.java</td>
+<td>3</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Usuarios::getCorreo@43-45@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Usuarios.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Usuarios::equals@55-69@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Usuarios.java</td>
+<td>13</td>
+<td>5</td>
+<td>74</td>
+<td>1</td>
+<td>15</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>Usuarios::toString@72-74@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\clases\Usuarios.java</td>
+<td>3</td>
+<td>1</td>
+<td>28</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>BuscarProductos::BuscarProductos@31-40@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\BuscarProductos.java</td>
+<td>7</td>
+<td>1</td>
+<td>40</td>
+<td>1</td>
+<td>10</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>BuscarProductos::BuscarProductos@42-44@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\BuscarProductos.java</td>
+<td>3</td>
+<td>1</td>
+<td>9</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>BuscarProductos::BuscarProductos@47-60@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\BuscarProductos.java</td>
+<td>9</td>
+<td>1</td>
+<td>58</td>
+<td>2</td>
+<td>14</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>BuscarProductos::initComponents@73-243@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\BuscarProductos.java</td>
+<td>155</td>
+<td>1</td>
+<td>1909</td>
+<td>0</td>
+<td>171</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>BuscarProductos::jComboBox_categoriaActionPerformed@245-247@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\BuscarProductos.java</td>
+<td>2</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>BuscarProductos::jComboBox_categoriaComponentShown@249-252@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\BuscarProductos.java</td>
+<td>2</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>BuscarProductos::jButton_buscarActionPerformed@257-324@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\BuscarProductos.java</td>
+<td>57</td>
+<td>14</td>
+<td>520</td>
+<td>1</td>
+<td>68</td>
+<td>Moderada</td>
+<td>Complejidad moderada; conviene revisar si puede simplificarse.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>BuscarProductos::jButtonVolverActionPerformed@328-333@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\BuscarProductos.java</td>
+<td>4</td>
+<td>1</td>
+<td>31</td>
+<td>1</td>
+<td>6</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>BuscarProductos::formWindowClosed@335-339@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\BuscarProductos.java</td>
+<td>4</td>
+<td>1</td>
+<td>31</td>
+<td>1</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>BuscarProductos::getProductosCategoria@341-343@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\BuscarProductos.java</td>
+<td>3</td>
+<td>1</td>
+<td>8</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>CarritoCompra::setEtiVar1@30-32@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\CarritoCompra.java</td>
+<td>3</td>
+<td>1</td>
+<td>14</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>CarritoCompra::setEtiVar2@34-36@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\CarritoCompra.java</td>
+<td>3</td>
+<td>1</td>
+<td>14</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>CarritoCompra::CarritoCompra@41-47@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\CarritoCompra.java</td>
+<td>5</td>
+<td>1</td>
+<td>29</td>
+<td>1</td>
+<td>7</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>CarritoCompra::CarritoCompra@49-62@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\CarritoCompra.java</td>
+<td>9</td>
+<td>1</td>
+<td>61</td>
+<td>2</td>
+<td>14</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>CarritoCompra::CarritoCompra@64-81@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\CarritoCompra.java</td>
+<td>10</td>
+<td>1</td>
+<td>73</td>
+<td>3</td>
+<td>18</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>CarritoCompra::CarritoCompra@83-85@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\CarritoCompra.java</td>
+<td>3</td>
+<td>1</td>
+<td>9</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>CarritoCompra::mostrarProductos@91-118@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\CarritoCompra.java</td>
+<td>25</td>
+<td>5</td>
+<td>189</td>
+<td>1</td>
+<td>28</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>CarritoCompra::initComponents@128-405@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\CarritoCompra.java</td>
+<td>250</td>
+<td>1</td>
+<td>3062</td>
+<td>0</td>
+<td>278</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>CarritoCompra::jTextField_categoriaActionPerformed@407-409@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\CarritoCompra.java</td>
+<td>2</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>CarritoCompra::jButton_eliminarProductoActionPerformed@414-437@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\CarritoCompra.java</td>
+<td>17</td>
+<td>5</td>
+<td>183</td>
+<td>1</td>
+<td>24</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>CarritoCompra::jButtonComprarActionPerformed@441-462@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\CarritoCompra.java</td>
+<td>16</td>
+<td>2</td>
+<td>135</td>
+<td>1</td>
+<td>22</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>CarritoCompra::jButtonAnteriorActionPerformed@467-477@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\CarritoCompra.java</td>
+<td>8</td>
+<td>2</td>
+<td>58</td>
+<td>1</td>
+<td>11</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>CarritoCompra::jButtonSiguienteActionPerformed@481-490@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\CarritoCompra.java</td>
+<td>9</td>
+<td>2</td>
+<td>73</td>
+<td>1</td>
+<td>10</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>CarritoCompra::jButtonVolverActionPerformed@495-499@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\CarritoCompra.java</td>
+<td>4</td>
+<td>1</td>
+<td>31</td>
+<td>1</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>CarritoCompra::formWindowClosed@501-508@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\CarritoCompra.java</td>
+<td>4</td>
+<td>1</td>
+<td>31</td>
+<td>1</td>
+<td>8</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarClientes::ConsultarClientes@38-67@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarClientes.java</td>
+<td>16</td>
+<td>1</td>
+<td>101</td>
+<td>1</td>
+<td>30</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarClientes::consultarClientes@72-115@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarClientes.java</td>
+<td>29</td>
+<td>5</td>
+<td>202</td>
+<td>0</td>
+<td>44</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarClientes::muestraCliente@119-162@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarClientes.java</td>
+<td>30</td>
+<td>2</td>
+<td>304</td>
+<td>1</td>
+<td>44</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarClientes::initComponents@170-318@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarClientes.java</td>
+<td>134</td>
+<td>1</td>
+<td>1471</td>
+<td>0</td>
+<td>149</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarClientes::formWindowClosed@323-327@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarClientes.java</td>
+<td>4</td>
+<td>1</td>
+<td>29</td>
+<td>1</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarClientes::jButton_siguienteActionPerformed@331-341@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarClientes.java</td>
+<td>10</td>
+<td>3</td>
+<td>62</td>
+<td>1</td>
+<td>11</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarClientes::jButton_anteriorActionPerformed@345-357@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarClientes.java</td>
+<td>10</td>
+<td>3</td>
+<td>62</td>
+<td>1</td>
+<td>13</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarClientes::jButtonEliminarActionPerformed@361-390@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarClientes.java</td>
+<td>23</td>
+<td>6</td>
+<td>171</td>
+<td>1</td>
+<td>30</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarClientes::jButton1ActionPerformed@395-399@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarClientes.java</td>
+<td>4</td>
+<td>1</td>
+<td>29</td>
+<td>1</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarProductos::ConsultarProductos@45-67@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarProductos.java</td>
+<td>14</td>
+<td>1</td>
+<td>89</td>
+<td>1</td>
+<td>23</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarProductos::consultarProductos@71-116@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarProductos.java</td>
+<td>34</td>
+<td>5</td>
+<td>236</td>
+<td>0</td>
+<td>46</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarProductos::muestraProducto@119-153@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarProductos.java</td>
+<td>30</td>
+<td>5</td>
+<td>224</td>
+<td>1</td>
+<td>35</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarProductos::initComponents@162-347@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarProductos.java</td>
+<td>169</td>
+<td>1</td>
+<td>1793</td>
+<td>0</td>
+<td>186</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarProductos::formWindowClosed@351-357@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarProductos.java</td>
+<td>4</td>
+<td>1</td>
+<td>29</td>
+<td>1</td>
+<td>7</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarProductos::jButton_anadirProductoActionPerformed@361-390@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarProductos.java</td>
+<td>26</td>
+<td>5</td>
+<td>232</td>
+<td>1</td>
+<td>30</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarProductos::jButton_eliminarProductoActionPerformed@394-425@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarProductos.java</td>
+<td>23</td>
+<td>6</td>
+<td>171</td>
+<td>1</td>
+<td>32</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarProductos::jButton_modificarProductoActionPerformed@429-454@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarProductos.java</td>
+<td>18</td>
+<td>3</td>
+<td>167</td>
+<td>1</td>
+<td>26</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarProductos::jButton_borrarDatosActionPerformed@459-462@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarProductos.java</td>
+<td>3</td>
+<td>1</td>
+<td>19</td>
+<td>1</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarProductos::jButton_anteriorActionPerformed@467-479@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarProductos.java</td>
+<td>10</td>
+<td>3</td>
+<td>62</td>
+<td>1</td>
+<td>13</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarProductos::jButton_siguienteActionPerformed@483-492@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarProductos.java</td>
+<td>10</td>
+<td>3</td>
+<td>62</td>
+<td>1</td>
+<td>10</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarProductos::volverActionPerformed@496-500@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarProductos.java</td>
+<td>4</td>
+<td>1</td>
+<td>29</td>
+<td>1</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarVentas::ConsultarVentas@29-59@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarVentas.java</td>
+<td>14</td>
+<td>2</td>
+<td>104</td>
+<td>1</td>
+<td>31</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarVentas::initComponents@74-208@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarVentas.java</td>
+<td>120</td>
+<td>1</td>
+<td>1421</td>
+<td>0</td>
+<td>135</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarVentas::formWindowClosed@213-219@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarVentas.java</td>
+<td>4</td>
+<td>1</td>
+<td>29</td>
+<td>1</td>
+<td>7</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarVentas::jButton_volverActionPerformed@222-227@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarVentas.java</td>
+<td>4</td>
+<td>1</td>
+<td>29</td>
+<td>1</td>
+<td>6</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarVentas::jSpinner1AncestorMoved@229-232@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarVentas.java</td>
+<td>2</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ConsultarVentas::jSpinner1StateChanged@234-253@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ConsultarVentas.java</td>
+<td>13</td>
+<td>3</td>
+<td>131</td>
+<td>1</td>
+<td>20</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ModificarDatos::ModificarDatos@43-68@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ModificarDatos.java</td>
+<td>14</td>
+<td>1</td>
+<td>89</td>
+<td>1</td>
+<td>26</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ModificarDatos::ModificarDatos@70-97@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ModificarDatos.java</td>
+<td>15</td>
+<td>1</td>
+<td>98</td>
+<td>2</td>
+<td>28</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ModificarDatos::muestraCliente@108-140@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ModificarDatos.java</td>
+<td>26</td>
+<td>2</td>
+<td>272</td>
+<td>0</td>
+<td>33</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ModificarDatos::initComponents@149-273@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ModificarDatos.java</td>
+<td>112</td>
+<td>1</td>
+<td>1179</td>
+<td>0</td>
+<td>125</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ModificarDatos::jButtonBajaActionPerformed@278-289@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ModificarDatos.java</td>
+<td>5</td>
+<td>1</td>
+<td>44</td>
+<td>1</td>
+<td>12</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ModificarDatos::jButtonModifDatosActionPerformed@294-327@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ModificarDatos.java</td>
+<td>25</td>
+<td>3</td>
+<td>232</td>
+<td>1</td>
+<td>34</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ModificarDatos::jButton_volverActionPerformed@332-336@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ModificarDatos.java</td>
+<td>4</td>
+<td>1</td>
+<td>29</td>
+<td>1</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ModificarDatos::formWindowClosed@338-343@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ModificarDatos.java</td>
+<td>4</td>
+<td>1</td>
+<td>29</td>
+<td>1</td>
+<td>6</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::PanelClientes@20-22@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>9</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::getJFormatted_var1@27-29@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>12</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::setJFormatted_var1@31-33@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::getJTextField_nombre@35-37@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>12</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::setJTextField_nombre@39-41@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::getJTextField_correo@43-45@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>12</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::setJTextField_correo@47-49@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::getjPasswordField_clave@51-55@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>5</td>
+<td>1</td>
+<td>28</td>
+<td>0</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::setjPasswordField_clave@57-59@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::getJTextField_calle@61-63@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>12</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::setJTextField_calle@65-67@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::getJTextField_numero@69-71@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>17</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::setJTextField_numero@73-75@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>21</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::getJTextField_cp@77-79@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>17</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::setJTextField_cp@81-83@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>21</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::getJTextField_ciudad@100-102@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>12</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::setJTextField_ciudad@104-106@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::getJFormatted_tarjCredito@108-110@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>17</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::setJFormatted_tarjCredito@112-114@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::getJTextField_titular@116-118@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>12</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::setJTextField_titular@120-122@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::getJSpinner_fechaCad@124-129@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>6</td>
+<td>1</td>
+<td>54</td>
+<td>0</td>
+<td>6</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::setJSpinner_fechaCad@131-133@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::getJFormatted_telefono@135-137@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>17</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::setJFormatted_telefono@139-141@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::getJTextField_var2@143-145@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>12</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::setJTextField_var2@147-149@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::borrarDatos@155-173@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>18</td>
+<td>1</td>
+<td>118</td>
+<td>0</td>
+<td>19</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::activarVar1@179-181@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>14</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::activarVar2@183-185@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>14</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::desactivarVar1@189-191@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>14</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::desactivarVar2@193-195@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>14</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::desapareceVar2@200-204@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>4</td>
+<td>1</td>
+<td>23</td>
+<td>0</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::apareceVar2@207-211@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>4</td>
+<td>1</td>
+<td>23</td>
+<td>0</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::setJlabel_var1@216-218@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::setJlabel_var2@220-222@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelClientes::initComponents@233-440@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelClientes.java</td>
+<td>187</td>
+<td>2</td>
+<td>2809</td>
+<td>0</td>
+<td>208</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::PanelProductos@22-27@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>4</td>
+<td>1</td>
+<td>20</td>
+<td>0</td>
+<td>6</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::getjTextField_titulo@31-33@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>3</td>
+<td>1</td>
+<td>12</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::setjTextField_titulo@35-37@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::getJFormatted_precio@39-41@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>3</td>
+<td>1</td>
+<td>15</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::setjFormatted_precio@43-45@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::getjTextField_categoria@47-49@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>3</td>
+<td>1</td>
+<td>15</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::setjTextField_categoria@51-53@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::getjTextField_caracteristicas@56-58@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>3</td>
+<td>1</td>
+<td>12</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::setjTextField_caracteristicas@60-62@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::getJFormatted_stock@64-66@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>3</td>
+<td>1</td>
+<td>15</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::setJFormatted_stock@68-70@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::getjLabel_iconFoto@72-74@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>3</td>
+<td>1</td>
+<td>12</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::setjLabel_iconFoto@76-78@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::getjFormatted_fechaEntrada@80-85@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>6</td>
+<td>1</td>
+<td>54</td>
+<td>0</td>
+<td>6</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::setjFormatted_fechaEntrada@87-89@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>3</td>
+<td>1</td>
+<td>16</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::borrarDatos@93-101@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>7</td>
+<td>1</td>
+<td>30</td>
+<td>0</td>
+<td>9</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::initComponents@120-279@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>142</td>
+<td>1</td>
+<td>1857</td>
+<td>0</td>
+<td>160</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::jTextField_caracteristicasActionPerformed@281-283@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>2</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::jComboBox_categoriaComponentShown@285-287@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>2</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>PanelProductos::jComboBox_categoriaActionPerformed@289-291@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\PanelProductos.java</td>
+<td>2</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ProductosBuscados::ProductosBuscados@33-39@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ProductosBuscados.java</td>
+<td>5</td>
+<td>1</td>
+<td>29</td>
+<td>1</td>
+<td>7</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ProductosBuscados::ProductosBuscados@41-56@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ProductosBuscados.java</td>
+<td>9</td>
+<td>1</td>
+<td>61</td>
+<td>2</td>
+<td>16</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ProductosBuscados::ProductosBuscados@58-94@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ProductosBuscados.java</td>
+<td>31</td>
+<td>5</td>
+<td>197</td>
+<td>3</td>
+<td>37</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ProductosBuscados::ProductosBuscados@96-98@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ProductosBuscados.java</td>
+<td>3</td>
+<td>1</td>
+<td>9</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ProductosBuscados::mostrarProductos@104-116@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ProductosBuscados.java</td>
+<td>7</td>
+<td>1</td>
+<td>78</td>
+<td>1</td>
+<td>13</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ProductosBuscados::initComponents@126-444@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ProductosBuscados.java</td>
+<td>288</td>
+<td>1</td>
+<td>3580</td>
+<td>0</td>
+<td>319</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ProductosBuscados::jTextField_categoriaActionPerformed@446-448@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ProductosBuscados.java</td>
+<td>2</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ProductosBuscados::jButtonAnteriorActionPerformed@454-464@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ProductosBuscados.java</td>
+<td>8</td>
+<td>2</td>
+<td>58</td>
+<td>1</td>
+<td>11</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ProductosBuscados::jButtonSiguienteActionPerformed@468-477@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ProductosBuscados.java</td>
+<td>9</td>
+<td>2</td>
+<td>73</td>
+<td>1</td>
+<td>10</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ProductosBuscados::jButtonVolverActionPerformed@482-488@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ProductosBuscados.java</td>
+<td>6</td>
+<td>1</td>
+<td>44</td>
+<td>1</td>
+<td>7</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ProductosBuscados::formWindowClosed@490-499@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ProductosBuscados.java</td>
+<td>6</td>
+<td>1</td>
+<td>44</td>
+<td>1</td>
+<td>10</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ProductosBuscados::jButton_addCarritoActionPerformed@501-519@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ProductosBuscados.java</td>
+<td>17</td>
+<td>2</td>
+<td>171</td>
+<td>1</td>
+<td>19</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ProductosBuscados::jButtonVerCarritoActionPerformed@521-526@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ProductosBuscados.java</td>
+<td>4</td>
+<td>1</td>
+<td>33</td>
+<td>1</td>
+<td>6</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ProductosBuscados::jButtonAniadirComentarioActionPerformed@528-539@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ProductosBuscados.java</td>
+<td>10</td>
+<td>1</td>
+<td>97</td>
+<td>1</td>
+<td>12</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>ProductosBuscados::jSpinnerCantidadStateChanged@541-543@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\ProductosBuscados.java</td>
+<td>2</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaAdministrador::VentanaAdministrador@19-30@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaAdministrador.java</td>
+<td>8</td>
+<td>1</td>
+<td>47</td>
+<td>1</td>
+<td>12</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaAdministrador::initComponents@39-163@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaAdministrador.java</td>
+<td>111</td>
+<td>1</td>
+<td>1280</td>
+<td>0</td>
+<td>125</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaAdministrador::formWindowClosed@167-171@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaAdministrador.java</td>
+<td>4</td>
+<td>1</td>
+<td>29</td>
+<td>1</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaAdministrador::jButton_consultarClientesActionPerformed@175-178@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaAdministrador.java</td>
+<td>3</td>
+<td>1</td>
+<td>22</td>
+<td>1</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaAdministrador::jButton_consultarProductosActionPerformed@182-185@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaAdministrador.java</td>
+<td>3</td>
+<td>1</td>
+<td>22</td>
+<td>1</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaAdministrador::jButton_consultarVentasActionPerformed@189-192@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaAdministrador.java</td>
+<td>3</td>
+<td>1</td>
+<td>22</td>
+<td>1</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaClientes::VentanaClientes@20-36@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaClientes.java</td>
+<td>10</td>
+<td>1</td>
+<td>59</td>
+<td>1</td>
+<td>17</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaClientes::VentanaClientes@40-57@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaClientes.java</td>
+<td>12</td>
+<td>1</td>
+<td>77</td>
+<td>2</td>
+<td>18</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaClientes::initComponents@66-201@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaClientes.java</td>
+<td>121</td>
+<td>1</td>
+<td>1464</td>
+<td>0</td>
+<td>136</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaClientes::formWindowClosed@206-210@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaClientes.java</td>
+<td>4</td>
+<td>1</td>
+<td>29</td>
+<td>1</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaClientes::jButton_productosActionPerformed@215-219@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaClientes.java</td>
+<td>4</td>
+<td>1</td>
+<td>31</td>
+<td>1</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaClientes::jButton_modifDatosActionPerformed@223-227@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaClientes.java</td>
+<td>4</td>
+<td>1</td>
+<td>31</td>
+<td>1</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaLogin::VentanaLogin@25-45@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaLogin.java</td>
+<td>12</td>
+<td>1</td>
+<td>86</td>
+<td>0</td>
+<td>21</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaLogin::VentanaLogin@47-62@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaLogin.java</td>
+<td>10</td>
+<td>1</td>
+<td>79</td>
+<td>1</td>
+<td>16</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaLogin::VentanaLogin@65-82@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaLogin.java</td>
+<td>11</td>
+<td>1</td>
+<td>95</td>
+<td>2</td>
+<td>18</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaLogin::initComponents@94-325@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaLogin.java</td>
+<td>208</td>
+<td>1</td>
+<td>2504</td>
+<td>0</td>
+<td>232</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaLogin::aActionPerformed@328-337@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaLogin.java</td>
+<td>8</td>
+<td>2</td>
+<td>45</td>
+<td>1</td>
+<td>10</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaLogin::jButton_botonEntrarActionPerformed@340-392@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaLogin.java</td>
+<td>30</td>
+<td>8</td>
+<td>259</td>
+<td>1</td>
+<td>53</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaLogin::jButton_botonRegistroActionPerformed@397-400@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaLogin.java</td>
+<td>3</td>
+<td>1</td>
+<td>22</td>
+<td>1</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaLogin::jLabel_errorMouseClicked@405-408@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaLogin.java</td>
+<td>2</td>
+<td>1</td>
+<td>13</td>
+<td>1</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaLogin::formWindowClosed@413-420@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaLogin.java</td>
+<td>5</td>
+<td>1</td>
+<td>31</td>
+<td>1</td>
+<td>8</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>(anonymous)::run@458-460@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaLogin.java</td>
+<td>3</td>
+<td>1</td>
+<td>15</td>
+<td>0</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaLogin::main@425-462@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaLogin.java</td>
+<td>21</td>
+<td>7</td>
+<td>260</td>
+<td>0</td>
+<td>38</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaRegistro::VentanaRegistro@35-61@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaRegistro.java</td>
+<td>15</td>
+<td>1</td>
+<td>102</td>
+<td>1</td>
+<td>27</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaRegistro::initComponents@72-237@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaRegistro.java</td>
+<td>150</td>
+<td>1</td>
+<td>1720</td>
+<td>0</td>
+<td>166</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaRegistro::jComboBox_tipoClienteActionPerformed@242-259@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaRegistro.java</td>
+<td>11</td>
+<td>2</td>
+<td>71</td>
+<td>1</td>
+<td>18</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaRegistro::jButton_registroActionPerformed@264-320@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaRegistro.java</td>
+<td>45</td>
+<td>12</td>
+<td>476</td>
+<td>1</td>
+<td>57</td>
+<td>Moderada</td>
+<td>Complejidad moderada; conviene revisar si puede simplificarse.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaRegistro::jButtonBorrarActionPerformed@326-329@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaRegistro.java</td>
+<td>3</td>
+<td>1</td>
+<td>19</td>
+<td>1</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaRegistro::formWindowClosed@335-338@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaRegistro.java</td>
+<td>3</td>
+<td>1</td>
+<td>20</td>
+<td>1</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+<tr>
+<td>VentanaRegistro::jButton1ActionPerformed@340-344@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\JavaComp\src\main\java\interfaz\VentanaRegistro.java</td>
+<td>4</td>
+<td>1</td>
+<td>29</td>
+<td>1</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>Ninguna</td>
+</tr>
+</tbody
+</table>
+</body>
+</html>

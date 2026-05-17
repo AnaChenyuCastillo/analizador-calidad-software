@@ -99,7 +99,7 @@ def procesar_lizard(ruta_txt: Path, ruta_proyecto: Path, lenguaje) -> dict:
     lineas = contenido.splitlines()
 
     info_referencia = referencia_lizard()
-    rangos = info_referencia["rangos"]
+    rangos = info_referencia["referencias_metricas"]
 
     mostrar_ccn = lenguaje.lower() == "java"
 

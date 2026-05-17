@@ -15,10 +15,8 @@ from graphviz import Digraph
 from analizador_calidad_software.analisis_herramientas.cc_grafo.quitar_coment_java import quitar_coment_java1
 from analizador_calidad_software.analisis_herramientas.cc_grafo.detectar_class_y_metodos import detect_class_met
 
-def obtener_repo_root() -> Path:
-    return Path(__file__).resolve().parents[3]
+from analizador_calidad_software.cli import obtener_repo_root
 
-"""
 def seleccionar_archivo():
     try:
         # Abre el cuadro de diálogo para seleccionar un archivo
@@ -48,7 +46,7 @@ def seleccionar_archivo():
         return ruta_archivo
     except Exception as e:
         messagebox.showerror("Error", f"Ocurrió un error(1): {e}")
-"""
+
 
 
 
@@ -87,6 +85,7 @@ def formatear_codigo(file_path, work_file)  :
      
     except Exception as e:
         print(f"Ocurrió un error(2): {e}")
+
 # Función para contar espacios al inicio de una línea
 def contar_espacios_inicio(linea):
     contador = 0
@@ -122,6 +121,7 @@ def buscar_palabra(inicio,fin,espacios,palabras:list[str],direcc=1):
 
 # tratamiento case y default para identar procesos al mismo nivel de case y default sumanadoles 4
 def Tratar_case_default():
+    global T_procesos
     for x in range(1,len(T_procesos)):
         proceso_ini=T_procesos[x][1]
         espacios_ini=T_procesos[x][0]
@@ -480,223 +480,246 @@ def examinar_proceso():
             case 'Fin':
                 agregar_nodo(T_procesos[x][5],nodos,"Fin")
 
-                
-    
-# Crear ventana principal oculta
-root = tk.Tk()
-root.withdraw()  # Oculta la ventana principal
-
-# Llamar a la función
-if len(sys.argv)>1:
-    mi_archivo = sys.argv[1] 
-#else:    
-    #mi_archivo=seleccionar_archivo()
- 
-#Esta es la ruta del archivo
-directorio_sel=""
-
-if len(sys.argv) >= 1:
-    directorio_sel= Path(sys.argv[0])
-   
-    
-
-
-
-# Procesar fichero 
-# paso 1 formatear fichero y copiar en file.txt
-if __name__ == "__main__":
+# paso 1 formatear fichero y copiar en file.txt                
+def formatear_file():
     ruta = Path(mi_archivo) # archivo a tratar
-    
+        
     nombre_dirsel=""
     Nombre_arch = ruta.stem
     directorio_arc = ruta.parent
+        
     
-   
- 
+    
     if directorio_sel!="" and directorio_sel!=directorio_arc:
 
         nombre_dirsel=directorio_sel
 
         nombre_dirsel="("+str(nombre_dirsel).replace("/", "_")+")"
-       
+        
     repo_root = obtener_repo_root()
-   
-    Directoriow=repo_root / "pruebas_herramientas" / "resultados"  # directorio trabajo
+    
+    Directoriow=repo_root / "src"/ "analizador_calidad_software" / "resultados"  # directorio trabajo
     if not os.path.exists(Directoriow):  
             os.makedirs(Directoriow)  
             print(f"Directorio creado: {Directoriow}")
-    
+        
 
     work_file = Directoriow / f"{Nombre_arch}dcc.txt"
     grafo_file = Directoriow / f"{Nombre_arch}dcc"
 
     formatear_codigo(ruta, work_file)
+    return(work_file,grafo_file,Directoriow)
 
 #paso 2 leer fichero e identificar palabras clave y crear tabla procesos
-with open(work_file, 'r', encoding='utf-8') as archivo:
+def palabras_crear_procesos(work_file):
+    with open(work_file, 'r', encoding='utf-8') as archivo:
+        
+        Nivel_ident=1
+        tipo="intermedio"
+        nodo=1
+        sw_newnode=1
+        llaves_ant=0
     
-    Nivel_ident=1
-    tipo="intermedio"
-    nodo=1
-    sw_newnode=1
-    llaves_ant=0
-   
+        num_grafo=0
+        
+    
+
+        #
+        numero_metodo=0
+        espacios_ant=0
+        
+        for numero_linea, linea in enumerate(archivo, start=1): 
+            espacios = contar_espacios_inicio(linea)
+            
+            tipo="intermedio"
+            if espacios != espacios_ant:
+                sw_newnode=1
+            cadena = linea
+            palabras = cadena.split()
+            if not palabras :
+                continue
+            
+            if  palabras[0][0] in ("#","{","}") :
+                continue
+                # print(palabras[0]) 
+            if  palabras[0] != "metodo" and numero_metodo==0 :
+                continue
+                # salta hasta el primer metodo     
+                    
+            etiqueta=""    
+
+            if palabras[0] in ("metodo","for","while","do","if","else","try","catch","finally","switch","case","default:"):
+                tipo=palabras[0]
+                tipo_ant=tipo
+                nodo_ant=nodo
+                sw_newnode=1
+                
+                if palabras[0] =="metodo":
+                    numero_metodo=numero_metodo+1
+                    etiqueta=palabras[1]
+                else:
+                    etiqueta="" 
+                    
+                if palabras[0]=="else" and len(palabras)>1 and palabras[1]=="if":
+                    tipo="else if"
+        
+            
+            
+            if sw_newnode == 1: 
+                T_procesos.append([espacios,tipo,nodo,0,etiqueta,numero_metodo])
+                sw_newnode=0
+                nodo=nodo+1
+            espacios_ant=espacios
+
+# generar tabla de nodos Tnodos y aristas Taristas y generar grafos            
+def generar_nodos_aristas():
+    global T_nodos,T_aristas,T_procesos
+    for n_grafo in range(1,numero_grafos+1):
+        # Modificar inicio y fin para grafo !=0
+        
+
+        T_nodos=[[num_grafo,"NUM_nodo","Nomb_nodo","Atributos"]]
+        T_aristas=[[num_grafo,"Nodo_I","Nodo_F","Texto_A"]]
+        filtradas = [sublista for sublista in cop_T_procesos if sublista[5]== n_grafo]
+        T_procesos=copy.deepcopy(filtradas)
+        if n_grafo!=0:
+            T_procesos.insert(1,[0,'Inicio',1,0,'',n_grafo])
+        
+            x=len(T_procesos)
+            T_procesos.append([0,'Fin',x+1,0,'',n_grafo]) 
+        
+        
+        # Renumerar procesos
+
+        
+        filas = len(T_procesos)
+        for y in range(1,filas):
+            T_procesos[y][2]=y
+    
+        
+        nodos=1
+        # examina el array proceso y genera los arrays nodos y aristas del grafo
+        examinar_proceso()
+
+            
+        #Tabla aristas y nodos tienen cabecera en 0 
+        calc_ciclo=(len(T_aristas) -1) - (len(T_nodos) -1) +2
+        
+        Nombre_grafico=""
+        #nproc=T_procesos[n_grafo][5]
+        ruta = Path(mi_archivo) # archivo a tratar
+        mruta=ruta.as_posix()
+        if n_grafo != 0:
+            mruta=mruta +  " metodo: " + T_procesos[0][4]
+
+        Texto_Label= str(f"{mruta}+\n Calculo complejidad ciclomatica nº aristas: +{str(len(T_aristas)-1)}+ - nº nodos:+{str(len(T_nodos)-1)}+ +2=  + {str(calc_ciclo)}")
+        from graphviz import Digraph    
+
+        
+
+        dot = Digraph(name=str(ruta), comment='Flujo de procesar_datos', format='pdf')
+        dot.attr(label=Texto_Label, fontsize="18", labelloc="t")
+        # numero de grafos len(T_def) -1 + 1 del principal(0) = len(T_def)
+
+
+        for x in range(1,len(T_nodos)):
+            dot.node(T_nodos[x][1],T_nodos[x][2])
+
+        dot.node(T_nodos[len(T_nodos)-1][1],T_nodos[len(T_nodos)-1][2],fontname="Helvetica-Bold")   
+        for x in range(1,len(T_aristas)):
+            dot.edge(T_aristas[x][1],T_aristas[x][2],T_aristas[x][3])
+        
+        
+        grafo_file1 = Path(str(grafo_file) + str(n_grafo))
+        grafo_file1pdf = Path(str(grafo_file1) + ".pdf")
+        T_grafos_files.append(grafo_file1pdf)
+        print("grafo_file1:",str(grafo_file1))
+        
+    
+        print("grafo_file1_final:",grafo_file1)
+    
+        print("tipo grafo_file1:",type(grafo_file1))
+        output_path = dot.render(engine="dot",filename=str(grafo_file1), cleanup=bool)
+        dot.clear()
+
+# fusionar archivos Pdfs de grafos        
+def fusionar_pdfs():    
+    global grafo_file
+    marca_tiempo=datetime.today().strftime("%Y%m%d%H%M%S")
+    grafo_file=str(grafo_file) + marca_tiempo +".pdf"
+    fusionador = PdfWriter()
+    for pdf in T_grafos_files:
+        fusionador.append(pdf)
+
+    print(f'grafo_file:{grafo_file}')
+    fusionador.write(grafo_file)
+    fusionador.close()
+    # borrar archivos de trabajo pdfs y work_file.txt
+    for pdf in T_grafos_files:
+        os.remove(pdf)
+    os.remove(work_file)   
+
+def flujo_grafos_java(arch=""):
+    global mi_archivo,directorio_sel,work_file,grafo_file,repo_root,ruta,num_grafo,numero_grafos  
+    global T_procesos,cop_T_procesos,T_def,T_grafos_files,T_nodos,T_aristas
+    # Crear ventana principal oculta
+    root = tk.Tk()
+    root.withdraw()  # Oculta la ventana principal
+
+    # Llamar a la función
+    if arch != "":
+        mi_archivo = arch
+    else:    
+        mi_archivo=seleccionar_archivo()
+    
+    #Esta es la ruta del archivo
+    directorio_sel=""
+
+    if len(sys.argv) >= 1:
+        directorio_sel= Path(sys.argv[0])
+          
+
     num_grafo=0
     T_procesos=[["INDEN","TIPO","NODOI","NODO_sal","etiqueta",num_grafo]]
-   
 
-    #
-    numero_metodo=0
-    espacios_ant=0
+    # Procesar fichero 
+    # paso 1 formatear fichero y copiar en file.txt
+    work_file,grafo_file,Directoriow=formatear_file()
     
-    for numero_linea, linea in enumerate(archivo, start=1): 
-        espacios = contar_espacios_inicio(linea)
-        
-        tipo="intermedio"
-        if espacios != espacios_ant:
-            sw_newnode=1
-        cadena = linea
-        palabras = cadena.split()
-        if not palabras :
-             continue
-        
-        if  palabras[0][0] in ("#","{","}") :
-            continue
-             # print(palabras[0]) 
-        if  palabras[0] != "metodo" and numero_metodo==0 :
-            continue
-             # salta hasta el primer metodo     
-                
-        etiqueta=""    
-
-        if palabras[0] in ("metodo","for","while","do","if","else","try","catch","finally","switch","case","default:"):
-             tipo=palabras[0]
-             tipo_ant=tipo
-             nodo_ant=nodo
-             sw_newnode=1
-             
-             if palabras[0] =="metodo":
-                numero_metodo=numero_metodo+1
-                etiqueta=palabras[1]
-             else:
-                etiqueta="" 
-                
-             if palabras[0]=="else" and len(palabras)>1 and palabras[1]=="if":
-                tipo="else if"
+    #paso 2 leer fichero e identificar palabras clave y crear tabla procesos
+    palabras_crear_procesos(work_file)
+    # tratamiento case y default para identar procesos al mismo nivel de case y default sumanadoles 4
+    print("T_procesos",T_procesos)
+    Tratar_case_default()
        
-        
-        
-        if sw_newnode == 1: 
-             T_procesos.append([espacios,tipo,nodo,0,etiqueta,numero_metodo])
-             sw_newnode=0
-             nodo=nodo+1
-        espacios_ant=espacios
+    # Añadir procesos intermedios finales para if for while switch
+    procesos_inter()
 
 
 
-# tratamiento case y default para identar procesos al mismo nivel de case y default sumanadoles 4
-Tratar_case_default()
-
-                  
-             
-           
-# Añadir procesos intermedios finales para if for while switch
-procesos_inter()
+    # numero de grafos=numero de metodos
+    numero_grafos=max(fila[5] for fila in T_procesos)
 
 
 
-# numero de grafos=numero de metodos
-numero_grafos=max(fila[5] for fila in T_procesos)
+    # preparar tabla pdfs
+    T_grafos_files=[]
+    #realiza copia de T_proceso para segmentar grafos
+    cop_T_procesos=copy.deepcopy(T_procesos)
 
 
-
-# preparar tabla pdfs
-T_grafos_files=[]
-#realiza copia de T_proceso para segmentar grafos
-cop_T_procesos=copy.deepcopy(T_procesos)
-
-
-# generar tabla de nodos Tnodos y aristas Taristas
-
-for n_grafo in range(1,numero_grafos+1):
-    # Modificar inicio y fin para grafo !=0
+  
+    # generar tabla de nodos Tnodos y aristas Taristas y generar grafos
+    generar_nodos_aristas()
     
-
-    T_nodos=[[num_grafo,"NUM_nodo","Nomb_nodo","Atributos"]]
-    T_aristas=[[num_grafo,"Nodo_I","Nodo_F","Texto_A"]]
-    filtradas = [sublista for sublista in cop_T_procesos if sublista[5]== n_grafo]
-    T_procesos=copy.deepcopy(filtradas)
-    if n_grafo!=0:
-        T_procesos.insert(1,[0,'Inicio',1,0,'',n_grafo])
-    
-        x=len(T_procesos)
-        T_procesos.append([0,'Fin',x+1,0,'',n_grafo]) 
-    
-    
-    # Renumerar procesos
-
-       
-    filas = len(T_procesos)
-    for y in range(1,filas):
-        T_procesos[y][2]=y
- 
-    
-    nodos=1
-    # examina el array proceso y genera los arrays nodos y aristas del grafo
-    examinar_proceso()
-
-        
-    #Tabla aristas y nodos tienen cabecera en 0 
-    calc_ciclo=(len(T_aristas) -1) - (len(T_nodos) -1) +2
-    
-    Nombre_grafico=""
-    #nproc=T_procesos[n_grafo][5]
-    mruta=ruta.as_posix()
-    if n_grafo != 0:
-        mruta=mruta +  " metodo: " + T_procesos[0][4]
-
-    Texto_Label= str(f"{mruta}+\n Calculo complejidad ciclomatica nº aristas: +{str(len(T_aristas)-1)}+ - nº nodos:+{str(len(T_nodos)-1)}+ +2=  + {str(calc_ciclo)}")
-    from graphviz import Digraph    
-
-    
-
-    dot = Digraph(name=str(ruta), comment='Flujo de procesar_datos', format='pdf')
-    dot.attr(label=Texto_Label, fontsize="18", labelloc="t")
-    # numero de grafos len(T_def) -1 + 1 del principal(0) = len(T_def)
+    # fusionar archivos Pdfs de grafos
+    print(f"Fusionando archivos")
+    fusionar_pdfs()
 
 
-    for x in range(1,len(T_nodos)):
-        dot.node(T_nodos[x][1],T_nodos[x][2])
 
-    dot.node(T_nodos[len(T_nodos)-1][1],T_nodos[len(T_nodos)-1][2],fontname="Helvetica-Bold")   
-    for x in range(1,len(T_aristas)):
-        dot.edge(T_aristas[x][1],T_aristas[x][2],T_aristas[x][3])
-    
-    
-    grafo_file1 = Path(str(grafo_file) + str(n_grafo))
-    grafo_file1pdf = Path(str(grafo_file1) + ".pdf")
-    T_grafos_files.append(grafo_file1pdf)
-    print("grafo_file1:",str(grafo_file1))
-    
-   
-    print("grafo_file1_final:",grafo_file1)
-   
-    print("tipo grafo_file1:",type(grafo_file1))
-    output_path = dot.render(engine="dot",filename=str(grafo_file1), cleanup=bool)
-    dot.clear()
 
-print(f"Fusionando archivos")
+#              *********** Fin def  ************            
+if __name__ == "__main__":
+    flujo_grafos_java()        
 
-marca_tiempo=datetime.today().strftime("%Y%m%d%H%M%S")
-grafo_file=str(grafo_file) + marca_tiempo +".pdf"
-fusionador = PdfWriter()
-for pdf in T_grafos_files:
-    fusionador.append(pdf)
-
-print(f'grafo_file:{grafo_file}')
-fusionador.write(grafo_file)
-fusionador.close()
-# borrar archivos de trabajo pdfs y work_file.txt
-for pdf in T_grafos_files:
-    os.remove(pdf)
-os.remove(work_file)

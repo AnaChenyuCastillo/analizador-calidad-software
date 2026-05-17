@@ -47,13 +47,23 @@ def ejecutar_herramienta(argumentos: list[str], cwd=None):
 
     #El parámetro nombre corresponde con el nombre de la herramienta
     #El parámetro argumento corrresponde con la lista de argumentos para lanzar el ejecutable
-
-    resultado = subprocess.run(
-        argumentos,
-        capture_output=True,
-        text=True,
-        cwd=str(cwd) if cwd else None #Lo que hacemos es que si le pasamos un proyecto lo coge como referencia para la ejecución pero si no se lo pasamos siguimos tenienedo por defecto el proyecto en el que estamos trabajando
-    )
+    if cwd is None:
+        resultado = subprocess.run(
+            argumentos,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace"
+        )
+    else:
+        resultado = subprocess.run(
+            argumentos,
+            capture_output=True,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            cwd=str(cwd) if cwd else None #Lo que hacemos es que si le pasamos un proyecto lo coge como referencia para la ejecución pero si no se lo pasamos siguimos tenienedo por defecto el proyecto en el que estamos trabajando
+        )
 
     return resultado
 

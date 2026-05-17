@@ -1,0 +1,1448 @@
+RESULTADO DE LA PRUEBA DE - LIZARD
+
+Proyecto analizado: scripts
+Ruta del proyecto: C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts
+Herramienta: Pylant
+Lenguaje principal: Python
+
+Codigo de salida: 30
+
+STDOUT
+************* Module probar_detector
+pruebas_herramientas\scripts\probar_detector.py:39:0: C0304: Final newline missing (missing-final-newline)
+pruebas_herramientas\scripts\probar_detector.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+pruebas_herramientas\scripts\probar_detector.py:9:0: C0413: Import "from analizador_calidad_software.deteccion.detector_lenguaje import detectar_lenguaje_proyecto, obtener_ranking_lenguajes_proyecto" should be placed at the top of the module (wrong-import-position)
+pruebas_herramientas\scripts\probar_detector.py:14:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\probar_detector.py:15:4: W0612: Unused variable 'ruta_texto' (unused-variable)
+************* Module prueba_ckjm_ficheros
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:14:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:18:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:38:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:75:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:89:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:124:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:144:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:157:0: C0304: Final newline missing (missing-final-newline)
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:21:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:41:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:50:16: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:61:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:92:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:111:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:120:9: W1514: Using open without explicitly specifying an encoding (unspecified-encoding)
+pruebas_herramientas\scripts\prueba_ckjm_ficheros.py:130:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module prueba_cloc_detectar_lenguaje
+pruebas_herramientas\scripts\prueba_cloc_detectar_lenguaje.py:45:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_cloc_detectar_lenguaje.py:58:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_cloc_detectar_lenguaje.py:61:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_cloc_detectar_lenguaje.py:76:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_cloc_detectar_lenguaje.py:84:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_cloc_detectar_lenguaje.py:92:0: C0304: Final newline missing (missing-final-newline)
+pruebas_herramientas\scripts\prueba_cloc_detectar_lenguaje.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+pruebas_herramientas\scripts\prueba_cloc_detectar_lenguaje.py:11:0: C0413: Import "from analizador_calidad_software.cli import ejecutar_herramienta, obtener_ruta_herramienta" should be placed at the top of the module (wrong-import-position)
+pruebas_herramientas\scripts\prueba_cloc_detectar_lenguaje.py:16:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_cloc_detectar_lenguaje.py:23:4: R1705: Unnecessary "elif" after "return", remove the leading "el" from "elif" (no-else-return)
+pruebas_herramientas\scripts\prueba_cloc_detectar_lenguaje.py:30:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_cloc_detectar_lenguaje.py:43:11: E0606: Possibly using variable 'ruta' before assignment (possibly-used-before-assignment)
+pruebas_herramientas\scripts\prueba_cloc_detectar_lenguaje.py:48:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_cloc_detectar_lenguaje.py:66:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_cloc_detectar_lenguaje.py:77:16: E1120: No value for argument 'nombre_fichero' in function call (no-value-for-parameter)
+************* Module prueba_cpb
+pruebas_herramientas\scripts\prueba_cpb.py:14:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_cpb.py:18:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_cpb.py:31:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_cpb.py:119:0: C0304: Final newline missing (missing-final-newline)
+pruebas_herramientas\scripts\prueba_cpb.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+pruebas_herramientas\scripts\prueba_cpb.py:7:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_cpb.py:10:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_cpb.py:21:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_cpb.py:34:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_cpb.py:55:16: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
+pruebas_herramientas\scripts\prueba_cpb.py:63:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_cpb.py:90:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_cpb.py:103:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module prueba_lizard
+pruebas_herramientas\scripts\prueba_lizard.py:21:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_lizard.py:98:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_lizard.py:103:0: C0304: Final newline missing (missing-final-newline)
+pruebas_herramientas\scripts\prueba_lizard.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+pruebas_herramientas\scripts\prueba_lizard.py:8:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_lizard.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_lizard.py:24:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_lizard.py:35:16: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
+pruebas_herramientas\scripts\prueba_lizard.py:43:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_lizard.py:71:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_lizard.py:84:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module prueba_pylint
+pruebas_herramientas\scripts\prueba_pylint.py:21:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_pylint.py:98:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_pylint.py:103:0: C0304: Final newline missing (missing-final-newline)
+pruebas_herramientas\scripts\prueba_pylint.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+pruebas_herramientas\scripts\prueba_pylint.py:8:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_pylint.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_pylint.py:24:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_pylint.py:32:10: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
+pruebas_herramientas\scripts\prueba_pylint.py:35:15: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
+pruebas_herramientas\scripts\prueba_pylint.py:43:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_pylint.py:71:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_pylint.py:84:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module prueba_radon
+pruebas_herramientas\scripts\prueba_radon.py:21:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_radon.py:64:0: C0301: Line too long (120/100) (line-too-long)
+pruebas_herramientas\scripts\prueba_radon.py:69:62: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\prueba_radon.py:108:0: C0301: Line too long (118/100) (line-too-long)
+pruebas_herramientas\scripts\prueba_radon.py:116:0: C0304: Final newline missing (missing-final-newline)
+pruebas_herramientas\scripts\prueba_radon.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+pruebas_herramientas\scripts\prueba_radon.py:8:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_radon.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_radon.py:24:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_radon.py:36:15: W1510: 'subprocess.run' used without explicitly defining the value for 'check'. (subprocess-run-check)
+pruebas_herramientas\scripts\prueba_radon.py:44:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_radon.py:64:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_radon.py:86:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\prueba_radon.py:99:0: C0116: Missing function or method docstring (missing-function-docstring)
+************* Module cc_grafo.ciclomatico2
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:16:0: C0301: Line too long (111/100) (line-too-long)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:31:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:34:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:55:71: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:66:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:67:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:69:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:70:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:85:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:93:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:95:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:116:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:119:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:122:31: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:123:47: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:131:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:132:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:142:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:150:31: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:151:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:152:19: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:158:0: W0311: Bad indentation. Found 10 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:159:0: W0311: Bad indentation. Found 13 spaces, expected 16 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:160:0: W0311: Bad indentation. Found 13 spaces, expected 16 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:161:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:162:0: W0311: Bad indentation. Found 10 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:163:0: W0311: Bad indentation. Found 12 spaces, expected 16 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:164:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:175:21: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:186:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:187:18: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:193:0: W0311: Bad indentation. Found 10 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:194:0: W0311: Bad indentation. Found 13 spaces, expected 16 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:195:0: W0311: Bad indentation. Found 13 spaces, expected 16 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:196:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:197:0: W0311: Bad indentation. Found 10 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:198:0: W0311: Bad indentation. Found 12 spaces, expected 16 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:199:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:214:3: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:217:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:222:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:224:19: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:227:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:230:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:234:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:242:37: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:257:15: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:261:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:262:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:263:27: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:263:0: W0311: Bad indentation. Found 4 spaces, expected 8 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:268:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:278:48: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:286:73: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:288:24: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:289:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:296:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:297:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:298:55: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:300:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:302:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:309:48: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:316:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:323:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:329:52: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:331:34: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:332:0: W0311: Bad indentation. Found 19 spaces, expected 20 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:333:0: W0311: Bad indentation. Found 19 spaces, expected 20 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:334:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:335:0: W0311: Bad indentation. Found 19 spaces, expected 20 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:336:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:337:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:338:0: W0311: Bad indentation. Found 19 spaces, expected 20 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:343:25: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:354:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:363:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:369:21: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:370:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:372:0: W0311: Bad indentation. Found 23 spaces, expected 24 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:373:0: W0311: Bad indentation. Found 23 spaces, expected 24 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:375:0: W0311: Bad indentation. Found 23 spaces, expected 24 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:376:0: W0311: Bad indentation. Found 23 spaces, expected 24 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:380:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:383:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:385:29: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:386:29: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:389:51: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:390:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:391:27: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:395:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:401:28: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:402:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:404:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:412:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:413:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:414:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:421:72: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:423:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:424:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:425:81: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:427:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:428:55: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:437:70: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:440:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:467:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:484:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:486:29: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:487:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:491:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:499:28: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:500:5: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:502:30: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:509:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:512:18: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:526:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:527:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:533:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:534:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:538:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:541:39: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:542:36: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:542:0: W0311: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:543:0: W0311: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:544:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:553:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:559:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:562:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:565:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:566:12: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:567:59: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:575:0: W0311: Bad indentation. Found 13 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:576:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:579:33: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:580:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:581:19: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:582:0: C0301: Line too long (118/100) (line-too-long)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:583:0: W0311: Bad indentation. Found 13 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:584:0: W0311: Bad indentation. Found 13 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:585:0: W0311: Bad indentation. Found 13 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:586:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:587:0: W0311: Bad indentation. Found 13 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:589:0: W0311: Bad indentation. Found 13 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:590:27: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:591:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:592:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:593:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:594:27: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:595:0: W0311: Bad indentation. Found 13 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:596:0: W0311: Bad indentation. Found 13 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:597:0: W0311: Bad indentation. Found 13 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:604:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:606:43: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:607:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:609:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:610:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:611:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:612:61: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:621:51: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:625:32: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:629:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:633:97: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:634:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:653:52: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:656:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:664:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:666:67: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:667:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:671:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:672:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:674:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:679:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:680:47: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:682:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:688:9: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:690:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:692:0: C0301: Line too long (165/100) (line-too-long)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:693:32: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:695:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:705:93: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:708:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:709:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:714:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:715:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:716:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:718:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:18:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:22:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:49:11: W0718: Catching too general exception Exception (broad-exception-caught)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:22:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:55:40: W0621: Redefining name 'work_file' from outer scope (line 546) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:96:11: W0718: Catching too general exception Exception (broad-exception-caught)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:75:8: E1111: Assigning result of a function call, where the function has no return (assignment-from-no-return)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:75:8: W0612: Unused variable 'result' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:100:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:100:27: W0621: Redefining name 'linea' from outer scope (line 567) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:109:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:109:0: C0103: Function name "Insertar_proceso" doesn't conform to snake_case naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:109:0: R0913: Too many arguments (7/5) (too-many-arguments)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:109:0: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:109:61: W0621: Redefining name 'etiqueta' from outer scope (line 581) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:110:4: W0602: Using global for 'num_grafo' but no assignment is done (global-variable-not-assigned)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:109:73: W0613: Unused argument 'xnum_grafo' (unused-argument)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:118:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:118:23: W0621: Redefining name 'z' from outer scope (line 669) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:120:8: W0621: Redefining name 'x' from outer scope (line 605) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:126:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:126:17: W0621: Redefining name 'num_grafo' from outer scope (line 244) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:129:4: C0103: Variable name "Id_nodo" doesn't conform to snake_case naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:135:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:135:19: W0621: Redefining name 'num_grafo' from outer scope (line 244) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:136:4: C0103: Variable name "Id_nodo_i" doesn't conform to snake_case naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:137:4: C0103: Variable name "Id_nodo_f" doesn't conform to snake_case naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:141:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:141:18: W0621: Redefining name 'z' from outer scope (line 669) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:141:20: W0621: Redefining name 'espacios' from outer scope (line 568) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:143:4: W0612: Unused variable 'xfila' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:154:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:154:22: W0621: Redefining name 'z' from outer scope (line 669) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:154:24: W0621: Redefining name 'espacios' from outer scope (line 568) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:158:10: R1724: Unnecessary "else" after "continue", remove the "else" and de-indent the code inside it (no-else-continue)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:168:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:168:19: W0621: Redefining name 'z' from outer scope (line 669) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:168:25: W0621: Redefining name 'espacios' from outer scope (line 568) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:170:4: W0612: Unused variable 'xfila' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:178:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:178:21: W0621: Redefining name 'z' from outer scope (line 669) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:178:27: W0621: Redefining name 'espacios' from outer scope (line 568) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:180:4: W0612: Unused variable 'xfila' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:189:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:189:18: W0621: Redefining name 'z' from outer scope (line 669) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:189:20: W0621: Redefining name 'espacios' from outer scope (line 568) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:193:10: R1724: Unnecessary "else" after "continue", remove the "else" and de-indent the code inside it (no-else-continue)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:202:0: W0105: String statement has no effect (pointless-string-statement)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:215:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:226:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:226:25: W0621: Redefining name 'z' from outer scope (line 669) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:226:27: W0621: Redefining name 'espacios' from outer scope (line 568) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:237:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:238:4: W0621: Redefining name 'numdef' from outer scope (line 639) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:239:8: W0621: Redefining name 'z' from outer scope (line 669) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:241:8: W0621: Redefining name 'proceso_ini' from outer scope (line 618) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:242:8: W0621: Redefining name 'espacios_ini' from outer scope (line 614) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:247:12: W0621: Redefining name 'etiqueta' from outer scope (line 581) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:240:8: W0603: Using the global statement (global-statement)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:260:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:260:0: R0914: Too many local variables (43/15) (too-many-locals)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:261:2: W0621: Redefining name 'nodos' from outer scope (line 675) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:262:6: W0621: Redefining name 'x' from outer scope (line 605) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:322:20: W0621: Redefining name 'nodo_ant' from outer scope (line 584) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:418:16: W0621: Redefining name 'espacios' from outer scope (line 568) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:260:0: R0912: Too many branches (25/12) (too-many-branches)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:260:0: R0915: Too many statements (144/50) (too-many-statements)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:276:23: W0612: Unused variable 'esp_fin_if' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:281:16: W0612: Unused variable 'sw_else' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:287:16: W0612: Unused variable 'nodoelif_ant' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:322:20: W0612: Unused variable 'nodo_ant' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:332:19: W0612: Unused variable 'nodoelse' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:345:16: W0612: Unused variable 'nodo_finally' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:351:27: W0612: Unused variable 'esp_salida_try' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:379:16: W0612: Unused variable 'nodofinally' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:386:16: W0612: Unused variable 'esp_finally' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:394:16: W0612: Unused variable 'nodoexcept' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:453:16: W0612: Unused variable 'ultimo_match' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:518:4: W0105: String statement has no effect (pointless-string-statement)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:528:7: R1714: Consider merging these comparisons with 'in' by using 'directorio_sel not in ('', directorio_arc)'. Use a set instead if elements are hashable. (consider-using-in)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:554:4: C0103: Constant name "Nivel_ident" doesn't conform to UPPER_CASE naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:560:4: C0103: Constant name "num_grafo" doesn't conform to UPPER_CASE naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:561:4: C0103: Variable name "T_procesos" doesn't conform to snake_case naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:640:0: C0103: Constant name "T_def" doesn't conform to UPPER_CASE naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:647:0: C0103: Constant name "T_grafos_files" doesn't conform to UPPER_CASE naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:658:4: C0103: Variable name "T_nodos" doesn't conform to snake_case naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:659:4: C0103: Variable name "T_aristas" doesn't conform to snake_case naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:683:4: C0103: Variable name "Nombre_grafico" doesn't conform to snake_case naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:692:4: C0103: Variable name "Texto_Label" doesn't conform to snake_case naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:693:4: W0404: Reimport 'Digraph' (imported line 14) (reimported)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:710:27: E0601: Using variable 'grafo_file' before assignment (used-before-assignment)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:723:6: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:724:0: W0105: String statement has no effect (pointless-string-statement)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:731:0: C0103: Constant name "nombre_pdf_final" doesn't conform to UPPER_CASE naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:10:0: C0411: standard import "pathlib.Path" should be placed before third party import "pypdf.PdfWriter" (wrong-import-order)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:693:4: C0412: Imports from package graphviz are not grouped (ungrouped-imports)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:2:0: W0611: Unused import subprocess (unused-import)
+************* Module cc_grafo.ciclomatico2_prueba
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:16:0: C0301: Line too long (111/100) (line-too-long)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:30:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:33:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:54:71: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:65:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:66:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:68:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:69:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:84:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:92:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:94:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:115:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:118:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:121:31: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:122:47: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:130:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:131:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:138:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:140:56: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:142:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:148:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:153:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:154:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:156:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:168:37: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:183:15: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:187:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:188:0: W0311: Bad indentation. Found 2 spaces, expected 4 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:189:27: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:189:0: W0311: Bad indentation. Found 4 spaces, expected 8 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:194:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:204:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:207:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:209:48: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:212:73: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:214:24: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:215:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:221:72: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:225:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:228:48: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:235:79: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:238:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:245:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:247:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:250:52: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:252:34: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:253:0: W0311: Bad indentation. Found 19 spaces, expected 20 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:254:0: W0311: Bad indentation. Found 19 spaces, expected 20 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:255:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:256:0: W0311: Bad indentation. Found 19 spaces, expected 20 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:257:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:258:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:259:0: W0311: Bad indentation. Found 19 spaces, expected 20 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:264:25: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:272:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:276:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:281:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:286:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:292:21: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:293:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:295:0: W0311: Bad indentation. Found 23 spaces, expected 24 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:296:0: W0311: Bad indentation. Found 23 spaces, expected 24 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:298:0: W0311: Bad indentation. Found 23 spaces, expected 24 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:299:0: W0311: Bad indentation. Found 23 spaces, expected 24 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:303:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:306:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:308:29: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:309:29: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:312:51: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:313:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:314:27: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:318:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:324:28: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:325:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:327:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:335:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:336:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:337:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:344:72: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:346:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:347:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:348:81: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:350:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:351:55: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:360:70: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:363:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:390:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:407:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:409:29: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:410:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:423:28: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:424:5: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:426:30: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:433:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:436:18: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:450:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:451:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:457:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:458:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:462:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:465:39: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:466:36: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:466:0: W0311: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:467:0: W0311: Bad indentation. Found 12 spaces, expected 8 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:468:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:476:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:480:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:486:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:489:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:492:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:493:12: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:494:59: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:502:0: W0311: Bad indentation. Found 13 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:503:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:506:33: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:507:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:508:19: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:509:0: C0301: Line too long (118/100) (line-too-long)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:510:0: W0311: Bad indentation. Found 13 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:511:0: W0311: Bad indentation. Found 13 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:512:0: W0311: Bad indentation. Found 13 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:513:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:514:0: W0311: Bad indentation. Found 13 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:516:0: W0311: Bad indentation. Found 13 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:517:27: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:518:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:519:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:520:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:521:27: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:522:0: W0311: Bad indentation. Found 13 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:523:0: W0311: Bad indentation. Found 13 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:524:0: W0311: Bad indentation. Found 13 spaces, expected 12 (bad-indentation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:531:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:533:43: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:534:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:536:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:537:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:538:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:539:61: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:548:51: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:552:32: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:557:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:558:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:562:97: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:563:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:583:52: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:586:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:594:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:596:67: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:597:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:601:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:602:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:604:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:609:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:610:47: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:612:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:618:9: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:620:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:622:0: C0301: Line too long (165/100) (line-too-long)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:623:32: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:625:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:636:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:637:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:642:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:643:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:644:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:646:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:17:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:21:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:48:11: W0718: Catching too general exception Exception (broad-exception-caught)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:21:0: R1710: Either all return statements in a function should return an expression, or none of them should. (inconsistent-return-statements)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:54:40: W0621: Redefining name 'work_file' from outer scope (line 470) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:95:11: W0718: Catching too general exception Exception (broad-exception-caught)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:74:8: E1111: Assigning result of a function call, where the function has no return (assignment-from-no-return)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:74:8: W0612: Unused variable 'result' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:99:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:99:27: W0621: Redefining name 'linea' from outer scope (line 494) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:108:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:108:0: C0103: Function name "Insertar_proceso" doesn't conform to snake_case naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:108:0: R0913: Too many arguments (7/5) (too-many-arguments)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:108:0: R0917: Too many positional arguments (7/5) (too-many-positional-arguments)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:108:61: W0621: Redefining name 'etiqueta' from outer scope (line 508) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:109:4: W0602: Using global for 'num_grafo' but no assignment is done (global-variable-not-assigned)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:108:73: W0613: Unused argument 'xnum_grafo' (unused-argument)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:117:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:117:23: W0621: Redefining name 'z' from outer scope (line 599) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:119:8: W0621: Redefining name 'x' from outer scope (line 532) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:125:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:125:17: W0621: Redefining name 'num_grafo' from outer scope (line 170) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:128:4: C0103: Variable name "Id_nodo" doesn't conform to snake_case naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:134:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:134:19: W0621: Redefining name 'num_grafo' from outer scope (line 170) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:135:4: C0103: Variable name "Id_nodo_i" doesn't conform to snake_case naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:136:4: C0103: Variable name "Id_nodo_f" doesn't conform to snake_case naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:141:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:141:25: W0621: Redefining name 'z' from outer scope (line 599) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:141:27: W0621: Redefining name 'espacios' from outer scope (line 495) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:152:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:152:30: W0621: Redefining name 'espacios' from outer scope (line 495) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:152:39: W0621: Redefining name 'palabras' from outer scope (line 500) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:163:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:164:4: W0621: Redefining name 'numdef' from outer scope (line 569) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:165:8: W0621: Redefining name 'z' from outer scope (line 599) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:167:8: W0621: Redefining name 'proceso_ini' from outer scope (line 545) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:168:8: W0621: Redefining name 'espacios_ini' from outer scope (line 541) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:173:12: W0621: Redefining name 'etiqueta' from outer scope (line 508) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:166:8: W0603: Using the global statement (global-statement)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:186:0: C0116: Missing function or method docstring (missing-function-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:186:0: R0914: Too many local variables (42/15) (too-many-locals)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:187:2: W0621: Redefining name 'nodos' from outer scope (line 605) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:188:6: W0621: Redefining name 'x' from outer scope (line 532) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:244:20: W0621: Redefining name 'nodo_ant' from outer scope (line 511) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:341:16: W0621: Redefining name 'espacios' from outer scope (line 495) (redefined-outer-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:186:0: R0912: Too many branches (26/12) (too-many-branches)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:186:0: R0915: Too many statements (142/50) (too-many-statements)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:213:16: W0612: Unused variable 'nodoelif_ant' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:244:20: W0612: Unused variable 'nodo_ant' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:253:19: W0612: Unused variable 'nodoelse' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:266:16: W0612: Unused variable 'nodo_finally' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:302:16: W0612: Unused variable 'nodofinally' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:309:16: W0612: Unused variable 'esp_finally' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:317:16: W0612: Unused variable 'nodoexcept' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:376:16: W0612: Unused variable 'ultimo_match' (unused-variable)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:442:4: W0105: String statement has no effect (pointless-string-statement)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:452:7: R1714: Consider merging these comparisons with 'in' by using 'directorio_sel not in ('', directorio_arc)'. Use a set instead if elements are hashable. (consider-using-in)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:481:4: C0103: Constant name "Nivel_ident" doesn't conform to UPPER_CASE naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:487:4: C0103: Constant name "num_grafo" doesn't conform to UPPER_CASE naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:488:4: C0103: Variable name "T_procesos" doesn't conform to snake_case naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:570:0: C0103: Constant name "T_def" doesn't conform to UPPER_CASE naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:577:0: C0103: Constant name "T_grafos_files" doesn't conform to UPPER_CASE naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:588:4: C0103: Variable name "T_nodos" doesn't conform to snake_case naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:589:4: C0103: Variable name "T_aristas" doesn't conform to snake_case naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:613:4: C0103: Variable name "Nombre_grafico" doesn't conform to snake_case naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:622:4: C0103: Variable name "Texto_Label" doesn't conform to snake_case naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:623:4: W0404: Reimport 'Digraph' (imported line 14) (reimported)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:652:6: W1309: Using an f-string that does not have any interpolated variables (f-string-without-interpolation)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:653:0: W0105: String statement has no effect (pointless-string-statement)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:660:0: C0103: Constant name "nombre_pdf_final" doesn't conform to UPPER_CASE naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:10:0: C0411: standard import "pathlib.Path" should be placed before third party import "pypdf.PdfWriter" (wrong-import-order)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:623:4: C0412: Imports from package graphviz are not grouped (ungrouped-imports)
+pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:2:0: W0611: Unused import subprocess (unused-import)
+************* Module cc_grafo.ciclo_selc_carp
+pruebas_herramientas\scripts\cc_grafo\ciclo_selc_carp.py:51:39: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclo_selc_carp.py:60:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclo_selc_carp.py:63:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclo_selc_carp.py:66:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclo_selc_carp.py:70:49: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclo_selc_carp.py:75:34: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclo_selc_carp.py:82:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\ciclo_selc_carp.py:91:0: C0305: Trailing newlines (trailing-newlines)
+pruebas_herramientas\scripts\cc_grafo\ciclo_selc_carp.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+pruebas_herramientas\scripts\cc_grafo\ciclo_selc_carp.py:67:11: W0718: Catching too general exception Exception (broad-exception-caught)
+pruebas_herramientas\scripts\cc_grafo\ciclo_selc_carp.py:52:12: C0103: Constant name "extension_buscada" doesn't conform to UPPER_CASE naming style (invalid-name)
+pruebas_herramientas\scripts\cc_grafo\ciclo_selc_carp.py:77:24: E1121: Too many positional arguments for function call (too-many-function-args)
+************* Module cc_grafo.quitar_coment
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:12:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:15:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:21:0: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:30:39: C0303: Trailing whitespace (trailing-whitespace)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:45:11: W0718: Catching too general exception Exception (broad-exception-caught)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==cc_grafo.ciclomatico2:[364:551]
+==cc_grafo.ciclomatico2_prueba:[287:474]
+                if elsetry !=0 :
+                    T_procesos[fin_valid_tray][3]= elsetry
+                    T_procesos[fin_valid_tray][4]="exito"
+
+                else:
+
+                    if n_finally !=0  :
+                       T_procesos[fin_valid_tray][3]= n_finally
+                       T_procesos[fin_valid_tray][4]="exito"
+                    else:
+                       T_procesos[fin_valid_tray][3]= salida_try
+                       T_procesos[fin_valid_tray][4]="exito"
+
+            case 'finally:':
+                nodofinally=nodos
+
+                agregar_nodo(T_procesos[x][5],nodos,T_procesos[x][1])
+                agregar_arista(T_procesos[x][5],nodos,nodos+1,T_procesos[x][1])
+
+                nodos=nodos+1
+                fin_finally=0
+                esp_finally=0
+                fin_finally=buscar_salida_bloque(x+1,T_procesos[x+1][0])
+                T_procesos[fin_finally][3]= salida_try
+                T_procesos[fin_except][4]="fin try"
+
+            case 'except' :
+                num_except=num_except+1
+                text_nodo="Except "+str(num_except)
+                nodoexcept=nodos
+
+                agregar_nodo(T_procesos[x][5],nodos,text_nodo)
+                agregar_arista(T_procesos[x][5],nodos,nodos+1,T_procesos[x][1])
+                # arista de try a except
+                agregar_arista(T_procesos[x][5],nodotry,nodos,T_procesos[x][1])
+                nodos=nodos+1
+                fin_except=0
+
+                fin_except=buscar_salida_bloque(x+1,T_procesos[x][0])-1
+
+                if n_finally !=0 :
+                    T_procesos[fin_except][3]= n_finally
+                    T_procesos[fin_except][4]=""
+                else:
+                    T_procesos[fin_except][3]= salida_try
+                    T_procesos[fin_except][4]=""
+
+
+
+
+            case 'while':
+
+                nodowhile=T_procesos[x][2]
+                espacios= T_procesos[x][0]
+                salida_while=buscar_salida_bloque(x+1,espacios)
+                agregar_nodo(T_procesos[x][5],nodos,'while')
+                agregar_arista(T_procesos[x][5],nodos,nodos+1,"while 1")
+                nodos=nodos+1
+
+
+                agregar_arista(T_procesos[x][5],nodowhile,salida_while,"while 3")
+                #modificamos retorno fin while retorno
+
+                T_procesos[salida_while-1][3]=nodowhile
+                T_procesos[salida_while-1][4]="wh r"
+            case 'for':
+
+                nodofor=T_procesos[x][2]
+                salida_for=0
+                espacios= T_procesos[x][0]
+                salida_for=buscar_salida_bloque(x+1,espacios)
+                agregar_nodo(T_procesos[x][5],nodos,'for')
+                agregar_arista(T_procesos[x][5],nodos,nodos+1,"for 1")
+
+                nodos=nodos+1
+
+                agregar_arista(T_procesos[x][5],nodofor,T_procesos[salida_for][2],"for 2")
+
+                #modificamos salida de fin for retorno
+                T_procesos[salida_for-1][3]=nodofor
+                T_procesos[salida_for-1][4]="for r"
+
+            case 'match':
+                nodo_match=x
+                agregar_nodo(T_procesos[x][5],nodos,'match')
+                nodos=nodos+1
+                espacios_match=T_procesos[x][0]
+                salida_match=buscar_salida_bloque(x+1,espacios_match)
+                ultimo_match=salida_match-1
+                numcase=0
+
+            case 'case':
+                #T_case=[["linea_case"]]
+                numcase=numcase+1
+                nodo_case=x
+                espacios_case=T_procesos[x][0]
+                agregar_nodo(T_procesos[x][5],nodos,'case')
+                nodos=nodos+1
+                agregar_arista(T_procesos[x][5],nodo_match,nodo_case,'case'+str(numcase))
+                agregar_arista(T_procesos[x][5],nodo_case,nodo_case+1,'case'+str(numcase))
+                salida_case=buscar_salida_bloque(x+1,espacios_case)
+                ultimo_case=salida_case-1
+
+                #modificar salida de los cases
+                T_procesos[ultimo_case][3]=salida_match
+                T_procesos[ultimo_case][4]='fin case'+str(numcase)
+
+            case 'intermedio'|'insertado':
+                nodosigue=0
+                agregar_nodo(T_procesos[x][5],nodos,T_procesos[x][1])
+                if T_procesos[x][4]=="":
+                    texto_arista="inter"
+                else:
+                    texto_arista=T_procesos[x][4]
+
+                if T_procesos[x][3]==0:
+                    nodosigue=nodos+1
+                else:
+                    nodosigue=T_procesos[x][3]
+
+                agregar_arista(T_procesos[x][5],nodos,nodosigue,texto_arista)
+                nodos=nodos+1
+
+            case 'Fin':
+                agregar_nodo(T_procesos[x][5],nodos,"Fin")
+
+
+
+# Crear ventana principal oculta
+root = tk.Tk()
+root.withdraw()  # Oculta la ventana principal
+
+# Llamar a la función
+if len(sys.argv)>1:
+    mi_archivo = sys.argv[1]
+else:
+    mi_archivo=seleccionar_archivo()
+print(f'archivo={mi_archivo}')
+#Esta es la ruta del archivo
+directorio_sel=""
+print("sys.argv, len(sys.argv):",sys.argv,len(sys.argv))
+if len(sys.argv) >= 1:
+    directorio_sel= Path(sys.argv[0])
+    print(f"este es mi directorio {directorio_sel}")
+
+
+
+# Procesar fichero
+# paso 1 reemplazar tabuladores por espacios y copiar en file.txt
+if __name__ == "__main__":
+    ruta = Path(mi_archivo) # archivo a tratar
+    print("mi ruta esta cogida")
+
+    '''punto=ruta.find('.')
+    ultima_barra=ruta.rfind('/')
+    Nombre_arch=ruta[ultima_barra+1:punto]
+    directorio_arc=ruta[0:ultima_barra]'''
+    nombre_dirsel=""
+    Nombre_arch = ruta.stem
+    directorio_arc = ruta.parent
+    print(f'directorio_arc,directorio_sel:{directorio_arc},{directorio_sel}')
+
+
+    if directorio_sel!="" and directorio_sel!=directorio_arc:
+        print("Entro en el if")
+        print(f'nombre_dirsel_1:{directorio_sel}')
+        nombre_dirsel=directorio_sel
+        print(f'nombre_dirsel2:{nombre_dirsel}')
+
+
+        nombre_dirsel="("+str(nombre_dirsel).replace("/", "_")+")"
+        print(f'nombre_dirsel4:{nombre_dirsel}')
+    print(f'nombre_dirsel fin:{nombre_dirsel}')
+
+    repo_root = obtener_repo_root()
+    Directoriow=repo_root / "pruebas_herramientas" / "resultados"  # directorio trabajo
+    if not os.path.exists(Directoriow):
+            os.makedirs(Directoriow)
+            print(f"Directorio creado: {Directoriow}")
+
+
+    work_file = Directoriow / f"{Nombre_arch}dcc.txt"
+    grafo_file = Directoriow / f"{Nombre_arch}dcc"
+
+    replace_tabs_with_spaces(ruta, work_file,  spaces_per_tab=4)
+
+#paso 2 leer fichero e identificar palabras clave y crear tabla procesos (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==cc_grafo.ciclomatico2:[18:143]
+==cc_grafo.ciclomatico2_prueba:[17:143]
+    return Path(__file__).resolve().parents[3]
+
+
+def seleccionar_archivo():
+    try:
+        # Abre el cuadro de diálogo para seleccionar un archivo
+        ruta_archivo = filedialog.askopenfilename(
+            title="Seleccionar archivo",
+            filetypes=(
+                ("Archivos Python", "*.py"),
+                ("Todos los archivos", "*.*"),
+                ("Archivos de texto", "*.txt")
+
+            )
+        )
+
+
+        # Si el usuario cancela, ruta_archivo será una cadena vacía
+        if not ruta_archivo:
+            messagebox.showinfo("Información", "No se seleccionó ningún archivo.")
+            return
+
+        # Validar que el archivo existe
+        if not os.path.isfile(ruta_archivo):
+            messagebox.showerror("Error", "El archivo seleccionado no existe.")
+            return
+
+        # Mostrar la ruta seleccionada
+        messagebox.showinfo("Archivo seleccionado", f"Ruta: {ruta_archivo}")
+        return ruta_archivo
+    except Exception as e:
+        messagebox.showerror("Error", f"Ocurrió un error(1): {e}")
+
+
+
+
+def replace_tabs_with_spaces(file_path, work_file, spaces_per_tab=4)  :
+    """
+    Reemplaza todos los tabuladores en un archivo de texto por un número fijo de espacios
+    y elimina lineas en blanco y  comentarios
+
+    :param file_path: Ruta del archivo a modificar.
+    :param spaces_per_tab: Número de espacios que reemplazarán a cada tabulador.
+    """
+    if not os.path.isfile(file_path):
+        print(f"Error: El archivo '{file_path}' no existe.")
+        return
+
+
+    try:
+
+
+        # Crear cfichero de trabajo
+        shutil.copy(file_path, work_file)
+        print(f"Copia  en: {work_file}")
+         # llama a quitar comentarios
+        result = ejecutar_quitar_comentario(file_path, work_file)
+        print("Los comentarios estan eliminados")
+        # Leer y reemplazar
+        with open(work_file, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        # Usar expandtabs para convertir \t en espacios
+        updated_content = content.expandtabs(spaces_per_tab)
+        #elimina lineas en blanco
+        lineas_sin_blanco = [linea for linea in updated_content.splitlines() if linea.strip()]
+
+        # Unir de nuevo en un solo string
+        updated_content = "\n".join(lineas_sin_blanco)
+
+        #updated_content = [linea for linea in updated_content if linea.strip() != ""]
+        # Guardar cambios
+        with open(work_file, "w", encoding="utf-8") as f:
+            f.write(updated_content)
+
+        print(f"Reemplazo completado: tabuladores -> {spaces_per_tab} espacios.")
+
+    except Exception as e:
+        print(f"Ocurrió un error(2): {e}")
+
+# Función para contar espacios al inicio de una línea
+def contar_espacios_inicio(linea):
+    contador = 0
+    for char in linea:
+        if char == ' ':
+            contador += 1
+        else:
+            break
+    return contador
+
+def Insertar_proceso(ifila,iespacios,itipo,inodo,inodo_sal=0,etiqueta='',xnum_grafo=0):
+    global num_grafo
+    text_eti=etiqueta
+    xnum_grafo=num_grafo
+    T_procesos.insert(ifila,[iespacios,itipo,inodo,inodo_sal,text_eti,num_grafo])
+
+    renumerar_procesos(ifila+1)
+
+# renumera procesos al añadir a la tabla
+def renumerar_procesos(z=1):
+
+    for x in range(z,len(T_procesos)):
+        T_procesos[x][2]=T_procesos[x][2]+1
+        if T_procesos[x][3]!=0:
+            T_procesos[x][3]=T_procesos[x][3]+1
+
+# agrega nodo para el grafico
+def agregar_nodo(num_grafo,num_nodo,nombre_nodo):
+    if str(num_nodo)!=nombre_nodo:
+        nombre_nodo=str(num_nodo)+" "+nombre_nodo
+    Id_nodo="N"+str(num_grafo)+"-"+str(num_nodo)
+    T_nodos.append([num_grafo,Id_nodo,nombre_nodo])
+
+
+
+# agrega arista
+def agregar_arista(num_grafo,nodo_i,nodo_f,texto_a=""):
+    Id_nodo_i="N"+str(num_grafo)+"-"+str(nodo_i)
+    Id_nodo_f="N"+str(num_grafo)+"-"+str(nodo_f)
+    T_aristas.append([num_grafo,Id_nodo_i,Id_nodo_f,texto_a ])
+
+
+# busca la salida del bloque exceptuando palabras claves
+def buscar_salida_bloque(z,espacios,palabras_exc:list[str]=""):
+
+    xfila=z (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==cc_grafo.ciclomatico2:[551:627]
+==cc_grafo.ciclomatico2_prueba:[478:554]
+with open(work_file, 'r', encoding='utf-8') as archivo:
+
+    Nivel_ident=1
+    tipo="intermedio"
+    nodo=1
+    sw_newnode=1
+    espacios_ant=0
+
+    num_grafo=0
+    T_procesos=[["INDEN","TIPO","NODOI","NODO_sal","etiqueta",num_grafo]]
+
+
+    #
+
+    # Cuenta
+    for numero_linea, linea in enumerate(archivo, start=1):
+        espacios = contar_espacios_inicio(linea)
+        tipo="intermedio"
+        if espacios != espacios_ant:
+            sw_newnode=1
+        cadena = linea
+        palabras = cadena.split()
+        if not palabras :
+             continue
+
+        if  palabras[0][0] == "#" :
+            continue
+             # print(palabras[0])
+
+        etiqueta=""
+        if palabras[0] in ("try:","except","finally:","def","if","for","while","match","elif","else:","match","case"):
+             tipo=palabras[0]
+             nodo_ant=nodo
+             sw_newnode=1
+
+             if palabras[0]=="def":
+                etiqueta=palabras[1]
+             else:
+                etiqueta=""
+
+
+
+        if sw_newnode == 1:
+             T_procesos.append([espacios,tipo,nodo,0,etiqueta,0])
+             sw_newnode=0
+             nodo=nodo+1
+        espacios_ant=espacios
+
+
+
+# Modificar inicio y fin para grafo 0
+    T_procesos.insert(1,[0,'Inicio',1,0,'',0])
+
+    x=len(T_procesos)
+    T_procesos.append([0,'Fin',x+1,0,'',0])
+
+
+
+
+
+# Añadir procesos intermedios finales para if for while match
+
+espacios_ini=0
+salida=0
+
+for x in range(1,len(T_procesos)):
+    proceso_ini=T_procesos[x][1]
+    espacios_ini=T_procesos[x][0]
+    salida=0
+    if T_procesos[x][1] in ("for","while","match"):
+        salida=0
+        salida=buscar_salida_bloque(x+1,T_procesos[x][0])
+        espacios=T_procesos[salida][0]
+    elif T_procesos[x][1]=="if":
+        salida=0
+        espacios=0 (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==cc_grafo.ciclomatico2:[629:704]
+==cc_grafo.ciclomatico2_prueba:[558:633]
+    if salida!=0 and espacios<espacios_ini:
+        nombre_proc="insertado"
+        etiqueta_proc="Fin"+T_procesos[x][1]
+        Insertar_proceso(salida,espacios_ini,nombre_proc,T_procesos[salida][2],0,etiqueta_proc,0)
+
+
+#tratar def
+
+
+numdef=0
+T_def=[["nombre_def","fila_ini","fila_fin"]]
+
+numdef=buscar_def()
+numero_grafos=max(fila[5] for fila in T_procesos)
+print(f'max={numero_grafos}')
+print(f'n.def:{len(T_def)}')
+# preparar tabla pdfs
+T_grafos_files=[]
+#realiza copia de T_proceso para segmentar grafos
+cop_T_procesos=copy.deepcopy(T_procesos)
+
+# generar tabla de nodos Tnodos y aristas Taristas
+graphviz_bin = repo_root / "herramientas" / "graphviz" / "bin"
+os.environ["PATH"] += os.pathsep + str(graphviz_bin)
+for n_grafo in range(0,numero_grafos+1):
+    # Modificar inicio y fin para grafo !=0
+
+
+    T_nodos=[[num_grafo,"NUM_nodo","Nomb_nodo"]]
+    T_aristas=[[num_grafo,"Nodo_I","Nodo_F","Texto_A"]]
+    filtradas = [sublista for sublista in cop_T_procesos if sublista[5]== n_grafo]
+    T_procesos=copy.deepcopy(filtradas)
+    if n_grafo!=0:
+        T_procesos.insert(1,[0,'Inicio',1,0,'',n_grafo])
+
+        x=len(T_procesos)
+        T_procesos.append([0,'Fin',len(T_procesos)-1,0,'',n_grafo])
+
+    #Renumerar
+    for z in range(1,len(T_procesos)):
+        T_procesos[z][2]=z
+
+
+    filas = len(T_procesos)
+
+    nodos=1
+    # examina el array proceso y genera los arrays nodos y aristas del grafo
+    examinar_proceso()
+
+
+    #Tabla aristas y nodos tienen cabecera en 0
+    calc_ciclo=(len(T_aristas) -1) - (len(T_nodos) -1) +2
+
+    Nombre_grafico=""
+    #nproc=T_procesos[n_grafo][5]
+
+    if n_grafo == 0:
+        mruta=ruta
+    else:
+        mruta=str(ruta) + " def: " + T_def[n_grafo][0]
+
+
+    Texto_Label= str(f"{mruta}+\n Calculo complejidad ciclomatica nº aristas: +{str(len(T_aristas)-1)}+ - nº nodos:+{str(len(T_nodos)-1)}+ +2=  + {str(calc_ciclo)}")
+    from graphviz import Digraph
+
+
+
+    dot = Digraph(name=str(ruta), comment='Flujo de procesar_datos', format='pdf')
+    dot.attr(label=Texto_Label, fontsize="18", labelloc="t")
+    # numero de grafos len(T_def) -1 + 1 del principal(0) = len(T_def)
+
+
+    for x in range(1,len(T_nodos)):
+        dot.node(T_nodos[x][1],T_nodos[x][2])
+ (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==cc_grafo.ciclomatico2:[237:269]
+==cc_grafo.ciclomatico2_prueba:[163:195]
+    numdef=0
+    for z in range(1,len(T_procesos)):
+        global num_grafo
+        proceso_ini=T_procesos[z][1]
+        espacios_ini=T_procesos[z][0]
+        if proceso_ini=="def":
+            num_grafo=num_grafo+1
+            def_ini=z
+            def_final=buscar_salida_bloque(def_ini+1,espacios_ini)-1
+            etiqueta=T_procesos[z][4]
+            for w in range(def_ini,def_final+1):
+                T_procesos[w][5]=num_grafo
+            texto_fin=etiqueta.find('(')
+            #etiqueta=etiqueta[1:texto_fin]
+            nombre_def=etiqueta[0:texto_fin]
+            #etiqueta[1:texto_fin]
+            numdef=numdef+1
+            T_def.append([nombre_def,def_ini,def_final])
+
+    num_grafo=0
+    return numdef
+
+def examinar_proceso():
+  nodos=1
+  for x in range(1,len(T_procesos)):
+    match T_procesos[x][1]:
+            case 'Inicio':
+                agregar_nodo(T_procesos[x][5],nodos,T_procesos[x][1])
+                agregar_arista(T_procesos[x][5],nodos,nodos+1,'inter')
+                nodos=nodos+1
+
+            case 'if': (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==prueba_lizard:[50:76]
+==prueba_pylint:[50:76]
+    lineas.append("")
+    lineas.append(f"Codigo de salida: {resultado.returncode}")
+    lineas.append("")
+
+    lineas.append("STDOUT")
+    if resultado.stdout.strip():
+        lineas.append(resultado.stdout)
+    else:
+        lineas.append("No se detecto duplicacion o no hubo salida estandar")
+
+    lineas.append("")
+    lineas.append("STDERR")
+    if resultado.stderr.strip():
+        lineas.append("ERRORES/ STDERR:")
+        lineas.append(resultado.stderr)
+    else:
+        print("No hubo errores")
+
+    return "\n".join(lineas)
+
+def guardar_resultado_txt(contenido: str, nombre_proyecto: str) -> Path:
+    repo_root = obtener_repo_root()
+    carpeta_resultados =  repo_root / "pruebas_herramientas" / "resultados"
+    carpeta_resultados.mkdir(parents=True, exist_ok=True)
+
+    timestap = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==cc_grafo.ciclomatico2:[327:350]
+==cc_grafo.ciclomatico2_prueba:[248:272]
+                    ultimo_si=buscar_salida_bloque(x+1,T_procesos[x][0])-1
+                    T_procesos[ultimo_si][3]= fin_if
+                    T_procesos[ultimo_si][4]="fin_if"
+                if xtipo=="try:" :
+                   nodoelse=nodos
+                   agregar_nodo(T_procesos[x][5],nodos,"else_try")
+
+                   agregar_arista(T_procesos[x][5],nodos,nodos+1,T_procesos[x][1])
+
+
+                   nodos=nodos+1
+
+
+
+
+            case 'try:' :
+                nodotry=nodos
+                nodo_finally=0
+                num_except=0
+                agregar_nodo(T_procesos[x][5],nodos,T_procesos[x][1])
+                agregar_arista(T_procesos[x][5],nodos,nodos+1,"valid")
+                nodos=nodos+1
+                salida_try=0 (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==cc_grafo.ciclomatico2:[719:742]
+==cc_grafo.ciclomatico2_prueba:[648:671]
+    output_path = dot.render(engine="dot",filename=str(grafo_file1), cleanup=bool)
+    dot.clear()
+print(f"Grafos generados para: {grafo_file}")
+print(f"Fusionando archivos")
+'''
+Esto es una prueba
+
+
+'''
+marca_tiempo=datetime.today().strftime("%Y%m%d%H%M%S")
+Nombre_arch_sin_ext = Path(Nombre_arch).stem
+nombre_pdf_final = f"{Nombre_arch_sin_ext}_dcc_{marca_tiempo}.pdf"
+grafo_file = Directoriow / nombre_pdf_final
+fusionador = PdfWriter()
+for pdf in T_grafos_files:
+    fusionador.append(pdf)
+
+print(f'grafo_file:{grafo_file}')
+fusionador.write(grafo_file)
+fusionador.close()
+# borrar archivos de trabajo pdfs y work_file.txt
+for pdf in T_grafos_files:
+    os.remove(pdf) (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==prueba_lizard:[89:103]
+==prueba_pylint:[89:103]
+    print("RETURN CODE: ", resultado.returncode)
+    print("STDOUT")
+    print(resultado.stdout)
+    print("STDERR")
+    print(resultado.stderr)
+
+    contenido = generar_texto_resultado(directorio_proyecto, resultado)
+    ruta_resultado = guardar_resultado_txt(contenido, directorio_proyecto.name)
+
+    print("Prueba competa correctamente")
+    print(f"Archivo generado: {ruta_resultado}")
+
+if __name__ == "__main__":
+    main() (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==cc_grafo.ciclomatico2:[285:307]
+==cc_grafo.ciclomatico2_prueba:[211:226]
+                agregar_arista(T_procesos[x][5],nodoif,sigue_bloque,"no")
+                nodoelif_ant=0
+            case 'elif':
+
+                nodoelif=nodos
+                sigue_bloque=buscar_salida_bloque(x+1,T_procesos[x][0])
+                agregar_nodo(T_procesos[x][5],nodos,T_procesos[x][1])
+                agregar_arista(T_procesos[x][5],nodos,nodos+1,"si")
+
+                agregar_arista(T_procesos[x][5],nodos,sigue_bloque,"no")
+
+
+                #T_procesos[ultimo_si][3]= sigue_bloque
+                #T_procesos[ultimo_si][4]="no sigue"
+
+
+
+                nodoelif_ant=nodoelif
+                nodos=nodos+1
+                #fin_if=0
+                #fin_if,esp_fin_if=buscar_fin_if(x+1,T_procesos[x][0])
+ (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==prueba_cpb:[52:64]
+==prueba_lizard:[32:44]
+    print(comando)
+
+    resultado = subprocess.run(
+        comando,
+        capture_output=True,
+        text=True
+    )
+
+    return resultado
+
+def generar_texto_resultado(directorio_proyeto: Path, resultado) -> str:
+    lineas = [] (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==prueba_pylint:[32:44]
+==prueba_radon:[33:45]
+    print(comando)
+
+    resltado = subprocess.run(
+        comando,
+        capture_output=True,
+        text=True
+    )
+
+    return resltado
+
+def generar_texto_resultado(directorio_proyeto: Path, resultado) -> str:
+    lineas = [] (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==cc_grafo.ciclomatico2:[705:719]
+==cc_grafo.ciclomatico2_prueba:[633:647]
+    for x in range(1,len(T_aristas)):
+        dot.edge(T_aristas[x][1],T_aristas[x][2],T_aristas[x][3])
+
+
+    grafo_file1 = Path(str(grafo_file) + str(n_grafo))
+    grafo_file1pdf = Path(str(grafo_file1) + ".pdf")
+    T_grafos_files.append(grafo_file1pdf)
+    print("grafo_file1:",str(grafo_file1))
+
+
+
+    print("grafo_file1_final:",grafo_file1)
+
+    print("tipo grafo_file1:",type(grafo_file1)) (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==prueba_lizard:[16:27]
+==prueba_pylint:[16:27]
+    )
+
+    if not ruta:
+        raise RuntimeError("No se selecciono ninguna carpeta de proyecto")
+
+    return Path(ruta)
+
+def ejecutar_pylint(directorio_proyecto: Path):
+    comando = [
+        sys.executable,
+        "-m", (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==prueba_cpb:[111:119]
+==prueba_lizard:[95:103]
+    contenido = generar_texto_resultado(directorio_proyecto, resultado)
+    ruta_resultado = guardar_resultado_txt(contenido, directorio_proyecto.name)
+
+    print("Prueba competa correctamente")
+    print(f"Archivo generado: {ruta_resultado}")
+
+if __name__ == "__main__":
+    main() (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==cc_grafo.ciclomatico2:[269:275]
+==cc_grafo.ciclomatico2_prueba:[197:204]
+                nodoif=nodos
+                agregar_nodo(T_procesos[x][5],nodos,T_procesos[x][1])
+                agregar_arista(T_procesos[x][5],nodos,nodos+1,"si")
+                nodos=nodos+1
+                fin_if=0
+                ultimo_si=0 (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==prueba_cpb:[76:83]
+==prueba_lizard:[55:61]
+    if resultado.stdout.strip():
+        lineas.append(resultado.stdout)
+    else:
+        lineas.append("No se detecto duplicacion o no hubo salida estandar")
+
+    lineas.append("") (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==prueba_cpb:[87:95]
+==prueba_lizard:[68:76]
+    return "\n".join(lineas)
+
+def guardar_resultado_txt(contenido: str, nombre_proyecto: str) -> Path:
+    repo_root = obtener_repo_root()
+    carpeta_resultados =  repo_root / "pruebas_herramientas" / "resultados"
+    carpeta_resultados.mkdir(parents=True, exist_ok=True)
+
+    timestap = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==prueba_cpb:[112:119]
+==prueba_radon:[109:116]
+    ruta_resultado = guardar_resultado_txt(contenido, directorio_proyecto.name)
+
+    print("Prueba competa correctamente")
+    print(f"Archivo generado: {ruta_resultado}")
+
+if __name__ == "__main__":
+    main() (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==prueba_lizard:[43:48]
+==prueba_pylint:[43:48]
+    lineas = []
+    lineas.append("RESULTADO DE LA PRUEBA DE - LIZARD")
+    lineas.append("")
+    lineas.append(f"Proyecto analizado: {directorio_proyeto.name}")
+    lineas.append(f"Ruta del proyecto: {directorio_proyeto}") (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==prueba_lizard:[78:87]
+==prueba_pylint:[78:87]
+    with open(ruta_fichero, "w", encoding="utf-8") as f:
+        f.write(contenido)
+
+    return ruta_fichero
+
+def main() -> None:
+    directorio_proyecto = selecionar_directorio_proyecto()
+    print(f"Proyecto seleccionado: {directorio_proyecto}")
+ (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==prueba_pylint:[68:76]
+==prueba_radon:[83:91]
+    return "\n".join(lineas)
+
+def guardar_resultado_txt(contenido: str, nombre_proyecto: str) -> Path:
+    repo_root = obtener_repo_root()
+    carpeta_resultados =  repo_root / "pruebas_herramientas" / "resultados"
+    carpeta_resultados.mkdir(parents=True, exist_ok=True)
+
+    timestap = datetime.now().strftime("%Y-%m-%d_%H-%M-%S") (duplicate-code)
+pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:1:0: R0801: Similar lines in 2 files
+==cc_grafo.ciclomatico2:[317:324]
+==cc_grafo.ciclomatico2_prueba:[239:248]
+                if xtipo=="if" :
+                    agregar_nodo(T_procesos[x][5],nodos,T_procesos[x][1])
+                    agregar_arista(T_procesos[x][5],nodos,nodos+1,T_procesos[x][1])
+                    # agregar arista del if a else elif
+                    nodo_ant=nodoif
+
+                    nodos=nodos+1
+
+ (duplicate-code)
+
+-----------------------------------
+Your code has been rated at 5.05/10
+
+
+
+STDERR

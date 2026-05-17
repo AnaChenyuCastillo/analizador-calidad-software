@@ -1,0 +1,185 @@
+RESULTADO DE PRUEBA - RADON
+
+Proyecto analizador: cc_grafo
+Ruta del proyecto: C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo
+Lenguaje analizador: Pyhton
+Herramienta: Radon
+Subcomandos ejecutados: cc, raw, mi, hal
+
+
+========= RADON CC (Complejidad ciclomatica) ==========
+Código de salida: 0
+
+STDOUT:
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py
+    F 260:0 examinar_proceso - D
+    F 141:0 buscar_if_try - B
+    F 55:0 replace_tabs_with_spaces - A
+    F 178:0 buscar_elif_else - A
+    F 22:0 seleccionar_archivo - A
+    F 154:0 buscar_salida_try - A
+    F 168:0 buscar_finally - A
+    F 189:0 buscar_fin_if - A
+    F 215:0 buscar_else_try - A
+    F 237:0 buscar_def - A
+    F 100:0 contar_espacios_inicio - A
+    F 118:0 renumerar_procesos - A
+    F 126:0 agregar_nodo - A
+    F 226:0 buscar_salida_bloque - A
+    F 18:0 obtener_repo_root - A
+    F 109:0 Insertar_proceso - A
+    F 135:0 agregar_arista - A
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py
+    F 186:0 examinar_proceso - D
+    F 54:0 replace_tabs_with_spaces - A
+    F 21:0 seleccionar_archivo - A
+    F 152:0 buscar_palabra - A
+    F 163:0 buscar_def - A
+    F 99:0 contar_espacios_inicio - A
+    F 117:0 renumerar_procesos - A
+    F 141:0 buscar_salida_bloque - A
+    F 125:0 agregar_nodo - A
+    F 17:0 obtener_repo_root - A
+    F 108:0 Insertar_proceso - A
+    F 134:0 agregar_arista - A
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclo_selc_carp.py
+    F 18:0 listar_archivos_por_extension - B
+    F 11:0 seleccionar_directorio - A
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\quitar_coment.py
+    F 28:0 process_file - A
+    F 5:0 remove_comments_from_code - A
+
+
+STDERR:
+No hubo errores.
+
+========= RADON RAW (Metricas basicas del codigo) ==========
+Código de salida: 0
+
+STDOUT:
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py
+    LOC: 743
+    LLOC: 468
+    SLOC: 470
+    Comments: 65
+    Single comments: 62
+    Multi: 25
+    Blank: 186
+    - Comment Stats
+        (C % L): 9%
+        (C % S): 14%
+        (C + M % L): 12%
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py
+    LOC: 672
+    LLOC: 420
+    SLOC: 423
+    Comments: 61
+    Single comments: 58
+    Multi: 13
+    Blank: 178
+    - Comment Stats
+        (C % L): 9%
+        (C % S): 14%
+        (C + M % L): 11%
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclo_selc_carp.py
+    LOC: 91
+    LLOC: 50
+    SLOC: 54
+    Comments: 7
+    Single comments: 7
+    Multi: 8
+    Blank: 22
+    - Comment Stats
+        (C % L): 8%
+        (C % S): 13%
+        (C + M % L): 16%
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\quitar_coment.py
+    LOC: 57
+    LLOC: 33
+    SLOC: 31
+    Comments: 3
+    Single comments: 4
+    Multi: 5
+    Blank: 17
+    - Comment Stats
+        (C % L): 5%
+        (C % S): 10%
+        (C + M % L): 14%
+
+
+STDERR:
+No hubo errores.
+
+========= RADON MI (Indices de mantenibilidad) ==========
+Código de salida: 0
+
+STDOUT:
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py - A
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py - A
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclo_selc_carp.py - A
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\quitar_coment.py - A
+
+
+STDERR:
+No hubo errores.
+
+========= RADON HAL (Metricas de Halstead) ==========
+Código de salida: 0
+
+STDOUT:
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2.py:
+    h1: 12
+    h2: 199
+    N1: 177
+    N2: 348
+    vocabulary: 211
+    length: 525
+    calculated_length: 1562.70784949684
+    volume: 4053.5770740712724
+    difficulty: 10.492462311557789
+    effort: 42532.004676687524
+    time: 2362.8891487048622
+    bugs: 1.3511923580237575
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclomatico2_prueba.py:
+    h1: 13
+    h2: 163
+    N1: 152
+    N2: 298
+    vocabulary: 176
+    length: 450
+    calculated_length: 1245.9484054754998
+    volume: 3356.744228386784
+    difficulty: 11.883435582822086
+    effort: 39889.653806044174
+    time: 2216.091878113565
+    bugs: 1.1189147427955948
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\ciclo_selc_carp.py:
+    h1: 5
+    h2: 17
+    N1: 10
+    N2: 17
+    vocabulary: 22
+    length: 27
+    calculated_length: 81.0965087756926
+    volume: 120.40465370320703
+    difficulty: 2.5
+    effort: 301.0116342580176
+    time: 16.722868569889865
+    bugs: 0.04013488456773568
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\pruebas_herramientas\scripts\cc_grafo\quitar_coment.py:
+    h1: 3
+    h2: 5
+    N1: 3
+    N2: 5
+    vocabulary: 8
+    length: 8
+    calculated_length: 16.36452797660028
+    volume: 24.0
+    difficulty: 1.5
+    effort: 36.0
+    time: 2.0
+    bugs: 0.008
+
+
+STDERR:
+No hubo errores.

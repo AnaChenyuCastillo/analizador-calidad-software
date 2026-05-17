@@ -1,6 +1,7 @@
 from pathlib import Path
 from tkinter import messagebox
 from datetime import datetime
+import webbrowser
 
 from analizador_calidad_software.cli import (
     seleccionar_proyecto,
@@ -12,7 +13,7 @@ from analizador_calidad_software.deteccion.detector_lenguaje import (
     detectar_lenguaje_proyecto
 )
 
-from analizador_calidad_software.analisis_herramientas.cc_grafo.ciclo_selc_carp_java import ejectar_ciclomatico
+from analizador_calidad_software.analisis_herramientas.cc_grafo.ejecutar_ciclomatico import ejectar_ciclomatico
 
 from analizador_calidad_software.analisis_herramientas.herramientas_java.ckjm import ejecutar_analisis_ckjm
 from analizador_calidad_software.analisis_herramientas.herramientas_java.cpd import ejecutar_analisis_cpd
@@ -20,15 +21,16 @@ from analizador_calidad_software.analisis_herramientas.herramientas_multilenguaj
 from analizador_calidad_software.analisis_herramientas.herramientas_python.radon import ejecutar_analisis_radon
 from analizador_calidad_software.analisis_herramientas.herramientas_python.pylint import ejecutar_analisis_pylint
 from analizador_calidad_software.procesar_resultados.unificar_resultados_herramientas import unificar_resultados_herramientas
+from analizador_calidad_software.generar_informe_html.generar_informe_html import generar_contenido_html
 
 def ejecutar_analisis_java(ruta_proyecto: Path, carpeta_resultados) -> None:
     
-    """print("\n Se ha detectado que es un proyecto Java")
+    print("\n Se ha detectado que es un proyecto Java")
     print("Aqui se llamara mas adelante a los modulos de anailisi de java")
     print("Herramientas pendientes:")
     print("- CKJM")
    
-    resultado_ckjm = ejecutar_analisis_ckjm(ruta_proyecto, carpeta_resultados)
+    resultado_ckjm, calses_errores_ckjm = ejecutar_analisis_ckjm(ruta_proyecto, carpeta_resultados)
     #print(resultado_ckjm)
     
     
@@ -58,9 +60,9 @@ def ejecutar_analisis_java(ruta_proyecto: Path, carpeta_resultados) -> None:
         resultados_herramientas.append({
             "herramienta": "LIZARD",
             "ruta_txt": resultado_lizard
-        })"""
+        })
     
-    #return resultados_herramientas
+    return resultados_herramientas, calses_errores_ckjm
 
 def preguntar_modo_pyhton() -> str:
     print("\n Se ha detectado que es un proyecto pyhon")
@@ -119,7 +121,7 @@ def ejecutar_analisis_python(ruta_proyecto: Path, carpeta_resultados) -> None:
 
         print("- Lizard -> completa")
 
-        resultado_lizard = ejecutar_analisis_lizard(ruta_proyecto)
+        resultado_lizard = ejecutar_analisis_lizard(ruta_proyecto, carpeta_resultados)
 
     if resultado_radon is not None:
         resultados_herramientas.append({
@@ -138,6 +140,8 @@ def ejecutar_analisis_python(ruta_proyecto: Path, carpeta_resultados) -> None:
             "herramienta": "PYLINT",
             "ruta_txt": resultado_pylint
         })
+
+    return resultados_herramientas
 
 
 def ejecutar_programa() -> int:
@@ -166,7 +170,8 @@ def ejecutar_programa() -> int:
         timestap = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
         carpeta_resultados = repo_root / "src" / "analizador_calidad_software" / "analisis_herramientas" / "resultados_herramientas" / f"{ruta_proyecto.name}_{timestap}"
         carpeta_resultados.mkdir(parents=True, exist_ok=True)
-        ejectar_ciclomatico(ruta_proyecto, lenguaje)
+        ruta_dcc =Path(ejectar_ciclomatico(ruta_proyecto, lenguaje))
+        #ruta_dcc = ""
 
         
         print("\n ======INFORMACION DEL PROYECTO==========")
@@ -174,15 +179,36 @@ def ejecutar_programa() -> int:
         print(f"Lengujes principal del proyecto: {lenguaje}")
         print(f"Lista de lenguajes del proyecto: {lista_lenguajes}")
 
+        errores_ckjm =[]
+
         if lenguaje == "java":
-            resultados_herremientas = ejecutar_analisis_java(ruta_proyecto, carpeta_resultados)
+            resultados_herremientas, errores_ckjm = ejecutar_analisis_java(ruta_proyecto, carpeta_resultados)
             
         elif lenguaje == "python":
             resultados_herremientas = ejecutar_analisis_python(ruta_proyecto, carpeta_resultados)
         
         datos_proyecto, tablas_resultados = unificar_resultados_herramientas(ruta_proyecto.name, ruta_proyecto, resultados_herremientas, lenguaje)
 
+        ruta_relativa_dcc = ruta_dcc.relative_to(repo_root)
+        print(tablas_resultados)
+
+        contenido_html = generar_contenido_html(datos_proyecto, tablas_resultados, ruta_dcc, errores_ckjm)
+        carpeta_resultados_finales = repo_root / "src"/ "analizador_calidad_software" / "resultados"
+
+        print("\n===== DEBUG HTML GENERADO =====")
+        print("Longitud HTML:", len(contenido_html))
+        print("Contiene clases.Administrador:", "clases.Administrador" in contenido_html)
+        print("Contiene Resultados CKJM:", "Resultados CKJM" in contenido_html)
+        print("Contiene Resultados CPD:", "Resultados CPD" in contenido_html)
+        print("Contiene Resultados Lizard:", "Resultados Lizard" in contenido_html)
+
+        ruta_html = carpeta_resultados_finales / f"Informe_calidad_{ruta_proyecto.name}_{timestap}.html"
+        ruta_html.parent.mkdir(parents=True, exist_ok=True)
+        ruta_html.write_text(contenido_html, encoding="utf-8")
+        webbrowser.open(ruta_html.as_uri())
+
         print("\nResultados procesados correctamente")
         print(f"Proyecto: {datos_proyecto['nombre_proyecto']}")
         print(f"Número de tablas generadas: {len(tablas_resultados)}")
-        print(tablas_resultados)
+        print("Informe generado correctamente")
+        
