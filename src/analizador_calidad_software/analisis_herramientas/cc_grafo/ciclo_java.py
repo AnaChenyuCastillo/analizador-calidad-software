@@ -615,7 +615,7 @@ def generar_nodos_aristas():
         if n_grafo != 0:
             mruta=mruta +  " metodo: " + T_procesos[0][4]
 
-        Texto_Label= str(f"{mruta}+\n Calculo complejidad ciclomatica nº aristas: +{str(len(T_aristas)-1)}+ - nº nodos:+{str(len(T_nodos)-1)}+ +2=  + {str(calc_ciclo)}")
+        Texto_Label= str(f"{mruta} \n Calculo complejidad ciclomatica (nº aristas-nº nodos +2): {str(len(T_aristas)-1)} - {str(len(T_nodos)-1)} +2= {str(calc_ciclo)}")
         from graphviz import Digraph    
 
         
