@@ -155,6 +155,7 @@ def generar_estilos():
             border-radius: 6px;
             font-size: 14px;
             border: none;
+            cursor: pointer;
         }
 
         .boton:hover {
@@ -200,6 +201,98 @@ def generar_estilos():
 
         .volver-arriba:hover {
             text-decoration: underline;
+        }
+
+        .cabecera-impresion {
+            display: none;
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 10mm;
+            }
+
+            body {
+                margin: 0;
+                background-color: white;
+                color: black;
+            }
+
+            .botones-superiores,
+            .indice,
+            .volver-arriba {
+                display: none;
+            }
+
+            .bloque-proyecto {
+                page-break-after: always;
+                border: none;
+            }
+
+            .bloque-tabla {
+                page-break-before: always;
+                border: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .referencia,
+            .observacion,
+            .tabla-referencias,
+            .tabla-rangos {
+                page-break-inside: avoid;
+            }
+
+            .tabla-referencias,
+            .tabla-rangos {
+                page-break-after: always;
+            }
+
+            table {
+                width: 100%;
+                font-size: 8px;
+                page-break-inside: auto;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            tbody {
+                display: table-row-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+
+            th {
+                background-color: #1f2937 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            td {
+                padding: 4px;
+            }
+
+            h1, h2, h3, h4 {
+                page-break-after: avoid;
+            }
+
+            .cabecera-impresion {
+                display: table-row;
+            }
+
+            .cabecera-impresion th {
+                background-color: #111827 !important;
+                color: white !important;
+                font-size: 10px;
+                text-align: left;
+            }
         }
     </style>
     """
@@ -383,6 +476,11 @@ def generar_tablas(tabla: dict, indice_tabla: int):
     partes.append("<div class='contenedor-tabla'>")
     partes.append("<table>")
     partes.append("<thead>")
+
+    partes.append("<tr class='cabecera-impresion'>")
+    partes.append(f"<th colspan='{len(cabeceras)}'>{titulo}</th>")
+    partes.append("</tr>")
+
     partes.append("<tr>")
 
     for cabecera in cabeceras:
@@ -476,14 +574,14 @@ def generar_contenido_html(
     partes.append("<html lang='es'>")
     partes.append("<head>")
     partes.append("<meta charset='UTF-8'>")
-    partes.append("<title>Informe de calidad de software</title>")
+    partes.append(f"<title>Informe de calidad de software {nombre_proyecto}</title>")
     partes.append(generar_estilos())
     partes.append("</head>")
     partes.append("<body id='inicio'>")
 
     partes.append("<div class='botones-superiores'>")
     partes.append("<a class='boton boton-secundario' href='#inicio'>Inicio</a>")
-    partes.append("<a class='boton' href='informe_calidad.pdf' download>Descargar PDF</a>")
+    partes.append("<button class='boton' onclick='window.print()'>Generar PDF</button>")
 
     if nombre_dcc:
         partes.append(
