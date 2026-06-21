@@ -1,0 +1,17 @@
+package clases ;
+class Administrador public class Administrador extends Usuarios
+{
+    metodo Administrador public Administrador (String correo, String clave)
+    {
+        super (correo, clave) ;
+    }
+    metodo comprobarAdmin public boolean comprobarAdmin ()
+    {
+        return super.getClave ().equals ("admin") && super.getCorreo ().equals ("admin@javacomp.com") ;
+    }
+    @Override
+    metodo toString public String toString ()
+    {
+        return super.toString () ;
+    }
+}

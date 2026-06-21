@@ -193,7 +193,8 @@ def ejecutar_programa() -> int:
         print(tablas_resultados)
 
         contenido_html = generar_contenido_html(datos_proyecto, tablas_resultados, ruta_dcc, errores_ckjm)
-        carpeta_resultados_finales = repo_root / "src"/ "analizador_calidad_software" / "resultados"
+        carpeta_resultados_finales = repo_root / "src"/ "analizador_calidad_software" / "resultados" / ruta_proyecto.name
+        carpeta_resultados.mkdir(parents=True, exist_ok=True)
 
         print("\n===== DEBUG HTML GENERADO =====")
         print("Longitud HTML:", len(contenido_html))
