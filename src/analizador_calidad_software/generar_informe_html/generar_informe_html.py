@@ -585,7 +585,7 @@ def generar_contenido_html(
 
     if nombre_dcc:
         partes.append(
-            f"<a class='boton boton-secundario' href='{limpiar_html(nombre_dcc)}' target='_blank'>Ver diagramas</a>"
+            f"<a class='boton boton-secundario' href='file:///{limpiar_html(nombre_dcc)}' target='_blank'>Ver diagramas</a>"
         )
 
     partes.append("</div>")

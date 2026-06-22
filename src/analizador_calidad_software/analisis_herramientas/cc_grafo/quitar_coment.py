@@ -9,7 +9,7 @@ def remove_comments_from_code(code: str) -> str:
     - Comentarios multilínea con ''' o 
     """
     #Eliminar comentarios multilínea (triple comillas simples o dobles)
-  
+    
     pattern = r"\"\"\"[\s\S]*?\"\"\""
     code= re.sub(pattern, "", code)
     
@@ -47,12 +47,5 @@ def process_file(input_path: str, output_path: str):
 
 
 def ejecutar_quitar_comentario(input_file, output_file):
-    '''print("sys.argv,len(sys.argv):",sys.argv,len(sys.argv))
-    if len(sys.argv) != 2:
-        print("Uso: python quitar_comentarios.py <archivo_entrada.py> <archivo_salida.py>")
-        sys.exit(1)
-
-    input_file = sys.argv[0]
-    output_file = sys.argv[1]'''
-
+    
     process_file(input_file, output_file)

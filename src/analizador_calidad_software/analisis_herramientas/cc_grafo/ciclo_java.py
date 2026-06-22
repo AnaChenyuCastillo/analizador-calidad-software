@@ -104,10 +104,23 @@ def buscar_salida_bloque(z,espacios,palabras_exc:list[str]=""):
     while (T_procesos[xfila][0]>espacios_obj) or (T_procesos[xfila][1] in palabras_exc):
         xfila=xfila+1
         if xfila==max_item:
-           return xfila-1
+           return xfila
     return xfila
 
-# busca una palabra en desde una posicion hacia arriba o hacia abajo(direcc=1 o -1)
+# busca una palabra en desde una posicion hacia arriba o hacia abajo(direcc=1 o -1) sin conocer los espacios
+def buscar_palabra_sinesp(inicio,fin,palabras:list[str],direcc=1):
+    
+    
+    num_palabra=0
+    
+    for yfila in range(inicio,fin,direcc):
+        
+        if  T_procesos[yfila][1] in palabras :
+            num_palabra=yfila
+            return num_palabra
+    return num_palabra
+
+# busca una palabra en desde una posicion hacia arriba o hacia abajo(direcc=1 o -1) conociendo los espacios
 def buscar_palabra(inicio,fin,espacios,palabras:list[str],direcc=1):
     
     
@@ -117,6 +130,7 @@ def buscar_palabra(inicio,fin,espacios,palabras:list[str],direcc=1):
         if (T_procesos[yfila][0]) == espacios:
             if  T_procesos[yfila][1] in palabras :
                 num_palabra=yfila
+                return num_palabra
     return num_palabra
 
 # tratamiento case y default para identar procesos al mismo nivel de case y default sumanadoles 4
@@ -141,22 +155,28 @@ def Tratar_case_default():
 
 # Añadir procesos intermedios finales para if for while switch
 def procesos_inter() :
+
     espacios_ini=0
     salida=0
     x=1
+
     while x < len(T_procesos):
         proceso_ini=T_procesos[x][1]
         espacios_ini=T_procesos[x][0]
         salida=0
-        if T_procesos[x][1] in ("for","while","switch","if","case","default:"):  
+        if T_procesos[x][1] in ("for","while","switch","if","case","default:"): 
+        
+        
             if T_procesos[x][1] in ("for","while","switch"):   
                 salida=0
                 salida=buscar_salida_bloque(x+1,T_procesos[x][0])
                 espacios=T_procesos[salida][0]
+                
             if T_procesos[x][1]=="if":    
                 salida=0
-                espacios=0
+                espacios=0  
                 salida=buscar_salida_bloque(x+1,T_procesos[x][0],["else if","else"])
+                 
             if T_procesos[x][1]=="case":  
                 salida_case=buscar_salida_bloque(x+1,T_procesos[x][0])
             
@@ -177,12 +197,16 @@ def procesos_inter() :
                     Insertar_proceso(x+1,T_procesos[x][0]+4,"insertado",x+1,0,"",T_procesos[x][5]) 
                     # ponemos salida a cero para evitar doble insercion
                     salida=0
-
-            if salida!=0 and espacios<espacios_ini:
-               
+            
+            if (salida!=0 and espacios<espacios_ini):
                 nombre_proc="insertado"
-                etiqueta_proc="Fin"+T_procesos[x][1]
-                Insertar_proceso(salida,espacios_ini,nombre_proc,T_procesos[salida][2],0,etiqueta_proc,T_procesos[x][5]) 
+                if x==len(T_procesos):
+                    etiqueta_proc="Fin"
+                else :   
+                    etiqueta_proc="Fin"+T_procesos[x][1]
+                
+                
+                Insertar_proceso(salida,espacios_ini,nombre_proc,salida,0,etiqueta_proc,T_procesos[x][5]) 
         x=x+1   
 
 def Insertar_proceso(ifila,iespacios,itipo,inodo,inodo_sal=0,etiqueta='',igrafo=0):
@@ -197,9 +221,9 @@ def Insertar_proceso(ifila,iespacios,itipo,inodo,inodo_sal=0,etiqueta='',igrafo=
 def renumerar_procesos(z=1):
    
     for x in range(z,len(T_procesos)):
-        T_procesos[x][2]=T_procesos[x][2]+1
+        T_procesos[x][2]=T_procesos[x][2] + 1
         if T_procesos[x][3]!=0: 
-            T_procesos[x][3]=T_procesos[x][3]+1 
+            T_procesos[x][3]=T_procesos[x][3] + 1 
 
 # agrega nodo para el grafico
 def agregar_nodo(num_grafo,num_nodo,nombre_nodo):
@@ -224,12 +248,14 @@ def examinar_proceso():
                 nodos=nodos+1
      
             case 'if':
+                
                 nodoif=nodos
                 agregar_nodo(T_procesos[x][5],nodos,T_procesos[x][1])
                 agregar_arista(T_procesos[x][5],nodos,nodos+1,"si")
                 nodos=nodos+1
                 fin_if=0
                 ultimo_si=0
+                
                 fin_if=buscar_salida_bloque(x+1,T_procesos[x][0],["else if","else"])
                 ultimo_si=buscar_salida_bloque(x+1,T_procesos[x][0])-1
                           
@@ -255,20 +281,29 @@ def examinar_proceso():
                 agregar_arista(T_procesos[x][5],nodos,nodos+1,"si")
 
                 # agregar arista del if a else if o a anterior else if
+                nodoif=buscar_palabra(x-1,1,T_procesos[x][0],["if"],-1)
+                nodo_elseif_ant=buscar_palabra(x-1,nodoif,T_procesos[x][0],["else if"],-1)
                 if nodo_elseif_ant==0:
                    nodo_ant= nodoif
                 else:
                    nodo_ant=  nodo_elseif_ant
 
                 agregar_arista(T_procesos[x][5],nodo_ant,nodos,"no")
-                         
+                
                 nodo_elseif_ant=nodoelseif
-                nodos=nodos+1
+                
 
                 fin_if=0
                 ultimo_si=0
                 fin_if=buscar_salida_bloque(x+1,T_procesos[x][0],["else if","else"])
-                
+                #agregar_arista(T_procesos[x][5],nodo_ant,nodos,"no1")
+                # buscamos else o else if hacia adelante para comprobar si es el ultimo
+                # y agregar la arista del no  
+                siguie_else= buscar_palabra(x+1,fin_if,T_procesos[x][0],["else if","else"],1) 
+                if siguie_else == 0:
+                    agregar_arista(T_procesos[x][5],nodos,fin_if,"no")
+
+                nodos=nodos+1
                 ultimo_si=buscar_salida_bloque(x+1,T_procesos[x][0])-1
                 T_procesos[ultimo_si][3]= fin_if 
                 T_procesos[ultimo_si][4]="fin_if"
@@ -280,6 +315,8 @@ def examinar_proceso():
                 agregar_arista(T_procesos[x][5],nodos,nodos+1,T_procesos[x][1])
                
                 # agregar arista del if a else 
+                nodoif=buscar_palabra(x-1,1,T_procesos[x][0],["if"],-1)
+                nodo_elseif_ant=buscar_palabra(x-1,nodoif,T_procesos[x][0],["else if"],-1)
                 if nodo_elseif_ant==0:
                    nodo_ant= nodoif
                 else:
@@ -400,11 +437,11 @@ def examinar_proceso():
                 espacios= T_procesos[x][0]
                 salida_for=buscar_salida_bloque(x+1,espacios)
                 agregar_nodo(T_procesos[x][5],nodos,'for')
-                agregar_arista(T_procesos[x][5],nodos,nodos+1,"for 1")  
+                agregar_arista(T_procesos[x][5],nodos,nodos+1,"for")  
 
                 nodos=nodos+1
         
-                agregar_arista(T_procesos[x][5],nodofor,T_procesos[salida_for][2],"for 2")
+                agregar_arista(T_procesos[x][5],nodofor,T_procesos[salida_for][2],"for s")
 
                 #modificamos salida de fin for retorno
                 T_procesos[salida_for-1][3]=nodofor
@@ -476,7 +513,56 @@ def examinar_proceso():
         
                 agregar_arista(T_procesos[x][5],nodos,nodosigue,texto_arista)
                 nodos=nodos+1  
-    
+            case 'return':
+               agregar_nodo(T_procesos[x][5],nodos,T_procesos[x][1])
+               # buscar "Fin"
+               
+               salida=buscar_palabra_sinesp(x+1,len(T_procesos),["Fin"],1)
+               T_procesos[x][3]=salida
+               T_procesos[x][4]='return'
+               texto_arista=T_procesos[x][4]
+               agregar_arista(T_procesos[x][5],nodos,salida,texto_arista)
+               nodos=nodos+1 
+
+            case "continue":
+                agregar_nodo(T_procesos[x][5],nodos,T_procesos[x][1])
+
+                # busca hacia arriba "for", "do" ,"while" 
+                esp_buscar=T_procesos[x][0]-4
+                esp_encontrados=T_procesos[x][0]
+                ini_busq=x-1
+                while esp_encontrados >=esp_buscar:
+                    inibucle=buscar_palabra_sinesp(ini_busq,1,["for", "do" ,"while"],-1)
+                    esp_encontrados=T_procesos[inibucle][0]
+                    ini_busq=inibucle-1
+
+                
+                if T_procesos[inibucle][1] in ["for","while"]:
+                    #agrega arista al principio del bucle
+                    agregar_arista(T_procesos[x][5],nodos,inibucle,"continue")
+
+                if T_procesos[inibucle][1] in ["do"]:
+                    # busca salida del bucle  
+                    salida_do=buscar_salida_bloque(inibucle+1,T_procesos[inibucle][0])
+                    agregar_arista(T_procesos[x][5],nodos,salida_do,"continue")
+                nodos=nodos+1 
+            case 'break':
+                agregar_nodo(T_procesos[x][5],nodos,T_procesos[x][1])
+                
+                # busca hacia arriba "for", "do" ,"while" ,"switch" 
+                esp_buscar=T_procesos[x][0]-4
+                esp_encontrados=T_procesos[x][0]
+                ini_busq=x-1
+                while esp_encontrados >=esp_buscar:
+                    inibucle=buscar_palabra_sinesp(ini_busq,1,["for", "do" ,"while","switch"],-1)
+                    esp_encontrados=T_procesos[inibucle][0]
+                    ini_busq=inibucle-1
+
+                salida=buscar_salida_bloque(inibucle+1,T_procesos[inibucle][0])
+                # agregar arista de break a fin bucle
+                
+                agregar_arista(T_procesos[x][5],nodos,salida,"break")
+                nodos=nodos+1     
             case 'Fin':
                 agregar_nodo(T_procesos[x][5],nodos,"Fin")
 
@@ -539,7 +625,7 @@ def palabras_crear_procesos(work_file):
             if not palabras :
                 continue
             
-            if  palabras[0][0] in ("#","{","}") :
+            if  palabras[0][0] in ("#","{","}",";") :
                 continue
                 # print(palabras[0]) 
             if  palabras[0] != "metodo" and numero_metodo==0 :
@@ -548,7 +634,7 @@ def palabras_crear_procesos(work_file):
                     
             etiqueta=""    
 
-            if palabras[0] in ("metodo","for","while","do","if","else","try","catch","finally","switch","case","default:"):
+            if palabras[0] in ("metodo","for","while","do","if","else","try","catch","finally","switch","case","default:","return","continue","break"):
                 tipo=palabras[0]
                 tipo_ant=tipo
                 nodo_ant=nodo
@@ -603,9 +689,14 @@ def generar_nodos_aristas():
         nodos=1
         # examina el array proceso y genera los arrays nodos y aristas del grafo
         examinar_proceso()
+        eliminar_nodos_sueltos()
+        renum_nodos()
+        
+                        
 
-            
+
         #Tabla aristas y nodos tienen cabecera en 0 
+        
         calc_ciclo=(len(T_aristas) -1) - (len(T_nodos) -1) +2
         
         Nombre_grafico=""
@@ -621,7 +712,7 @@ def generar_nodos_aristas():
         
 
         dot = Digraph(name=str(ruta), comment='Flujo de procesar_datos', format='pdf')
-        dot.attr(label=Texto_Label, fontsize="18", labelloc="t")
+        dot.attr(label=Texto_Label, fontsize="18", labelloc="t",overlap="false", concentrate="false",splines="spline",rankdir="TB",rank="same" )
         # numero de grafos len(T_def) -1 + 1 del principal(0) = len(T_def)
 
 
@@ -644,6 +735,46 @@ def generar_nodos_aristas():
         print("tipo grafo_file1:",type(grafo_file1))
         output_path = dot.render(engine="dot",filename=str(grafo_file1), cleanup=bool)
         dot.clear()
+def eliminar_nodos_sueltos():
+    # eliminar nodos y sus aristas salientes colgados por efecto de los return
+    i = 2    # saltamos cabecera e inicio
+    while i < len(T_nodos):
+        mi_nodo=T_nodos[i][1]
+        conteo=0
+        conteo = sum(1 for arista in T_aristas if arista[2] == mi_nodo)
+        if conteo==0:
+            del T_nodos[i]  
+            # borrar aristas salientes
+            j=1
+            while j < len(T_aristas):
+                if T_aristas[j][1] == mi_nodo:
+                    del T_aristas[j]  # No incrementamos i porque la lista se acortó
+                else:
+                    j += 1  # Avanzamos solo si no borramos
+
+        else:
+            i += 1  # Solo avanzamos si no borramos
+
+    # fin nodos y arista sueltos por efecto return, continue break 
+
+def renum_nodos():        
+    # renumeramos T_nodos y modificamos T_aristas con los nodos modificados  
+            
+    for x in range(1,len(T_nodos)):
+        Id_nodo="N"+str(T_nodos[x][0])+"-"+str(x)
+        
+        if T_nodos[x][1]!=Id_nodo:
+            nodo_antiguo=T_nodos[x][1]
+            T_nodos[x][1]=Id_nodo
+            texto_nodo=T_nodos[x][2].split(" ", 1)
+            T_nodos[x][2]=str(x) + " " + texto_nodo[1]
+            for fila in T_aristas:
+                if fila[1]==nodo_antiguo:
+                    fila[1]=Id_nodo
+                if fila[2]==nodo_antiguo:
+                    fila[2]=Id_nodo
+                    
+    # fin renumerar nodos y aristas
 
 # fusionar archivos Pdfs de grafos        
 def fusionar_pdfs():    
@@ -694,7 +825,7 @@ def flujo_grafos_java(arch=""):
     palabras_crear_procesos(work_file)
     # tratamiento case y default para identar procesos al mismo nivel de case y default sumanadoles 4
    
-    Tratar_case_default()
+    #Tratar_case_default()
        
     # Añadir procesos intermedios finales para if for while switch
     procesos_inter()

@@ -1,4 +1,5 @@
 from pathlib import Path
+import tkinter as tk
 from tkinter import messagebox
 from datetime import datetime
 import webbrowser
@@ -80,7 +81,7 @@ def preguntar_modo_pyhton() -> str:
             return "Completo"
         
         if opcion == "2":
-            print("Recuerda que el anlisi rapido no ejecutará la aplicación de detección de errores pylint")
+            print("Recuerda que el anlisis rapido no ejecutará la aplicación de detección de errores pylint")
             return "Rapido"
         
         print("Opcion no valida. Introduce 1 o 2")
@@ -145,14 +146,28 @@ def ejecutar_analisis_python(ruta_proyecto: Path, carpeta_resultados) -> None:
 
 
 def ejecutar_programa() -> int:
+  
+    root = tk.Tk()
+    root.withdraw()
+
+    root.attributes("-topmost", True)
+    root.lift()
+    root.focus_force()
+    root.update()
+
     messagebox.showwarning(
         "Alerta",
-        "Para poder analizar los proyectos Java es necesario que se detecten archivos .class, es decir que el proyecto esté compilado"
+        "Para poder analizar los proyectos Java es necesario que se detecten archivos .class, es decir que el proyecto esté compilado",
+        parent=root
     )
+
+    root.attributes("-topmost", False)
+    root.destroy()
+
     ruta_proyecto = seleccionar_proyecto()
 
     #lenguaje = obtener_ranking_lenguajes_proyecto(ruta_proyecto)[0][0]
-    print("detectando lengueje")
+    print("detectando lenguaje")
     lenguaje = detectar_lenguaje_proyecto(ruta_proyecto)
     print(lenguaje)
     lista_lenguajes = obtener_ranking_lenguajes_proyecto(ruta_proyecto)
@@ -163,7 +178,7 @@ def ejecutar_programa() -> int:
         print("lenguaje, contador",lenguaje, contador)
 
     if lenguaje != "python" and lenguaje !="java":
-        print("El lenguaje principal no esta registradp en el sistema, asegurese de que el proyecto es Java o Python")
+        print("El lenguaje principal no esta registrado en el sistema, asegurese de que el proyecto es Java o Python")
         return 1
     else:
         repo_root = obtener_repo_root()
@@ -193,8 +208,7 @@ def ejecutar_programa() -> int:
         print(tablas_resultados)
 
         contenido_html = generar_contenido_html(datos_proyecto, tablas_resultados, ruta_dcc, errores_ckjm)
-        carpeta_resultados_finales = repo_root / "src"/ "analizador_calidad_software" / "resultados" / ruta_proyecto.name
-        carpeta_resultados.mkdir(parents=True, exist_ok=True)
+        carpeta_resultados_finales = repo_root / "src"/ "analizador_calidad_software" / "resultados"
 
         print("\n===== DEBUG HTML GENERADO =====")
         print("Longitud HTML:", len(contenido_html))

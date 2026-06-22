@@ -1,5 +1,7 @@
 import os
 import subprocess
+import io
+import tokenize
 from datetime import datetime
 import shutil
 import copy
@@ -46,11 +48,15 @@ def seleccionar_archivo():
         return ruta_archivo
     except Exception as e:
         messagebox.showerror("Error", f"Ocurrió un error(1): {e}")
+        
+        
 
 
 
 
 def replace_tabs_with_spaces(file_path, work_file, spaces_per_tab=4)  : 
+    
+
     """
     Reemplaza todos los tabuladores en un archivo de texto por un número fijo de espacios 
     y elimina lineas en blanco y  comentarios
@@ -78,22 +84,239 @@ def replace_tabs_with_spaces(file_path, work_file, spaces_per_tab=4)  :
 
         # Usar expandtabs para convertir \t en espacios
         updated_content = content.expandtabs(spaces_per_tab)
+       
         #elimina lineas en blanco
         lineas_sin_blanco = [linea for linea in updated_content.splitlines() if linea.strip()]
-    
+        
         # Unir de nuevo en un solo string
         updated_content = "\n".join(lineas_sin_blanco)
-
+       
+        #unir sentencias multilinea
+        updated_content1=unir_sentencias_multilinea_python(updated_content)
+        
+        
+       
         #updated_content = [linea for linea in updated_content if linea.strip() != ""]
         # Guardar cambios
         with open(work_file, "w", encoding="utf-8") as f:
-            f.write(updated_content)
-        
-       
+            f.write(updated_content1)   
         
     except Exception as e:
         print(f"Ocurrió un error(2): {e}")
+        
 
+
+def unir_sentencias_multilinea_python(texto: str) -> str:
+    """
+    Une sentencias Python multilínea en una sola línea.
+
+    
+
+    No toca líneas simples, por tanto no rompe f-strings como:
+
+        nombre_marcado = f"{metodo.clase}.{metodo.nombre}"
+    """
+
+    lineas = texto.splitlines()
+    salida = []
+
+    buffer = []
+    nivel = 0
+    continuacion_barra = False
+
+    dentro_triple = False
+    triple_quote = None
+
+    def contar_nivel_linea(linea: str, nivel_actual: int):
+        """
+        Cuenta paréntesis, corchetes y llaves fuera de strings y comentarios.
+        Devuelve:
+            nuevo_nivel, termina_con_barra, tiene_comentario
+        """
+
+        i = 0
+        n = len(linea)
+        nivel = nivel_actual
+        tiene_comentario = False
+
+        while i < n:
+            c = linea[i]
+
+            # Comentario fuera de string.
+            if c == "#":
+                tiene_comentario = True
+                break
+
+            # Prefijos de string: f"...", r"...", fr"...", etc.
+            if c in "fFrRbBuU":
+                j = i
+                while j < n and linea[j] in "fFrRbBuU":
+                    j += 1
+
+                if j < n and linea[j] in ("'", '"'):
+                    i = j
+                    c = linea[i]
+
+            # String normal o triple string.
+            if c in ("'", '"'):
+                quote = c
+
+                # Triple comilla.
+                if i + 2 < n and linea[i:i + 3] == quote * 3:
+                    i += 3
+
+                    fin = linea.find(quote * 3, i)
+
+                    if fin == -1:
+                        # Triple string continúa en líneas siguientes.
+                        return nivel, False, tiene_comentario, True, quote * 3
+
+                    i = fin + 3
+                    continue
+
+                # String normal de una línea.
+                i += 1
+
+                while i < n:
+                    if linea[i] == "\\":
+                        i += 2
+                    elif linea[i] == quote:
+                        i += 1
+                        break
+                    else:
+                        i += 1
+
+                continue
+
+            if c in "([{":
+                nivel += 1
+            elif c in ")]}":
+                if nivel > 0:
+                    nivel -= 1
+
+            i += 1
+
+        stripped = linea.rstrip()
+        termina_con_barra = stripped.endswith("\\") and not stripped.endswith("\\\\")
+
+        return nivel, termina_con_barra, tiene_comentario, False, None
+
+    def compactar_buffer(buffer_lineas):
+        """
+        Une las líneas del buffer sin alterar el contenido interno de strings.
+        """
+        if not buffer_lineas:
+            return ""
+
+        primera = buffer_lineas[0]
+        indentacion = primera[:len(primera) - len(primera.lstrip())]
+
+        partes = []
+
+        for linea in buffer_lineas:
+            parte = linea.strip()
+
+            if not parte:
+                continue
+
+            if parte.endswith("\\"):
+                parte = parte[:-1].rstrip()
+
+            partes.append(parte)
+
+        return indentacion + " ".join(partes)
+
+    for linea in lineas:
+        # Si estamos dentro de un triple string, no se compacta nada.
+        if dentro_triple:
+            salida.append(linea)
+
+            if triple_quote and triple_quote in linea:
+                dentro_triple = False
+                triple_quote = None
+
+            continue
+
+        stripped = linea.strip()
+
+        # Línea vacía.
+        if not stripped:
+            if buffer:
+                salida.append(compactar_buffer(buffer))
+                buffer = []
+                nivel = 0
+                continuacion_barra = False
+
+            salida.append(linea)
+            continue
+
+        # Comentario de línea completa.
+        if stripped.startswith("#"):
+            if buffer:
+                salida.append(compactar_buffer(buffer))
+                buffer = []
+                nivel = 0
+                continuacion_barra = False
+
+            salida.append(linea)
+            continue
+
+        nivel_antes = nivel
+
+        nuevo_nivel, termina_con_barra, tiene_comentario, abre_triple, tq = contar_nivel_linea(
+            linea,
+            nivel
+        )
+
+        # Si aparece triple string, no intentamos compactar esa zona.
+        if abre_triple:
+            if buffer:
+                salida.append(compactar_buffer(buffer))
+                buffer = []
+                nivel = 0
+                continuacion_barra = False
+
+            salida.append(linea)
+            dentro_triple = True
+            triple_quote = tq
+            continue
+
+        # Si no estamos acumulando y la línea no abre nada ni continúa,
+        # se deja intacta. Esto protege las f-strings normales.
+        if not buffer and nuevo_nivel == 0 and not termina_con_barra and nivel_antes == 0:
+            salida.append(linea)
+            nivel = nuevo_nivel
+            continuacion_barra = False
+            continue
+
+        # Si hay comentario interno en una sentencia multilínea,
+        # es más seguro no compactar.
+        if tiene_comentario:
+            if buffer:
+                salida.extend(buffer)
+                buffer = []
+                nivel = 0
+                continuacion_barra = False
+
+            salida.append(linea)
+            nivel = nuevo_nivel
+            continue
+
+        buffer.append(linea)
+        nivel = nuevo_nivel
+        continuacion_barra = termina_con_barra
+
+        # Fin de sentencia lógica.
+        if nivel == 0 and not continuacion_barra:
+            salida.append(compactar_buffer(buffer))
+            buffer = []
+            nivel = 0
+            continuacion_barra = False
+
+    if buffer:
+        salida.append(compactar_buffer(buffer))
+
+    return "\n".join(salida) + "\n"
 # Función para contar espacios al inicio de una línea
 def contar_espacios_inicio(linea):
     contador = 0
@@ -159,7 +382,18 @@ def buscar_palabra(inicio,fin,espacios,palabras:list[str],direcc=1):
             if  T_procesos[yfila][1] in palabras :
                 num_palabra=yfila
     return num_palabra
-
+# busca una palabra en desde una posicion hacia arriba o hacia abajo(direcc=1 o -1) sin conocer los espacios
+def buscar_palabra_sinesp(inicio,fin,palabras:list[str],direcc=1):
+    
+    
+    num_palabra=0
+    
+    for yfila in range(inicio,fin,direcc):
+        
+        if  T_procesos[yfila][1] in palabras :
+            num_palabra=yfila
+            return num_palabra
+    return num_palabra
 def buscar_def():
     numdef=0
     for z in range(1,len(T_procesos)):
@@ -367,11 +601,11 @@ def examinar_proceso():
                 espacios= T_procesos[x][0]
                 salida_while=buscar_salida_bloque(x+1,espacios)
                 agregar_nodo(T_procesos[x][5],nodos,'while')
-                agregar_arista(T_procesos[x][5],nodos,nodos+1,"while 1")  
+                agregar_arista(T_procesos[x][5],nodos,nodos+1,"while")  
                 nodos=nodos+1
        
         
-                agregar_arista(T_procesos[x][5],nodowhile,salida_while,"while 3")  
+                agregar_arista(T_procesos[x][5],nodowhile,salida_while,"while s")  
                 #modificamos retorno fin while retorno
           
                 T_procesos[salida_while-1][3]=nodowhile 
@@ -383,11 +617,11 @@ def examinar_proceso():
                 espacios= T_procesos[x][0]
                 salida_for=buscar_salida_bloque(x+1,espacios)
                 agregar_nodo(T_procesos[x][5],nodos,'for')
-                agregar_arista(T_procesos[x][5],nodos,nodos+1,"for 1")  
+                agregar_arista(T_procesos[x][5],nodos,nodos+1,"for")  
 
                 nodos=nodos+1
         
-                agregar_arista(T_procesos[x][5],nodofor,T_procesos[salida_for][2],"for 2")
+                agregar_arista(T_procesos[x][5],nodofor,T_procesos[salida_for][2],"for s")
 
                 #modificamos salida de fin for retorno
                 T_procesos[salida_for-1][3]=nodofor
@@ -433,7 +667,52 @@ def examinar_proceso():
         
                 agregar_arista(T_procesos[x][5],nodos,nodosigue,texto_arista)
                 nodos=nodos+1  
-    
+            case 'return':
+                agregar_nodo(T_procesos[x][5],nodos,"return")
+                salida=len(T_procesos)-1
+                # agregar arista de return a fin
+                T_procesos[x][3]=salida
+                T_procesos[x][4]='return'
+                texto_arista='return'
+                agregar_arista(T_procesos[x][5],nodos,salida,texto_arista)
+                nodos=nodos+1 
+            case 'break':
+                agregar_nodo(T_procesos[x][5],nodos,T_procesos[x][1])
+                
+                # busca hacia arriba "for", "while" 
+                esp_buscar=T_procesos[x][0]-4
+                esp_encontrados=T_procesos[x][0]
+                ini_busq=x-1
+                while esp_encontrados >=esp_buscar:
+                    inibucle=buscar_palabra_sinesp(ini_busq,1,["for","while"],-1)
+                    esp_encontrados=T_procesos[inibucle][0]
+                    ini_busq=inibucle-1
+
+                salida=buscar_salida_bloque(inibucle+1,T_procesos[inibucle][0])
+                # agregar arista de break a fin bucle
+                T_procesos[x][3]=salida
+                T_procesos[x][4]='break'
+                agregar_arista(T_procesos[x][5],nodos,salida,"break")
+                nodos=nodos+1 
+            case "continue":
+                agregar_nodo(T_procesos[x][5],nodos,T_procesos[x][1])
+
+                # busca hacia arriba "for", "while" 
+                esp_buscar=T_procesos[x][0]-4
+                esp_encontrados=T_procesos[x][0]
+                ini_busq=x-1
+                while esp_encontrados >=esp_buscar:
+                    inibucle=buscar_palabra_sinesp(ini_busq,1,["for","while"],-1)
+                    esp_encontrados=T_procesos[inibucle][0]
+                    ini_busq=inibucle-1
+
+                
+                # agregar arista de break a inicio bucle retorno
+                T_procesos[x][3]=inibucle
+                T_procesos[x][4]='continue'
+                
+                agregar_arista(T_procesos[x][5],nodos,inibucle,"continue")
+                nodos=nodos+1 
             case 'Fin':
                 agregar_nodo(T_procesos[x][5],nodos,"Fin")
     x=x+1
@@ -467,7 +746,7 @@ def leerf_palab_crear_proc(work_file):
                 # print(palabras[0]) 
                     
             etiqueta=""    
-            if palabras[0] in ("try:","except","finally:","def","if","for","while","match","elif","else:","match","case"):
+            if palabras[0] in ("try:","except","finally:","def","if","for","while","match","elif","else:","match","case","return","break","continue"):
                 tipo=palabras[0]
                 nodo_ant=nodo
                 sw_newnode=1
@@ -500,6 +779,7 @@ def leerf_palab_crear_proc(work_file):
       
 # paso 1 reemplazar tabuladores por espacios y copiar en file.txt 
 def remmplaz_tab_cop_file(mi_archivo):
+    
     ruta = Path(mi_archivo) # archivo a tratar
     
     nombre_dirsel=""
@@ -524,6 +804,7 @@ def remmplaz_tab_cop_file(mi_archivo):
     
 
     work_file = Directoriow / f"{Nombre_arch}dcc.txt"
+    
     grafo_file = Directoriow / f"{Nombre_arch}dcc"
 
     replace_tabs_with_spaces(ruta, work_file,  spaces_per_tab=4)
@@ -582,7 +863,7 @@ def generar_nodos_aristas():
         from graphviz import Digraph    
 
         dot = Digraph(name=str(ruta), comment='Flujo de procesar_datos', format='pdf')
-        dot.attr(label=Texto_Label, fontsize="18", labelloc="t")
+        dot.attr(label=Texto_Label, fontsize="18", labelloc="t",overlap="false", concentrate="false",splines="spline",rankdir="TB",rank="same" )
         # numero de grafos len(T_def) -1 + 1 del principal(0) = len(T_def)
 
         for x in range(1,len(T_nodos)):
@@ -669,7 +950,7 @@ def flujo_grafos_python(arch = "") :
     # borrar archivos de trabajo pdfs y work_file.txt
     for pdf in T_grafos_files:
         os.remove(pdf)
-    os.remove(work_file)     
+    #os.remove(work_file)     
     return ruta
 
 #              *** fin def ******

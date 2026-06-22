@@ -8,8 +8,11 @@ from tkinter import filedialog
 def seleccionar_proyecto() -> Path:
     root = tk.Tk()
     root.withdraw()
+    root.attributes("-topmost", True)
+    root.lift()
+    root.focus_force()
 
-    ruta = filedialog.askdirectory(
+    ruta = filedialog.askdirectory(parent=root,
         title=("Seleccionar la carpeta del proyecto que quieres analizar")
     )
 

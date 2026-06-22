@@ -1,0 +1,102 @@
+RESULTADO DE PRUEBA - RADON
+
+Proyecto analizador: deteccion
+Ruta del proyecto: C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\deteccion
+Lenguaje analizador: Pyhton
+Herramienta: Radon
+Subcomandos ejecutados: cc, raw, mi, hal
+
+
+========= RADON CC (Complejidad ciclomatica) ==========
+Código de salida: 0
+
+STDOUT:
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\deteccion\detector_lenguaje.py
+    F 18:0 obtener_lenguaje_principal - B (6)
+    F 36:0 obtener_ranking_lenguajes - A (5)
+    F 51:0 ejecutar_cloc_para_deteccion - A (2)
+    F 62:0 detectar_lenguaje_proyecto - A (2)
+    F 73:0 obtener_ranking_lenguajes_proyecto - A (1)
+
+
+STDERR:
+No hubo errores.
+
+========= RADON RAW (Metricas basicas del codigo) ==========
+Código de salida: 0
+
+STDOUT:
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\deteccion\detector_lenguaje.py
+    LOC: 75
+    LLOC: 51
+    SLOC: 54
+    Comments: 0
+    Single comments: 0
+    Multi: 0
+    Blank: 21
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\deteccion\__init__.py
+    LOC: 0
+    LLOC: 0
+    SLOC: 0
+    Comments: 0
+    Single comments: 0
+    Multi: 0
+    Blank: 0
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+
+
+STDERR:
+No hubo errores.
+
+========= RADON MI (Indices de mantenibilidad) ==========
+Código de salida: 0
+
+STDOUT:
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\deteccion\detector_lenguaje.py - A (46.27)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\deteccion\__init__.py - A (100.00)
+
+
+STDERR:
+No hubo errores.
+
+========= RADON HAL (Metricas de Halstead) ==========
+Código de salida: 0
+
+STDOUT:
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\deteccion\detector_lenguaje.py:
+    h1: 5
+    h2: 19
+    N1: 10
+    N2: 19
+    vocabulary: 24
+    length: 29
+    calculated_length: 92.32026322986493
+    volume: 132.96391252091354
+    difficulty: 2.5
+    effort: 332.4097813022838
+    time: 18.4672100723491
+    bugs: 0.044321304173637846
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\deteccion\__init__.py:
+    h1: 0
+    h2: 0
+    N1: 0
+    N2: 0
+    vocabulary: 0
+    length: 0
+    calculated_length: 0
+    volume: 0
+    difficulty: 0
+    effort: 0
+    time: 0.0
+    bugs: 0.0
+
+
+STDERR:
+No hubo errores.

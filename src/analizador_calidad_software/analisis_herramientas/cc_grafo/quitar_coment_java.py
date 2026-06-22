@@ -2,92 +2,272 @@
 import sys
 import re
 import os
+from analizador_calidad_software.analisis_herramientas.cc_grafo.poner_llaves_java import poner_llaves_java1
+# unifica condiciones y sentencias en una sola linea
+def unificar_lineas_java(codigo: str) -> str:
+    """
+    Unifica:
+      - cada condición/cabecera Java en una sola línea:
+       
+      - cada sentencia terminada en ; en una sola línea:
+   
+    """
 
-def remove_java_comments(code: str) -> str:
+    s = codigo
+    n = len(s)
+
+    PALABRAS_CONTROL = ["else if", "if", "while", "for", "switch", "catch"]
+
+    def ident(c: str) -> bool:
+        return c.isalnum() or c in "_$"
+
+    def es_keyword(pos: int, kw: str) -> bool:
+        if not s.startswith(kw, pos):
+            return False
+
+        antes = s[pos - 1] if pos > 0 else ""
+        despues_pos = pos + len(kw)
+        despues = s[despues_pos] if despues_pos < n else ""
+
+        return not ident(antes) and not ident(despues)
+
+    def saltar_string_o_comentario(pos: int) -> int:
+        if pos >= n:
+            return pos
+
+        if s.startswith("//", pos):
+            fin = s.find("\n", pos + 2)
+            return n if fin == -1 else fin + 1
+
+        if s.startswith("/*", pos):
+            fin = s.find("*/", pos + 2)
+            return n if fin == -1 else fin + 2
+
+        if s[pos] in ("'", '"'):
+            quote = s[pos]
+            pos += 1
+
+            while pos < n:
+                if s[pos] == "\\":
+                    pos += 2
+                elif s[pos] == quote:
+                    return pos + 1
+                else:
+                    pos += 1
+
+            return pos
+
+        return pos
+
+    def saltar_espacios_no_newline(pos: int) -> int:
+        while pos < n and s[pos] in " \t\r":
+            pos += 1
+        return pos
+
+    def saltar_espacios(pos: int) -> int:
+        while pos < n and s[pos].isspace():
+            pos += 1
+        return pos
+
+    def normalizar_espacios(texto: str) -> str:
+        return " ".join(texto.split())
+
+    def encontrar_parentesis_cierre(pos_abre: int) -> int:
+        nivel = 0
+        pos = pos_abre
+
+        while pos < n:
+            nuevo = saltar_string_o_comentario(pos)
+
+            if nuevo != pos:
+                pos = nuevo
+                continue
+
+            if s[pos] == "(":
+                nivel += 1
+            elif s[pos] == ")":
+                nivel -= 1
+
+                if nivel == 0:
+                    return pos
+
+            pos += 1
+
+        raise ValueError("Paréntesis sin cerrar.")
+
+    def unificar_cabecera_desde(pos: int):
+        for kw in PALABRAS_CONTROL:
+            if es_keyword(pos, kw):
+                fin_kw = pos + len(kw)
+                pos_par = saltar_espacios(fin_kw)
+
+                if pos_par >= n or s[pos_par] != "(":
+                    return None
+
+                pos_cierre = encontrar_parentesis_cierre(pos_par)
+
+                cabecera = s[pos:pos_par].strip()
+                condicion = s[pos_par + 1:pos_cierre]
+
+                return f"{cabecera} ({normalizar_espacios(condicion)})", pos_cierre + 1
+
+        return None
+
+    def leer_sentencia_desde(pos: int):
+        """
+        Lee UNA sola sentencia terminada en ;.
+        No une con la siguiente.
+        """
+        inicio = pos
+        par = 0
+        cor = 0
+        contiene_salto = False
+
+        while pos < n:
+            nuevo = saltar_string_o_comentario(pos)
+
+            if nuevo != pos:
+                if "\n" in s[pos:nuevo]:
+                    contiene_salto = True
+                pos = nuevo
+                continue
+
+            c = s[pos]
+
+            if c == "\n":
+                contiene_salto = True
+
+            if c == "(":
+                par += 1
+            elif c == ")":
+                par -= 1
+            elif c == "[":
+                cor += 1
+            elif c == "]":
+                cor -= 1
+
+            elif c == "{" and par == 0 and cor == 0:
+                return None
+
+            elif c == "}" and par == 0 and cor == 0:
+                return None
+
+            elif c == ";" and par == 0 and cor == 0:
+                sentencia = s[inicio:pos + 1]
+
+                if contiene_salto:
+                    return normalizar_espacios(sentencia), pos + 1
+
+                return sentencia.strip(), pos + 1
+
+            pos += 1
+
+        return None
+
+    def inicio_de_linea(pos: int) -> int:
+        while pos > 0 and s[pos - 1] != "\n":
+            pos -= 1
+        return pos
+
+    def solo_espacios_desde_inicio_linea(pos: int) -> bool:
+        ini = inicio_de_linea(pos)
+        return s[ini:pos].strip() == ""
+
+    resultado = []
+    pos = 0
+
+    while pos < n:
+        nuevo = saltar_string_o_comentario(pos)
+
+        if nuevo != pos:
+            resultado.append(s[pos:nuevo])
+            pos = nuevo
+            continue
+
+        # Mantener saltos y espacios estructurales básicos.
+        if s[pos].isspace():
+            resultado.append(s[pos])
+            pos += 1
+            continue
+
+        # Solo intentamos unificar desde el inicio real de una línea
+        # o después de espacios de indentación.
+        if solo_espacios_desde_inicio_linea(pos):
+            intento_cabecera = unificar_cabecera_desde(pos)
+
+            if intento_cabecera:
+                texto, nueva_pos = intento_cabecera
+                resultado.append(texto)
+                pos = nueva_pos
+                continue
+
+            if s[pos] not in "{};":
+                intento_sentencia = leer_sentencia_desde(pos)
+
+                if intento_sentencia:
+                    texto, nueva_pos = intento_sentencia
+                    resultado.append(texto)
+                    pos = nueva_pos
+                    continue
+
+        resultado.append(s[pos])
+        pos += 1
+
+    # Limpieza final:
+    # elimina espacios antes de saltos de línea, pero conserva líneas separadas.
+    res = "".join(resultado)
+    res = "\n".join(line.rstrip() for line in res.splitlines())
+
+    return res.strip() + "\n"
+# fin unifica condiciones en una sola linea
+def limpiar_codigo_java(code: str) -> str:
     """
     Elimina comentarios de código Java, preservando cadenas de texto.
-    También limpia líneas vacías sobrantes.
-    """
+    También limpia líneas vacías sobrantes. Elimina anotaciones que comienzan por @
+  
+    """    
     pattern = re.compile(
-        r'(\"(?:\\.|[^"\\])*\"|\'.*?(?<!\\)\'|/\*[\s\S]*?\*/|//[^\n]*)',
+        r'("(?:\\.|[^"\\])*"'
+        r"|"
+        r"'(?:\\.|[^'\\])*'"
+        r"|"
+        r"/\*[\s\S]*?\*/"
+        r"|"
+        r"//[^\n]*"
+        r"|"
+        r"^[^\S\n]*@[A-Za-z_$][A-Za-z0-9_$.]*"
+        r"(?:\s*\("
+        r"(?:"
+        r'[^()"\'\\]+'
+        r"|"
+        r'"(?:\\.|[^"\\])*"'
+        r"|"
+        r"'(?:\\.|[^'\\])*'"
+        r"|"
+        r"\([^()]*\)"
+        r")*"
+        r"\))?"
+        r")",
         re.MULTILINE
     )
 
     def replacer(match):
         text = match.group(0)
-        if text.startswith("/*") or text.startswith("//"):
+        stripped = text.lstrip()
+
+        if (
+            stripped.startswith("/*")
+            or stripped.startswith("//")
+            or stripped.startswith("@")
+        ):
             return ""
+
         return text
 
     code_no_comments = re.sub(pattern, replacer, code)
     code_clean = re.sub(r'\n\s*\n+', '\n', code_no_comments)
+
     return code_clean.strip() + "\n"
-
-def wrap_case_blocks(java_code):
-    """
-    Envuelve el contenido de cada 'case' o 'default' en llaves si no las tiene.
-    """
-    lines = java_code.splitlines()
-    output = []
-    inside_case = False
-    case_indent = ""
-    temp_block = []
-
-    for line in lines:
-        stripped = line.strip()
-
-        # Detectar inicio de case o default
-        if re.match(r'^(case\s+.+:|default\s*:)', stripped):
-            # Si había un bloque previo, cerrarlo
-            if inside_case:
-                output.extend(wrap_block(temp_block, case_indent))
-                temp_block.clear()
-
-            output.append(line)
-            inside_case = True
-            case_indent = re.match(r'^(\s*)', line).group(1)
-            continue
-
-        # Detectar fin de bloque case por otro case/default o cierre de switch
-        if inside_case and (re.match(r'^(case\s+.+:|default\s*:)', stripped) or stripped.startswith("}")):
-            output.extend(wrap_block(temp_block, case_indent))
-            temp_block.clear()
-            inside_case = False
-
-        # Acumular líneas dentro del case
-        if inside_case:
-            temp_block.append(line)
-        else:
-            output.append(line)
-
-    # Si el archivo termina dentro de un case
-    if inside_case:
-        output.extend(wrap_block(temp_block, case_indent))
-
-    return "\n".join(output)
-
-
-def wrap_block(block_lines, indent):
-    """
-    Envuelve un bloque de líneas en llaves si no las tiene ya.
-    """
-    # Eliminar líneas vacías iniciales y finales
-    while block_lines and not block_lines[0].strip():
-        block_lines.pop(0)
-    while block_lines and not block_lines[-1].strip():
-        block_lines.pop()
-
-    if not block_lines:
-        return []
-
-    # Si ya empieza con { y termina con }, no hacer nada
-    if block_lines[0].strip().startswith("{") and block_lines[-1].strip().endswith("}"):
-        return block_lines
-
-    wrapped = [f"{indent}{{"]
-    wrapped.extend(block_lines)
-    wrapped.append(f"{indent}}}")
-    return wrapped
 
 def format_braces_and_indent(code: str) -> str:
     """
@@ -138,9 +318,22 @@ def quitar_coment_java1(file_path, work_file):
     try:
         with open(origen, "r", encoding="utf-8") as f:
             codigo = f.read()
-        codigo_sin_comentario = wrap_case_blocks(codigo)
-        codigo_sin_comentarios = remove_java_comments(codigo_sin_comentario)
+        
+        print("poner_llaves_java1")
+        codigo_sin_comentarios = poner_llaves_java1(codigo,4) 
+        print("unificar_multilinea_java")
+        codigo_sin_comentarios=unificar_lineas_java(codigo_sin_comentarios)
+        #destino2=f"{destino}plj"
+        #with open(destino2, "w", encoding="utf-8") as f:
+        #    f.write(codigo_sin_comentarios)   
+        print("remove_java_commen")
+        codigo_sin_comentarios = limpiar_codigo_java(codigo_sin_comentarios)
+        print("wrap_case_blocks")
+        #codigo_sin_comentarios = wrap_case_blocks(codigo_sin_comentarios)
+       
+        print("format_braces_and_indent")
         codigo_formateado = format_braces_and_indent(codigo_sin_comentarios)
+        print("fin formateo")
 
         with open(destino, "w", encoding="utf-8") as f:
             f.write(codigo_formateado)
