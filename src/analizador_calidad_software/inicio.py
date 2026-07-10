@@ -1,3 +1,5 @@
+# Autor: Castillo Casado, Ana Chenyu
+# 2026
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
 from pathlib import Path
 import subprocess
@@ -16,7 +18,8 @@ from cli import obtener_repo_root
 # CONFIGURACIÓN
 # ============================================================
 
-PUERTO = 8000
+#PUERTO = 8000 
+# se pasa como parametro
 
 # Si este programa se ejecuta desde ejecutar_analizador.bat, déjalo en True.
 # Si lo ejecutas desde PyCharm, VSCode o una consola que NO quieras cerrar,
@@ -524,8 +527,36 @@ def generar_html():
             font-family: Arial, sans-serif;
             background-color: #f4f6f8;
             margin: 0;
-            padding: 0 0 320px 0;
+            padding: 0 0 340px 0;
             text-align: center;
+        }
+
+        .cabeceraIzquierda {
+            position: fixed;
+            top: 8px;
+            left: 8px;
+            z-index: 10000;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+            text-align: left;
+        }
+
+        .logoCabecera {
+            width: 130px;
+            height: 130px;
+            object-fit: contain;
+            border: none;
+            border-radius: 0;
+            margin: 0;
+        }
+
+        .textosCabecera {
+            font-size: 12px;
+            color: #1f4e79;
+            font-weight: bold;
+            line-height: 1.3;
         }
 
         #btnCerrarAplicacion {
@@ -547,9 +578,9 @@ def generar_html():
         }
 
         .contenedor {
-            width: 80%;
+            width: 70%;
             max-width: 950px;
-            margin: 50px auto;
+            margin: 25px auto;
             background-color: white;
             padding: 35px;
             border-radius: 12px;
@@ -575,7 +606,6 @@ def generar_html():
             border: 1px solid #ddd;
             margin-bottom: 30px;
         }
-        }
 
         .boton {
             display: inline-block;
@@ -591,11 +621,11 @@ def generar_html():
         }
 
         .boton:hover {
-            background-color: #163a59;
+            background-color: #F87C63; 
         }
 
         .boton:disabled {
-            background-color: #777;
+            background-color: #FEF2F2;
             cursor: not-allowed;
         }
 
@@ -603,6 +633,9 @@ def generar_html():
             margin-top: 22px;
             font-size: 14px;
             color: #666;
+        }
+        .lineaBlanca {
+            height: 8px;
         }
 
         #consola {
@@ -700,6 +733,19 @@ def generar_html():
 </head>
 
 <body>
+    <div class="cabeceraIzquierda">
+        <img class="logoCabecera" src="/logoUAH.png" alt="Logo">
+
+        <div class="textosCabecera">
+            <div>TFG GISI</div>
+            <div class="lineaBlanca"></div>
+            <div>Autor: Castillo Casado, Ana Chenyu</div>
+            <div>Tutor: Bueno Guillén, Francisco Javier</div>
+            <div class="lineaBlanca"></div>
+            <div>curso: 2025/2026</div>
+        </div>
+    </div>
+
     <button id="btnCerrarAplicacion" title="Cerrar aplicación">
         ✕ Cerrar aplicación
     </button>
@@ -719,12 +765,8 @@ def generar_html():
             Iniciar programa
         </button>
 
-        <p class="nota">
-            Al pulsar el botón se iniciará la ejecución del programa desde __main__.py.
-        </p>
+        
     </div>
-
-    
 
     <div id="consola">
         <div id="cabeceraConsola">
@@ -789,6 +831,7 @@ def generar_html():
             btnCerrarConsola.style.display = "none";
 
             btnIniciar.disabled = true;
+            btnIniciar.style.color = "Black";
             btnIniciar.textContent = "Programa en ejecución...";
 
             entrada.focus();
@@ -967,10 +1010,11 @@ def generar_html():
 
             } catch (error) {
                 alert("No se pudo cerrar correctamente la aplicación: " + error);
+                setTimeout(function() {
+                    window.close();
+                }, 300);
             }
         });
-
-        
     </script>
 </body>
 </html>
@@ -988,12 +1032,28 @@ def abrir_navegador():
 
 def main():
     global servidor_http
+    global PUERTO
+    # sys.argv[0] es el nombre del script
+    # sys.argv[1] sería el primer parámetro pasado
+    try:
+        if len(sys.argv) < 2:
+            raise ValueError("Debes pasar al menos un parámetro al ejecutar el programa.")
+
+        # Asignar el primer parámetro a una variable
+        PUERTO = int(sys.argv[1])
+
+        # Ejemplo de uso
+        print(f"Puerto recibido: {PUERTO}")
+
+    except ValueError as e:
+        print(f"Error: {e}")
+        print("Uso: python script.py <parametro>")
+        sys.exit(1)
 
     servidor_http = ThreadingHTTPServer(("127.0.0.1", PUERTO), LanzadorHandler)
 
     print(f"Servidor iniciado en http://127.0.0.1:{PUERTO}")
-    print("Pulsa Ctrl+C para detenerlo.")
-
+    print("Para detenerlo cierralo desde la pagina del navegador 'Cerrar aplicación' o Pulsa 2 veces Ctrl+C ")
     threading.Thread(target=abrir_navegador, daemon=True).start()
 
     try:

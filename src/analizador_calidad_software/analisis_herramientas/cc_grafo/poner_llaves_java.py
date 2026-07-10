@@ -1,3 +1,6 @@
+# Autor: Castillo Casado, Ana Chenyu
+# 2026
+
 def poner_llaves_java1(codigo: str, espacios_indentacion: int = 4) -> str:
     """
     Añade llaves a estructuras Java sin llaves:

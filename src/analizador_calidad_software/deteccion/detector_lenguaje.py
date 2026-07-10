@@ -1,3 +1,6 @@
+# Autor: Castillo Casado, Ana Chenyu
+# 2026
+
 import json
 from pathlib import Path
 from typing import Literal

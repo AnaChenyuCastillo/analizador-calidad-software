@@ -1,3 +1,6 @@
+# Autor: Castillo Casado, Ana Chenyu
+# 2026
+
 import re
 import sys
 import os

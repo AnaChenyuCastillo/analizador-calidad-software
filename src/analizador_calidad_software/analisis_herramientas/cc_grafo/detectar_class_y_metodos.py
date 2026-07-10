@@ -1,3 +1,6 @@
+# Autor: Castillo Casado, Ana Chenyu
+# 2026
+
 #!/usr/bin/env python3
 import argparse
 import bisect

@@ -1,3 +1,6 @@
+REM Autor: Castillo Casado, Ana Chenyu
+REM 2026
+
 @echo off
 set "BAT_DIR=%~dp0"
 echo %BAT_DIR%

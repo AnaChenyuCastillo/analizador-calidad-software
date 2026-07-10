@@ -1,0 +1,290 @@
+RESULTADO DE PRUEBA - RADON
+
+Proyecto analizador: procesar_resultados
+Ruta del proyecto: C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados
+Lenguaje analizador: Pyhton
+Herramienta: Radon
+Subcomandos ejecutados: cc, raw, mi, hal
+
+
+========= RADON CC (Complejidad ciclomatica) ==========
+Código de salida: 0
+
+STDOUT:
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py
+    F 38:0 procesar_ckjm - C (13)
+    F 11:0 construir_fila - A (1)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_cpd.py
+    F 24:0 procesar_cpd - B (10)
+    F 11:0 construir_fila - A (1)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_lizard.py
+    F 44:0 obtener_clasificacion_ccn - B (7)
+    F 86:0 es_fila_metricas_lizard - B (6)
+    F 63:0 obtener_ruta_relativa_lizard - A (5)
+    F 100:0 procesar_lizard - A (5)
+    F 11:0 construir_fila - A (2)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_pylint.py
+    F 86:0 procesar_pylint - B (9)
+    F 50:0 obtener_ruta_relativa - A (2)
+    F 57:0 extraer_puntuacion_pylint - A (2)
+    F 68:0 procesar_linea_pylint - A (2)
+    F 12:0 construir_fila_resumen - A (1)
+    F 26:0 construir_fila_detalle - A (1)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_radon.py
+    F 77:0 procesar_radon - E (35)
+    F 40:0 obtener_clasificacion - B (7)
+    F 60:0 obtener_ruta_relativa - A (2)
+    F 11:0 construir_fila - A (1)
+    F 67:0 crear_datos_archivo_vacios - A (1)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py
+    F 318:0 obtener_metricas_fuera_de_rango - B (9)
+    F 96:0 referencia_lizard - A (2)
+    F 6:0 referencia_ckjm - A (1)
+    F 69:0 referencia_cpd - A (1)
+    F 154:0 referencia_radon - A (1)
+    F 236:0 referencia_pylint - A (1)
+    F 283:0 rangos_complejidad_ciclomatica - A (1)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py
+    F 20:0 obtener_procesador - B (6)
+    F 37:0 obtener_referencias - B (6)
+    F 63:0 unificar_resultados_herramientas - B (6)
+    F 54:0 crear_tabla_error - A (1)
+
+
+STDERR:
+No hubo errores.
+
+========= RADON RAW (Metricas basicas del codigo) ==========
+Código de salida: 0
+
+STDOUT:
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py
+    LOC: 171
+    LLOC: 64
+    SLOC: 143
+    Comments: 2
+    Single comments: 2
+    Multi: 0
+    Blank: 26
+    - Comment Stats
+        (C % L): 1%
+        (C % S): 1%
+        (C + M % L): 1%
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_cpd.py
+    LOC: 118
+    LLOC: 49
+    SLOC: 88
+    Comments: 2
+    Single comments: 2
+    Multi: 0
+    Blank: 28
+    - Comment Stats
+        (C % L): 2%
+        (C % S): 2%
+        (C + M % L): 2%
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_lizard.py
+    LOC: 193
+    LLOC: 79
+    SLOC: 154
+    Comments: 2
+    Single comments: 2
+    Multi: 0
+    Blank: 37
+    - Comment Stats
+        (C % L): 1%
+        (C % S): 1%
+        (C + M % L): 1%
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_pylint.py
+    LOC: 207
+    LLOC: 74
+    SLOC: 158
+    Comments: 2
+    Single comments: 2
+    Multi: 0
+    Blank: 47
+    - Comment Stats
+        (C % L): 1%
+        (C % S): 1%
+        (C + M % L): 1%
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_radon.py
+    LOC: 256
+    LLOC: 118
+    SLOC: 196
+    Comments: 3
+    Single comments: 2
+    Multi: 0
+    Blank: 58
+    - Comment Stats
+        (C % L): 1%
+        (C % S): 2%
+        (C + M % L): 1%
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py
+    LOC: 346
+    LLOC: 48
+    SLOC: 317
+    Comments: 2
+    Single comments: 2
+    Multi: 0
+    Blank: 27
+    - Comment Stats
+        (C % L): 1%
+        (C % S): 1%
+        (C + M % L): 1%
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py
+    LOC: 101
+    LLOC: 62
+    SLOC: 76
+    Comments: 4
+    Single comments: 2
+    Multi: 0
+    Blank: 23
+    - Comment Stats
+        (C % L): 4%
+        (C % S): 5%
+        (C + M % L): 4%
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\__init__.py
+    LOC: 0
+    LLOC: 0
+    SLOC: 0
+    Comments: 0
+    Single comments: 0
+    Multi: 0
+    Blank: 0
+    - Comment Stats
+        (C % L): 0%
+        (C % S): 0%
+        (C + M % L): 0%
+
+
+STDERR:
+No hubo errores.
+
+========= RADON MI (Indices de mantenibilidad) ==========
+Código de salida: 0
+
+STDOUT:
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py - A (59.10)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_cpd.py - A (58.65)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_lizard.py - A (46.48)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_pylint.py - A (49.43)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_radon.py - A (37.08)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py - A (52.41)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py - A (62.31)
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\__init__.py - A (100.00)
+
+
+STDERR:
+No hubo errores.
+
+========= RADON HAL (Metricas de Halstead) ==========
+Código de salida: 0
+
+STDOUT:
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:
+    h1: 1
+    h2: 2
+    N1: 2
+    N2: 4
+    vocabulary: 3
+    length: 6
+    calculated_length: 2.0
+    volume: 9.509775004326938
+    difficulty: 1.0
+    effort: 9.509775004326938
+    time: 0.5283208335737188
+    bugs: 0.003169925001442313
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_cpd.py:
+    h1: 3
+    h2: 9
+    N1: 5
+    N2: 10
+    vocabulary: 12
+    length: 15
+    calculated_length: 33.28421251514428
+    volume: 53.77443751081735
+    difficulty: 1.6666666666666667
+    effort: 89.62406251802892
+    time: 4.9791145843349405
+    bugs: 0.017924812503605784
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:
+    h1: 10
+    h2: 23
+    N1: 13
+    N2: 27
+    vocabulary: 33
+    length: 40
+    calculated_length: 137.26120593818493
+    volume: 201.77576477433814
+    difficulty: 5.869565217391305
+    effort: 1184.336010631985
+    time: 65.79644503511027
+    bugs: 0.06725858825811272
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_pylint.py:
+    h1: 5
+    h2: 18
+    N1: 10
+    N2: 20
+    vocabulary: 23
+    length: 30
+    calculated_length: 86.66829050039843
+    volume: 135.7068586817104
+    difficulty: 2.7777777777777777
+    effort: 376.96349633808444
+    time: 20.942416463226913
+    bugs: 0.04523561956057014
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_radon.py:
+    h1: 10
+    h2: 41
+    N1: 36
+    N2: 71
+    vocabulary: 51
+    length: 107
+    calculated_length: 252.87891313821507
+    volume: 606.9495115909501
+    difficulty: 8.658536585365853
+    effort: 5255.2945515801775
+    time: 291.960808421121
+    bugs: 0.20231650386365005
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:
+    h1: 7
+    h2: 13
+    N1: 9
+    N2: 17
+    vocabulary: 20
+    length: 26
+    calculated_length: 67.75720079023742
+    volume: 112.37013046707143
+    difficulty: 4.576923076923077
+    effort: 514.3094432915962
+    time: 28.572746849533118
+    bugs: 0.03745671015569048
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py:
+    h1: 2
+    h2: 5
+    N1: 3
+    N2: 6
+    vocabulary: 7
+    length: 9
+    calculated_length: 13.60964047443681
+    volume: 25.26619429851844
+    difficulty: 1.2
+    effort: 30.319433158222125
+    time: 1.6844129532345624
+    bugs: 0.008422064766172813
+C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\__init__.py:
+    h1: 0
+    h2: 0
+    N1: 0
+    N2: 0
+    vocabulary: 0
+    length: 0
+    calculated_length: 0
+    volume: 0
+    difficulty: 0
+    effort: 0
+    time: 0.0
+    bugs: 0.0
+
+
+STDERR:
+No hubo errores.

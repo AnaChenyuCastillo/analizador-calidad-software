@@ -1,3 +1,6 @@
+# Autor: Castillo Casado, Ana Chenyu
+# 2026
+
 from pathlib import Path
 import tkinter as tk
 

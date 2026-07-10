@@ -1,3 +1,6 @@
+# Autor: Castillo Casado, Ana Chenyu
+# 2026
+
 from pathlib import Path
 
 from analizador_calidad_software.procesar_resultados.referencias_metricas import (

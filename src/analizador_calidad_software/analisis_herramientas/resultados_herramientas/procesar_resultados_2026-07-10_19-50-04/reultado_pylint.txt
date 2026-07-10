@@ -1,0 +1,220 @@
+RESULTADO DE LA PRUEBA DE - LIZARD
+
+Proyecto analizado: procesar_resultados
+Ruta del proyecto: C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados
+Herramienta: Pylant
+Lenguaje principal: Python
+
+Codigo de salida: 28
+
+STDOUT
+************* Module analizador_calidad_software.procesar_resultados.procesar_ckjm
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:12:14: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:13:12: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:14:12: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:15:12: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:16:12: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:17:12: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:18:13: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:19:11: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:20:12: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:86:0: C0301: Line too long (143/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:147:0: C0301: Line too long (135/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:171:0: C0304: Final newline missing (missing-final-newline)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:11:0: R0913: Too many arguments (10/5) (too-many-arguments)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:11:0: R0917: Too many positional arguments (10/5) (too-many-positional-arguments)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:38:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:38:0: R0914: Too many local variables (25/15) (too-many-locals)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:38:0: R0915: Too many statements (55/50) (too-many-statements)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:38:34: W0613: Unused argument 'ruta_proyecto' (unused-argument)
+src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py:38:55: W0613: Unused argument 'lenguaje' (unused-argument)
+************* Module analizador_calidad_software.procesar_resultados.procesar_cpd
+src\analizador_calidad_software\procesar_resultados\procesar_cpd.py:78:0: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_cpd.py:118:0: C0304: Final newline missing (missing-final-newline)
+src\analizador_calidad_software\procesar_resultados\procesar_cpd.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_cpd.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_cpd.py:24:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_cpd.py:24:0: R0914: Too many local variables (23/15) (too-many-locals)
+src\analizador_calidad_software\procesar_resultados\procesar_cpd.py:86:19: W0718: Catching too general exception Exception (broad-exception-caught)
+src\analizador_calidad_software\procesar_resultados\procesar_cpd.py:24:54: W0613: Unused argument 'lenguaje' (unused-argument)
+************* Module analizador_calidad_software.procesar_resultados.procesar_lizard
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:34:9: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:47:0: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:57:0: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:60:0: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:66:0: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:83:0: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:91:0: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:158:0: C0301: Line too long (104/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:184:0: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:193:0: C0304: Final newline missing (missing-final-newline)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:11:0: R0913: Too many arguments (10/5) (too-many-arguments)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:11:0: R0917: Too many positional arguments (10/5) (too-many-positional-arguments)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:23:4: R1705: Unnecessary "else" after "return", remove the "else" and de-indent the code inside it (no-else-return)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:44:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:58:13: R1716: Simplify chained comparison between the operands (chained-comparison)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:63:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:78:4: W0702: No exception type(s) specified (bare-except)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:86:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:100:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_lizard.py:100:0: R0914: Too many local variables (27/15) (too-many-locals)
+************* Module analizador_calidad_software.procesar_resultados.procesar_pylint
+src\analizador_calidad_software\procesar_resultados\procesar_pylint.py:207:0: C0304: Final newline missing (missing-final-newline)
+src\analizador_calidad_software\procesar_resultados\procesar_pylint.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_pylint.py:12:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_pylint.py:26:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_pylint.py:26:0: R0913: Too many arguments (9/5) (too-many-arguments)
+src\analizador_calidad_software\procesar_resultados\procesar_pylint.py:26:0: R0917: Too many positional arguments (9/5) (too-many-positional-arguments)
+src\analizador_calidad_software\procesar_resultados\procesar_pylint.py:50:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_pylint.py:53:11: W0718: Catching too general exception Exception (broad-exception-caught)
+src\analizador_calidad_software\procesar_resultados\procesar_pylint.py:57:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_pylint.py:68:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_pylint.py:86:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_pylint.py:86:0: R0914: Too many local variables (32/15) (too-many-locals)
+src\analizador_calidad_software\procesar_resultados\procesar_pylint.py:86:57: W0613: Unused argument 'lenguaje' (unused-argument)
+************* Module analizador_calidad_software.procesar_resultados.procesar_radon
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:21:15: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:22:13: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:23:9: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:35:19: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:36:17: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:37:13: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:167:0: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:168:74: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:169:93: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:171:70: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:172:91: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:174:68: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:175:87: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:176:0: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:217:48: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:218:44: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:219:36: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:241:23: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:242:21: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:243:17: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:256:0: C0304: Final newline missing (missing-final-newline)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:11:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:11:0: R0913: Too many arguments (12/5) (too-many-arguments)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:11:0: R0917: Too many positional arguments (12/5) (too-many-positional-arguments)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:40:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:43:11: W0718: Catching too general exception Exception (broad-exception-caught)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:54:13: R1716: Simplify chained comparison between the operands (chained-comparison)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:60:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:63:11: W0718: Catching too general exception Exception (broad-exception-caught)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:67:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:77:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:77:0: R0914: Too many local variables (37/15) (too-many-locals)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:77:0: R0912: Too many branches (27/12) (too-many-branches)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:77:0: R0915: Too many statements (85/50) (too-many-statements)
+src\analizador_calidad_software\procesar_resultados\procesar_radon.py:77:56: W0613: Unused argument 'lenguaje' (unused-argument)
+************* Module analizador_calidad_software.procesar_resultados.referencias_metricas
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:43:0: C0301: Line too long (119/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:49:0: C0301: Line too long (116/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:76:0: C0301: Line too long (101/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:88:0: C0301: Line too long (110/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:142:0: C0301: Line too long (111/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:145:0: C0301: Line too long (106/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:146:0: C0301: Line too long (112/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:147:0: C0301: Line too long (120/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:159:0: C0301: Line too long (109/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:162:0: C0301: Line too long (116/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:163:0: C0301: Line too long (116/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:169:0: C0301: Line too long (106/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:175:0: C0301: Line too long (105/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:199:0: C0301: Line too long (101/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:205:0: C0301: Line too long (120/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:240:0: C0301: Line too long (102/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:266:0: C0301: Line too long (109/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:346:0: C0304: Final newline missing (missing-final-newline)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:6:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:69:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:96:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:154:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:236:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:283:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:318:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:327:15: W0718: Catching too general exception Exception (broad-exception-caught)
+src\analizador_calidad_software\procesar_resultados\referencias_metricas.py:4:0: W0611: Unused Path imported from pathlib (unused-import)
+************* Module analizador_calidad_software.procesar_resultados.unificar_resultados_herramientas
+src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py:34:0: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py:51:0: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py:63:0: C0301: Line too long (139/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py:87:13: C0303: Trailing whitespace (trailing-whitespace)
+src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py:93:0: C0301: Line too long (106/100) (line-too-long)
+src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py:101:0: C0305: Trailing newlines (trailing-newlines)
+src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py:1:0: C0114: Missing module docstring (missing-module-docstring)
+src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py:20:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py:37:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py:54:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py:63:0: C0116: Missing function or method docstring (missing-function-docstring)
+src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py:5:0: W0611: Unused Any imported from typing (unused-import)
+src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py:1:0: R0801: Similar lines in 2 files
+==analizador_calidad_software.procesar_resultados.procesar_cpd:[104:118]
+==analizador_calidad_software.procesar_resultados.procesar_lizard:[179:193]
+            metricas_fuera_de_rango
+        )
+
+        filas.append(fila)
+
+    tabla = {
+        "titulo": titulo,
+        "tabla_referencias": info_referencia["tabla_referencias"],
+        "observaciones_tabla": info_referencia["observaciones_tabla"],
+        "cabeceras": cabeceras,
+        "filas": filas
+    }
+
+    return tabla (duplicate-code)
+src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py:1:0: R0801: Similar lines in 2 files
+==analizador_calidad_software.procesar_resultados.procesar_ckjm:[159:171]
+==analizador_calidad_software.procesar_resultados.procesar_radon:[243:256]
+        )
+
+        filas.append(fila)
+
+    tabla = {
+        "titulo": titulo,
+        "tabla_referencias": info_referencia["tabla_referencias"],
+        "observaciones_tabla": info_referencia["observaciones_tabla"],
+        "cabeceras": cabeceras,
+        "filas": filas,
+    }
+
+    return tabla (duplicate-code)
+src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py:1:0: R0801: Similar lines in 2 files
+==analizador_calidad_software.procesar_resultados.procesar_ckjm:[159:167]
+==analizador_calidad_software.procesar_resultados.procesar_cpd:[105:114]
+        )
+        filas.append(fila)
+
+    tabla = {
+        "titulo": titulo,
+        "tabla_referencias": info_referencia["tabla_referencias"],
+        "observaciones_tabla": info_referencia["observaciones_tabla"],
+        "cabeceras": cabeceras, (duplicate-code)
+src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py:1:0: R0801: Similar lines in 2 files
+==analizador_calidad_software.procesar_resultados.procesar_lizard:[180:189]
+==analizador_calidad_software.procesar_resultados.procesar_radon:[243:252]
+        )
+
+        filas.append(fila)
+
+    tabla = {
+        "titulo": titulo,
+        "tabla_referencias": info_referencia["tabla_referencias"],
+        "observaciones_tabla": info_referencia["observaciones_tabla"],
+        "cabeceras": cabeceras, (duplicate-code)
+
+-----------------------------------
+Your code has been rated at 6.84/10
+
+
+
+STDERR
