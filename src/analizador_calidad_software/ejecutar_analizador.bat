@@ -31,7 +31,7 @@ echo Python encontrado en:
 echo "%PYTHON_EXE%"
 
 
-"%PYTHON_EXE%" "%PROGRAMApy%"
+"%PYTHON_EXE%" "%PROGRAMApy%" 8000
 
 
 
