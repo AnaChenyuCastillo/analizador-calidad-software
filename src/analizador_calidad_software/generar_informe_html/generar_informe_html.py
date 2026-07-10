@@ -597,6 +597,8 @@ def generar_contenido_html(
     partes.append(f"<p><strong>Ruta:</strong> {ruta_proyecto}</p>")
     partes.append(f"<p><strong>Lenguaje:</strong> {lenguaje}</p>")
     partes.append(f"<p><strong>Número de tablas:</strong> {len(tablas_resultados)}</p>")
+    partes.append("Algunas métricas no presentan un rango de referencia porque no existe un umbral universalmente aceptado para interpretarlas, ")
+    partes.append("ya que su valor depende del tamaño, lenguaje, estructura y contexto del proyecto analizado.")
     partes.append("</div>")
 
     aviso_ckjm = generar_aviso_errores_ckjm(errores_ckjm)
