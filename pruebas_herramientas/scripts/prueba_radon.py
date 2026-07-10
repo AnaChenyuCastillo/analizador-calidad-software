@@ -98,7 +98,7 @@ def guardar_resultado_txt(contenido: str, nombre_proyecto: str) -> Path:
 
 def main() -> None:
     directorio_proyecto = selecionar_directorio_proyecto()
-    print(f"Proyecto selecionado: {directorio_proyecto}")
+    print(f"Proyecto seleccionado: {directorio_proyecto}")
 
     resultado_cc = ejecutar_radon("cc", directorio_proyecto)
     resultado_raw = ejecutar_radon("raw", directorio_proyecto)

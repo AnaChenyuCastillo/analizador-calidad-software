@@ -1,0 +1,70 @@
+RESULTADO DE LA PRUEBA DE - LIZARD
+
+Proyecto analizado: procesar_resultados
+Ruta del proyecto: C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados
+Herramienta: Lizard
+Métrica principal: Coplejidad cicloatica
+
+Codigo de salida: 1
+
+STDOUT
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+      24      1     50     10      24 construir_fila@8-31@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py
+     114     13    605      3     134 procesar_ckjm@35-168@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py
+      12      1     26      4      12 construir_fila@8-19@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_cpd.py
+      71     10    343      3      95 procesar_cpd@21-115@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_cpd.py
+      32      2     66     10      32 construir_fila@8-39@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_lizard.py
+      13      7     95      2      18 obtener_clasificacion_ccn@41-58@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_lizard.py
+      18      5     96      2      22 obtener_ruta_relativa_lizard@60-81@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_lizard.py
+      11      6     73      1      13 es_fila_metricas_lizard@83-95@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_lizard.py
+      75      5    299      3      94 procesar_lizard@97-190@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_lizard.py
+      12      1     28      4      12 construir_fila_resumen@9-20@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_pylint.py
+      22      1     48      9      22 construir_fila_detalle@23-44@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_pylint.py
+       5      2     39      2       5 obtener_ruta_relativa@47-51@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_pylint.py
+       6      2     39      1       9 extraer_puntuacion_pylint@54-62@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_pylint.py
+      12      2    112      1      16 procesar_linea_pylint@65-80@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_pylint.py
+      96      9    377      3     122 procesar_pylint@83-204@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_pylint.py
+      22      1     46      9      22 construir_fila@8-29@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_radon.py
+      14      7     89      2      18 obtener_clasificacion@31-48@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_radon.py
+       5      2     39      2       5 obtener_ruta_relativa@51-55@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_radon.py
+       6      1     21      0       6 crear_datos_archivo_vacios@58-63@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_radon.py
+     120     29    646      3     161 procesar_radon@65-225@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_radon.py
+      61      1    196      0      61 referencia_ckjm@3-63@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py
+      25      1     70      0      25 referencia_cpd@66-90@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py
+      51      2    177      1      56 referencia_lizard@93-148@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py
+      80      1    250      0      80 referencia_radon@151-230@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py
+      45      1    143      0      45 referencia_pylint@233-277@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py
+      33      1     89      0      33 rangos_complejidad_ciclomatica@280-312@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py
+      21      9    116      2      29 obtener_metricas_fuera_de_rango@315-343@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py
+      14      1     48      1      16 obtener_procesador@17-32@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py
+      14      1     64      2      16 obtener_referencias@34-49@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py
+       8      1     50      2       8 crear_tabla_error@51-58@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py
+      26      6    174      4      38 unificar_resultados_herramientas@60-97@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py
+8 file analyzed.
+==============================================================
+NLOC    Avg.NLOC  AvgCCN  Avg.token  function_cnt    file
+--------------------------------------------------------------
+    143      69.0     7.0      327.5         2     C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py
+     88      41.5     5.5      184.5         2     C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_cpd.py
+    154      29.8     5.0      125.8         5     C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_lizard.py
+    158      25.5     2.8      107.2         6     C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_pylint.py
+    172      33.4     8.0      168.2         5     C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_radon.py
+    317      45.1     2.3      148.7         7     C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py
+     76      15.5     2.2       84.0         4     C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py
+      0       0.0     0.0        0.0         0     C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\__init__.py
+
+===========================================================================================================
+!!!! Warnings (cyclomatic_complexity > 15 or length > 1000 or nloc > 1000000 or parameter_count > 100) !!!!
+================================================
+  NLOC    CCN   token  PARAM  length  location  
+------------------------------------------------
+     120     29    646      3     161 procesar_radon@65-225@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_radon.py
+==========================================================================================
+Total nloc   Avg.NLOC  AvgCCN  Avg.token   Fun Cnt  Warning cnt   Fun Rt   nloc Rt
+------------------------------------------------------------------------------------------
+      1108      34.5     4.3      145.6       31            1      0.03    0.11
+
+
+STDERR

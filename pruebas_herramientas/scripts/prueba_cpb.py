@@ -102,7 +102,7 @@ def guardar_resultado_txt(contenido: str, nombre_proyecto: str) -> Path:
 
 def main() -> None:
     directorio_proyecto = selecionar_directorio_java()
-    print(f"Proyecto selecionado: {directorio_proyecto}")
+    print(f"Proyecto seleccionado: {directorio_proyecto}")
 
     resultado = ejecutar_cpd(directorio_proyecto)
 
@@ -112,7 +112,7 @@ def main() -> None:
     contenido = generar_texto_resultado(directorio_proyecto, resultado)
     ruta_resultado = guardar_resultado_txt(contenido, directorio_proyecto.name)
 
-    print("Prueba competa correctamente")
+    print("Prueba completa correctamente")
     print(f"Archivo generado: {ruta_resultado}")
 
 if __name__ == "__main__":

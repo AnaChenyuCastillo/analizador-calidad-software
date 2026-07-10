@@ -65,7 +65,7 @@ def interpretar_salida_ckjm(salida: str, nombre_proyecto: str) -> dict:
     return salida_metodo
 
 def generar_texto_resultado(metricas: dict) -> str:
-    print("Las métrocas son:", metricas)
+    print("Las métricas son:", metricas)
     texto = []
     texto.append("")
     texto.append(f"Clase analizada: {metricas['Clase']}")

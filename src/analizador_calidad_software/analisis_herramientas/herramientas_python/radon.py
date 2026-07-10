@@ -95,7 +95,7 @@ def ejecutar_analisis_radon(directorio_proyecto, carpeta_resultados) -> None:
 
     ruta_resultado = guardar_resultado_txt(contenido, carpeta_resultados, "radon")
 
-    print("Prueba competa correctamente")
+    print("Prueba completada correctamente")
     print(f"Archivo generado: {ruta_resultado}")
 
     return ruta_resultado

@@ -19,7 +19,7 @@ def obtener_ruta_ckjm() -> Path:
     return ruta
 
 def selecionar_class() -> Path:
-    print("Selecionando clase:")
+    print("Seleccionando clase:")
     root = tk.Tk()
     root.withdraw()
     print("Abriendo ventana para seleccionar clase")
@@ -90,7 +90,7 @@ def interpretar_salida_ckjm(salida: str) -> dict:
     return salida_metodo
 
 def generar_texto_resultado(metricas: dict) -> str:
-    print("Las métrocas son:", metricas)
+    print("Las métricas son:", metricas)
     texto = []
     texto.append("Resultadode prueba CKJM")
     texto.append("")

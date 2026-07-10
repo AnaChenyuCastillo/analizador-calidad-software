@@ -71,7 +71,7 @@ def main() -> None:
         print("Se ha seleccionado un archivo")
 
     if ruta.is_dir():
-        print("Se ha selecionado un directorio")
+        print("Se ha seleccionado un directorio")
 
     
     ruta_cloc = obtener_ruta_herramienta("cloc")

@@ -66,12 +66,12 @@ def ejecutar_analisis_java(ruta_proyecto: Path, carpeta_resultados) -> None:
     return resultados_herramientas, calses_errores_ckjm
 
 def preguntar_modo_pyhton() -> str:
-    print("\n Se ha detectado que es un proyecto pyhon")
-    print("Seleciona el modo de analisis")
+    print("\n Se ha detectado que es un proyecto python")
+    print("Selecciona el modo de analisis")
     print("1. Completo")
     print("2. Rapido")
-    print("El anlisis completo puede tardar varias horas dado que analiz exahustivamente el programa con pylint")
-    print("El analisis rapido tarda menos pero analiza los 30 fichero mas importarnte con pylint")
+    print("El analisis completo puede tardar varias horas dado que analiza exhaustivamente el programa con pylint")
+    print("El analisis rapido tarda menos pero no ejecutará pylint")
 
     while True:
         opcion = input("introduce 1 o 2: ").strip()
@@ -81,7 +81,7 @@ def preguntar_modo_pyhton() -> str:
             return "Completo"
         
         if opcion == "2":
-            print("Recuerda que el anlisis rapido no ejecutará la aplicación de detección de errores pylint")
+            print("Recuerda que el analisis rapido no ejecutará la aplicación de detección de errores pylint")
             return "Rapido"
         
         print("Opcion no valida. Introduce 1 o 2")
@@ -94,7 +94,7 @@ def ejecutar_analisis_python(ruta_proyecto: Path, carpeta_resultados) -> None:
     resultado_lizard = None
     resultado_pylint = None
 
-    print("\n Se ha detectado que es un proyecto pyhon")
+    print("\n Se ha detectado que es un proyecto python")
 
     if modo == "Completo":
         print("Ejecutar todas las aplicaciones al completo ")
@@ -169,7 +169,7 @@ def ejecutar_programa() -> int:
     #lenguaje = obtener_ranking_lenguajes_proyecto(ruta_proyecto)[0][0]
     print("detectando lenguaje")
     lenguaje = detectar_lenguaje_proyecto(ruta_proyecto)
-    print(lenguaje)
+    #print(lenguaje)
     lista_lenguajes = obtener_ranking_lenguajes_proyecto(ruta_proyecto)
     contador = 1
     while lenguaje != "python" and lenguaje !="java" and contador < len(lista_lenguajes):
@@ -191,7 +191,7 @@ def ejecutar_programa() -> int:
         
         print("\n ======INFORMACION DEL PROYECTO==========")
         print(f"Ruta del proyecto: {ruta_proyecto}")
-        print(f"Lengujes principal del proyecto: {lenguaje}")
+        print(f"Lenguajes principal del proyecto: {lenguaje}")
         print(f"Lista de lenguajes del proyecto: {lista_lenguajes}")
 
         errores_ckjm =[]

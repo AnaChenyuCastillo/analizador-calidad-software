@@ -17,15 +17,15 @@ def seleccionar_proyecto() -> Path:
     )
 
     if not ruta:
-        raise RuntimeError("No se ha selecionado ninguna carpeta de proyecto")
+        raise RuntimeError("No se ha seleccionado ninguna carpeta de proyecto")
     
     ruta_proyecto = Path(ruta).resolve()
 
     if not ruta_proyecto.exists():
-        raise RecursionError("La ruta selecionada no existe")
+        raise RecursionError("La ruta seleccionada no existe")
     
     if not ruta_proyecto.is_dir():
-        raise RuntimeError("La ruta selecionada no es una carpeta")
+        raise RuntimeError("La ruta seleccionada no es una carpeta")
     
     return ruta_proyecto
 

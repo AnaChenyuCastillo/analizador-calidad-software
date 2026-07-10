@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset='UTF-8'>
+<title>Informe de calidad de software procesar_resultados</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        h1 {
+            color: #1f2937;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #1f2937;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 6px;
+        }
+
+        h3 {
+            margin-top: 25px;
+            color: #374151;
+        }
+
+        h4 {
+            margin-top: 20px;
+            color: #374151;
+        }
+
+        .bloque-proyecto {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+        }
+
+        .bloque-tabla {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 35px;
+            border: 1px solid #ddd;
+        }
+
+        .referencia {
+            background-color: #eef2ff;
+            padding: 12px;
+            border-left: 4px solid #6366f1;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        .observacion {
+            background-color: #fff7ed;
+            padding: 12px;
+            border-left: 4px solid #f97316;
+            margin: 10px 0 20px 0;
+            border-radius: 4px;
+        }
+
+        .aviso {
+            background-color: #fef2f2;
+            padding: 15px;
+            border-left: 4px solid #dc2626;
+            margin: 20px 0 30px 0;
+            border-radius: 4px;
+        }
+
+        .aviso ul {
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        .contenedor-tabla {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 25px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #1f2937;
+            color: white;
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .tabla-referencias th {
+            background-color: #4338ca;
+        }
+
+        .tabla-rangos th {
+            background-color: #065f46;
+        }
+
+        .tabla-vacia {
+            padding: 12px;
+            background-color: #fee2e2;
+            border-left: 4px solid #dc2626;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .botones-superiores {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .boton {
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            background-color: #374151;
+        }
+
+        .boton-secundario {
+            background-color: #4b5563;
+        }
+
+        .boton-secundario:hover {
+            background-color: #6b7280;
+        }
+
+        .indice {
+            background-color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 30px;
+        }
+
+        .indice a {
+            display: inline-block;
+            margin: 6px 10px 6px 0;
+            color: #1f2937;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .indice a:hover {
+            text-decoration: underline;
+        }
+
+        .volver-arriba {
+            display: inline-block;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: #374151;
+            text-decoration: none;
+        }
+
+        .volver-arriba:hover {
+            text-decoration: underline;
+        }
+
+        .cabecera-impresion {
+            display: none;
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 10mm;
+            }
+
+            body {
+                margin: 0;
+                background-color: white;
+                color: black;
+            }
+
+            .botones-superiores,
+            .indice,
+            .volver-arriba {
+                display: none;
+            }
+
+            .bloque-proyecto {
+                page-break-after: always;
+                border: none;
+            }
+
+            .bloque-tabla {
+                page-break-before: always;
+                border: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .referencia,
+            .observacion,
+            .tabla-referencias,
+            .tabla-rangos {
+                page-break-inside: avoid;
+            }
+
+            .tabla-referencias,
+            .tabla-rangos {
+                page-break-after: always;
+            }
+
+            table {
+                width: 100%;
+                font-size: 8px;
+                page-break-inside: auto;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            tbody {
+                display: table-row-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+
+            th {
+                background-color: #1f2937 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            td {
+                padding: 4px;
+            }
+
+            h1, h2, h3, h4 {
+                page-break-after: avoid;
+            }
+
+            .cabecera-impresion {
+                display: table-row;
+            }
+
+            .cabecera-impresion th {
+                background-color: #111827 !important;
+                color: white !important;
+                font-size: 10px;
+                text-align: left;
+            }
+        }
+    </style>
+    
+</head>
+<body id='inicio'>
+<div class='botones-superiores'>
+<a class='boton boton-secundario' href='#inicio'>Inicio</a>
+<button class='boton' onclick='window.print()'>Generar PDF</button>
+<a class='boton boton-secundario' href='file:///C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\resultados\procesar_resultados_20260709214140_py.pdf' target='_blank'>Ver diagramas</a>
+</div>
+<h1>Informe de calidad de software</h1>
+<div class='bloque-proyecto'>
+<p><strong>Proyecto:</strong> procesar_resultados</p>
+<p><strong>Ruta:</strong> C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados</p>
+<p><strong>Lenguaje:</strong> python</p>
+<p><strong>Número de tablas:</strong> 2</p>
+</div>
+<div class='indice'>
+<h2>Índice de resultados</h2>
+<a href='#tabla-1'>Resultados Radon</a>
+<a href='#tabla-2'>Resultados Lizard</a>
+</div>
+<section class='bloque-tabla' id='tabla-1'>
+<h2>Resultados Radon</h2>
+<a class='volver-arriba' href='#inicio'>Volver arriba</a>
+<div class='referencia'><strong>Referencia:</strong> Radon calcula métricas de código Python como complejidad ciclomática, índice de mantenibilidad, métricas básicas de tamaño y métricas de Halstead. En este informe se muestran las métricas más relevantes para interpretar la calidad del código.</div>
+<div class='observacion'><strong>Observación:</strong> La complejidad ciclomática y el índice de mantenibilidad se interpretan mediante rangos cualitativos. SLOC y las métricas de Halstead se muestran como métricas descriptivas para contextualizar el tamaño, el volumen lógico, la dificultad y el esfuerzo estimado del código analizado.</div>
+<h3>Referencias de métricas</h3>
+<div class='contenedor-tabla'>
+<table class='tabla-referencias'>
+<thead>
+<tr>
+<th></th>
+<th>SLOC</th>
+<th>CC</th>
+<th>MI</th>
+<th>VOLUMEN</th>
+<th>DIFICULTAD</th>
+<th>ESFUERZO</th>
+<th>BUGS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nombre</strong></td>
+<td>Líneas de código fuente</td>
+<td>Complejidad ciclomática</td>
+<td>Índice de mantenibilidad</td>
+<td>Volumen de Halstead</td>
+<td>Dificultad de Halstead</td>
+<td>Esfuerzo de Halstead</td>
+<td>Errores estimados de Halstead</td>
+</tr>
+<tr>
+<td><strong>Qué mide</strong></td>
+<td>Cantidad de líneas de código fuente sin contar líneas en blanco ni comentarios.</td>
+<td>Número de caminos independientes existentes en el flujo de control del código.</td>
+<td>Indicador numérico que estima la facilidad de mantenimiento del código.</td>
+<td>Tamaño lógico del código calculado a partir de operadores y operandos.</td>
+<td>Estimación de la dificultad de comprensión o implementación del código.</td>
+<td>Estimación del esfuerzo necesario para comprender o desarrollar el código.</td>
+<td>Estimación teórica del número de defectos potenciales asociados al volumen lógico del código.</td>
+</tr>
+<tr>
+<td><strong>Mínimo</strong></td>
+<td>Sin especificar</td>
+<td>1</td>
+<td>20</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+</tr>
+<tr>
+<td><strong>Máximo</strong></td>
+<td>Sin especificar</td>
+<td>10</td>
+<td>100</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Rangos cualitativos</h3>
+<h4>CC</h4>
+<div class='contenedor-tabla'>
+<table class='tabla-rangos'>
+<thead>
+<tr>
+<th>Mínimo</th>
+<th>Máximo</th>
+<th>Clasificación</th>
+<th>Observación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>10</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>20</td>
+<td>Moderada</td>
+<td>Complejidad moderada; conviene revisar si puede simplificarse.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>50</td>
+<td>Alta</td>
+<td>Complejidad alta; puede estar justificada en casos concretos, pero aumenta el esfuerzo de prueba y mantenimiento.</td>
+</tr>
+<tr>
+<td>51</td>
+<td>Sin especificar</td>
+<td>Muy alta</td>
+<td>Complejidad muy alta; requiere revisión prioritaria por su impacto en comprensión, prueba y mantenimiento.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4>MI</h4>
+<div class='contenedor-tabla'>
+<table class='tabla-rangos'>
+<thead>
+<tr>
+<th>Mínimo</th>
+<th>Máximo</th>
+<th>Clasificación</th>
+<th>Observación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td>100</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>19</td>
+<td>Media</td>
+<td>Mantenibilidad media; conviene revisar posibles mejoras.</td>
+</tr>
+<tr>
+<td>0</td>
+<td>9</td>
+<td>Baja</td>
+<td>Mantenibilidad baja; requiere revisión prioritaria.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Resultados</h3>
+<div class='contenedor-tabla'>
+<table>
+<thead>
+<tr class='cabecera-impresion'>
+<th colspan='9'>Resultados Radon</th>
+</tr>
+<tr>
+<th>Elemento analizado</th>
+<th>SLOC</th>
+<th>Complejidad ciclomatica</th>
+<th>Clasificacion complejidad</th>
+<th>Observacion complejidad</th>
+<th>MI</th>
+<th>Clasificacion MI</th>
+<th>Observacion MI</th>
+<th>Volumen Halstead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>procesar_ckjm.py::F 35:0 procesar_ckjm</td>
+<td>143</td>
+<td>13</td>
+<td>Moderada</td>
+<td>Complejidad moderada; conviene revisar si puede simplificarse.</td>
+<td>52.00</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>9.509775004326938</td>
+</tr>
+<tr>
+<td>procesar_ckjm.py::F 8:0 construir_fila</td>
+<td>143</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>52.00</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>9.509775004326938</td>
+</tr>
+<tr>
+<td>procesar_cpd.py::F 21:0 procesar_cpd</td>
+<td>88</td>
+<td>10</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>49.67</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>53.77443751081735</td>
+</tr>
+<tr>
+<td>procesar_cpd.py::F 8:0 construir_fila</td>
+<td>88</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>49.67</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>53.77443751081735</td>
+</tr>
+<tr>
+<td>procesar_lizard.py::F 41:0 obtener_clasificacion_ccn</td>
+<td>154</td>
+<td>7</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>39.64</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>201.77576477433814</td>
+</tr>
+<tr>
+<td>procesar_lizard.py::F 83:0 es_fila_metricas_lizard</td>
+<td>154</td>
+<td>6</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>39.64</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>201.77576477433814</td>
+</tr>
+<tr>
+<td>procesar_lizard.py::F 60:0 obtener_ruta_relativa_lizard</td>
+<td>154</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>39.64</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>201.77576477433814</td>
+</tr>
+<tr>
+<td>procesar_lizard.py::F 97:0 procesar_lizard</td>
+<td>154</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>39.64</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>201.77576477433814</td>
+</tr>
+<tr>
+<td>procesar_lizard.py::F 8:0 construir_fila</td>
+<td>154</td>
+<td>2</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>39.64</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>201.77576477433814</td>
+</tr>
+<tr>
+<td>procesar_pylint.py::F 83:0 procesar_pylint</td>
+<td>158</td>
+<td>9</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>42.68</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>135.7068586817104</td>
+</tr>
+<tr>
+<td>procesar_pylint.py::F 47:0 obtener_ruta_relativa</td>
+<td>158</td>
+<td>2</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>42.68</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>135.7068586817104</td>
+</tr>
+<tr>
+<td>procesar_pylint.py::F 54:0 extraer_puntuacion_pylint</td>
+<td>158</td>
+<td>2</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>42.68</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>135.7068586817104</td>
+</tr>
+<tr>
+<td>procesar_pylint.py::F 65:0 procesar_linea_pylint</td>
+<td>158</td>
+<td>2</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>42.68</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>135.7068586817104</td>
+</tr>
+<tr>
+<td>procesar_pylint.py::F 9:0 construir_fila_resumen</td>
+<td>158</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>42.68</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>135.7068586817104</td>
+</tr>
+<tr>
+<td>procesar_pylint.py::F 23:0 construir_fila_detalle</td>
+<td>158</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>42.68</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>135.7068586817104</td>
+</tr>
+<tr>
+<td>procesar_radon.py::F 65:0 procesar_radon</td>
+<td>172</td>
+<td>29</td>
+<td>Alta</td>
+<td>Complejidad alta; puede estar justificada en casos concretos, pero aumenta el esfuerzo de prueba y mantenimiento.</td>
+<td>36.48</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>488.7749255733411</td>
+</tr>
+<tr>
+<td>procesar_radon.py::F 31:0 obtener_clasificacion</td>
+<td>172</td>
+<td>7</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>36.48</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>488.7749255733411</td>
+</tr>
+<tr>
+<td>procesar_radon.py::F 51:0 obtener_ruta_relativa</td>
+<td>172</td>
+<td>2</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>36.48</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>488.7749255733411</td>
+</tr>
+<tr>
+<td>procesar_radon.py::F 8:0 construir_fila</td>
+<td>172</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>36.48</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>488.7749255733411</td>
+</tr>
+<tr>
+<td>procesar_radon.py::F 58:0 crear_datos_archivo_vacios</td>
+<td>172</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>36.48</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>488.7749255733411</td>
+</tr>
+<tr>
+<td>referencias_metricas.py::F 315:0 obtener_metricas_fuera_de_rango</td>
+<td>317</td>
+<td>9</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>47.62</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>112.37013046707143</td>
+</tr>
+<tr>
+<td>referencias_metricas.py::F 93:0 referencia_lizard</td>
+<td>317</td>
+<td>2</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>47.62</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>112.37013046707143</td>
+</tr>
+<tr>
+<td>referencias_metricas.py::F 3:0 referencia_ckjm</td>
+<td>317</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>47.62</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>112.37013046707143</td>
+</tr>
+<tr>
+<td>referencias_metricas.py::F 66:0 referencia_cpd</td>
+<td>317</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>47.62</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>112.37013046707143</td>
+</tr>
+<tr>
+<td>referencias_metricas.py::F 151:0 referencia_radon</td>
+<td>317</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>47.62</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>112.37013046707143</td>
+</tr>
+<tr>
+<td>referencias_metricas.py::F 233:0 referencia_pylint</td>
+<td>317</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>47.62</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>112.37013046707143</td>
+</tr>
+<tr>
+<td>referencias_metricas.py::F 280:0 rangos_complejidad_ciclomatica</td>
+<td>317</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>47.62</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>112.37013046707143</td>
+</tr>
+<tr>
+<td>unificar_resultados_herramientas.py::F 17:0 obtener_procesador</td>
+<td>76</td>
+<td>6</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>58.57</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>25.26619429851844</td>
+</tr>
+<tr>
+<td>unificar_resultados_herramientas.py::F 34:0 obtener_referencias</td>
+<td>76</td>
+<td>6</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>58.57</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>25.26619429851844</td>
+</tr>
+<tr>
+<td>unificar_resultados_herramientas.py::F 60:0 unificar_resultados_herramientas</td>
+<td>76</td>
+<td>6</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>58.57</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>25.26619429851844</td>
+</tr>
+<tr>
+<td>unificar_resultados_herramientas.py::F 51:0 crear_tabla_error</td>
+<td>76</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>58.57</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>25.26619429851844</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class='bloque-tabla' id='tabla-2'>
+<h2>Resultados Lizard</h2>
+<a class='volver-arriba' href='#inicio'>Volver arriba</a>
+<div class='referencia'><strong>Referencia:</strong> Lizard calcula métricas estructurales como NLOC, tokens, número de parámetros y longitud. En proyectos Java también se incluye la complejidad ciclomática. En proyectos Python, la complejidad ciclomática se muestra mediante Radon para evitar duplicidad.</div>
+<div class='observacion'><strong>Observación:</strong> Las métricas de Lizard deben interpretarse en contexto. En proyectos grandes pueden existir funciones extensas justificadas por lógica de negocio, estructuras condicionales amplias o flujos difíciles de dividir. Aun así, valores elevados pueden indicar mayor dificultad de prueba y mantenimiento.</div>
+<h3>Referencias de métricas</h3>
+<div class='contenedor-tabla'>
+<table class='tabla-referencias'>
+<thead>
+<tr>
+<th></th>
+<th>NLOC</th>
+<th>TOKENS</th>
+<th>PARAM</th>
+<th>LENGTH</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nombre</strong></td>
+<td>Líneas de código sin comentarios</td>
+<td>Tokens</td>
+<td>Número de parámetros</td>
+<td>Longitud</td>
+</tr>
+<tr>
+<td><strong>Qué mide</strong></td>
+<td>Cantidad de líneas efectivas de código dentro del elemento analizado.</td>
+<td>Cantidad de unidades léxicas presentes en el elemento analizado.</td>
+<td>Cantidad de parámetros recibidos por una función o método.</td>
+<td>Número de líneas que ocupa la función o método analizado.</td>
+</tr>
+<tr>
+<td><strong>Mínimo</strong></td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+</tr>
+<tr>
+<td><strong>Máximo</strong></td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Resultados</h3>
+<div class='contenedor-tabla'>
+<table>
+<thead>
+<tr class='cabecera-impresion'>
+<th colspan='5'>Resultados Lizard</th>
+</tr>
+<tr>
+<th>Elemento analizado</th>
+<th>NLOC</th>
+<th>Tokens</th>
+<th>Parametros</th>
+<th>longitud</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>construir_fila@8-31@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py</td>
+<td>24</td>
+<td>50</td>
+<td>10</td>
+<td>24</td>
+</tr>
+<tr>
+<td>procesar_ckjm@35-168@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_ckjm.py</td>
+<td>114</td>
+<td>605</td>
+<td>3</td>
+<td>134</td>
+</tr>
+<tr>
+<td>construir_fila@8-19@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_cpd.py</td>
+<td>12</td>
+<td>26</td>
+<td>4</td>
+<td>12</td>
+</tr>
+<tr>
+<td>procesar_cpd@21-115@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_cpd.py</td>
+<td>71</td>
+<td>343</td>
+<td>3</td>
+<td>95</td>
+</tr>
+<tr>
+<td>construir_fila@8-39@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_lizard.py</td>
+<td>32</td>
+<td>66</td>
+<td>10</td>
+<td>32</td>
+</tr>
+<tr>
+<td>obtener_clasificacion_ccn@41-58@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_lizard.py</td>
+<td>13</td>
+<td>95</td>
+<td>2</td>
+<td>18</td>
+</tr>
+<tr>
+<td>obtener_ruta_relativa_lizard@60-81@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_lizard.py</td>
+<td>18</td>
+<td>96</td>
+<td>2</td>
+<td>22</td>
+</tr>
+<tr>
+<td>es_fila_metricas_lizard@83-95@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_lizard.py</td>
+<td>11</td>
+<td>73</td>
+<td>1</td>
+<td>13</td>
+</tr>
+<tr>
+<td>procesar_lizard@97-190@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_lizard.py</td>
+<td>75</td>
+<td>299</td>
+<td>3</td>
+<td>94</td>
+</tr>
+<tr>
+<td>construir_fila_resumen@9-20@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_pylint.py</td>
+<td>12</td>
+<td>28</td>
+<td>4</td>
+<td>12</td>
+</tr>
+<tr>
+<td>construir_fila_detalle@23-44@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_pylint.py</td>
+<td>22</td>
+<td>48</td>
+<td>9</td>
+<td>22</td>
+</tr>
+<tr>
+<td>obtener_ruta_relativa@47-51@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_pylint.py</td>
+<td>5</td>
+<td>39</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>extraer_puntuacion_pylint@54-62@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_pylint.py</td>
+<td>6</td>
+<td>39</td>
+<td>1</td>
+<td>9</td>
+</tr>
+<tr>
+<td>procesar_linea_pylint@65-80@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_pylint.py</td>
+<td>12</td>
+<td>112</td>
+<td>1</td>
+<td>16</td>
+</tr>
+<tr>
+<td>procesar_pylint@83-204@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_pylint.py</td>
+<td>96</td>
+<td>377</td>
+<td>3</td>
+<td>122</td>
+</tr>
+<tr>
+<td>construir_fila@8-29@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_radon.py</td>
+<td>22</td>
+<td>46</td>
+<td>9</td>
+<td>22</td>
+</tr>
+<tr>
+<td>obtener_clasificacion@31-48@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_radon.py</td>
+<td>14</td>
+<td>89</td>
+<td>2</td>
+<td>18</td>
+</tr>
+<tr>
+<td>obtener_ruta_relativa@51-55@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_radon.py</td>
+<td>5</td>
+<td>39</td>
+<td>2</td>
+<td>5</td>
+</tr>
+<tr>
+<td>crear_datos_archivo_vacios@58-63@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_radon.py</td>
+<td>6</td>
+<td>21</td>
+<td>0</td>
+<td>6</td>
+</tr>
+<tr>
+<td>procesar_radon@65-225@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_radon.py</td>
+<td>120</td>
+<td>646</td>
+<td>3</td>
+<td>161</td>
+</tr>
+<tr>
+<td>referencia_ckjm@3-63@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py</td>
+<td>61</td>
+<td>196</td>
+<td>0</td>
+<td>61</td>
+</tr>
+<tr>
+<td>referencia_cpd@66-90@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py</td>
+<td>25</td>
+<td>70</td>
+<td>0</td>
+<td>25</td>
+</tr>
+<tr>
+<td>referencia_lizard@93-148@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py</td>
+<td>51</td>
+<td>177</td>
+<td>1</td>
+<td>56</td>
+</tr>
+<tr>
+<td>referencia_radon@151-230@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py</td>
+<td>80</td>
+<td>250</td>
+<td>0</td>
+<td>80</td>
+</tr>
+<tr>
+<td>referencia_pylint@233-277@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py</td>
+<td>45</td>
+<td>143</td>
+<td>0</td>
+<td>45</td>
+</tr>
+<tr>
+<td>rangos_complejidad_ciclomatica@280-312@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py</td>
+<td>33</td>
+<td>89</td>
+<td>0</td>
+<td>33</td>
+</tr>
+<tr>
+<td>obtener_metricas_fuera_de_rango@315-343@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\referencias_metricas.py</td>
+<td>21</td>
+<td>116</td>
+<td>2</td>
+<td>29</td>
+</tr>
+<tr>
+<td>obtener_procesador@17-32@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py</td>
+<td>14</td>
+<td>48</td>
+<td>1</td>
+<td>16</td>
+</tr>
+<tr>
+<td>obtener_referencias@34-49@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py</td>
+<td>14</td>
+<td>64</td>
+<td>2</td>
+<td>16</td>
+</tr>
+<tr>
+<td>crear_tabla_error@51-58@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py</td>
+<td>8</td>
+<td>50</td>
+<td>2</td>
+<td>8</td>
+</tr>
+<tr>
+<td>unificar_resultados_herramientas@60-97@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\unificar_resultados_herramientas.py</td>
+<td>26</td>
+<td>174</td>
+<td>4</td>
+<td>38</td>
+</tr>
+<tr>
+<td>procesar_radon@65-225@C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\procesar_resultados\procesar_radon.py</td>
+<td>120</td>
+<td>646</td>
+<td>3</td>
+<td>161</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</body>
+</html>
