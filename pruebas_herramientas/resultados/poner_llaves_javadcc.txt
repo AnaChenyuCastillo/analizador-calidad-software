@@ -1,0 +1,256 @@
+def poner_llaves_java1(codigo: str, espacios_indentacion: int = 4) -> str:
+    s = codigo
+    n = len(s)
+    IND = " " * espacios_indentacion
+    def ident(c: str) -> bool:
+        return c.isalnum() or c in "_$"
+    def ind(level: int) -> str:
+        return IND * level
+    def is_kw(pos: int, kw: str) -> bool:
+        if not s.startswith(kw, pos):
+            return False
+        before = s[pos - 1] if pos > 0 else ""
+        after_pos = pos + len(kw)
+        after = s[after_pos] if after_pos < n else ""
+        return not ident(before) and not ident(after)
+    def skip_ws(pos: int) -> int:
+        while pos < n and s[pos].isspace():
+            pos += 1
+        return pos
+    def skip_string_comment(pos: int) -> int:
+        if pos >= n:
+            return pos
+        if s.startswith("//", pos):
+            fin = s.find("\n", pos + 2)
+            return n if fin == -1 else fin + 1
+        if s.startswith("/*", pos):
+            fin = s.find("*/", pos + 2)
+            return n if fin == -1 else fin + 2
+        if s[pos] in ("'", '"'):
+            quote = s[pos]
+            pos += 1
+            while pos < n:
+                if s[pos] == "\\":
+                    pos += 2
+                elif s[pos] == quote:
+                    return pos + 1
+                else:
+                    pos += 1
+            return pos
+        return pos
+    def leer_comentario(pos: int, level: int):
+        if s.startswith("//", pos):
+            fin = s.find("\n", pos + 2)
+            if fin == -1:
+                comentario = s[pos:].strip()
+                return ind(level) + comentario, n
+            comentario = s[pos:fin].strip()
+            return ind(level) + comentario, fin + 1
+        if s.startswith("/*", pos):
+            fin = s.find("*/", pos + 2)
+            if fin == -1:
+                comentario = s[pos:].strip()
+                return ind(level) + comentario, n
+            fin += 2
+            comentario = s[pos:fin].strip()
+            lineas = comentario.splitlines()
+            comentario_formateado = "\n".join( ind(level) + linea.strip() for linea in lineas )
+            return comentario_formateado, fin
+        return "", pos
+    def find_matching(pos: int, open_ch: str, close_ch: str) -> int:
+        depth = 0
+        while pos < n:
+            nxt = skip_string_comment(pos)
+            if nxt != pos:
+                pos = nxt
+                continue
+            if s[pos] == open_ch:
+                depth += 1
+            elif s[pos] == close_ch:
+                depth -= 1
+                if depth == 0:
+                    return pos
+            pos += 1
+        raise ValueError(f"No se encontró cierre para {open_ch}")
+    def read_parenthesized_header(pos: int, kw: str):
+        start = pos
+        pos += len(kw)
+        pos = skip_ws(pos)
+        if pos >= n or s[pos] != "(":
+            raise ValueError(f"{kw} sin condición entre paréntesis")
+        close = find_matching(pos, "(", ")")
+        return s[start:close + 1].strip(), close + 1
+    def read_case_label(pos: int):
+        start = pos
+        par = 0
+        cor = 0
+        while pos < n:
+            nxt = skip_string_comment(pos)
+            if nxt != pos:
+                pos = nxt
+                continue
+            c = s[pos]
+            if c == "(":
+                par += 1
+            elif c == ")":
+                par -= 1
+            elif c == "[":
+                cor += 1
+            elif c == "]":
+                cor -= 1
+            elif c == ":" and par == 0 and cor == 0:
+                return s[start:pos + 1].strip(), pos + 1
+            pos += 1
+        raise ValueError("case/default sin ':'")
+    def read_simple(pos: int):
+        start = pos
+        par = 0
+        cor = 0
+        while pos < n:
+            nxt = skip_string_comment(pos)
+            if nxt != pos:
+                pos = nxt
+                continue
+            c = s[pos]
+            if c == "(":
+                par += 1
+            elif c == ")":
+                par -= 1
+            elif c == "[":
+                cor += 1
+            elif c == "]":
+                cor -= 1
+            elif c == ";" and par == 0 and cor == 0:
+                return s[start:pos + 1].strip(), pos + 1, "semicolon"
+            elif c == "{" and par == 0 and cor == 0:
+                return s[start:pos].strip(), pos, "block"
+            elif c == "}" and par == 0 and cor == 0:
+                return s[start:pos].strip(), pos, "close"
+            pos += 1
+        return s[start:pos].strip(), pos, "eof"
+    def parse_block(pos: int, level: int):
+        if pos >= n or s[pos] != "{":
+            raise ValueError("Se esperaba '{'")
+        pos += 1
+        content, pos = parse_content( pos, level + 1, stop_at_case=False )
+        pos = skip_ws(pos)
+        if pos >= n or s[pos] != "}":
+            raise ValueError("Bloque sin '}'")
+        pos += 1
+        if content.strip():
+            return ( ind(level) + "{\n" + content.rstrip() + "\n" + ind(level) + "}" ), pos
+        return ( ind(level) + "{\n" + ind(level) + "}" ), pos
+    def parse_body(pos: int, level: int):
+        pos = skip_ws(pos)
+        comentarios = []
+        while pos < n and (s.startswith("//", pos) or s.startswith("/*", pos)):
+            comentario, pos = leer_comentario(pos, level + 1)
+            if comentario.strip():
+                comentarios.append(comentario.rstrip())
+            pos = skip_ws(pos)
+        if pos < n and s[pos] == "{":
+            block, pos = parse_block(pos, level)
+            if comentarios:
+                lineas = [ ind(level) + "{", *comentarios, block.removeprefix(ind(level) + "{\n").removesuffix("\n" + ind(level) + "}") ]
+                return "\n".join(lineas) + "\n" + ind(level) + "}", pos
+            return block, pos
+        stmt, pos = parse_statement(pos, level + 1)
+        body_lines = []
+        if comentarios:
+            body_lines.extend(comentarios)
+        if stmt.strip():
+            body_lines.append(stmt.rstrip())
+        return ( ind(level) + "{\n" + "\n".join(body_lines) + "\n" + ind(level) + "}" ), pos
+    def parse_if(pos: int, level: int):
+        header, pos = read_parenthesized_header(pos, "if")
+        body, pos = parse_body(pos, level)
+        result = ( ind(level) + header + "\n" + body )
+        pos = skip_ws(pos)
+        if is_kw(pos, "else"):
+            pos += len("else")
+            pos = skip_ws(pos)
+            if is_kw(pos, "if"):
+                else_if, pos = parse_if(pos, level)
+                lines = else_if.splitlines()
+                lines[0] = lines[0].lstrip()
+                result += ( "\n" + ind(level) + "else " + lines[0] )
+                if len(lines) > 1:
+                    result += "\n" + "\n".join(lines[1:])
+            else:
+                else_body, pos = parse_body(pos, level)
+                result += ( "\n" + ind(level) + "else\n" + else_body )
+        return result, pos
+    def parse_loop(pos: int, level: int, kw: str):
+        header, pos = read_parenthesized_header(pos, kw)
+        body, pos = parse_body(pos, level)
+        return ( ind(level) + header + "\n" + body ), pos
+    def parse_switch(pos: int, level: int):
+        header, pos = read_parenthesized_header(pos, "switch")
+        pos = skip_ws(pos)
+        if pos >= n or s[pos] != "{":
+            raise ValueError("switch sin bloque con llaves")
+        block, pos = parse_block(pos, level)
+        return ( ind(level) + header + "\n" + block ), pos
+    def parse_statement(pos: int, level: int):
+        pos = skip_ws(pos)
+        if pos >= n:
+            return "", pos
+        if s.startswith("//", pos) or s.startswith("/*", pos):
+            return leer_comentario(pos, level)
+        if is_kw(pos, "if"):
+            return parse_if(pos, level)
+        if is_kw(pos, "while"):
+            return parse_loop(pos, level, "while")
+        if is_kw(pos, "for"):
+            return parse_loop(pos, level, "for")
+        if is_kw(pos, "switch"):
+            return parse_switch(pos, level)
+        if s[pos] == "{":
+            return parse_block(pos, level)
+        if is_kw(pos, "else"):
+            pos += len("else")
+            pos = skip_ws(pos)
+            if is_kw(pos, "if"):
+                else_if, pos = parse_if(pos, level)
+                return ind(level) + "else " + else_if.lstrip(), pos
+            body, pos = parse_body(pos, level)
+            return ( ind(level) + "else\n" + body ), pos
+        text, pos2, kind = read_simple(pos)
+        if kind == "block":
+            block, pos3 = parse_block(pos2, level)
+            if text:
+                return ( ind(level) + text + "\n" + block ), pos3
+            return block, pos3
+        if text:
+            return ind(level) + text, pos2
+        return "", pos2
+    def parse_content(pos: int, level: int, stop_at_case: bool = False):
+        parts = []
+        while True:
+            pos = skip_ws(pos)
+            if pos >= n:
+                break
+            if s[pos] == "}":
+                break
+            if stop_at_case and (is_kw(pos, "case") or is_kw(pos, "default")):
+                break
+            if s.startswith("//", pos) or s.startswith("/*", pos):
+                comentario, pos = leer_comentario(pos, level)
+                if comentario.strip():
+                    parts.append(comentario.rstrip())
+                continue
+            if is_kw(pos, "case") or is_kw(pos, "default"):
+                label, pos = read_case_label(pos)
+                parts.append(ind(level) + label)
+                case_body, pos = parse_content( pos, level + 1, stop_at_case=True )
+                parts.append(ind(level) + "{")
+                if case_body.strip():
+                    parts.append(case_body.rstrip())
+                parts.append(ind(level) + "}")
+            else:
+                stmt, pos = parse_statement(pos, level)
+                if stmt.strip():
+                    parts.append(stmt.rstrip())
+        return "\n".join(parts), pos
+    result, _ = parse_content(0, 0, stop_at_case=False)
+    return result.strip()

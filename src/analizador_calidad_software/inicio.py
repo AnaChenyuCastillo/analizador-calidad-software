@@ -742,7 +742,7 @@ def generar_html():
             <div>Autor: Castillo Casado, Ana Chenyu</div>
             <div>Tutor: Bueno Guillén, Francisco Javier</div>
             <div class="lineaBlanca"></div>
-            <div>curso: 2025/2026</div>
+            <div>Curso: 2025/2026</div>
         </div>
     </div>
 

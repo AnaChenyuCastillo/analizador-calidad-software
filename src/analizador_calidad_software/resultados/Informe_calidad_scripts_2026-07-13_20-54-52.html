@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset='UTF-8'>
+<title>Informe de calidad de software scripts</title>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        h1 {
+            color: #1f2937;
+        }
+
+        h2 {
+            margin-top: 40px;
+            color: #1f2937;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 6px;
+        }
+
+        h3 {
+            margin-top: 25px;
+            color: #374151;
+        }
+
+        h4 {
+            margin-top: 20px;
+            color: #374151;
+        }
+
+        .bloque-proyecto {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+        }
+
+        .bloque-tabla {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 35px;
+            border: 1px solid #ddd;
+        }
+
+        .referencia {
+            background-color: #eef2ff;
+            padding: 12px;
+            border-left: 4px solid #6366f1;
+            margin: 10px 0;
+            border-radius: 4px;
+        }
+
+        .observacion {
+            background-color: #fff7ed;
+            padding: 12px;
+            border-left: 4px solid #f97316;
+            margin: 10px 0 20px 0;
+            border-radius: 4px;
+        }
+
+        .aviso {
+            background-color: #fef2f2;
+            padding: 15px;
+            border-left: 4px solid #dc2626;
+            margin: 20px 0 30px 0;
+            border-radius: 4px;
+        }
+
+        .aviso ul {
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        .contenedor-tabla {
+            width: 100%;
+            overflow-x: auto;
+            margin-bottom: 25px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #1f2937;
+            color: white;
+            text-align: left;
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+
+        td {
+            padding: 8px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .tabla-referencias th {
+            background-color: #4338ca;
+        }
+
+        .tabla-rangos th {
+            background-color: #065f46;
+        }
+
+        .tabla-vacia {
+            padding: 12px;
+            background-color: #fee2e2;
+            border-left: 4px solid #dc2626;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .botones-superiores {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .boton {
+            background-color: #1f2937;
+            color: white;
+            text-decoration: none;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .boton:hover {
+            background-color: #374151;
+        }
+
+        .boton-secundario {
+            background-color: #4b5563;
+        }
+
+        .boton-secundario:hover {
+            background-color: #6b7280;
+        }
+
+        .indice {
+            background-color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 30px;
+        }
+
+        .indice a {
+            display: inline-block;
+            margin: 6px 10px 6px 0;
+            color: #1f2937;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .indice a:hover {
+            text-decoration: underline;
+        }
+
+        .volver-arriba {
+            display: inline-block;
+            margin-top: 5px;
+            margin-bottom: 15px;
+            font-size: 13px;
+            color: #374151;
+            text-decoration: none;
+        }
+
+        .volver-arriba:hover {
+            text-decoration: underline;
+        }
+
+        .cabecera-impresion {
+            display: none;
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 10mm;
+            }
+
+            body {
+                margin: 0;
+                background-color: white;
+                color: black;
+            }
+
+            .botones-superiores,
+            .indice,
+            .volver-arriba {
+                display: none;
+            }
+
+            .bloque-proyecto {
+                page-break-after: always;
+                border: none;
+            }
+
+            .bloque-tabla {
+                page-break-before: always;
+                border: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .referencia,
+            .observacion,
+            .tabla-referencias,
+            .tabla-rangos {
+                page-break-inside: avoid;
+            }
+
+            .tabla-referencias,
+            .tabla-rangos {
+                page-break-after: always;
+            }
+
+            table {
+                width: 100%;
+                font-size: 8px;
+                page-break-inside: auto;
+            }
+
+            thead {
+                display: table-header-group;
+            }
+
+            tbody {
+                display: table-row-group;
+            }
+
+            tr {
+                page-break-inside: avoid;
+                page-break-after: auto;
+            }
+
+            th {
+                background-color: #1f2937 !important;
+                color: white !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            td {
+                padding: 4px;
+            }
+
+            h1, h2, h3, h4 {
+                page-break-after: avoid;
+            }
+
+            .cabecera-impresion {
+                display: table-row;
+            }
+
+            .cabecera-impresion th {
+                background-color: #111827 !important;
+                color: white !important;
+                font-size: 10px;
+                text-align: left;
+            }
+        }
+    </style>
+    
+</head>
+<body id='inicio'>
+<div class='botones-superiores'>
+<a class='boton boton-secundario' href='#inicio'>Inicio</a>
+<button class='boton' onclick='window.print()'>Generar PDF</button>
+<a class='boton boton-secundario' href='file:///C:\Users\cheny\OneDrive - Universidad de Alcala\TFG\analizador-calidad-software\analizador-calidad-software\src\analizador_calidad_software\resultados\scripts_20260713205513_py.pdf' target='_blank'>Ver diagramas</a>
+</div>
+<h1>Informe de calidad de software</h1>
+<div class='bloque-proyecto'>
+<p><strong>Proyecto:</strong> scripts</p>
+<p><strong>Ruta:</strong> C:\Datos\universidad\Nueva carpeta\scripts</p>
+<p><strong>Lenguaje:</strong> python</p>
+<p><strong>Número de tablas:</strong> 4</p>
+Algunas métricas no presentan un rango de referencia porque no existe un umbral universalmente aceptado para interpretarlas, 
+ya que su valor depende del tamaño, lenguaje, estructura y contexto del proyecto analizado.
+</div>
+<div class='indice'>
+<h2>Índice de resultados</h2>
+<a href='#tabla-1'>Resultados Radon</a>
+<a href='#tabla-2'>Resultados Lizard</a>
+<a href='#tabla-3'>Resumen Pylint</a>
+<a href='#tabla-4'>Incidencias relevantes Pylint</a>
+</div>
+<section class='bloque-tabla' id='tabla-1'>
+<h2>Resultados Radon</h2>
+<a class='volver-arriba' href='#inicio'>Volver arriba</a>
+<div class='referencia'><strong>Referencia:</strong> Radon calcula métricas de código Python como complejidad ciclomática, índice de mantenibilidad, métricas básicas de tamaño y métricas de Halstead. En este informe se muestran las métricas más relevantes para interpretar la calidad del código.</div>
+<div class='observacion'><strong>Observación:</strong> La complejidad ciclomática y el índice de mantenibilidad se interpretan mediante rangos cualitativos. SLOC y las métricas de Halstead se muestran como métricas descriptivas para contextualizar el tamaño, el volumen lógico, la dificultad y el esfuerzo estimado del código analizado.</div>
+<h3>Referencias de métricas</h3>
+<div class='contenedor-tabla'>
+<table class='tabla-referencias'>
+<thead>
+<tr>
+<th></th>
+<th>SLOC</th>
+<th>CC</th>
+<th>MI</th>
+<th>VOLUMEN</th>
+<th>DIFICULTAD</th>
+<th>ESFUERZO</th>
+<th>BUGS</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nombre</strong></td>
+<td>Líneas de código fuente</td>
+<td>Complejidad ciclomática</td>
+<td>Índice de mantenibilidad</td>
+<td>Volumen de Halstead</td>
+<td>Dificultad de Halstead</td>
+<td>Esfuerzo de Halstead</td>
+<td>Errores estimados de Halstead</td>
+</tr>
+<tr>
+<td><strong>Qué mide</strong></td>
+<td>Cantidad de líneas de código fuente sin contar líneas en blanco ni comentarios.</td>
+<td>Número de caminos independientes existentes en el flujo de control del código.</td>
+<td>Indicador numérico que estima la facilidad de mantenimiento del código.</td>
+<td>Tamaño lógico del código calculado a partir de operadores y operandos.</td>
+<td>Estimación de la dificultad de comprensión o implementación del código.</td>
+<td>Estimación del esfuerzo necesario para comprender o desarrollar el código.</td>
+<td>Estimación teórica del número de defectos potenciales asociados al volumen lógico del código.</td>
+</tr>
+<tr>
+<td><strong>Mínimo</strong></td>
+<td>Sin especificar</td>
+<td>1</td>
+<td>20</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+</tr>
+<tr>
+<td><strong>Máximo</strong></td>
+<td>Sin especificar</td>
+<td>10</td>
+<td>100</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Rangos cualitativos</h3>
+<h4>CC</h4>
+<div class='contenedor-tabla'>
+<table class='tabla-rangos'>
+<thead>
+<tr>
+<th>Mínimo</th>
+<th>Máximo</th>
+<th>Clasificación</th>
+<th>Observación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>10</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+</tr>
+<tr>
+<td>11</td>
+<td>20</td>
+<td>Moderada</td>
+<td>Complejidad moderada; conviene revisar si puede simplificarse.</td>
+</tr>
+<tr>
+<td>21</td>
+<td>50</td>
+<td>Alta</td>
+<td>Complejidad alta; puede estar justificada en casos concretos, pero aumenta el esfuerzo de prueba y mantenimiento.</td>
+</tr>
+<tr>
+<td>51</td>
+<td>Sin especificar</td>
+<td>Muy alta</td>
+<td>Complejidad muy alta; requiere revisión prioritaria por su impacto en comprensión, prueba y mantenimiento.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4>MI</h4>
+<div class='contenedor-tabla'>
+<table class='tabla-rangos'>
+<thead>
+<tr>
+<th>Mínimo</th>
+<th>Máximo</th>
+<th>Clasificación</th>
+<th>Observación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>20</td>
+<td>100</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>19</td>
+<td>Media</td>
+<td>Mantenibilidad media; conviene revisar posibles mejoras.</td>
+</tr>
+<tr>
+<td>0</td>
+<td>9</td>
+<td>Baja</td>
+<td>Mantenibilidad baja; requiere revisión prioritaria.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Resultados</h3>
+<div class='contenedor-tabla'>
+<table>
+<thead>
+<tr class='cabecera-impresion'>
+<th colspan='12'>Resultados Radon</th>
+</tr>
+<tr>
+<th>Elemento analizado</th>
+<th>SLOC</th>
+<th>Complejidad ciclomatica</th>
+<th>Clasificacion complejidad</th>
+<th>Observacion complejidad</th>
+<th>MI</th>
+<th>Clasificacion MI</th>
+<th>Observacion MI</th>
+<th>Volumen Halstead</th>
+<th>Dificultad Halstead</th>
+<th>Esfuerzo Halstead</th>
+<th>Bugs estimados Halstead</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>auth.py::F 70:0 list_users</td>
+<td>92</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>63.45</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4.754887502163469</td>
+<td>0.5</td>
+<td>2.3774437510817346</td>
+<td>0.0015849625007211565</td>
+</tr>
+<tr>
+<td>auth.py::F 85:0 add_user</td>
+<td>92</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>63.45</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4.754887502163469</td>
+<td>0.5</td>
+<td>2.3774437510817346</td>
+<td>0.0015849625007211565</td>
+</tr>
+<tr>
+<td>auth.py::F 102:0 validate_login</td>
+<td>92</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>63.45</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4.754887502163469</td>
+<td>0.5</td>
+<td>2.3774437510817346</td>
+<td>0.0015849625007211565</td>
+</tr>
+<tr>
+<td>auth.py::F 115:0 change_password</td>
+<td>92</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>63.45</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4.754887502163469</td>
+<td>0.5</td>
+<td>2.3774437510817346</td>
+<td>0.0015849625007211565</td>
+</tr>
+<tr>
+<td>auth.py::F 20:0 run</td>
+<td>92</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>63.45</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4.754887502163469</td>
+<td>0.5</td>
+<td>2.3774437510817346</td>
+<td>0.0015849625007211565</td>
+</tr>
+<tr>
+<td>auth.py::F 55:0 run_command</td>
+<td>92</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>63.45</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>4.754887502163469</td>
+<td>0.5</td>
+<td>2.3774437510817346</td>
+<td>0.0015849625007211565</td>
+</tr>
+<tr>
+<td>check_config.py::F 62:0 run</td>
+<td>265</td>
+<td>39</td>
+<td>Alta</td>
+<td>Complejidad alta; puede estar justificada en casos concretos, pero aumenta el esfuerzo de prueba y mantenimiento.</td>
+<td>38.29</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>744.0</td>
+<td>7.5</td>
+<td>5580.0</td>
+<td>0.248</td>
+</tr>
+<tr>
+<td>check_config.py::F 218:0 check</td>
+<td>265</td>
+<td>16</td>
+<td>Moderada</td>
+<td>Complejidad moderada; conviene revisar si puede simplificarse.</td>
+<td>38.29</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>744.0</td>
+<td>7.5</td>
+<td>5580.0</td>
+<td>0.248</td>
+</tr>
+<tr>
+<td>check_config.py::F 323:0 dump_dict</td>
+<td>265</td>
+<td>9</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>38.29</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>744.0</td>
+<td>7.5</td>
+<td>5580.0</td>
+<td>0.248</td>
+</tr>
+<tr>
+<td>check_config.py::F 49:0 color</td>
+<td>265</td>
+<td>5</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>38.29</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>744.0</td>
+<td>7.5</td>
+<td>5580.0</td>
+<td>0.248</td>
+</tr>
+<tr>
+<td>check_config.py::F 314:0 line_info</td>
+<td>265</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>38.29</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>744.0</td>
+<td>7.5</td>
+<td>5580.0</td>
+<td>0.248</td>
+</tr>
+<tr>
+<td>check_config.py::F 300:0 async_check_config</td>
+<td>265</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>38.29</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>744.0</td>
+<td>7.5</td>
+<td>5580.0</td>
+<td>0.248</td>
+</tr>
+<tr>
+<td>ensure_config.py::F 13:0 run</td>
+<td>30</td>
+<td>2</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>82.04</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>2.0</td>
+<td>0.5</td>
+<td>1.0</td>
+<td>0.0006666666666666666</td>
+</tr>
+<tr>
+<td>ensure_config.py::F 41:0 async_run</td>
+<td>30</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>82.04</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>2.0</td>
+<td>0.5</td>
+<td>1.0</td>
+<td>0.0006666666666666666</td>
+</tr>
+<tr>
+<td>__init__.py::F 22:0 run</td>
+<td>54</td>
+<td>12</td>
+<td>Moderada</td>
+<td>Complejidad moderada; conviene revisar si puede simplificarse.</td>
+<td>58.25</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>81.7492568250068</td>
+<td>3.272727272727273</td>
+<td>267.5430223363859</td>
+<td>0.027249752275002266</td>
+</tr>
+<tr>
+<td>__init__.py::F 69:0 extract_config_dir</td>
+<td>54</td>
+<td>2</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>58.25</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>81.7492568250068</td>
+<td>3.272727272727273</td>
+<td>267.5430223363859</td>
+<td>0.027249752275002266</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py::F 154:0 state_changed_event_helper</td>
+<td>211</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>43.26</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>478.8369363238518</td>
+<td>2.978723404255319</td>
+<td>1426.3227890497712</td>
+<td>0.1596123121079506</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py::F 189:0 state_changed_event_filter_helper</td>
+<td>211</td>
+<td>4</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>43.26</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>478.8369363238518</td>
+<td>2.978723404255319</td>
+<td>1426.3227890497712</td>
+<td>0.1596123121079506</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py::F 61:0 fire_events</td>
+<td>211</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>43.26</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>478.8369363238518</td>
+<td>2.978723404255319</td>
+<td>1426.3227890497712</td>
+<td>0.1596123121079506</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py::F 88:0 fire_events_with_filter</td>
+<td>211</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>43.26</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>478.8369363238518</td>
+<td>2.978723404255319</td>
+<td>1426.3227890497712</td>
+<td>0.1596123121079506</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py::F 120:0 state_changed_helper</td>
+<td>211</td>
+<td>3</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>43.26</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>478.8369363238518</td>
+<td>2.978723404255319</td>
+<td>1426.3227890497712</td>
+<td>0.1596123121079506</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py::F 27:0 run</td>
+<td>211</td>
+<td>2</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>43.26</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>478.8369363238518</td>
+<td>2.978723404255319</td>
+<td>1426.3227890497712</td>
+<td>0.1596123121079506</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py::F 227:0 filtering_entity_id</td>
+<td>211</td>
+<td>2</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>43.26</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>478.8369363238518</td>
+<td>2.978723404255319</td>
+<td>1426.3227890497712</td>
+<td>0.1596123121079506</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py::F 292:0 valid_entity_id</td>
+<td>211</td>
+<td>2</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>43.26</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>478.8369363238518</td>
+<td>2.978723404255319</td>
+<td>1426.3227890497712</td>
+<td>0.1596123121079506</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py::F 301:0 json_serialize_states</td>
+<td>211</td>
+<td>2</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>43.26</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>478.8369363238518</td>
+<td>2.978723404255319</td>
+<td>1426.3227890497712</td>
+<td>0.1596123121079506</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py::F 46:0 run_benchmark</td>
+<td>211</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>43.26</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>478.8369363238518</td>
+<td>2.978723404255319</td>
+<td>1426.3227890497712</td>
+<td>0.1596123121079506</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py::F 54:0 benchmark</td>
+<td>211</td>
+<td>1</td>
+<td>Buena</td>
+<td>Complejidad baja, normalmente sencilla de probar y mantener.</td>
+<td>43.26</td>
+<td>Alta</td>
+<td>Mantenibilidad alta.</td>
+<td>478.8369363238518</td>
+<td>2.978723404255319</td>
+<td>1426.3227890497712</td>
+<td>0.1596123121079506</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class='bloque-tabla' id='tabla-2'>
+<h2>Resultados Lizard</h2>
+<a class='volver-arriba' href='#inicio'>Volver arriba</a>
+<div class='referencia'><strong>Referencia:</strong> Lizard calcula métricas estructurales como NLOC, tokens, número de parámetros y longitud. En proyectos Java también se incluye la complejidad ciclomática. En proyectos Python, la complejidad ciclomática se muestra mediante Radon para evitar duplicidad.</div>
+<div class='observacion'><strong>Observación:</strong> Las métricas de Lizard deben interpretarse en contexto. En proyectos grandes pueden existir funciones extensas justificadas por lógica de negocio, estructuras condicionales amplias o flujos difíciles de dividir. Aun así, valores elevados pueden indicar mayor dificultad de prueba y mantenimiento.</div>
+<h3>Referencias de métricas</h3>
+<div class='contenedor-tabla'>
+<table class='tabla-referencias'>
+<thead>
+<tr>
+<th></th>
+<th>NLOC</th>
+<th>TOKENS</th>
+<th>PARAM</th>
+<th>LENGTH</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Nombre</strong></td>
+<td>Líneas de código sin comentarios</td>
+<td>Tokens</td>
+<td>Número de parámetros</td>
+<td>Longitud</td>
+</tr>
+<tr>
+<td><strong>Qué mide</strong></td>
+<td>Cantidad de líneas efectivas de código dentro del elemento analizado.</td>
+<td>Cantidad de unidades léxicas presentes en el elemento analizado.</td>
+<td>Cantidad de parámetros recibidos por una función o método.</td>
+<td>Número de líneas que ocupa la función o método analizado.</td>
+</tr>
+<tr>
+<td><strong>Mínimo</strong></td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+</tr>
+<tr>
+<td><strong>Máximo</strong></td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+<td>Sin especificar</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3>Resultados</h3>
+<div class='contenedor-tabla'>
+<table>
+<thead>
+<tr class='cabecera-impresion'>
+<th colspan='5'>Resultados Lizard</th>
+</tr>
+<tr>
+<th>Elemento analizado</th>
+<th>NLOC</th>
+<th>Tokens</th>
+<th>Parametros</th>
+<th>longitud</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>run@27-43@C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py</td>
+<td>11</td>
+<td>96</td>
+<td>1</td>
+<td>17</td>
+</tr>
+<tr>
+<td>run_benchmark@46-51@C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py</td>
+<td>5</td>
+<td>32</td>
+<td>1</td>
+<td>6</td>
+</tr>
+<tr>
+<td>]@54-57@C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py</td>
+<td>3</td>
+<td>20</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>fire_events.listener@68-71@C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py</td>
+<td>3</td>
+<td>11</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>fire_events@61-84@C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py</td>
+<td>13</td>
+<td>76</td>
+<td>1</td>
+<td>24</td>
+</tr>
+<tr>
+<td>fire_events_with_filter.event_filter@95-97@C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py</td>
+<td>2</td>
+<td>8</td>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>fire_events_with_filter.listener@100-103@C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py</td>
+<td>3</td>
+<td>11</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>fire_events_with_filter@88-116@C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py</td>
+<td>15</td>
+<td>86</td>
+<td>1</td>
+<td>29</td>
+</tr>
+<tr>
+<td>state_changed_helper.listener@127-133@C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py</td>
+<td>5</td>
+<td>24</td>
+<td>1</td>
+<td>7</td>
+</tr>
+<tr>
+<td>state_changed_helper@120-150@C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py</td>
+<td>18</td>
+<td>120</td>
+<td>1</td>
+<td>31</td>
+</tr>
+<tr>
+<td>state_changed_event_helper.listener@161-164@C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py</td>
+<td>3</td>
+<td>12</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>state_changed_event_helper@154-185@C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py</td>
+<td>20</td>
+<td>117</td>
+<td>1</td>
+<td>32</td>
+</tr>
+<tr>
+<td>state_changed_event_filter_helper.listener@199-202@C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py</td>
+<td>3</td>
+<td>12</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>state_changed_event_filter_helper@189-223@C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py</td>
+<td>20</td>
+<td>116</td>
+<td>1</td>
+<td>35</td>
+</tr>
+<tr>
+<td>filtering_entity_id@227-288@C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py</td>
+<td>56</td>
+<td>170</td>
+<td>1</td>
+<td>62</td>
+</tr>
+<tr>
+<td>valid_entity_id@292-297@C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py</td>
+<td>5</td>
+<td>39</td>
+<td>1</td>
+<td>6</td>
+</tr>
+<tr>
+<td>json_serialize_states@301-310@C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py</td>
+<td>8</td>
+<td>54</td>
+<td>1</td>
+<td>10</td>
+</tr>
+<tr>
+<td>run@20-52@C:\Datos\universidad\Nueva carpeta\scripts\auth.py</td>
+<td>27</td>
+<td>220</td>
+<td>1</td>
+<td>33</td>
+</tr>
+<tr>
+<td>run_command@55-67@C:\Datos\universidad\Nueva carpeta\scripts\auth.py</td>
+<td>9</td>
+<td>118</td>
+<td>1</td>
+<td>13</td>
+</tr>
+<tr>
+<td>list_users@70-82@C:\Datos\universidad\Nueva carpeta\scripts\auth.py</td>
+<td>11</td>
+<td>60</td>
+<td>3</td>
+<td>13</td>
+</tr>
+<tr>
+<td>add_user@85-99@C:\Datos\universidad\Nueva carpeta\scripts\auth.py</td>
+<td>12</td>
+<td>67</td>
+<td>3</td>
+<td>15</td>
+</tr>
+<tr>
+<td>validate_login@102-112@C:\Datos\universidad\Nueva carpeta\scripts\auth.py</td>
+<td>10</td>
+<td>58</td>
+<td>3</td>
+<td>11</td>
+</tr>
+<tr>
+<td>change_password@115-126@C:\Datos\universidad\Nueva carpeta\scripts\auth.py</td>
+<td>11</td>
+<td>66</td>
+<td>3</td>
+<td>12</td>
+</tr>
+<tr>
+<td>color@49-59@C:\Datos\universidad\Nueva carpeta\scripts\check_config.py</td>
+<td>9</td>
+<td>70</td>
+<td>3</td>
+<td>11</td>
+</tr>
+<tr>
+<td>run@62-215@C:\Datos\universidad\Nueva carpeta\scripts\check_config.py</td>
+<td>125</td>
+<td>961</td>
+<td>1</td>
+<td>154</td>
+</tr>
+<tr>
+<td>check.mock_load@231-234@C:\Datos\universidad\Nueva carpeta\scripts\check_config.py</td>
+<td>3</td>
+<td>32</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr>
+<td>check.mock_secrets@237-244@C:\Datos\universidad\Nueva carpeta\scripts\check_config.py</td>
+<td>7</td>
+<td>43</td>
+<td>2</td>
+<td>8</td>
+</tr>
+<tr>
+<td>check.secrets_proxy@263-266@C:\Datos\universidad\Nueva carpeta\scripts\check_config.py</td>
+<td>4</td>
+<td>23</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>check@218-297@C:\Datos\universidad\Nueva carpeta\scripts\check_config.py</td>
+<td>46</td>
+<td>385</td>
+<td>2</td>
+<td>80</td>
+</tr>
+<tr>
+<td>async_check_config@300-311@C:\Datos\universidad\Nueva carpeta\scripts\check_config.py</td>
+<td>11</td>
+<td>81</td>
+<td>1</td>
+<td>12</td>
+</tr>
+<tr>
+<td>line_info@314-320@C:\Datos\universidad\Nueva carpeta\scripts\check_config.py</td>
+<td>6</td>
+<td>30</td>
+<td>2</td>
+<td>7</td>
+</tr>
+<tr>
+<td>dump_dict.sort_dict_key@329-332@C:\Datos\universidad\Nueva carpeta\scripts\check_config.py</td>
+<td>3</td>
+<td>27</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>dump_dict@323-350@C:\Datos\universidad\Nueva carpeta\scripts\check_config.py</td>
+<td>19</td>
+<td>184</td>
+<td>4</td>
+<td>28</td>
+</tr>
+<tr>
+<td>run@13-38@C:\Datos\universidad\Nueva carpeta\scripts\ensure_config.py</td>
+<td>20</td>
+<td>124</td>
+<td>1</td>
+<td>26</td>
+</tr>
+<tr>
+<td>async_run@41-46@C:\Datos\universidad\Nueva carpeta\scripts\ensure_config.py</td>
+<td>5</td>
+<td>32</td>
+<td>1</td>
+<td>6</td>
+</tr>
+<tr>
+<td>run@22-66@C:\Datos\universidad\Nueva carpeta\scripts\__init__.py</td>
+<td>32</td>
+<td>249</td>
+<td>1</td>
+<td>45</td>
+</tr>
+<tr>
+<td>extract_config_dir@69-78@C:\Datos\universidad\Nueva carpeta\scripts\__init__.py</td>
+<td>9</td>
+<td>77</td>
+<td>1</td>
+<td>10</td>
+</tr>
+<tr>
+<td>run@62-215@C:\Datos\universidad\Nueva carpeta\scripts\check_config.py</td>
+<td>125</td>
+<td>961</td>
+<td>1</td>
+<td>154</td>
+</tr>
+<tr>
+<td>check@218-297@C:\Datos\universidad\Nueva carpeta\scripts\check_config.py</td>
+<td>46</td>
+<td>385</td>
+<td>2</td>
+<td>80</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class='bloque-tabla' id='tabla-3'>
+<h2>Resumen Pylint</h2>
+<a class='volver-arriba' href='#inicio'>Volver arriba</a>
+<h3>Resultados</h3>
+<div class='contenedor-tabla'>
+<table>
+<thead>
+<tr class='cabecera-impresion'>
+<th colspan='4'>Resumen Pylint</th>
+</tr>
+<tr>
+<th>Categoria</th>
+<th>Severidad</th>
+<th>Numero de incidencias</th>
+<th>Interpretacion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fatal</td>
+<td>Muy grave</td>
+<td>0</td>
+<td>Impide o dificulta gravemente el análisis.</td>
+</tr>
+<tr>
+<td>Error</td>
+<td>Grave</td>
+<td>27</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>Warning</td>
+<td>Revisión necesaria</td>
+<td>15</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>Refactor</td>
+<td>Mejora recomendada</td>
+<td>3</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>Convention</td>
+<td>Estilo</td>
+<td>2</td>
+<td>Incumplimiento de convenciones de estilo o formato.</td>
+</tr>
+<tr>
+<td>Information</td>
+<td>Informativo</td>
+<td>0</td>
+<td>Información adicional del análisis.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section class='bloque-tabla' id='tabla-4'>
+<h2>Incidencias relevantes Pylint</h2>
+<a class='volver-arriba' href='#inicio'>Volver arriba</a>
+<h3>Resultados</h3>
+<div class='contenedor-tabla'>
+<table>
+<thead>
+<tr class='cabecera-impresion'>
+<th colspan='9'>Incidencias relevantes Pylint</th>
+</tr>
+<tr>
+<th>Archivo</th>
+<th>Linea</th>
+<th>Columna</th>
+<th>Categoria</th>
+<th>Codigo</th>
+<th>Simbolo</th>
+<th>Mensaje</th>
+<th>Severidad</th>
+<th>Interpretacion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>__init__.py</td>
+<td>13</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>__init__.py</td>
+<td>14</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.bootstrap&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>__init__.py</td>
+<td>15</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.config&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>__init__.py</td>
+<td>16</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.requirements&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>__init__.py</td>
+<td>17</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.util.package&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>auth.py</td>
+<td>10</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>auth.py</td>
+<td>11</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.auth&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>auth.py</td>
+<td>12</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.auth.providers&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>auth.py</td>
+<td>13</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.config&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>auth.py</td>
+<td>14</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.core&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>auth.py</td>
+<td>15</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.helpers&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>auth.py</td>
+<td>71</td>
+<td>4</td>
+<td>Warning</td>
+<td>W0613</td>
+<td>unused-argument</td>
+<td>Unused argument &#x27;hass&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>auth.py</td>
+<td>71</td>
+<td>63</td>
+<td>Warning</td>
+<td>W0613</td>
+<td>unused-argument</td>
+<td>Unused argument &#x27;args&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>auth.py</td>
+<td>86</td>
+<td>4</td>
+<td>Warning</td>
+<td>W0613</td>
+<td>unused-argument</td>
+<td>Unused argument &#x27;hass&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>auth.py</td>
+<td>103</td>
+<td>4</td>
+<td>Warning</td>
+<td>W0613</td>
+<td>unused-argument</td>
+<td>Unused argument &#x27;hass&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>auth.py</td>
+<td>116</td>
+<td>4</td>
+<td>Warning</td>
+<td>W0613</td>
+<td>unused-argument</td>
+<td>Unused argument &#x27;hass&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>check_config.py</td>
+<td>16</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;annotatedyaml&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>check_config.py</td>
+<td>17</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;annotatedyaml.loader&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>check_config.py</td>
+<td>19</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>check_config.py</td>
+<td>20</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.config&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>check_config.py</td>
+<td>21</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.config_entries&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>check_config.py</td>
+<td>22</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.exceptions&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>check_config.py</td>
+<td>23</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.helpers&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>check_config.py</td>
+<td>29</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.helpers.check_config&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>check_config.py</td>
+<td>51</td>
+<td>4</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;colorlog.escape_codes&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>check_config.py</td>
+<td>62</td>
+<td>0</td>
+<td>Refactor</td>
+<td>R0914</td>
+<td>too-many-locals</td>
+<td>Too many local variables (22/15)</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>check_config.py</td>
+<td>62</td>
+<td>0</td>
+<td>Refactor</td>
+<td>R0912</td>
+<td>too-many-branches</td>
+<td>Too many branches (23/12)</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>check_config.py</td>
+<td>62</td>
+<td>0</td>
+<td>Refactor</td>
+<td>R0915</td>
+<td>too-many-statements</td>
+<td>Too many statements (68/50)</td>
+<td>Mejora recomendada</td>
+<td>Código mejorable desde el punto de vista del diseño o la mantenibilidad.</td>
+</tr>
+<tr>
+<td>check_config.py</td>
+<td>62</td>
+<td>8</td>
+<td>Warning</td>
+<td>W0613</td>
+<td>unused-argument</td>
+<td>Unused argument &#x27;script_args&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>check_config.py</td>
+<td>265</td>
+<td>30</td>
+<td>Warning</td>
+<td>W0212</td>
+<td>protected-access</td>
+<td>Access to a protected member _cache of a client class</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>check_config.py</td>
+<td>286</td>
+<td>11</td>
+<td>Warning</td>
+<td>W0718</td>
+<td>broad-exception-caught</td>
+<td>Catching too general exception Exception</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>ensure_config.py</td>
+<td>7</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>ensure_config.py</td>
+<td>8</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.core&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py</td>
+<td>12</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py</td>
+<td>13</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.const&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py</td>
+<td>14</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.helpers.entityfilter&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py</td>
+<td>15</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.helpers.event&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py</td>
+<td>19</td>
+<td>0</td>
+<td>Error</td>
+<td>E0401</td>
+<td>import-error</td>
+<td>Unable to import &#x27;homeassistant.helpers.json&#x27;</td>
+<td>Grave</td>
+<td>Posible error real en el código.</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py</td>
+<td>95</td>
+<td>21</td>
+<td>Warning</td>
+<td>W0613</td>
+<td>unused-argument</td>
+<td>Unused argument &#x27;event_data&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py</td>
+<td>127</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0613</td>
+<td>unused-argument</td>
+<td>Unused argument &#x27;args&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py</td>
+<td>161</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0613</td>
+<td>unused-argument</td>
+<td>Unused argument &#x27;args&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py</td>
+<td>199</td>
+<td>0</td>
+<td>Warning</td>
+<td>W0613</td>
+<td>unused-argument</td>
+<td>Unused argument &#x27;args&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py</td>
+<td>227</td>
+<td>30</td>
+<td>Warning</td>
+<td>W0613</td>
+<td>unused-argument</td>
+<td>Unused argument &#x27;hass&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py</td>
+<td>292</td>
+<td>26</td>
+<td>Warning</td>
+<td>W0613</td>
+<td>unused-argument</td>
+<td>Unused argument &#x27;hass&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+<tr>
+<td>benchmark\__init__.py</td>
+<td>301</td>
+<td>32</td>
+<td>Warning</td>
+<td>W0613</td>
+<td>unused-argument</td>
+<td>Unused argument &#x27;hass&#x27;</td>
+<td>Revisión necesaria</td>
+<td>Posible problema, mala práctica o situación peligrosa.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</body>
+</html>

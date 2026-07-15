@@ -74,6 +74,13 @@ def crear_datos_archivo_vacios() -> dict:
         "BUGS": "",        
     }
 
+def formatear_decimal(valor, decimales=2) -> str:
+    try:
+        numero = float(valor)
+        return str(round(numero, decimales))
+    except Exception:
+        return valor
+
 def procesar_radon(ruta_txt: Path, ruta_proyecto: Path, lenguaje) -> dict:
     contenido = ruta_txt.read_text(encoding="utf-8", errors="replace")
     lineas = contenido.splitlines()
@@ -214,9 +221,9 @@ def procesar_radon(ruta_txt: Path, ruta_proyecto: Path, lenguaje) -> dict:
         sloc = datos_archivo["SLOC"]
         mi = datos_archivo["MI"]
         volumen = datos_archivo["VOLUMEN"]
-        dificultad = datos_archivo["DIFICULTAD"]   
-        esfuerzo = datos_archivo["ESFUERZO"]       
-        bugs = datos_archivo["BUGS"]               
+        dificultad = formatear_decimal(datos_archivo["DIFICULTAD"])  
+        esfuerzo = formatear_decimal(datos_archivo["ESFUERZO"])       
+        bugs = formatear_decimal(datos_archivo["BUGS"], 4)              
 
         clasificacion_complejidad, observacion_complejidad = obtener_clasificacion(
             complejidad,

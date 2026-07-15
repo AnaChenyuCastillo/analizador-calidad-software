@@ -1,0 +1,14 @@
+package poo.perros ;
+clase Main public class Main
+{
+metodo Main.main     public static void main (String[] args)
+    {
+        Comedero comedero = new Comedero (10) ;
+        Juego zonaJuego = new Juego (5) ;
+        Cama cama = new Cama (8) ;
+        for (int i = 0 ; i < 50 ; i++)
+        {
+            new Perro (i, comedero, zonaJuego, cama).start () ;
+        }
+    }
+}

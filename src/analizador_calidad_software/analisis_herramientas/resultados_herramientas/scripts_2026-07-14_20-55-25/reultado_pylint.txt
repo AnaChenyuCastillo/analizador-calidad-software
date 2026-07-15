@@ -1,0 +1,79 @@
+RESULTADO DE LA PRUEBA DE - LIZARD
+
+Proyecto analizado: scripts
+Ruta del proyecto: C:\Datos\universidad\Nueva carpeta\scripts
+Herramienta: Pylant
+Lenguaje principal: Python
+
+Codigo de salida: 30
+
+STDOUT
+************* Module scripts
+C:\Datos\universidad\Nueva carpeta\scripts\__init__.py:13:0: E0401: Unable to import 'homeassistant' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\__init__.py:14:0: E0401: Unable to import 'homeassistant.bootstrap' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\__init__.py:15:0: E0401: Unable to import 'homeassistant.config' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\__init__.py:16:0: E0401: Unable to import 'homeassistant.requirements' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\__init__.py:17:0: E0401: Unable to import 'homeassistant.util.package' (import-error)
+************* Module scripts.auth
+C:\Datos\universidad\Nueva carpeta\scripts\auth.py:10:0: E0401: Unable to import 'homeassistant' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\auth.py:11:0: E0401: Unable to import 'homeassistant.auth' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\auth.py:12:0: E0401: Unable to import 'homeassistant.auth.providers' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\auth.py:13:0: E0401: Unable to import 'homeassistant.config' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\auth.py:14:0: E0401: Unable to import 'homeassistant.core' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\auth.py:15:0: E0401: Unable to import 'homeassistant.helpers' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\auth.py:71:4: W0613: Unused argument 'hass' (unused-argument)
+C:\Datos\universidad\Nueva carpeta\scripts\auth.py:71:63: W0613: Unused argument 'args' (unused-argument)
+C:\Datos\universidad\Nueva carpeta\scripts\auth.py:86:4: W0613: Unused argument 'hass' (unused-argument)
+C:\Datos\universidad\Nueva carpeta\scripts\auth.py:103:4: W0613: Unused argument 'hass' (unused-argument)
+C:\Datos\universidad\Nueva carpeta\scripts\auth.py:116:4: W0613: Unused argument 'hass' (unused-argument)
+************* Module scripts.check_config
+C:\Datos\universidad\Nueva carpeta\scripts\check_config.py:16:0: E0401: Unable to import 'annotatedyaml' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\check_config.py:17:0: E0401: Unable to import 'annotatedyaml.loader' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\check_config.py:19:0: E0401: Unable to import 'homeassistant' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\check_config.py:20:0: E0401: Unable to import 'homeassistant.config' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\check_config.py:21:0: E0401: Unable to import 'homeassistant.config_entries' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\check_config.py:22:0: E0401: Unable to import 'homeassistant.exceptions' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\check_config.py:23:0: E0401: Unable to import 'homeassistant.helpers' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\check_config.py:29:0: E0401: Unable to import 'homeassistant.helpers.check_config' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\check_config.py:51:4: E0401: Unable to import 'colorlog.escape_codes' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\check_config.py:51:4: C0415: Import outside toplevel (colorlog.escape_codes.escape_codes, colorlog.escape_codes.parse_colors) (import-outside-toplevel)
+C:\Datos\universidad\Nueva carpeta\scripts\check_config.py:62:0: R0914: Too many local variables (22/15) (too-many-locals)
+C:\Datos\universidad\Nueva carpeta\scripts\check_config.py:62:0: R0912: Too many branches (23/12) (too-many-branches)
+C:\Datos\universidad\Nueva carpeta\scripts\check_config.py:62:0: R0915: Too many statements (68/50) (too-many-statements)
+C:\Datos\universidad\Nueva carpeta\scripts\check_config.py:62:8: W0613: Unused argument 'script_args' (unused-argument)
+C:\Datos\universidad\Nueva carpeta\scripts\check_config.py:265:30: W0212: Access to a protected member _cache of a client class (protected-access)
+C:\Datos\universidad\Nueva carpeta\scripts\check_config.py:286:11: W0718: Catching too general exception Exception (broad-exception-caught)
+************* Module scripts.ensure_config
+C:\Datos\universidad\Nueva carpeta\scripts\ensure_config.py:7:0: E0401: Unable to import 'homeassistant' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\ensure_config.py:8:0: E0401: Unable to import 'homeassistant.core' (import-error)
+************* Module scripts.benchmark.__init__
+C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py:39:0: C0301: Line too long (101/100) (line-too-long)
+************* Module scripts.benchmark
+C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py:12:0: E0401: Unable to import 'homeassistant' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py:13:0: E0401: Unable to import 'homeassistant.const' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py:14:0: E0401: Unable to import 'homeassistant.helpers.entityfilter' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py:15:0: E0401: Unable to import 'homeassistant.helpers.event' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py:19:0: E0401: Unable to import 'homeassistant.helpers.json' (import-error)
+C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py:95:21: W0613: Unused argument 'event_data' (unused-argument)
+C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py:127:0: W0613: Unused argument 'args' (unused-argument)
+C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py:161:0: W0613: Unused argument 'args' (unused-argument)
+C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py:199:0: W0613: Unused argument 'args' (unused-argument)
+C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py:227:30: W0613: Unused argument 'hass' (unused-argument)
+C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py:292:26: W0613: Unused argument 'hass' (unused-argument)
+C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py:301:32: W0613: Unused argument 'hass' (unused-argument)
+C:\Datos\universidad\Nueva carpeta\scripts\benchmark\__init__.py:1:0: R0801: Similar lines in 2 files
+==scripts.auth:[23:30]
+==scripts.check_config:[65:71]
+    parser.add_argument(
+        "-c",
+        "--config",
+        default=get_default_config_dir(),
+        help="Directory that contains the Home Assistant configuration",
+    ) (duplicate-code)
+
+------------------------------------------------------------------
+Your code has been rated at 6.70/10 (previous run: 6.70/10, +0.00)
+
+
+
+STDERR
